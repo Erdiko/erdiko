@@ -11,10 +11,10 @@ or
 
 The Mobile Mash-Up Framework
 
-goal
+Goal
 ----
 
-Our goal is to offer a lightweight framework to make your sites optimized for mobile devices, APIs and multiple browsers.  Erdiko means middle in the Basque language (Euskara).  The framework aims to make custom app development and levergaing multiple open source projects easy.  If you need to leverage multiple projects like Drupal, Magento, WordPress, Zend, etc then give Erdiko a shot.
+Our goal is to offer a lightweight framework to make your sites optimized for mobile devices, APIs and multiple browsers.  Erdiko means middle in the Basque language (Euskara).  The framework aims to make custom app development and leveraging multiple open source projects easy.  If you need to leverage multiple projects like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot.
 
 Code is in very preliminary architecture stage.  It is not yet in Alpha and should not be used for production installations just yet.
 
