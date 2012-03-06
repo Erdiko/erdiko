@@ -1,0 +1,131 @@
+/*  =Elements
+----------------------------------------------- */
+body {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.25;
+}
+/* Text areas don't inherit their font style from the body element (at least, not in Firefox) */
+body, textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="text"], input[type="password"] {
+    font-family: "Arial", Helvetica, sans-serif;
+    cursor: text;
+}
+h1, h2, h3, h4, h5, h6,
+table, ul, ol, dl, p, fieldset {
+    margin: 1em 0 0.25em 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 14px;
+}
+h3, h4, h5 {
+    font-size: 13px;
+}
+h6 {
+    font-size: 12px;
+}
+h4, h5 {
+    font-style: italic;
+}
+
+*:first-child {
+    margin-top: 0;
+}
+*:last-child {
+    margin-bottom: 0;
+}
+a {
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+a img {
+    border-width: 0;
+}
+ol {
+    padding: 0 0 0 2em;
+}
+ul {
+    padding: 0 0 0 1.5em;
+}
+dl {
+    padding: 0;
+}
+li, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th {
+    text-align: left;
+}
+th, td {
+    margin: 0;
+    padding: 0;
+}
+/* Some browsers (notably IE6) add extra padding/margin at the end of a form element */
+form {
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    border: 1px dotted #666;
+    padding: 4px 8px;
+}
+button {
+    cursor: pointer;
+}
+
+
+/*  =Layout
+----------------------------------------------- */
+body {
+    background-color: #666;
+}
+
+#header {
+    height: 120px;
+}
+#header,
+.content,
+#footer {
+    background-color: #fff;
+    margin: 0 auto;
+    width: 920px;
+}
+
+.content {
+    overflow: hidden;
+}
+#footer {
+    clear: both;
+    height: 120px;
+}
+
+.content-main {
+background-color: pink;
+    float: left;
+    height: 500px;
+    width: 600px;
+}
+
+.aside {
+background-color: #999;
+    float: right;
+    width: 300px;
+}
