@@ -44,17 +44,30 @@ class ThemeEngine extends Module implements Theme
 	
 	public function getHeader($name = "")
 	{
-		return "Header";
+		// return $this->_data['header'];
+		$filename = $this->_folder.'/templates/header.phtml';
+		$html = $this->getTemplateFile($filename, $this->_data['header']);
+		
+		return $html;
 	}
 	
 	public function getFooter($name = "")
 	{
-		return "Footer";
+		// return $this->_data['footer'];
+		$filename = $this->_folder.'/templates/footer.phtml';
+		$html = $this->getTemplateFile($filename, $this->_data['footer']);
+		
+		return $html;
 	}
 		
 	public function getFile($section)
 	{
 		
+	}
+	
+	public function getTitle()
+	{
+		return $this->_data['title'];
 	}
 	
 	public function getMainContent($name = "", $options = null)
@@ -100,7 +113,7 @@ class ThemeEngine extends Module implements Theme
 	
 	function getTemplateFile($filename, $data)
 	{	
-		error_log("get file: $filename");
+		// error_log("get file: $filename");
 		
 	    if (is_file($filename))
 		{

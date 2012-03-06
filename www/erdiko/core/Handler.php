@@ -26,12 +26,21 @@ class Handler extends \ToroHandler
 		// error_log("Hello World!");
 		
 		$data = array(
-			'main_content' => "Hello World",
-			'title' => "Home Page",
+			'header' => array(
+				'content' => "Header",
+				'tagline' => "Booyah",
+				'site_name' => "My Hello World Site",
+			),
+			'footer' => array(
+				'content' => "Footer",
+				'links' => array('link 1', 'link 2', 'link 3'),
+			),
+			'main_content' => "Hello World...",
+			'title' => "Home Page Title",
 			'sidebar' => array(
 				array(
-					'blah' => 'blah',
-					'blah_blah' => 'blah blah',
+					'block_title' => 'block 1',
+					'block_content' => 'blah blah blah...',
 				),
 			),
 		);
