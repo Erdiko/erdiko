@@ -6,9 +6,9 @@
 class Erdiko
 {
 	/**
-	 * Factory Classes
+	 * Factory Module Classes
 	 */
-	public static getModule()
+	public static function getModule($moduleName)
 	{
 		
 	}
@@ -20,7 +20,7 @@ class Erdiko
 	{
 		// some dummy initial routes
 		$routes = array(
-				array('/', 'MainHandler'),
+				array('/', '\erdiko\core\Handler'),
 				array('test', 'TestHandler'),
 				array("article/([a-zA-Z0-9_]+)", 'ArticleHandler')
 			);
