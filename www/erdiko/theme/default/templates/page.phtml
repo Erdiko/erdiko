@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <title>HTML Shell</title>
 
-    <link rel='stylesheet' href='css/global.css' type='text/css' />
+    <link rel='stylesheet' href='<?php echo $this->getThemeUrl(); ?>/css/global.css' type='text/css' />
 
 </head>
 <body>
 
 <div id="header">
-    Header
+    <?php echo $data->getHeader(); ?>
 </div>
 <div class="container">
-    <?php //echo $this->getLayout(); ?>
+    <?php echo $this->getLayout(); ?>
 </div>
 <div id="footer">
-    Footer
+    <?php echo $data->getFooter(); ?>
 </div>
 
 </body>

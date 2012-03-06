@@ -1,6 +1,12 @@
 <?php
 /**
+ * Erdiko
+ * All factory classes and global helper
  * 
+ * @category   Erdiko
+ * @package    Erdiko
+ * @copyright Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
+ * @author	John Arroyo
  */
 
 class Erdiko
@@ -11,6 +17,20 @@ class Erdiko
 	public static function getModule($moduleName)
 	{
 		
+	}
+	
+	/**
+	 * get the registered theme
+	 * @todo get theme from config
+	 * @return object $theme
+	 */
+	public static function getTheme()
+	{
+		// get Theme
+		$themeEngine = new \erdiko\modules\theme\ThemeEngine();
+		$themeEngine->loadTheme( 'core', 'default' );
+		
+		return $themeEngine;
 	}
 	
 	/**

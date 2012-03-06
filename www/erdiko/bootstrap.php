@@ -8,7 +8,13 @@ require_once $webroot.'/Erdiko.php';
 // Libraries
 require_once $webroot.'/libraries/ToroPHP/toro.php';
 
+// Interfaces
+require_once $webroot.'/erdiko/core/interfaces/Theme.php';
+require_once $webroot.'/erdiko/core/interfaces/Session.php';
+
 // Core 
 require_once $webroot.'/erdiko/core/Handler.php';
+require_once $webroot.'/erdiko/core/Module.php';
 
 // Modules
+require_once $webroot.'/erdiko/modules/theme/ThemeEngine.php';
