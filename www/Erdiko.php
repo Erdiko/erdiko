@@ -39,12 +39,17 @@ class Erdiko
 	public static function getRoutes()
 	{
 		// some dummy initial routes
+		// This needs to be moved to the app config
 		$routes = array(
 				array('/', '\erdiko\core\Handler'),
-				array('test', 'TestHandler'),
-				array("article/([a-zA-Z0-9_]+)", 'ArticleHandler')
+				array('test/([a-zA-Z0-9_/]+)', '\erdiko\core\Handler'),
+				array("theme/([a-zA-Z0-9_/]+)/([a-zA-Z0-9_/]+)", '\erdiko\modules\theme\Handler'),
+				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", '\erdiko\core\Handler'),
+				array("([a-zA-Z0-9_]+)", '\erdiko\core\Handler'),
+				// array("([0-9]{4})", '\erdiko\core\Handler'),
+				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", '\erdiko\core\Handler'),
 			);
-			
+		
 		return $routes;
 	}
 }
