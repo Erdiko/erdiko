@@ -1,35 +1,33 @@
 <?php
 /**
- * Handler
- * Base request handler, All handlers should inherit this class.
+ * Default theme handler, 
+ * Primarily for debugging and testing the theme
  * 
  * @category   Erdiko
- * @package    Core
- * @copyright  Copyright (c) 2012, Arroyo Labs, http://www.arroyolabs.com
- * @author	   John Arroyo
+ * @package    theme
+ * @module	   Theme
+ * @copyright Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
+ * @author	John Arroyo
  */
-namespace erdiko\core;
-use Erdiko;
+namespace erdiko\modules\theme;
 
-class Handler extends \ToroHandler 
+
+class Handler extends \erdiko\core\Handler
 {
-    // public function __construct() { }
-	
-	public function theme($data)
+	public function get($name = null, $arguments = null)
 	{
-		$theme = Erdiko::getTheme();
-		$theme->theme($data);
-	}
-	
-    public function get($name = null, $arguments = null)
-	{
+		$numColumns = 1;
+		
 		error_log("name: ".$name);
 		error_log("arguments: ".$arguments);
+		
+		if( is_numeric($arguments) )
+			$numColumns = $arguments;
 		
 		$data = array(
 			'header' => array(
 				'content' => "Header",
-				'tagline' => "Booyah",
+				'tagline' => "Theme Tester",
 				'site_name' => "My Hello World Site",
 			),
 			'footer' => array(
@@ -37,7 +35,7 @@ class Handler extends \ToroHandler
 				'links' => array('link 1', 'link 2', 'link 3'),
 			),
 			'layout' => array(
-				'columns' => 1,
+				'columns' => $numColumns,
 			),
 			'main_content' => "Hello World...",
 			'title' => "Home Page Title",

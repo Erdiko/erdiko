@@ -18,3 +18,4 @@ require_once $webroot.'/erdiko/core/Module.php';
 
 // Modules
 require_once $webroot.'/erdiko/modules/theme/ThemeEngine.php';
+require_once $webroot.'/erdiko/modules/theme/Handler.php';

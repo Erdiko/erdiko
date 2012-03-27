@@ -77,13 +77,17 @@ class ThemeEngine extends Module implements Theme
 	
 	public function getSidebar($name = "", $options = null)
 	{
-		return "sidebar";
+		// make sidebar name configurable to return particular pages
+		return "sidebar: $name";
 	}
 	
 	public function getLayout()
 	{
-		$layoutName = "1";
-		$filename = $this->_folder.'/templates/layout-'.$layoutName.'.phtml';
+		$numColumns = "1";
+		if( isset($this->_data['layout']['columns']) )
+			$numColumns = $this->_data['layout']['columns'];
+		
+		$filename = $this->_folder.'/templates/layout-'.$numColumns.'.phtml';
 		$html = $this->getTemplateFile($filename, $this);
 		echo $html;
 	}
