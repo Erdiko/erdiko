@@ -26,7 +26,7 @@ h1 {
     font-size: 20px;
 }
 h2 {
-    font-size: 14px;
+    font-size: 16px;
 }
 h3, h4, h5 {
     font-size: 13px;
@@ -95,37 +95,76 @@ button {
 /*  =Layout
 ----------------------------------------------- */
 body {
-    background-color: #666;
+    background-color: #fff;
+}
+.container {
+    width: 100%;
+}
+.content {
+    width: 920px;
 }
 
-#header {
-    height: 120px;
-}
-#header,
+.header,
 .content,
-#footer {
-    background-color: #fff;
+.footer {
     margin: 0 auto;
-    width: 920px;
+}
+
+.header,
+.footer {
+    width: 918px;
+}
+
+.content-main,
+.footer {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.header {
+    height: 120px;
+    margin-bottom: 10px;
+
+    -moz-border-radius-bottomleft      : 5px;
+    -moz-border-radius-bottomright     : 5px;
+    -webkit-border-bottom-left-radius  : 5px;
+    -webkit-border-bottom-right-radius : 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.header, .content-main, .footer, .aside {
+    background-color: #eee;
+    border: 1px solid #bbb;
 }
 
 .content {
     overflow: hidden;
 }
-#footer {
+.footer {
     clear: both;
     height: 120px;
+    margin-top: 10px;
 }
 
 .content-main {
-background-color: pink;
     float: left;
     height: 500px;
-    width: 600px;
+    width: 918px;
 }
 
 .aside {
-background-color: #999;
+    background-color: #eee;
     float: right;
+    height: 600px;
     width: 300px;
+}
+
+.two-col {
+    width: 600px;
+}
+
+.left-col {
+    width: 140px;
 }
