@@ -115,33 +115,19 @@ body {
     width: 918px;
 }
 
-.content-main,
-.footer {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
 .header {
     height: 120px;
     margin-bottom: 10px;
-
-    -moz-border-radius-bottomleft      : 5px;
-    -moz-border-radius-bottomright     : 5px;
-    -webkit-border-bottom-left-radius  : 5px;
-    -webkit-border-bottom-right-radius : 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 .header, .content-main, .footer, .aside {
     background-color: #eee;
-    border: 1px solid #bbb;
 }
 
 .content {
     overflow: hidden;
 }
+
 .footer {
     clear: both;
     height: 120px;
@@ -150,21 +136,35 @@ body {
 
 .content-main {
     float: left;
-    height: 500px;
-    width: 918px;
+    height: 600px;
+    width: 920px;
 }
 
 .aside {
-    background-color: #eee;
     float: right;
-    height: 600px;
     width: 300px;
 }
 
-.two-col {
-    width: 600px;
+/*  =Column 2
+----------------------------------------------- */
+.column-2 .content-main {
+    width: 610px;
+}
+.column-2 .aside {
+    width: 300px;
 }
 
-.left-col {
-    width: 140px;
+/*  =Column 3
+----------------------------------------------- */
+.column-3 .col-left {
+    float: left;
+    margin-right: 10px;
+    width: 200px;
+}
+.column-3 .content-main {
+    float: left;
+    width: 500px;
+}
+.column-3 .aside {
+    width: 200px;
 }

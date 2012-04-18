@@ -1,0 +1,203 @@
+/*  =Mobile
+----------------------------------------------- */
+
+/*  =Reset
+----------------------------------------------- */
+* {
+  margin:0;
+  padding:0;
+}
+.clearfix:after {
+  content:" ";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+  font-size:0;
+}
+.clearfix {
+  display:block;
+}
+* html .clearfix {
+  height:1%;
+}
+*:first-child+html .clearfix {
+  zoom: 1;
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+h2 {
+    font-size: 16px;
+}
+h3 {
+    font-size: 14px;
+}
+h4, h5, h6 {
+    font-size: 14px;
+}
+
+h2, h3, h4, h5 {
+    font-weight: 300;
+}
+a:link, a:visited, span.link:link, span.link:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+li {
+  list-style-type:none;
+}
+
+/* set image max width to 100% */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*  =Layout
+----------------------------------------------- */
+.L {
+  float:left;
+}
+.R {
+  float:right;
+}
+
+.col {
+  margin:0 8px;
+}
+.col1 .col {
+  width: 296px;
+}
+.col2 .col {
+  width: 140px;
+}
+.col3 .col {
+  width: 88px;
+}
+.col4 .col {
+  width: 62px;
+}
+.col5 .col {
+  width: 46px;
+}
+.col2 .col, .col3 .col, .col4 .col, .col5 .col, .col6 .col {
+  float: left;
+}
+
+/*  =Hides various elements such as cart totals
+----------------------------------------------- */
+.hidden {
+  display: none;
+}
+
+
+body {
+  background-color: #fff;
+  font-size: 13px;
+  line-height:1.2;
+}
+
+/* global site padding */
+.mobile-layout {
+  padding: 0 4px;
+}
+
+
+/* header */
+.header{
+  padding: 5px;
+}
+
+
+/* footer */
+.footer {
+  margin: 15px 0 24px;
+  text-align: center;
+}
+
+
+/*  =Landscape Media Query 321px - 480px Overwrites
+----------------------------------------------- */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  body {
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+  .mobile-layout {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .col1 .col {
+    width: 452px;
+  }
+  .col2 .col {
+    width: 218px;
+  }
+  .col3 .col {
+    width: 140px;
+  }
+  .col4 .col {
+    width: 101px;
+  }
+  .col5 .col {
+    width: 77px;
+  }
+  .col6 .col {
+    width: 62px;
+  }
+
+  .footer .footer-quick li {
+    padding-left: 80px;
+  }
+
+}
+
+
+/*  =Portrait Retina View
+----------------------------------------------- */
+@media screen and (-webkit-min-device-pixel-ratio : 2) and (max-width: 320px) {
+
+}
+
+
+/*  =Portrait and Landscape Retina Views
+----------------------------------------------- */
+@media screen and (-webkit-min-device-pixel-ratio : 2) {
+
+}
+
+
+/*  =Landscape Retina View
+----------------------------------------------- */
+@media screen and (-webkit-min-device-pixel-ratio : 2) and (min-width: 321px) and (max-width: 480px) {
+
+}
+
+
+/*  =iPad - 768px
+----------------------------------------------- */
+@media screen and (min-width: 768px) {
+  .col1 .col {
+    width: 744px;
+  }
+}
+
+
+/*  =iPad - 1024px
+----------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .col1 .col {
+    width: 1000px;
+  }
+}
