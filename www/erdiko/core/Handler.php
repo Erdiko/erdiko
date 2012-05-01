@@ -13,12 +13,30 @@ use Erdiko;
 
 class Handler extends \ToroHandler 
 {
-    // public function __construct() { }
+    protected $_localConfig;
+	protected $_webroot;
+	
+	public function __construct()
+	{
+		$this->_webroot = dirname(dirname(__DIR__));
+		$file = $this->_webroot.'/app/config/local.inc';
+		$this->_localConfig = Erdiko::getConfigFile($file);
+	}
 	
 	public function theme($data)
 	{
-		$theme = Erdiko::getTheme();
+		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path']);
 		$theme->theme($data);
+	}
+	
+	/**
+	 * @param string $arguments
+	 * @return array $arguments
+	 */
+	public function parseArguments($arguments)
+	{
+		$arguments = explode("/", $arguments); 
+		return $arguments;
 	}
 	
     public function get($name = null, $arguments = null)

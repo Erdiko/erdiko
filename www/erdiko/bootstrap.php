@@ -19,3 +19,6 @@ require_once $webroot.'/erdiko/core/Module.php';
 // Modules
 require_once $webroot.'/erdiko/modules/theme/ThemeEngine.php';
 require_once $webroot.'/erdiko/modules/theme/Handler.php';
+
+// RSVP - @todo get the autoloader working!
+require_once $webroot.'/app/modules/rsvp/Handler.php';

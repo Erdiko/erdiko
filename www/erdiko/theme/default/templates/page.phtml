@@ -4,7 +4,15 @@
     <meta charset="utf-8">
     <title><?php echo $data->getTitle(); ?></title>
 
-    <link rel='stylesheet' href='<?php echo $this->getThemeUrl(); ?>/css/global.css' type='text/css' />
+	<?php 
+		// Spit out CSS
+		foreach($data->getCss() as $css)
+			echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
+		
+		// Spit out JS
+		foreach($data->getJs() as $js)
+			echo "<script src='".$js['file']."'></script>\n";
+	?>
 
 </head>
 <body>

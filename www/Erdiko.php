@@ -21,16 +21,49 @@ class Erdiko
 	
 	/**
 	 * get the registered theme
-	 * @todo get theme from config
+	 * @param string $name
+	 * @param string $namespace
 	 * @return object $theme
 	 */
-	public static function getTheme()
+	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/theme/default')
 	{
 		// get Theme
 		$themeEngine = new \erdiko\modules\theme\ThemeEngine();
-		$themeEngine->loadTheme( 'core', 'default' );
+		$themeEngine->loadTheme($name, $namespace, $path);
 		
 		return $themeEngine;
+	}
+	
+	/**
+	 * Load a template file from a module
+	 * @param string $filename
+	 * @param mixed $data, data to expose to template
+	 */
+	public static function getTemplate($filename, $data)
+	{
+		if (is_file($filename))
+		{
+			ob_start();
+			include $filename;
+			return ob_get_clean();
+		}
+		return false;
+	}
+	
+	/**
+	 * Read JSON config file and return array
+	 * @param filename $filename
+	 * @return array $config
+	 */
+	public static function getConfigFile($file)
+	{
+		$data = str_replace("\\", "\\\\", file_get_contents($file));
+		$json = json_decode($data, TRUE);
+		
+		error_log("$file raw: ".print_r($data, TRUE));
+		error_log("$file array: ".print_r($json, TRUE));
+		
+		return $json;
 	}
 	
 	/**
@@ -38,16 +71,20 @@ class Erdiko
 	 */
 	public static function getRoutes()
 	{
+		$primaryHandler = '\erdiko\core\Handler';
+		$primaryHandler = '\app\modules\rsvp\Handler'; // override for rsvp app
+		
 		// some dummy initial routes
 		// This needs to be moved to the app config
 		$routes = array(
-				array('/', '\erdiko\core\Handler'),
-				array('test/([a-zA-Z0-9_/]+)', '\erdiko\core\Handler'),
+				array('/', $primaryHandler),
+				array('test/([a-zA-Z0-9_/]+)', $primaryHandler),
 				array("theme/([a-zA-Z0-9_/]+)/([a-zA-Z0-9_/]+)", '\erdiko\modules\theme\Handler'),
-				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", '\erdiko\core\Handler'),
-				array("([a-zA-Z0-9_]+)", '\erdiko\core\Handler'),
+				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", $primaryHandler),
+				array("([a-zA-Z0-9_]+)", $primaryHandler),
+				array("([a-zA-Z0-9_]+)/([a-zA-Z0-9_/]+)", $primaryHandler),
 				// array("([0-9]{4})", '\erdiko\core\Handler'),
-				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", '\erdiko\core\Handler'),
+				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", $primaryHandler),
 			);
 		
 		return $routes;

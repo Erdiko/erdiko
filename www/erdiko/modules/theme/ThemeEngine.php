@@ -14,19 +14,30 @@ namespace erdiko\modules\theme;
 
 use erdiko\core\Module;
 use erdiko\core\interfaces\Theme;
+use Erdiko;
 
 class ThemeEngine extends Module implements Theme
 {
-	private $_folder;
-	private $_themeName;
-	private $_templates;
-	private $_data;
+	protected $_folder;
+	protected $_themeName;
+	protected $_namespace;
+	protected $_templates;
+	protected $_data;
+	protected $_webroot;
+	protected $_path;
+	protected $_themeConfig;
+	protected $_domainName;
 	
 	public function __construct()
 	{
 		$this->_templates = array(
 			'header' => 'header',
 		);
+	}
+	
+	public function getWebroot()
+	{
+		return $this->_webroot;
 	}
 	
 	public function getThemeFolder()
@@ -39,13 +50,23 @@ class ThemeEngine extends Module implements Theme
 	 */
 	public function getThemeUrl()
 	{
-		return '/erdiko/theme/default';
+		return $this->_path;
+	}
+	
+	public function getCss()
+	{
+		return $this->_themeConfig['css'];
+	} 
+	
+	public function getJs()
+	{
+		return $this->_themeConfig['js'];
 	}
 	
 	public function getHeader($name = "")
 	{
 		// return $this->_data['header'];
-		$filename = $this->_folder.'/templates/header.phtml';
+		$filename = $this->_webroot.$this->_themeConfig['templates']['header']['file'];
 		$html = $this->getTemplateFile($filename, $this->_data['header']);
 		
 		return $html;
@@ -54,7 +75,7 @@ class ThemeEngine extends Module implements Theme
 	public function getFooter($name = "")
 	{
 		// return $this->_data['footer'];
-		$filename = $this->_folder.'/templates/footer.phtml';
+		$filename = $this->_webroot.$this->_themeConfig['templates']['footer']['file'];
 		$html = $this->getTemplateFile($filename, $this->_data['footer']);
 		
 		return $html;
@@ -72,7 +93,7 @@ class ThemeEngine extends Module implements Theme
 	
 	public function getMainContent($name = "", $options = null)
 	{
-		return "Main Content...";
+		return $this->_data['main_content'];
 	}
 	
 	public function getSidebar($name = "", $options = null)
@@ -87,19 +108,69 @@ class ThemeEngine extends Module implements Theme
 		if( isset($this->_data['layout']['columns']) )
 			$numColumns = $this->_data['layout']['columns'];
 		
-		$filename = $this->_folder.'/templates/layout-'.$numColumns.'.phtml';
+		$filename = $this->_webroot.$this->_themeConfig['templates']['layout-'.$numColumns]['file'];
 		$html = $this->getTemplateFile($filename, $this);
 		echo $html;
 	}
 	
-	public function loadTheme($namespace, $themeName)
+	public function mergeCss($first, $second)
 	{
-		if($namespace = 'core')
-			$this->_folder = dirname(dirname(__DIR__)).'/theme/'.$themeName;
-		else
-			$this->_folder = dirname(dirname(dirname(__DIR__))).'/app/theme/'.$themeName; // @todo fix this line...
+		foreach($second as $css)
+			$first[] = array('file' => $this->_domainName.$css['file']);
 		
-		$this->_themeName = $themeName;
+		error_log('merge array: '.print_r($first, true));
+		
+		return $first;
+	}
+	
+	public function mergeJs($first, $second)
+	{
+		foreach($second as $js)
+			$first[] = array('file' => $this->_domainName.$js['file']);
+		
+		return $first;
+	}
+	
+	/**
+	 * @param string $themeName
+	 * @param string $type, 'core' or 'app'
+	 */
+	public function loadTheme($name, $namespace, $path)
+	{	
+		$this->_webroot = dirname(dirname(dirname(__DIR__)));
+		$this->_themeName = $name;
+		$this->_path = $path;
+		$this->_namespace = $namespace;
+		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
+		
+		$this->_folder = $this->_webroot.$path;
+		$file = $this->_folder.'/theme.inc';
+		
+		error_log('themeEngine file: '.$file);
+		
+		$this->_themeConfig = Erdiko::getConfigFile($file);
+		
+		// If a parent theme exists, merge the theme configs
+		if( isset($this->_themeConfig['parent']) )
+		{
+			$parentConfig = Erdiko::getConfigFile($this->_webroot.$this->_themeConfig['parent']);
+			
+			// $parentConfig['css'][] = $this->_themeConfig['css'][0];
+			// $this->_themeConfig['css'] = $parentConfig['css'];
+			$parentConfig['css'] = $this->mergeCss($parentConfig['css'], $this->_themeConfig['css']);
+			unset($this->_themeConfig['css']);
+			
+			// $this->_themeConfig['css'] = array_merge($this->_themeConfig['css'], $parentConfig['css']);
+			$parentConfig['js'] = $this->mergeJs($parentConfig['js'], $this->_themeConfig['js']);
+			unset($this->_themeConfig['js']);
+			
+			// $this->_themeConfig['js'] = $this->_themeConfig['js'] + $parentConfig['js'];
+			
+			$this->_themeConfig = $parentConfig + $this->_themeConfig;
+		}
+		
+		error_log('themeEngine parent config: '.print_r($parentConfig, true));		
+		error_log('themeEngine config: '.print_r($this->_themeConfig, true));
 	}
 	
 	public function setData($data)
@@ -109,7 +180,11 @@ class ThemeEngine extends Module implements Theme
 	
 	public function theme($data)
 	{
-		$filename = $this->_folder.'/templates/page.phtml';
+		$filename = $this->_webroot.$this->_themeConfig['templates']['page']['file'];
+		
+		error_log("filename: $filename");
+		error_log('themeEngine config: '.print_r($this->_themeConfig['templates'], true));
+		
 		$this->setData($data);
 		$html = $this->getTemplateFile($filename, $this);
 		echo $html;
