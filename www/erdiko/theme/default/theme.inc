@@ -11,6 +11,11 @@
 	],
 	"js": [
 		{
+			"name": "jquery",
+			"file":  "/libraries/javascript/jquery-1.7.2.js",
+			"active": 1
+		},
+		{
 			"name": "global",
 			"file":  "/erdiko/theme/default/js/global.js",
 			"active": 1
