@@ -1,2 +1,4 @@
 *.komodoproject
+*.sublime-project
+*.sublime-workspace
 _Store
