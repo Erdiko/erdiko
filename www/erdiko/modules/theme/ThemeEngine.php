@@ -116,7 +116,7 @@ class ThemeEngine extends Module implements Theme
 	public function mergeCss($first, $second)
 	{
 		foreach($second as $css)
-			$first[] = array('file' => $this->_domainName.$css['file']);
+			$first[] = array('file' => $css['file']);
 		
 		error_log('merge array: '.print_r($first, true));
 		
@@ -126,7 +126,7 @@ class ThemeEngine extends Module implements Theme
 	public function mergeJs($first, $second)
 	{
 		foreach($second as $js)
-			$first[] = array('file' => $this->_domainName.$js['file']);
+			$first[] = array('file' => $js['file']);
 		
 		return $first;
 	}
@@ -145,8 +145,6 @@ class ThemeEngine extends Module implements Theme
 		
 		$this->_folder = $this->_webroot.$path;
 		$file = $this->_folder.'/theme.inc';
-		
-		error_log('themeEngine file: '.$file);
 		
 		$this->_themeConfig = Erdiko::getConfigFile($file);
 		
@@ -169,8 +167,8 @@ class ThemeEngine extends Module implements Theme
 			$this->_themeConfig = $parentConfig + $this->_themeConfig;
 		}
 		
-		error_log('themeEngine parent config: '.print_r($parentConfig, true));		
-		error_log('themeEngine config: '.print_r($this->_themeConfig, true));
+		// error_log('themeEngine parent config: '.print_r($parentConfig, true));		
+		// error_log('themeEngine config: '.print_r($this->_themeConfig, true));
 	}
 	
 	public function setData($data)
@@ -182,8 +180,8 @@ class ThemeEngine extends Module implements Theme
 	{
 		$filename = $this->_webroot.$this->_themeConfig['templates']['page']['file'];
 		
-		error_log("filename: $filename");
-		error_log('themeEngine config: '.print_r($this->_themeConfig['templates'], true));
+		// error_log("filename: $filename");
+		// error_log('themeEngine config: '.print_r($this->_themeConfig['templates'], true));
 		
 		$this->setData($data);
 		$html = $this->getTemplateFile($filename, $this);
