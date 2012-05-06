@@ -2,6 +2,7 @@
 
   var scntDiv = $('#guest-num-rsvps');
 
+  // Create input fields based upon select option
   $('#num_guests').change(function() {
     var inputFields = parseInt($('#num_guests').val(), 10);
     scntDiv.empty()
@@ -15,10 +16,10 @@
     $(':text, textarea').each(function() {
       if ($(this).val().length === 0) {
         $(this).addClass('error');
+        e.preventDefault();
       } else {
         $(this).removeClass('error');
       }
-      e.preventDefault();
     });
   });
 
