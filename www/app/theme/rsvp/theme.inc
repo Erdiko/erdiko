@@ -24,6 +24,9 @@
 		},
 		"header": {
 			"file": "/app/theme/rsvp/templates/header.phtml"	
+		},
+		"page": {
+			"file": "/app/theme/rsvp/templates/page.phtml"	
 		}
 	}
 }

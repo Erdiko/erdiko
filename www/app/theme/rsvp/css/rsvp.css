@@ -10,3 +10,11 @@
 .form-error {
 	color:#FF0000;
 }
+#footer-sink {
+	vertical-align: bottom;
+}
+.footer a {
+	color: #555555;
+	padding: 20px;
+	text-decoration:underline;
+}

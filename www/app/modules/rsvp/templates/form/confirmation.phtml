@@ -32,7 +32,8 @@
 	<input type="hidden" name="wedding_rsvp_id" value="<?php echo $data['guest']['wedding_rsvp_id']; ?>">
 	
 	<p>&nbsp;</p>
-	<input type="button" name="reset" id="reset" value="Reset">
+	
+	<input type="button" onclick="window.location = 'reset/<?php echo $data['guest']['wedding_rsvp_id']; ?>';" value="Reset">
 	<input type="submit" name="submit" id="submit" value="Confirm">
 	
     <p>&nbsp;</p>

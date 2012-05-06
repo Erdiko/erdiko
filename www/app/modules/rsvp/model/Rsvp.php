@@ -105,7 +105,14 @@ class Rsvp
 	
 	public function setAccept($id, $accept, $comments = "")
 	{
-		$sql = "UPDATE `wedding_rsvp` SET `accept`='$accept', `comments`='$comments' WHERE `wedding_rsvp_id`='$id'";
+		if($accept === null)
+			$accept = "null";
+		else
+			$accept = "'$accept'";
+			
+		$comments = addslashes($comments);
+		
+		$sql = "UPDATE `wedding_rsvp` SET `accept`=$accept, `comments`='$comments', `rsvp_date`=NOW() WHERE `wedding_rsvp_id`='$id'";
 		$this->_db->write($sql);
 	}
 	
@@ -124,6 +131,18 @@ class Rsvp
 	{
 		// Mark wedding_rsvp column 'accept' as 0 (not comming)
 		$this->setAccept($id, 0, $request['comments']);
+	}
+	
+	public function deleteAllGuests($id)
+	{
+		$sql = "DELETE FROM `wedding_rsvp_guest` WHERE `wedding_rsvp_id`='$id'";
+		$this->_db->write($sql);
+	}
+	
+	public function reset($id)
+	{
+		$this->setAccept($id, null, "");
+		$this->deleteAllGuests($id);
 	}
 
 }

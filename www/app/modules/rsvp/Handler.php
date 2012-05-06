@@ -72,7 +72,12 @@ class Handler extends \erdiko\core\Handler
 			),
 			'footer' => array(
 				'content' => "",
-				'links' => array('link 1', 'link 2', 'link 3'),
+				'links' => array(
+					array( 
+						'name' => 'Visit JohnAndSweta.com',
+						'url' => 'http://www.johnandsweta.com/',
+					),
+				),
 			),
 			'layout' => array(
 				'columns' => 1,
@@ -130,7 +135,7 @@ class Handler extends \erdiko\core\Handler
 					'title' => $this->_textConfig['login']['title'],
 					'sub_title' => $this->_textConfig['login']['sub_title'],
 					'description' => $this->_textConfig['login']['description'],
-					'error' => 'We did not find your code, please re-enter it.',
+					'error' => 'Sorry, we did not find your code.  Please re-enter it.',
 				);
 				
 				$filename = __DIR__.'/templates/form/login.phtml';
@@ -144,36 +149,41 @@ class Handler extends \erdiko\core\Handler
 				// if marked as complete do not allow edits, show rsvp info instead
 				if( $check[0]['rsvp_complete'] == 1)
 				{
-					$rsvp = new Rsvp();
 					$data = $rsvp->getRsvpData($check[0]['wedding_rsvp_id']);
 					$temp = $this->_textConfig['review'];
-					$data = array_merge($data, $temp);
-
+					$data = $data + $temp;
+					
 					$filename = __DIR__.'/templates/form/review.phtml';
 					return  Erdiko::getTemplate($filename, $data);
 				}
 				else
 				{
-					$data = array(
-						'guest' => array(
-							'wedding_rsvp_id' => $check[0]['wedding_rsvp_id'],
-							'name' => $check[0]['name'],
-							'code' => $check[0]['code'],
-							'address' => $check[0]['address'],
-							'num_rsvps' => $check[0]['num_rsvps'],
-							'sangeet' => $check[0]['sangeet'],
-							'rsvp_complete' => $check[0]['rsvp_complete'],
-						),
-						'title' => $this->_textConfig['rsvp']['title'],
-						'sub_title' => $this->_textConfig['rsvp']['sub_title'],
-						'description' => $this->_textConfig['rsvp']['description'],
-					);
-
-					$filename = __DIR__.'/templates/form/rsvp.phtml';
-					return  Erdiko::getTemplate($filename, $data);
+					$guest = $check[0];
+					return $this->rsvp($guest);	
 				}
 			}
 		}
+	}
+	
+	public function rsvp($guest)
+	{
+		$data = array(
+			'guest' => array(
+				'wedding_rsvp_id' => $guest['wedding_rsvp_id'],
+				'name' => $guest['name'],
+				'code' => $guest['code'],
+				'address' => $guest['address'],
+				'num_rsvps' => $guest['num_rsvps'],
+				'sangeet' => $guest['sangeet'],
+				'rsvp_complete' => $guest['rsvp_complete'],
+			),
+			'title' => $this->_textConfig['rsvp']['title'],
+			'sub_title' => $this->_textConfig['rsvp']['sub_title'],
+			'description' => $this->_textConfig['rsvp']['description'],
+		);
+
+		$filename = __DIR__.'/templates/form/rsvp.phtml';
+		return  Erdiko::getTemplate($filename, $data);
 	}
 	
 	public function getGenericError()
@@ -245,13 +255,24 @@ class Handler extends \erdiko\core\Handler
 		return "still need to implement confirmation...";
 	}
 	
+	public function reset($id)
+	{
+		// clear RSVP info
+		$rsvp = new Rsvp();
+		$rsvp->reset($id);
+		$data = $rsvp->getRsvpData($id);
+		
+		// return the rsvp form
+		return $this->rsvp($data['guest']);
+	}
+	
 	/**
 	 *
 	 */
 	public function formAction($arguments)
 	{
-		error_log('arguments: '.print_r($arguments, true));
-		error_log('request: '.print_r($_REQUEST, true));
+		// error_log('arguments: '.print_r($arguments, true));
+		// error_log('request: '.print_r($_REQUEST, true));
 		
 		if($arguments[0] == "submit")
 		{
@@ -260,6 +281,13 @@ class Handler extends \erdiko\core\Handler
 		elseif($arguments[0] == "confirm")
 		{
 			return $this->confirm();
+		}
+		elseif($arguments[0] == "reset")
+		{
+			if( ! isset($arguments[1]) )
+				return $this->getGenericError();
+			
+			return $this->reset($arguments[1]);
 		}
 		else
 		{

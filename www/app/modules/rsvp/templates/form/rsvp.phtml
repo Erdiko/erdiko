@@ -17,6 +17,9 @@
       </select>
     </p>
 
+	<p>&nbsp;</p>
+	<div id="guest-num-rsvps"></div>
+
 	<?php
 	/*
 	// The old way...pre-jQuery
@@ -30,12 +33,10 @@
 	*/
 	?>
 	
-	<p>&nbsp;</p>Comments (optional):<br />
+	<p>&nbsp;</p>
+	Comments (optional):<br />
 	<textarea cols="41" rows="4" name="comments"></textarea>	
 	<p>&nbsp;</p>
-	
-	<div id="add_guests"></div>
-	<div id="guest-num-rsvps"></div>
 	
 	<input type="hidden" name="code" value="<?php echo $data['guest']['code']; ?>">
 	<input type="hidden" name="num_rsvps" value="<?php echo $data['guest']['num_rsvps']; ?>">
