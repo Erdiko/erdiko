@@ -5,22 +5,22 @@
     <p>How many guests do you wish to RSVP?
       <label for="num_guests"></label>
       <select name="num_guests" id="num_guests">
-      	<option value="0">0 (cannot attend)</option>
-		<?php
-		for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
-			echo '<option value="'.$i.'">'.$i.'</option>';
-		?>
+        <option value="0">0 (cannot attend)</option>
+    <?php
+    for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
+      echo '<option value="'.$i.'">'.$i.'</option>';
+    ?>
       </select>
     </p>
 
-	<?php
-	for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
-	{
-		echo '<div id="add_guests"></div>';
-	}
-	?>
+  <?php
+  for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
+  {
+    echo '<div id="add_guests"></div>';
+  }
+  ?>
 
-	<input type="submit" id="submit" value="submit">
+  <input type="submit" id="submit" value="submit">
 
     <p>&nbsp;</p>
   </fieldset>
