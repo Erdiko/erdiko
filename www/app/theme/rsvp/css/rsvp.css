@@ -1,4 +1,4 @@
-.header img { 
+.header img {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
@@ -17,4 +17,7 @@
 	color: #555555;
 	padding: 20px;
 	text-decoration:underline;
+}
+.error {
+  border: 2px solid #ff0000;
 }
