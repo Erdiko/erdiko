@@ -10,4 +10,16 @@
     }
   });
 
+  // Check for empty fields
+  $(':submit').click(function(e) {
+    $(':text, textarea').each(function() {
+      if ($(this).val().length === 0) {
+        $(this).addClass('error');
+      } else {
+        $(this).removeClass('error');
+      }
+      e.preventDefault();
+    });
+  });
+
 })();
