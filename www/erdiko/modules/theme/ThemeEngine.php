@@ -64,7 +64,7 @@ class ThemeEngine extends Module implements Theme
 	}
 	
 	public function getHeader($name = "")
-	{
+	{	
 		// return $this->_data['header'];
 		$filename = $this->_webroot.$this->_themeConfig['templates']['header']['file'];
 		$html = $this->getTemplateFile($filename, $this->_data['header']);
@@ -155,16 +155,16 @@ class ThemeEngine extends Module implements Theme
 			
 			// $parentConfig['css'][] = $this->_themeConfig['css'][0];
 			// $this->_themeConfig['css'] = $parentConfig['css'];
-			$parentConfig['css'] = $this->mergeCss($parentConfig['css'], $this->_themeConfig['css']);
-			unset($this->_themeConfig['css']);
+			$this->_themeConfig['css'] = $this->mergeCss($parentConfig['css'], $this->_themeConfig['css']);
+			unset($parentConfig['css']);
 			
 			// $this->_themeConfig['css'] = array_merge($this->_themeConfig['css'], $parentConfig['css']);
-			$parentConfig['js'] = $this->mergeJs($parentConfig['js'], $this->_themeConfig['js']);
-			unset($this->_themeConfig['js']);
+			$this->_themeConfig['js'] = $this->mergeJs($parentConfig['js'], $this->_themeConfig['js']);
+			unset($parentConfig['js']);
 			
 			// $this->_themeConfig['js'] = $this->_themeConfig['js'] + $parentConfig['js'];
-			
-			$this->_themeConfig = $parentConfig + $this->_themeConfig;
+			// $this->_themeConfig = $parentConfig + $this->_themeConfig;
+			$this->_themeConfig['templates'] = $this->_themeConfig['templates'] + $parentConfig['templates'];
 		}
 		
 		// error_log('themeEngine parent config: '.print_r($parentConfig, true));		
