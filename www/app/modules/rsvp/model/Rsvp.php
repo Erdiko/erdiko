@@ -35,7 +35,6 @@ class Rsvp
 		return $data;
 	}
 	
-	// @todo flush out
 	public function addGuests($id, $guests)
 	{
 		// write each guest to the db...
@@ -70,13 +69,22 @@ class Rsvp
 		// make sure counts match
 		$guestCt = count($guests);
 		if($request['num_guests'] == $guestCt)
+		{
+			// It matches, great!
 			$confirmedGuests = $this->addGuests($id, $guests);
+		}
+		else
+		{
+			// Not good, this shouldn't happen maybe we can fix w/javascript
+			$guests = array_slice($guests, 0, $request['num_guests']);
+			$confirmedGuests = $this->addGuests($id, $guests);
+		}
+		
+		// Mark wedding_rsvp column 'accept'
+		$this->setAccept($id, 1, $request['comments']);
 		
 		error_log("guestCt: $guestCt, num_guests: ".$request['num_guests']);
 		error_log('Confirmed Guests: '.print_r($confirmedGuests, true));
-		
-		// mark wedding_rsvp table as complete
-		// $this->markComplete(); // could add this as a confirmation step :-)
 	}
 	
 	public function getRsvpData($id)
@@ -95,19 +103,27 @@ class Rsvp
 		return $data;
 	}
 	
-	/**
-	 * Confirm recent changes
-	 * @param int $id
-	 * @return int $success
-	 */
-	public function confirm($id)
+	public function setAccept($id, $accept, $comments = "")
 	{
-		
+		$sql = "UPDATE `wedding_rsvp` SET `accept`='$accept', `comments`='$comments' WHERE `wedding_rsvp_id`='$id'";
+		$this->_db->write($sql);
 	}
 	
-	public function decline($id, $_REQUEST)
+	/**
+	 * Confirm recent changes, set 'rsvp_complete' flag
+	 * @param int $id
+	 */
+	public function setComplete($id)
 	{
-		
+		// mark wedding_rsvp table as complete
+		$sql = "UPDATE `wedding_rsvp` SET `rsvp_complete`='1' WHERE `wedding_rsvp_id`='$id'";
+		$this->_db->write($sql);
+	}
+	
+	public function decline($id, $request)
+	{
+		// Mark wedding_rsvp column 'accept' as 0 (not comming)
+		$this->setAccept($id, 0, $request['comments']);
 	}
 
 }

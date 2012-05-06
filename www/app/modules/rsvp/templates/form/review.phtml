@@ -1,3 +1,5 @@
+<?php error_log('data: '.print_r($data, true)); ?>
+
 <h1><?php echo $data['title']; ?></h1>
 <h2>Hi <?php echo $data['guest']['name']; ?></h2>
 <p><?php echo $data['description']; ?></p>
@@ -5,7 +7,7 @@
 
 <form id="confirmation-form" name="confirmation-form" method="post" action="/form/confirm">
   <fieldset>
-    <legend>RSVP Confirmation</legend>
+    <legend>RSVP Review</legend>
 	
 	
 
@@ -26,16 +28,6 @@
 		}
 	}	
 	?>
-	<p>&nbsp;</p>
-	Comments: <?php echo $data['guest']['comments']; ?>
-	
-	<input type="hidden" name="code" value="<?php echo $data['guest']['code']; ?>">
-	<input type="hidden" name="num_rsvps" value="<?php echo $data['guest']['num_rsvps']; ?>">
-	<input type="hidden" name="wedding_rsvp_id" value="<?php echo $data['guest']['wedding_rsvp_id']; ?>">
-	
-	<p>&nbsp;</p>
-	<input type="button" name="reset" id="reset" value="Reset">
-	<input type="submit" name="submit" id="submit" value="Confirm">
 	
     <p>&nbsp;</p>
   </fieldset>
