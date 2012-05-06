@@ -1,0 +1,30 @@
+<h1><?php echo $data['title']; ?></h1>
+<h2>Hi <?php echo $data['guest']['name']; ?></h2>
+<p><?php echo $data['description']; ?></p>
+<p>&nbsp;</p>
+
+<form id="confirmation-form" name="confirmation-form" method="post" action="/form/confirm">
+  <fieldset>
+    <legend>RSVP Confirmation</legend>
+	
+	<h3>You have RSVP'ed the following guests</h3>
+
+	<?php
+	for($i = 0; $i < count($data['guests']); $i++)
+	{
+		$data['guests'][$i]['name'];
+		
+		echo '<p>Guest '.$i.': '.$data['guests'][$i]['name'].'</p>';
+	}
+	?>
+	<input type="hidden" name="code" value="<?php echo $data['guest']['code']; ?>">
+	<input type="hidden" name="num_rsvps" value="<?php echo $data['guest']['num_rsvps']; ?>">
+	<input type="hidden" name="wedding_rsvp_id" value="<?php echo $data['guest']['wedding_rsvp_id']; ?>">
+	
+	<p>&nbsp;</p>
+	<input type="button" name="reset" id="reset" value="Reset">
+	<input type="submit" name="submit" id="submit" value="Confirm">
+	
+    <p>&nbsp;</p>
+  </fieldset>
+</form>

@@ -60,10 +60,19 @@ class Erdiko
 		$data = str_replace("\\", "\\\\", file_get_contents($file));
 		$json = json_decode($data, TRUE);
 		
-		error_log("$file raw: ".print_r($data, TRUE));
-		error_log("$file array: ".print_r($json, TRUE));
+		// error_log("$file raw: ".print_r($data, TRUE));
+		// error_log("$file array: ".print_r($json, TRUE));
 		
 		return $json;
+	}
+	
+	public static function getConfig($name)
+	{
+		// @todo check cache first
+		$webroot = __DIR__;
+		$file = $webroot."/app/config/$name.inc";
+		
+		return self::getConfigFile($file);
 	}
 	
 	/**
@@ -89,4 +98,17 @@ class Erdiko
 		
 		return $routes;
 	}
+	
+	/**
+	 * send email
+	 */
+	public static function sendEmail($toEmail, $subject, $body, $fromEmail)
+	{	
+		$headers = "From: $fromEmail\r\n" .
+			"Reply-To: $fromEmail\r\n" .
+			"X-Mailer: PHP/" . phpversion();
+		
+		return mail($toEmail, $subject, $body, $headers);
+	}
+	
 }

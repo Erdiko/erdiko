@@ -136,7 +136,7 @@ body {
 
 .content-main {
     float: left;
-    height: 600px;
+	min-height: 500px;
     width: 920px;
 }
 

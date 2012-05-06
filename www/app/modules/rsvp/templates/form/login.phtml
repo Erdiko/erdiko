@@ -1,12 +1,16 @@
-<p>Thank you for visiting our site.</p>
+<h1><?php echo $data['title']; ?></h1>
+<p><?php echo $data['description']; ?></p>
 <p>&nbsp;</p>
 
-<form id="login" name="login-form" method="post" action="login/submit">
+<form id="login" name="login-form" method="post" action="/login/submit">
   <fieldset>
-    <legend>Login to RSVP</legend>
-for the Pandey / Arroyo Wedding
-<p>
-      <label for="code">Enter your RSVP Code</label>
+    <legend>RSVP Login</legend>
+	<?php
+		if( isset($data['error']) )
+			echo '<div class="form-error">'.$data['error'].'</div>';
+	?>
+	<p>
+      <label for="code">Please enter your RSVP Code</label>
       <input type="text" name="code" id="code" />
     </p>
 <p>	

@@ -1,7 +1,11 @@
-<form id="rsvp-form" name="rsvp-form" method="post" action="form/submit">
+<h1><?php echo $data['title']; ?></h1>
+<h2>Hi <?php echo $data['guest']['name']; ?></h2>
+<p><?php echo $data['description']; ?></p>
+<p>&nbsp;</p>
+
+<form id="rsvp-form" name="rsvp-form" method="post" action="/form/submit">
   <fieldset>
     <legend>RSVP</legend>
-    <p>Welcome <?php echo $data['guest']['name']; ?></p>
     <p>How many guests do you wish to RSVP? 
       <label for="num_guests"></label>
       <select name="num_guests" id="num_guests">
@@ -22,8 +26,10 @@
 	    	</p>';
 	}
 	?>
-	
-	<input type="submit" id="submit" value="submit">
+	<input type="hidden" name="code" value="<?php echo $data['guest']['code']; ?>">
+	<input type="hidden" name="num_rsvps" value="<?php echo $data['guest']['num_rsvps']; ?>">
+	<input type="hidden" name="wedding_rsvp_id" value="<?php echo $data['guest']['wedding_rsvp_id']; ?>">
+	<input type="submit" name="submit" id="submit" value="submit">
 	
     <p>&nbsp;</p>
   </fieldset>
