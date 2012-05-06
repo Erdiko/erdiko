@@ -1,6 +1,6 @@
 (function() {
 
-  var scntDiv = $('#add_guests');
+  var scntDiv = $('#guest-num-rsvps');
 
   $('#num_guests').change(function() {
     var inputFields = parseInt($('#num_guests').val(), 10);
