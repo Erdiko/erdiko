@@ -9,6 +9,8 @@
 }
 .form-error {
 	color:#FF0000;
+	margin-top: 10px;
+	font-weight: bold;
 }
 #footer-sink {
 	vertical-align: bottom;

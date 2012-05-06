@@ -16,8 +16,8 @@
     $(':text').each(function() {
       if ($(this).val().length === 0) {
         $(this).addClass('error');
-		document.getElementById("form-error-text").innerText = "Please make sure you entered all guest names."; // for IE
-		document.getElementById("form-error-text").textContent = "Please make sure you entered all guest names."; // for the rest of the known world
+		document.getElementById("form-error-text").innerText = "Make sure you have entered all guest names."; // for IE
+		document.getElementById("form-error-text").textContent = "Make sure you have entered all guest names."; // for the rest of the known world
         e.preventDefault();
       } else {
         $(this).removeClass('error');

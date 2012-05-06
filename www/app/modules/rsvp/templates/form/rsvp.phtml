@@ -1,13 +1,12 @@
 <h1><?php echo $data['title']; ?></h1>
 <h2>Hi <?php echo $data['guest']['name']; ?></h2>
 <p><?php echo $data['description']; ?></p>
+<div class="form-error" id="form-error-text"></div>
 <p>&nbsp;</p>
 
 <form id="rsvp-form" name="rsvp-form" method="post" action="/form/submit">
   <fieldset>
     <legend>RSVP</legend>
-
-	<div class="form-error" id="form-error-text"></div>
 
     <p>How many guests do you wish to RSVP? 
       <label for="num_guests"></label>
