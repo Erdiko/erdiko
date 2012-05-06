@@ -2,7 +2,7 @@
   <fieldset>
     <legend>RSVP</legend>
     <p>Welcome <?php echo $data['guest']['name']; ?></p>
-    <p>How many guests do you wish to RSVP? 
+    <p>How many guests do you wish to RSVP?
       <label for="num_guests"></label>
       <select name="num_guests" id="num_guests">
       	<option value="0">0 (cannot attend)</option>
@@ -16,15 +16,18 @@
 	<?php
 	for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
 	{
-		echo '<p>Guest '.$i.'
-	      		<label for="guest'.$i.'">Name</label>
-	      		<input type="text" name="guest'.$i.'" id="guest'.$i.'" alt="Full Name"/>
-	    	</p>';
+		echo '<div id="add_guests"></div>';
 	}
 	?>
-	
+
 	<input type="submit" id="submit" value="submit">
-	
+
     <p>&nbsp;</p>
   </fieldset>
 </form>
+
+
+
+<!-- TODO: move this to the footer.phtml -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/app/theme/rsvp/js/rsvp.js"></script>
