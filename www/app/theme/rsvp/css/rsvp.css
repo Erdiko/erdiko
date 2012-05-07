@@ -7,6 +7,9 @@
 .content-main {
 	padding: 20px;
 }
+a {
+	color: #0000FF;
+}
 .form-error {
 	color:#FF0000;
 	margin-top: 10px;

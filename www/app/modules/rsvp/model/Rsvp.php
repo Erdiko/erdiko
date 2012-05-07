@@ -50,7 +50,7 @@ class Rsvp
 	
 	public function accept($id, $request)
 	{
-		// check num_guests against number found in form.
+		$this->checkForComplete($id);
 		
 		// add each guest
 		$guests = array();
@@ -83,8 +83,8 @@ class Rsvp
 		// Mark wedding_rsvp column 'accept'
 		$this->setAccept($id, 1, $request['comments']);
 		
-		error_log("guestCt: $guestCt, num_guests: ".$request['num_guests']);
-		error_log('Confirmed Guests: '.print_r($confirmedGuests, true));
+		// error_log("guestCt: $guestCt, num_guests: ".$request['num_guests']);
+		// error_log('Confirmed Guests: '.print_r($confirmedGuests, true));
 	}
 	
 	public function getRsvpData($id)
@@ -105,11 +105,13 @@ class Rsvp
 	
 	public function setAccept($id, $accept, $comments = "")
 	{
+		$this->checkForComplete($id);
+		
 		if($accept === null)
 			$accept = "null";
 		else
 			$accept = "'$accept'";
-			
+		
 		$comments = addslashes($comments);
 		
 		$sql = "UPDATE `wedding_rsvp` SET `accept`=$accept, `comments`='$comments', `rsvp_date`=NOW() WHERE `wedding_rsvp_id`='$id'";
@@ -129,20 +131,39 @@ class Rsvp
 	
 	public function decline($id, $request)
 	{
+		$this->checkForComplete($id);
+		
 		// Mark wedding_rsvp column 'accept' as 0 (not comming)
 		$this->setAccept($id, 0, $request['comments']);
 	}
 	
 	public function deleteAllGuests($id)
-	{
+	{	
 		$sql = "DELETE FROM `wedding_rsvp_guest` WHERE `wedding_rsvp_id`='$id'";
 		$this->_db->write($sql);
 	}
 	
 	public function reset($id)
 	{
+		$this->checkForComplete($id);
+		
 		$this->setAccept($id, null, "");
 		$this->deleteAllGuests($id);
+	}
+	
+	/**
+	 * If the guest has already completed their RSVP throw an exception.
+	 * They should not be able to modify the RSVP.
+	 */
+	public function checkForComplete($id)
+	{
+		$sql = "SELECT * FROM `wedding_rsvp` WHERE `wedding_rsvp_id`='$id'";
+		$data = $this->_db->query($sql);
+		
+		error_log('rsvp complete: '.$data[0]['rsvp_complete']);
+		
+		if( $data[0]['rsvp_complete'] == 1 )
+			throw new \Exception('You cannot edit an RSVP after it has been confirmed.');
 	}
 
 }

@@ -35,8 +35,13 @@ class Handler extends \erdiko\core\Handler
 		),
 		'done' => array(
 			'title' => 'Pandey / Arroyo Wedding',
-			'sub_title' => '',
-			'description' => 'Thank you for your RSVP.',
+			'sub_title' => 'Thank you for your RSVP',
+			'description' => '',
+		),
+		'exception' => array(
+			'title' => 'Pandey / Arroyo Wedding',
+			'sub_title' => 'Error Occurred',
+			'description' => 'There was an error processing your request, please start over and try again.  <a href="/rsvp/">Click Here</a>.',
 		),
 	);
 	
@@ -103,9 +108,9 @@ class Handler extends \erdiko\core\Handler
 				$action = $name.'Action';
 				$data['main_content'] = $this->$action($arguments);
 			}
-			catch(Exception $e)
+			catch(\Exception $e)
 			{
-				// do something
+				$data['main_content'] = $this->getExceptionHtml( $e->getMessage() );
 			}
 		}
 		
@@ -206,7 +211,6 @@ class Handler extends \erdiko\core\Handler
 			if( $_REQUEST['num_guests'] == 0 )
 			{				
 				$rsvp->decline($id, $_REQUEST);
-				
 			}
 			elseif($_REQUEST['num_guests'] > 0)
 			{
@@ -251,8 +255,6 @@ class Handler extends \erdiko\core\Handler
 		
 		$filename = __DIR__.'/templates/form/done.phtml';
 		return  Erdiko::getTemplate($filename, $formData);
-		
-		return "still need to implement confirmation...";
 	}
 	
 	public function reset($id)
@@ -293,6 +295,19 @@ class Handler extends \erdiko\core\Handler
 		{
 			return $this->getGenericError();
 		}	
+	}
+	
+	public function getExceptionHtml($message)
+	{
+		$formData = array(
+			'title' => $this->_textConfig['exception']['title'],
+			'sub_title' => $this->_textConfig['exception']['sub_title'],
+			'description' => $this->_textConfig['exception']['description'],
+			'message' => $message,
+		);
+		
+		$filename = __DIR__.'/templates/form/exception.phtml';
+		return  Erdiko::getTemplate($filename, $formData);
 	}
 	
 	public function indexAction($arguments)
