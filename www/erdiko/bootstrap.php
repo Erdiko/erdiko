@@ -1,6 +1,6 @@
- <?php
+<?php
 $base = dirname(dirname(__DIR__));
-$webroot = $base.'/www';
+$webroot = dirname(__DIR__);
 
 // Static functions / Factories
 require_once $webroot.'/Erdiko.php';
