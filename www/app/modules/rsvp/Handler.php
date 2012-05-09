@@ -242,10 +242,32 @@ class Handler extends \erdiko\core\Handler
 		$rsvp = new Rsvp();
 		$rsvp->setComplete($_REQUEST['wedding_rsvp_id']);
 		
-		$body = print_r($rsvp->getRsvpData($_REQUEST['wedding_rsvp_id']), true);
+		// Prepare email data
+		$rsvpData = $rsvp->getRsvpData($_REQUEST['wedding_rsvp_id']);
+		$body = "New RSVP\n\n".
+			"Name: ".$rsvpData['guest']['name'].
+			"\nComments: ".$rsvpData['guest']['comments'].
+			"\nAccept Status: ".$rsvpData['guest']['accept']."\n\n";
+		
+		$i = 0;
+		$guests = "";
+		if( isset($rsvpData['guests'][0]) )
+		{
+			foreach( $rsvpData['guests'] as $guest )
+			{
+				$i++;
+				$guests .= "name $i: ".$guest['name']."\n";
+			}
+		}
+		
+		if($i > 0)
+			$body .= "RSVP Guest Names: \n".$guests;
+		else
+			$body .= "They will not be attending.";
 		
 		// send us an email
 		Erdiko::sendEmail('johnandsweta@gmail.com', 'New Wedding RSVP', $body, 'johnandsweta@gmail.com');
+		// Erdiko::sendEmail('john.arroyo@gmail.com', 'New Wedding RSVP', $body, 'johnandsweta@gmail.com');
 		
 		$formData = array(
 			'title' => $this->_textConfig['done']['title'],
