@@ -146,6 +146,8 @@ class ThemeEngine extends Module implements Theme
 		$this->_folder = $this->_webroot.$path;
 		$file = $this->_folder.'/theme.inc';
 		
+		error_log('file: '.$file);
+		
 		$this->_themeConfig = Erdiko::getConfigFile($file);
 		
 		// If a parent theme exists, merge the theme configs

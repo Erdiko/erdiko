@@ -1,30 +1,29 @@
 <?php
 $base = dirname(dirname(__DIR__));
 $webroot = dirname(__DIR__);
+$core = $webroot.'/erdiko';
+$app = $webroot.'/app';
 
 // Static functions / Factories
 require_once $webroot.'/Erdiko.php';
 
 // Libraries
-require_once $webroot.'/libraries/ToroPHP/toro.php';
+require_once $core.'/libraries/ToroPHP/toro.php';
 
 // Interfaces
-require_once $webroot.'/erdiko/core/interfaces/Theme.php';
-require_once $webroot.'/erdiko/core/interfaces/Session.php';
+require_once $core.'/core/interfaces/Theme.php';
+require_once $core.'/core/interfaces/Session.php';
 
 // Core 
-require_once $webroot.'/erdiko/core/Handler.php';
-require_once $webroot.'/erdiko/core/Module.php';
-require_once $webroot.'/erdiko/core/datasource/MySql.php';
+require_once $core.'/core/Handler.php';
+require_once $core.'/core/Module.php';
+require_once $core.'/core/datasource/MySql.php';
 
 // Modules
-require_once $webroot.'/erdiko/modules/theme/ThemeEngine.php';
-require_once $webroot.'/erdiko/modules/theme/Handler.php';
-
-// require_once $webroot.'/erdiko/modules/model/Interface.php';
-// require_once $webroot.'/erdiko/modules/model/MySql.php';
+require_once $core.'/modules/theme/ThemeEngine.php';
+require_once $core.'/modules/theme/Handler.php';
 
 // RSVP
 // @todo get the autoloader working!
-require_once $webroot.'/app/modules/rsvp/Handler.php';
-require_once $webroot.'/app/modules/rsvp/model/Rsvp.php';
+require_once $app.'/modules/contrib/rsvp/Handler.php';
+require_once $app.'/modules/contrib/rsvp/models/Rsvp.php';

@@ -1,0 +1,41 @@
+<h1><?php echo $data['title']; ?></h1>
+<h2>Hi <?php echo $data['guest']['name']; ?></h2>
+<p><?php echo $data['description']; ?></p>
+<p>&nbsp;</p>
+
+<form id="confirmation-form" name="confirmation-form" method="post" action="/form/confirm">
+  <fieldset>
+    <legend>RSVP Confirmation</legend>
+
+	<?php
+	if( $data['guest']['accept'] == 0 )
+	{
+		echo "<h3>You are not attending.</h3>";
+	}
+	else
+	{
+		echo "<h3>You have RSVP'ed the following guests</h3>";
+		
+		for($i = 0; $i < count($data['guests']); $i++)
+		{
+			$ii = $i+1;
+			$data['guests'][$i]['name'];
+			echo '<p>Guest '.$ii.': '.$data['guests'][$i]['name'].'</p>';
+		}
+	}	
+	?>
+	<p>&nbsp;</p>
+	Comments: <?php echo $data['guest']['comments']; ?>
+	
+	<input type="hidden" name="code" value="<?php echo $data['guest']['code']; ?>">
+	<input type="hidden" name="num_rsvps" value="<?php echo $data['guest']['num_rsvps']; ?>">
+	<input type="hidden" name="wedding_rsvp_id" value="<?php echo $data['guest']['wedding_rsvp_id']; ?>">
+	
+	<p>&nbsp;</p>
+	
+	<input type="button" onclick="window.location = 'reset/<?php echo $data['guest']['wedding_rsvp_id']; ?>';" value="Reset">
+	<input type="submit" name="submit" id="submit" value="Confirm">
+	
+    <p>&nbsp;</p>
+  </fieldset>
+</form>

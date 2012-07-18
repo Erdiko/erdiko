@@ -1,0 +1,50 @@
+<h1><?php echo $data['title']; ?></h1>
+<h2>Hi <?php echo $data['guest']['name']; ?></h2>
+<p><?php echo $data['description']; ?></p>
+<div class="form-error" id="form-error-text"></div>
+<p>&nbsp;</p>
+
+<form id="rsvp-form" name="rsvp-form" method="post" action="/form/submit">
+  <fieldset>
+    <legend>RSVP</legend>
+
+    <p>How many guests do you wish to RSVP? 
+      <label for="num_guests"></label>
+      <select name="num_guests" id="num_guests">
+        <option value="0">0 (cannot attend)</option>
+    <?php
+    	for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
+      		echo '<option value="'.$i.'">'.$i.'</option>';
+    ?>
+      </select>
+    </p>
+	<p>&nbsp;</p>
+	
+	<div id="guest-num-rsvps"></div>
+	<p>&nbsp;</p>
+
+	<?php
+	/*
+	// The old way...pre-jQuery
+	for($i = 1; $i <= $data['guest']['num_rsvps']; $i++)
+	{
+		echo '<p>Guest '.$i.'
+	      		<label for="guest'.$i.'">Name</label>
+	      		<input type="text" name="guest'.$i.'" id="guest'.$i.'" alt="Full Name"/>
+	    	</p>';
+	}
+	*/
+	?>
+	
+	Comments (optional):<br />
+	<textarea cols="41" rows="4" name="comments"></textarea>	
+	<p>&nbsp;</p>
+	
+	<input type="hidden" name="code" value="<?php echo $data['guest']['code']; ?>">
+	<input type="hidden" name="num_rsvps" value="<?php echo $data['guest']['num_rsvps']; ?>">
+	<input type="hidden" name="wedding_rsvp_id" value="<?php echo $data['guest']['wedding_rsvp_id']; ?>">
+	<input type="submit" name="submit" id="submit" value="Submit">
+
+    <p>&nbsp;</p>
+  </fieldset>
+</form>

@@ -1,0 +1,21 @@
+<h1><?php echo $data['title']; ?></h1>
+<p><?php echo $data['description']; ?></p>
+<?php
+	if( isset($data['error']) )
+		echo '<div class="form-error">'.$data['error'].'</div>';
+?>
+<p>&nbsp;</p>
+
+<form id="login" name="login-form" method="post" action="/login/submit">
+  <fieldset>
+    <legend>RSVP Login</legend>
+	<p>
+      <label for="code">Please enter your RSVP Code</label>
+      <input type="text" name="code" id="code" />
+    </p>
+<p>	
+  	<input type="submit" name="Submit" id="Submit" value="Submit" />
+</p>
+    <p>&nbsp;</p>
+  </fieldset>
+</form>

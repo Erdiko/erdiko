@@ -80,7 +80,6 @@ class Erdiko
 	 */
 	public static function getRoutes()
 	{
-		$primaryHandler = '\erdiko\core\Handler';
 		$primaryHandler = '\app\modules\rsvp\Handler'; // override for rsvp app
 		
 		// some dummy initial routes
@@ -92,7 +91,6 @@ class Erdiko
 				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", $primaryHandler),
 				array("([a-zA-Z0-9_]+)", $primaryHandler),
 				array("([a-zA-Z0-9_]+)/([a-zA-Z0-9_/]+)", $primaryHandler),
-				// array("([0-9]{4})", '\erdiko\core\Handler'),
 				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", $primaryHandler),
 			);
 		

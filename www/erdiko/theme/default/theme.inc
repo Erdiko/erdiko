@@ -12,7 +12,7 @@
 	"js": [
 		{
 			"name": "jquery",
-			"file":  "/libraries/javascript/jquery-1.7.2.js",
+			"file":  "/erdiko/libraries/javascript/jquery-1.7.2.js",
 			"active": 1
 		},
 		{

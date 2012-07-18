@@ -19,7 +19,7 @@ class Handler extends \ToroHandler
 	public function __construct()
 	{
 		$this->_webroot = dirname(dirname(__DIR__));
-		$file = $this->_webroot.'/app/config/local.inc';
+		$file = $this->_webroot.'/app/config/contexts/application.inc';
 		$this->_localConfig = Erdiko::getConfigFile($file);
 	}
 	
@@ -41,8 +41,8 @@ class Handler extends \ToroHandler
 	
     public function get($name = null, $arguments = null)
 	{
-		error_log("name: ".$name);
-		error_log("arguments: ".$arguments);
+		//error_log("name: ".$name);
+		//error_log("arguments: ".$arguments);
 		
 		$data = array(
 			'header' => array(
