@@ -160,7 +160,7 @@ class ThemeEngine extends Module implements Theme
 		$this->_extras = $extras;
 		
 		$this->_folder = $this->_webroot.$path;
-		$file = $this->_folder.'/theme.inc';		
+		$file = $this->_folder.'/theme.json';		
 		$this->_themeConfig = Erdiko::getConfigFile($file);
 		
 		$this->_themeConfig['meta'] = $extras['meta']; // Add injected Meta

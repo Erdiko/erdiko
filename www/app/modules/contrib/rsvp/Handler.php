@@ -1,6 +1,7 @@
 <?php
 /**
  * RSVP Handler
+ * 
  * @author John Arroyo, john@arroyolabs.com
  */
 namespace app\modules\rsvp;
@@ -54,8 +55,8 @@ class Handler extends \erdiko\core\Handler
 	{
 		$arguments = $this->parseArguments($arguments);
 		
-		// error_log("name: ".$name);
-		// error_log("arguments: ".print_r($arguments, true));
+		error_log("name: ".$name);
+		error_log("arguments: ".print_r($arguments, true));
 		
 		/**
 		 * Notes

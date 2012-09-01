@@ -3,10 +3,10 @@
  * Erdiko
  * All factory classes and global helper
  * 
- * @category   Erdiko
- * @package    Erdiko
- * @copyright Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
- * @author	John Arroyo
+ * @category	Erdiko
+ * @package		Erdiko
+ * @copyright 	Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
+ * @author		John Arroyo, john@arroyolabs.com
  */
 
 class Erdiko
@@ -71,7 +71,7 @@ class Erdiko
 	{
 		// @todo check cache first
 		$webroot = __DIR__;
-		$file = $webroot."/app/config/$name.inc";
+		$file = $webroot."/app/config/$name.json";
 		
 		return self::getConfigFile($file);
 	}
@@ -83,7 +83,7 @@ class Erdiko
 	 */
 	public static function getRoutes()
 	{
-		$file = __DIR__.'/app/config/contexts/application.inc';
+		$file = __DIR__.'/app/config/contexts/application.json';
 		$applicationConfig = Erdiko::getConfigFile($file);
 		
 		return $applicationConfig['routes'];

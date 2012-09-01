@@ -18,9 +18,6 @@ class Handler extends \erdiko\core\Handler
 	{
 		$numColumns = 1;
 		
-		// error_log("name: ".$name);
-		// error_log("arguments: ".$arguments);
-		
 		if( is_numeric($arguments) )
 			$numColumns = $arguments;
 		

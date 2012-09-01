@@ -20,7 +20,7 @@ class Handler extends \ToroHandler
 	public function __construct()
 	{
 		$this->_webroot = dirname(dirname(__DIR__));
-		$file = $this->_webroot.'/app/config/contexts/application.inc';
+		$file = $this->_webroot.'/app/config/contexts/application.json';
 		$this->_localConfig = Erdiko::getConfigFile($file);
 		
 		$this->_themeExtras = array(
@@ -149,7 +149,7 @@ class Handler extends \ToroHandler
 	 * @param string $file
 	 * @param array $data
 	 */
-	public function getView($file, $data)
+	public function getView($file, $data = null)
 	{
 		$filename = $this->_webroot.$this->_localConfig['theme']['path'].'/views/'.$file;
 		return  Erdiko::getTemplate($filename, $data);

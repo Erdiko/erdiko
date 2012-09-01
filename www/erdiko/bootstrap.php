@@ -25,13 +25,5 @@ require_once $core.'/modules/theme/Handler.php';
 
 // @todo get the autoloader working!
 
-// RSVP
-require_once $app.'/modules/contrib/rsvp/Handler.php';
-require_once $app.'/modules/contrib/rsvp/models/Rsvp.php';
-
-// Drupal
-require_once $app.'/modules/contrib/drupal/Model.php';
-
-// Decibel
-require_once $app.'/modules/custom/decibel/Handler.php';
-require_once $app.'/modules/custom/decibel/models/Cms.php';
+// Hello World App
+require_once $app.'/modules/custom/hello/Handler.php';
