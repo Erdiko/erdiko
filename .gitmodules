@@ -1,6 +1,0 @@
-[submodule "www/libraries/ToroPHP"]
-	path = www/libraries/ToroPHP
-	url = https://github.com/anandkunal/ToroPHP.git
-[submodule "www/libraries/less"]
-	path = www/libraries/less
-	url = https://github.com/leafo/lessphp.git

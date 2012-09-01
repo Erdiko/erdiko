@@ -1,2 +1,0 @@
-// base theme
-// available contexts
