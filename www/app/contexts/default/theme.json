@@ -1,0 +1,35 @@
+{
+	"name": "default",
+	"namespace": "\app\contexts\default",
+	"path": "/app/contexts/default",
+	"parent": "/erdiko/theme/default/theme.json",
+	"coulmns": 1,
+	"css": [
+		{
+			"name": "default",
+			"file":  "/app/contexts/default/css/default.css",
+			"active": 1
+		}
+	],
+	"js": [
+		{
+			"name": "behavior",
+			"file":  "/app/contexts/default/js/behavior.js",
+			"active": 1
+		}
+	],
+	"templates": {
+		"page": {
+			"file": "/app/contexts/default/layout/page.php"
+		},
+		"footer": {
+			"file": "/app/contexts/default/layout/footer.php"
+		},
+		"header": {
+			"file": "/app/contexts/default/layout/header.php"
+		},
+		"layout-1": {
+			"file": "/app/contexts/default/templates/layout-1.php"
+		}
+	}
+}

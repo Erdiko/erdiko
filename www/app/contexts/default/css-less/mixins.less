@@ -1,0 +1,77 @@
+
+/* Mix Ins */
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.frame {
+  .box-shadow(rgba(0, 0, 0, 0.25) 0 0 5px);
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.93%;
+}
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+// CSS3 Content Columns
+.content-columns(@count, @gap) {
+  -webkit-column-count: @count;
+     -moz-column-count: @count;
+          column-count: @count;
+
+  -webkit-column-gap: @gap;
+     -moz-column-gap: @gap;
+          column-gap: @gap;
+}
+
+// Gradients
+.horizontal(@startColor: #faf8f1, @endColor: #eadcb4) {
+  background-color: @endColor;
+  background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+  background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(left, @startColor, @endColor); // Le standard
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE9 and down
+}
+
+.vertical(@startColor: #faf8f1, @endColor: #eadcb4) {
+  background-color: mix(@startColor, @endColor, 60%);
+  background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+  background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(top, @startColor, @endColor); // The standard
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+}
+
+// Alerts
+.alert(@alertText, @alertBackground, @alertpx, @alertStyle, @alertBorder) {
+  color: @alertText;
+  background-color: @alertBackground;
+  border: @alertpx @alertStyle @alertBorder;
+}

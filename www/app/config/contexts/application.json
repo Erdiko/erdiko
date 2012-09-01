@@ -1,0 +1,29 @@
+{
+	"theme": {
+		"name": "default",
+		"namespace": "\app\contexts\default",
+		"path": "/app/contexts/default",
+		"config": "/app/contexts/default/theme.json"
+	},
+	"layout" : {
+		"layout": {
+			"columns": 1
+		},
+		"title": "Erdiko Framework",
+		"header": {
+			"content": "",
+			"tagline": "",
+			"site_name": "Erdiko Framework"
+		},
+		"footer": {
+			"content": "",
+			"links": [ ]
+		}
+	},
+	"routes": [
+		["/", "\app\modules\custom\hello\Handler"],
+		["([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", "\app\modules\custom\hello\Handler"],
+		["([a-zA-Z0-9_]+)", "\app\modules\custom\hello\Handler"],
+		["([a-zA-Z0-9_]+)/([a-zA-Z0-9_/]+)", "\app\modules\custom\hello\Handler"]
+	]
+}

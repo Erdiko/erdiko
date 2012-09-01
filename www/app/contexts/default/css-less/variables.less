@@ -1,0 +1,108 @@
+/* Variables */
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #666;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+// Accent colors
+// -------------------------
+@cream:                 #ede5ce;
+@creamLighter:          #faf8f1;
+@red:                   #800000;
+
+
+// Scaffolding
+// -------------------------
+@bodyBackground:        @creamLighter;
+@textColor:             @gray;
+
+// Links
+// -------------------------
+@linkColor:             @black;
+@linkColorAlt:          @gray;
+@linkColorHover:        @red;
+
+// Typography
+// -------------------------
+@font-face {
+    font-family: 'AmarelinhaBoldBold';
+    src: url('amarelinha-bold-webfont.eot');
+    src: url('amarelinha-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('amarelinha-bold-webfont.woff') format('woff'),
+         url('amarelinha-bold-webfont.ttf') format('truetype'),
+         url('amarelinha-bold-webfont.svg#AmarelinhaBoldBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmarelinhaMedium';
+    src: url('amarelinha-webfont.eot');
+    src: url('amarelinha-webfont.eot?#iefix') format('embedded-opentype'),
+         url('amarelinha-webfont.woff') format('woff'),
+         url('amarelinha-webfont.ttf') format('truetype'),
+         url('amarelinha-webfont.svg#AmarelinhaMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       "Georgia", Times New Roman, Times, serif;
+@monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+@primaryFontFamily:     "AmarelinhaBoldBold";
+
+@baseFontSize:          13px;
+@baseFontFamily:        @primaryFontFamily;
+@baseLineHeight:        18px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+
+// Widths
+// -------------------------
+@fullWidth:             960px;
+@sidebar:               175px;
+
+
+// Z-index master list
+// -------------------------
+@zindexAlert:          1000;
+
+
+// Image icons path
+// -------------------------
+@iconSocialSpritePath:  "../images/icons/social.png";
+@iconClassicMapPath:    "../images/galleria/classic-map.png";
+@iconDecibelPath :      "../images/icons/decibel.png";
+@siteBackgroundPath:    "../images/bg.jpg";
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+
+@alertpx: 1px;
+@alertStyle: solid;
