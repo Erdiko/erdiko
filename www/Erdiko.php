@@ -23,13 +23,14 @@ class Erdiko
 	 * get the registered theme
 	 * @param string $name
 	 * @param string $namespace
+	 * @param string $path
 	 * @return object $theme
 	 */
-	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/theme/default')
+	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/theme/default', $extras = null)
 	{
 		// get Theme
 		$themeEngine = new \erdiko\modules\theme\ThemeEngine();
-		$themeEngine->loadTheme($name, $namespace, $path);
+		$themeEngine->loadTheme($name, $namespace, $path, $extras);
 		
 		return $themeEngine;
 	}
@@ -77,24 +78,15 @@ class Erdiko
 	
 	/**
 	 * Get the compiled application routes from the config files
+	 * 
+	 * @todo cache the loaded/compiled routes
 	 */
 	public static function getRoutes()
 	{
-		$primaryHandler = '\app\modules\rsvp\Handler'; // override for rsvp app
+		$file = __DIR__.'/app/config/contexts/application.inc';
+		$applicationConfig = Erdiko::getConfigFile($file);
 		
-		// some dummy initial routes
-		// This needs to be moved to the app config
-		$routes = array(
-				array('/', $primaryHandler),
-				array('test/([a-zA-Z0-9_/]+)', $primaryHandler),
-				array("theme/([a-zA-Z0-9_/]+)/([a-zA-Z0-9_/]+)", '\erdiko\modules\theme\Handler'),
-				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", $primaryHandler),
-				array("([a-zA-Z0-9_]+)", $primaryHandler),
-				array("([a-zA-Z0-9_]+)/([a-zA-Z0-9_/]+)", $primaryHandler),
-				array("([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_/]+)", $primaryHandler),
-			);
-		
-		return $routes;
+		return $applicationConfig['routes'];
 	}
 	
 	/**

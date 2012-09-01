@@ -23,7 +23,15 @@ require_once $core.'/core/datasource/MySql.php';
 require_once $core.'/modules/theme/ThemeEngine.php';
 require_once $core.'/modules/theme/Handler.php';
 
-// RSVP
 // @todo get the autoloader working!
+
+// RSVP
 require_once $app.'/modules/contrib/rsvp/Handler.php';
 require_once $app.'/modules/contrib/rsvp/models/Rsvp.php';
+
+// Drupal
+require_once $app.'/modules/contrib/drupal/Model.php';
+
+// Decibel
+require_once $app.'/modules/custom/decibel/Handler.php';
+require_once $app.'/modules/custom/decibel/models/Cms.php';

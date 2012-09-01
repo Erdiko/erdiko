@@ -45,7 +45,7 @@ class ToroApplication {
 
     public function serve() {
         ToroHook::fire('before_request');
-    
+		
         $request_method = strtolower($_SERVER['REQUEST_METHOD']);
         $path_info = '/';
         $path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : $path_info;

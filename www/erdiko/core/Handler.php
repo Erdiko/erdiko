@@ -15,17 +15,67 @@ class Handler extends \ToroHandler
 {
     protected $_localConfig;
 	protected $_webroot;
+	protected $_themeExtras;
 	
 	public function __construct()
 	{
 		$this->_webroot = dirname(dirname(__DIR__));
 		$file = $this->_webroot.'/app/config/contexts/application.inc';
 		$this->_localConfig = Erdiko::getConfigFile($file);
+		
+		$this->_themeExtras = array(
+			'js' => array(), 
+			'css' => array(), 
+			'meta' => array(),
+			'title' => "",
+			);
+	}
+
+	/**
+	 * Add page title text to current page
+	 */
+	public function addPageTitle($title)
+	{
+		$this->_themeExtras['title'] = $title;
+	}
+
+	/**
+	 * Add js file to current page
+	 */
+	public function addJs($file)
+	{
+		$this->_themeExtras['js'][] = array('file' => $file);
 	}
 	
-	public function theme($data)
+	/**
+	 * Add Css file to current page
+	 * @note Not yet supported
+	 */
+	public function addCss($file)
 	{
-		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path']);
+		$this->_themeExtras['css'][] = array('file' => $file);
+	}
+	
+	/**
+	 * Add Meta Tags to the page
+	 * 
+	 * @param string $content
+	 * @param string $name, html meta name (e.g. 'description' or 'keywords')
+	 */
+	public function addMeta($content, $name = 'description')
+	{
+		$this->_themeExtras['meta'][$name] = $content;
+	}
+	
+	/**
+	 * Theme a set of data
+	 * Generates an entire page with the given data 
+	 * 
+	 * @param array $data
+	 */
+	public function theme($data)
+	{	
+		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path'], $this->_themeExtras);
 		$theme->theme($data);
 	}
 	
@@ -39,34 +89,69 @@ class Handler extends \ToroHandler
 		return $arguments;
 	}
 	
-    public function get($name = null, $arguments = null)
+	/**
+	 * 
+	 */
+	public function get($name = null, $arguments = null)
 	{
-		//error_log("name: ".$name);
-		//error_log("arguments: ".$arguments);
+		return $this->route($name, $arguments);
+	}
+	
+	/**
+	 * 
+	 */
+	public function post($name = null, $arguments = null)
+	{
+		return $this->route($name, $arguments);
+	}
+	
+	/**
+	 * Primary request router
+	 *
+	 * @param string $name, action name
+	 * @param string $arguments remaining url params
+	 */
+	public function route($name, $arguments)
+	{
+		$arguments = $this->parseArguments($arguments);
 		
-		$data = array(
-			'header' => array(
-				'content' => "Header",
-				'tagline' => "Booyah",
-				'site_name' => "My Hello World Site",
-			),
-			'footer' => array(
-				'content' => "Footer",
-				'links' => array('link 1', 'link 2', 'link 3'),
-			),
-			'layout' => array(
-				'columns' => 1,
-			),
-			'main_content' => "Hello World...",
-			'title' => "Home Page Title",
-			'sidebar' => array(
-				array(
-					'block_title' => 'block 1',
-					'block_content' => 'blah blah blah...',
-				),
-			),
-		);
+		// Get the theme config defined in local.inc
+		// $file = $this->_webroot.$this->_localConfig['theme']['config'];
+		// $themeConfig = Erdiko::getConfigFile($file);
+		
+		// Get data to populate page wrapper
+		$data = $this->_localConfig['layout'];
+		
+		// Determine what conetent should be called 
+		if( empty($name) )
+		{
+			$data['main_content'] = $this->indexAction($arguments);
+		}
+		else 
+		{
+			try 
+			{
+				$action = $name.'Action';
+				$data['main_content'] = $this->$action($arguments);
+			}
+			catch(\Exception $e)
+			{
+				$data['main_content'] = $this->getExceptionHtml( $e->getMessage() );
+			}
+		}
 		
 		$this->theme($data);
+	}
+	
+	/**
+	 * Load a view from the current theme with the given data
+	 * 
+	 * @param string $file
+	 * @param array $data
+	 */
+	public function getView($file, $data)
+	{
+		$filename = $this->_webroot.$this->_localConfig['theme']['path'].'/views/'.$file;
+		return  Erdiko::getTemplate($filename, $data);
 	}
 }

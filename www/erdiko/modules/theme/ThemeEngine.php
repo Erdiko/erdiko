@@ -26,6 +26,7 @@ class ThemeEngine extends Module implements Theme
 	protected $_webroot;
 	protected $_path;
 	protected $_themeConfig;
+	protected $_extras;
 	protected $_domainName;
 	
 	public function __construct()
@@ -63,6 +64,11 @@ class ThemeEngine extends Module implements Theme
 		return $this->_themeConfig['js'];
 	}
 	
+	public function getMeta()
+	{		
+		return $this->_themeConfig['meta'];
+	}
+	
 	public function getHeader($name = "")
 	{	
 		// return $this->_data['header'];
@@ -86,10 +92,18 @@ class ThemeEngine extends Module implements Theme
 		
 	}
 	
+	// @todo need to make a clean distinction between 'title' and 'page title'
+	// @todo rename to siteName
 	public function getTitle()
 	{
 		return $this->_data['title'];
 	}
+	
+	public function getPageTitle()
+	{		
+		return $this->_themeConfig['title'];
+	}
+	
 	
 	public function getMainContent($name = "", $options = null)
 	{
@@ -110,6 +124,7 @@ class ThemeEngine extends Module implements Theme
 		
 		$filename = $this->_webroot.$this->_themeConfig['templates']['layout-'.$numColumns]['file'];
 		$html = $this->getTemplateFile($filename, $this);
+		
 		echo $html;
 	}
 	
@@ -117,8 +132,6 @@ class ThemeEngine extends Module implements Theme
 	{
 		foreach($second as $css)
 			$first[] = array('file' => $css['file']);
-		
-		error_log('merge array: '.print_r($first, true));
 		
 		return $first;
 	}
@@ -133,44 +146,46 @@ class ThemeEngine extends Module implements Theme
 	
 	/**
 	 * @param string $themeName
-	 * @param string $type, 'core' or 'app'
+	 * @param string $namespace
+	 * @param string $path
+	 * @param array $extras
 	 */
-	public function loadTheme($name, $namespace, $path)
+	public function loadTheme($name, $namespace, $path, $extras)
 	{	
 		$this->_webroot = dirname(dirname(dirname(__DIR__)));
 		$this->_themeName = $name;
 		$this->_path = $path;
 		$this->_namespace = $namespace;
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
+		$this->_extras = $extras;
 		
 		$this->_folder = $this->_webroot.$path;
-		$file = $this->_folder.'/theme.inc';
-		
-		error_log('file: '.$file);
-		
+		$file = $this->_folder.'/theme.inc';		
 		$this->_themeConfig = Erdiko::getConfigFile($file);
+		
+		$this->_themeConfig['meta'] = $extras['meta']; // Add injected Meta
+		$this->_themeConfig['title'] = $extras['title']; // Add injected Page title
 		
 		// If a parent theme exists, merge the theme configs
 		if( isset($this->_themeConfig['parent']) )
 		{
 			$parentConfig = Erdiko::getConfigFile($this->_webroot.$this->_themeConfig['parent']);
 			
-			// $parentConfig['css'][] = $this->_themeConfig['css'][0];
-			// $this->_themeConfig['css'] = $parentConfig['css'];
+			// CSS
 			$this->_themeConfig['css'] = $this->mergeCss($parentConfig['css'], $this->_themeConfig['css']);
 			unset($parentConfig['css']);
 			
-			// $this->_themeConfig['css'] = array_merge($this->_themeConfig['css'], $parentConfig['css']);
+			// JS
 			$this->_themeConfig['js'] = $this->mergeJs($parentConfig['js'], $this->_themeConfig['js']);
 			unset($parentConfig['js']);
 			
-			// $this->_themeConfig['js'] = $this->_themeConfig['js'] + $parentConfig['js'];
-			// $this->_themeConfig = $parentConfig + $this->_themeConfig;
+			// Templates
 			$this->_themeConfig['templates'] = $this->_themeConfig['templates'] + $parentConfig['templates'];
 		}
 		
-		// error_log('themeEngine parent config: '.print_r($parentConfig, true));		
-		// error_log('themeEngine config: '.print_r($this->_themeConfig, true));
+		// Add any additional javascript files needed for the page.
+		if($extras['js'] != null)
+			$this->_themeConfig['js'] = $this->mergeJs($this->_themeConfig['js'], $extras['js']);
 	}
 	
 	public function setData($data)
@@ -179,21 +194,16 @@ class ThemeEngine extends Module implements Theme
 	}
 	
 	public function theme($data)
-	{
-		$filename = $this->_webroot.$this->_themeConfig['templates']['page']['file'];
-		
-		// error_log("filename: $filename");
-		// error_log('themeEngine config: '.print_r($this->_themeConfig['templates'], true));
-		
+	{		
+		$filename = $this->_webroot.$this->_themeConfig['templates']['page']['file'];	
 		$this->setData($data);
 		$html = $this->getTemplateFile($filename, $this);
+		
 		echo $html;
 	}
 	
 	function getTemplateFile($filename, $data)
-	{	
-		// error_log("get file: $filename");
-		
+	{			
 	    if (is_file($filename))
 		{
 			ob_start();
