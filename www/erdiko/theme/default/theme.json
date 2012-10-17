@@ -1,37 +1,38 @@
 {
-	"name": "default",
-	"namespace": "\erdiko\theme\default",
-	"path": "/erdiko/theme/default",
-	"css": [
-	],
-	"js": [
-		{
-			"name": "jquery",
-			"file":  "/erdiko/libraries/javascript/jquery-1.8.0.js",
-			"active": 1
-		}
-	],
-	"templates": {
-		"page": {
-			"file": "/erdiko/theme/default/templates/page.php"
-		},
-		"footer": {
-			"file": "/erdiko/theme/default/templates/footer.php"
-		},
-		"header": {
-			"file": "/erdiko/theme/default/templates/header.php"
-		},
-		"home": {
-			"file": "/erdiko/theme/default/templates/home.php"
-		},
-		"layout-1": {
-			"file": "/erdiko/theme/default/templates/layout-1.php"
-		},
-		"layout-2": {
-			"file": "/erdiko/theme/default/templates/layout-2.php"
-		},
-		"layout-3": {
-			"file": "/erdiko/theme/default/templates/layout-3.php"
-		}
-	}
+  "name": "default",
+  "namespace": "\erdiko\theme\default",
+  "path": "/erdiko/theme/default",
+  "css": [
+    {
+      "name": "default",
+      "file":  "/erdiko/theme/default/css/reset.css",
+      "active": 1
+    },
+    {
+      "name": "default",
+      "file":  "/erdiko/theme/default/css/global.css",
+      "active": 1
+    }
+  ],
+  "js": [
+    {
+      "name": "jquery",
+      "file":  "/erdiko/libraries/javascript/jquery-1.8.0.js",
+      "active": 1
+    }
+  ],
+  "templates": {
+    "page": {
+      "file": "/erdiko/theme/default/layout/page.php"
+    },
+    "footer": {
+      "file": "/erdiko/theme/default/layout/footer.php"
+    },
+    "header": {
+      "file": "/erdiko/theme/default/layout/header.php"
+    },
+    "layout-1": {
+      "file": "/erdiko/theme/default/templates/layout-1.php"
+    }
+  }
 }
