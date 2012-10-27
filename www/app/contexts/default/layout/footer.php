@@ -1,11 +1,3 @@
-<footer id="footer">
-  <p>
-    Copyright &copy; 2012 All Rights Reserved.
-    <br>
-    <?php
-      echo $data['content'];
-      foreach($data['links'] as $link)
-        echo '<a href="'.$link['url'].'">'.$link['name'].'</a>';
-    ?>
-  </p>
-</footer>
+<div class="footer">
+  <p class="copyright">Copyright &copy; <?php echo date('Y');?> All rights reserved.</p>
+</div>

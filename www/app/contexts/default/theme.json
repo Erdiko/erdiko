@@ -1,13 +1,25 @@
 {
-	"name": "default",
-	"namespace": "\app\contexts\default",
-	"path": "/app/contexts/default",
-	"parent": "/erdiko/theme/default/theme.json",
-	"coulmns": 1,
-	"css": [
-	],
-	"js": [
-	],
-	"templates": {
-	}
+  "name": "default",
+  "namespace": "\app\contexts\default",
+  "path": "/app/contexts/default",
+  "parent": "/erdiko/theme/default/theme.json",
+  "coulmns": 1,
+  "css": [
+  ],
+  "js": [
+  ],
+  "templates": {
+    "header": {
+      "file": "/app/contexts/default/layout/header.php"
+    },
+    "header": {
+      "file": "/app/contexts/default/layout/header.php"
+    },
+    "page": {
+      "file": "/app/contexts/default/layout/page.php"
+    },
+    "layout-1": {
+      "file": "/app/contexts/default/templates/layout-1.php"
+    }
+  }
 }

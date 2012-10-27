@@ -9,31 +9,11 @@ $topNav = array(
   array("href" => "/about", "navTitle" => "about us")
 );
 ?>
-
-<?php //echo $data['content']; ?>
 <header id="header">
-  <div class="social">
-    <ul class="no-bullet left">
-    <?php $i = 0 ?>
-      <?php
-      if($social){
-      foreach ($social as $node): ?>
-      <li class="<?php echo  $social[$i]["class"]; ?>">
-        <a href="<?php echo  $social[$i]["href"]; ?>"></a>
-      </li>
-      <?php $i++; ?>
-    <?php
-      endforeach;
-      }
-    ?>
-    </ul>
+  <div class="header">
+    Company Name
+    <?php echo $data['content']; ?>
   </div>
-
-  <hgroup>
-    <div id="site-logo">
-      <a href="<?php echo  $logo['href']; ?>"><img src="<?php echo  $logo['src']; ?>" alt="<?php echo  $logo['alt']; ?>"/></a>
-    </div>
-  </hgroup>
 
   <nav>
     <ul id="main-nav" class="clearfix">

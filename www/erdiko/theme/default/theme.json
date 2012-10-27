@@ -7,11 +7,6 @@
       "name": "default",
       "file":  "/erdiko/theme/default/css/reset.css",
       "active": 1
-    },
-    {
-      "name": "default",
-      "file":  "/erdiko/theme/default/css/global.css",
-      "active": 1
     }
   ],
   "js": [

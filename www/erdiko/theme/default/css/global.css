@@ -12,32 +12,8 @@ header {
 
 
 
-
+/*  =Footer
+----------------------------------------------- */
 .copyright {
     font-size: 11px;
-}
-
-
-/*  =Column 2
------------------------------------------------ */
-.column-2 .content-main {
-    width: 610px;
-}
-.column-2 .aside {
-    width: 300px;
-}
-
-/*  =Column 3
------------------------------------------------ */
-.column-3 .col-left {
-    float: left;
-    margin-right: 10px;
-    width: 200px;
-}
-.column-3 .content-main {
-    float: left;
-    width: 500px;
-}
-.column-3 .aside {
-    width: 200px;
 }
