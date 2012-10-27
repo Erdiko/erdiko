@@ -5,6 +5,11 @@
   "parent": "/erdiko/theme/default/theme.json",
   "coulmns": 1,
   "css": [
+    {
+      "name": "default",
+      "file":  "/app/contexts/default/css/default.css",
+      "active": 1
+    }
   ],
   "js": [
   ],

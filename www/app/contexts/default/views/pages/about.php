@@ -1,4 +1,4 @@
 
-<div class="clearfix about content full-width">
+<div class="">
   About Us
 </div>
