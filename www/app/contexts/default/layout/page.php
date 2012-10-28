@@ -36,12 +36,12 @@ if(isMobile()): ?>
 </head>
 <body>
 
-<div id="pagewrap" class="">
-    <?php echo $data->getHeader(); ?>
-
+<div id="pagewrap">
+  <?php echo $data->getHeader(); ?>
+  <div class="content-main">
     <?php echo $this->getLayout(); ?>
-
-    <?php echo $data->getFooter(); ?>
+  </div>
+  <?php echo $data->getFooter(); ?>
 </div>
 
 <?php
