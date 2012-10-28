@@ -6,7 +6,9 @@ $topNav = array(
 ?>
 <header id="header">
   <div class="header">
-    Company Name
+    <hgroup>
+      Company Name
+    </hgroup>
     <nav>
       <ul id="main-nav" class="clearfix unstyled">
       <?php $i = 0 ?>
