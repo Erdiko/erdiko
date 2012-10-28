@@ -36,7 +36,7 @@ if(isMobile()): ?>
 </head>
 <body>
 
-<div id="pagewrap">
+<div id="pagewrap" class="">
     <?php echo $data->getHeader(); ?>
 
     <?php echo $this->getLayout(); ?>
@@ -51,10 +51,7 @@ if(isMobile()): ?>
 ?>
 <script type="text/javascript">/* <![CDATA[ */
 $(document).ready(function() {
-  Behavior.init_external_links();
-  Behavior.init_nav_selection();
-  Behavior.init_submenu();
-  Behavior.init_join_email_list();
+
 });
 /* ]]> */</script>
 

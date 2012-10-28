@@ -1,14 +1,68 @@
+/*  =body
+----------------------------------------------- */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBackground;
+}
+body, textarea {
+    font-family: @baseFontFamily;
+}
+input[type=text], input[type=password] {
+    font-family: @baseFontFamily;
+    cursor: text;
+}
+*:first-child {
+    margin-top: 0;
+}
+*:last-child {
+    margin-bottom: 0;
+}
+button {
+    cursor: pointer;
+}
+a {
+  color: @linkColor;
+  text-decoration: none;
+}
+a:hover {
+  color: @linkColorHover;
+  text-decoration: underline;
+}
+p {
+  margin-bottom: @baseLineHeight/2;
+}
+
+
+
+/*  =Layout
+----------------------------------------------- */
+.header, .content-main, .footer {
+  .container-fluid();
+}
+
+
+
 /*  =Header
 ----------------------------------------------- */
 header {
-    border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid @grayLight;
 }
-
 
 
 
 /*  =Footer
 ----------------------------------------------- */
+footer {
+  border-top: 1px solid @grayLight;
+  padding: @baseLineHeight 0;
+}
 .copyright {
-    font-size: 11px;
+  font-size: 11px;
 }

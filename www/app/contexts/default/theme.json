@@ -17,8 +17,8 @@
     "header": {
       "file": "/app/contexts/default/layout/header.php"
     },
-    "header": {
-      "file": "/app/contexts/default/layout/header.php"
+    "footer": {
+      "file": "/app/contexts/default/layout/footer.php"
     },
     "page": {
       "file": "/app/contexts/default/layout/page.php"
