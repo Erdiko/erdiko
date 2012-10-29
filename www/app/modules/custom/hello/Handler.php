@@ -83,6 +83,7 @@ class Handler extends \erdiko\core\Handler
 		$this->setBodyTitle( '2 Column Layout Page' );
 		$this->setBodyContent( '2 column layout example' );
 		$this->setLayoutColumns(2);
+		$this->setSidebar('left', 'This is the left side content...');
 
 		// Add page title
 		$this->setPageTitle('2 Column Page');
@@ -93,6 +94,8 @@ class Handler extends \erdiko\core\Handler
 		$this->setBodyTitle( '3 Column Layout Page' );
 		$this->setBodyContent( '3 column layout example' );
 		$this->setLayoutColumns(3);
+		$this->setSidebar('left', 'This is the left side content...');
+		$this->setSidebar('right', 'This is the right side content...');
 
 		// Add page title
 		$this->setPageTitle('3 Column Page');

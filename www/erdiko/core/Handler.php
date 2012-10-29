@@ -35,6 +35,7 @@ class Handler extends \ToroHandler
 		$this->_pageData = array(
 			'data' => array('title' => null, 'content' => null), 
 			'view' => array('page' => null), 
+			'sidebar' => array(),
 			);
 	}
 
@@ -89,14 +90,15 @@ class Handler extends \ToroHandler
 		{
 			// render the page
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
-
-			// could use this to render columns as well.
-			// $data['left_column'] = "";
 		}
 
 		// Alter layout if needed
 		if($this->_numberColumns)
 			$theme->setNumCloumns($this->_numberColumns);
+
+		// Deal with sidebars for multi-column layouts
+		if(!empty($this->_pageData['sidebar']))
+			$theme->setSidebars($this->_pageData['sidebar']);
 
 		$theme->theme($data);
 	}
@@ -224,5 +226,19 @@ class Handler extends \ToroHandler
 	public function setLayoutColumns($cols)
 	{
 		$this->_numberColumns = $cols;
+	}
+
+	/**
+	 * Set the view template to be used
+	 *
+	 * @param string $name
+	 * @param mixed $content
+	 * @param string $view, view filename
+	 */
+	public function setSidebar($name, $content, $view = null)
+	{
+		$this->_pageData['sidebar'][$name]['content'] = $content;
+		if($view != null)
+			$this->_pageData['sidebar'][$name]['view'] = $view;
 	}
 }

@@ -29,6 +29,7 @@ class ThemeEngine extends Module implements Theme
 	protected $_extras;
 	protected $_domainName;
 	protected $_numColumns;
+	protected $_sidebars;
 	
 	public function __construct()
 	{
@@ -110,10 +111,31 @@ class ThemeEngine extends Module implements Theme
 		return $this->_data['main_content'];
 	}
 	
-	public function getSidebar($name = "", $options = null)
+	public function getSidebar($name, $options = null)
 	{
-		// make sidebar name configurable to return particular pages
-		return "sidebar: $name";
+		try {
+			if( isset($this->_sidebars[$name]) )
+				$html = $this->renderSidebar($this->_sidebars[$name]);
+			else
+				$html = "";
+		} catch (\Exception $e) {
+			$html = $this->getExceptionHtml( $e->getMessage() );
+		}
+
+		return $html;
+	}
+
+	public function renderSidebar($data)
+	{
+		// If no view specified use the default
+		if(!isset($data['view']))
+			$file = $this->_themeConfig['sidebars']['default']['file'];
+		else
+			$file = $data['view'];
+
+		$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
+
+		return $this->getTemplateFile($filename, $data['content']);
 	}
 	
 	public function setNumCloumns($cols)
@@ -199,6 +221,11 @@ class ThemeEngine extends Module implements Theme
 			if(!isset($this->_themeConfig['views']))
 				$this->_themeConfig['views'] = array();
 			$this->_themeConfig['views'] = $this->_themeConfig['views'] + $parentConfig['views'];
+
+			// Sidebars
+			if(!isset($this->_themeConfig['sidebars']))
+				$this->_themeConfig['sidebars'] = array();
+			$this->_themeConfig['sidebars'] = $this->_themeConfig['sidebars'] + $parentConfig['sidebars'];
 		}
 		
 		// Add any additional javascript files needed for the page.
@@ -243,6 +270,11 @@ class ThemeEngine extends Module implements Theme
 		// error_log("view filename, $filename");
 
 		return $this->getTemplateFile($filename, $data);
+	}
+
+	public function setSidebars($data)
+	{
+		$this->_sidebars = $data;
 	}
 
 }

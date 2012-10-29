@@ -15,6 +15,6 @@ interface Theme
 	public function getHeader($name = "");
 	public function getFooter($name = "");
 	public function getMainContent($name = "", $options = null);
-	public function getSidebar($name = "", $options = null);
+	public function getSidebar($name, $options = null);
 	public function getLayout();
 }
