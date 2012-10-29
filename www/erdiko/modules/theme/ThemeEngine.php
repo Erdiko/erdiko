@@ -104,7 +104,6 @@ class ThemeEngine extends Module implements Theme
 		return $this->_themeConfig['title'];
 	}
 	
-	
 	public function getMainContent($name = "", $options = null)
 	{
 		return $this->_data['main_content'];
@@ -116,14 +115,18 @@ class ThemeEngine extends Module implements Theme
 		return "sidebar: $name";
 	}
 	
-	public function getLayout()
+	public function getLayout($layout = null)
 	{
 		$numColumns = "1";
 		if( isset($this->_data['layout']['columns']) )
 			$numColumns = $this->_data['layout']['columns'];
+		if($layout != null)
+			$numColumns = $layout;
 		
-		$filename = $this->_webroot.$this->_themeConfig['templates']['layout-'.$numColumns]['file'];
+		$filename = $this->_webroot.$this->_themeConfig['layouts'][$numColumns]['file'];
 		$html = $this->getTemplateFile($filename, $this);
+
+		error_log("$numColumns:$filename");
 		
 		echo $html;
 	}
@@ -195,7 +198,8 @@ class ThemeEngine extends Module implements Theme
 	
 	public function theme($data)
 	{		
-		$filename = $this->_webroot.$this->_themeConfig['templates']['page']['file'];	
+		// modify to allow overrides of template
+		$filename = $this->_webroot.$this->_themeConfig['templates']['default']['file'];	
 		$this->setData($data);
 		$html = $this->getTemplateFile($filename, $this);
 		

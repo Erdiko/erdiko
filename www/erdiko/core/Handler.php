@@ -149,8 +149,10 @@ class Handler extends \ToroHandler
 	 * @param string $file
 	 * @param array $data
 	 */
-	public function getView($file, $data = null)
+	public function getView($data = null, $file = null)
 	{
+		// $this->_data['layout']['columns']
+
 		$filename = $this->_webroot.$this->_localConfig['theme']['path'].'/views/'.$file;
 		return  Erdiko::getTemplate($filename, $data);
 	}

@@ -22,15 +22,23 @@ class Handler extends \erdiko\core\Handler
 
 		// Set up the view data
 		$data = array(
-			'content' => "Hello World."
+			'title' => 'Hello World',
+			'content' => "Welcome to Erdiko.",
 			);
 
 		// Add meta tags
 		$this->addMeta('This is Erdiko\'s hello world.', 'description');
 		// Add page title
 		$this->addPageTitle('Home');
-		// Get a view
-		$html = $this->getView('home.php', $data);
+		// Get rendered view
+		$html = $this->getView($data, 'home.php');
+
+		/*	
+			$this->setData();
+			$this->addBlock();
+			$this->setView();
+			$this->render();
+		*/
 
 		return $html;
 	}
@@ -44,7 +52,38 @@ class Handler extends \erdiko\core\Handler
 		// Add page title
 		$this->addPageTitle('About Us');
 		// Get a view
-		$html = $this->getView('pages/about.php', $data);
+		$html = $this->getView($data, 'pages/about.php');
+
+		return $html;
+	}
+
+	public function markupAction($arguments = null)
+	{
+		// Set up the view data
+		$data = array(
+			'title' => 'Example Mark-Up',
+			'content' => 'See examples of how various tags render.',
+			);
+		// Add page title
+		$this->addPageTitle('Example CSS Mark-Up');
+		// Get a view
+		$html = $this->getView($data, 'pages/markup.php');
+		// $html = $this->embedView('pages/markup.php');
+
+		return $html;
+	}
+
+	public function onecolumnAction($arguments = null)
+	{
+		// Set up the view data
+		$data = array(
+			'content' => '1 Column Page',
+			'title' => '1 Column Page'
+			);
+		// Add page title
+		$this->addPageTitle('1 Column Page');
+		// Get a view
+		$html = $this->getView($data, 'page.php');
 
 		return $html;
 	}

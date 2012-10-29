@@ -15,16 +15,33 @@
   ],
   "templates": {
     "header": {
-      "file": "/app/contexts/default/layout/header.php"
+      "file": "/app/contexts/default/templates/page/header.php"
     },
     "footer": {
-      "file": "/app/contexts/default/layout/footer.php"
+      "file": "/app/contexts/default/templates/page/footer.php"
+    },
+    "default": {
+      "file": "/app/contexts/default/templates/default.php"
     },
     "page": {
-      "file": "/app/contexts/default/layout/page.php"
+      "file": "/app/contexts/default/templates/default.php"
     },
-    "layout-1": {
-      "file": "/app/contexts/default/templates/layout-1.php"
+    "fullpage": {
+      "file": "/app/contexts/default/templates/fullpage.php"
+    }
+  },
+  "layouts": {
+    "default": {
+      "file": "/app/contexts/default/templates/layouts/1column.php"
+    },
+    "1": {
+      "file": "/app/contexts/default/templates/layouts/1column.php"
+    },
+    "2": {
+      "file": "/app/contexts/default/templates/layouts/2column.php"
+    },
+    "3": {
+      "file": "/app/contexts/default/templates/layouts/3column.php"
     }
   }
 }

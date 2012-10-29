@@ -39,7 +39,7 @@ if(isMobile()): ?>
 <div id="pagewrap">
   <?php echo $data->getHeader(); ?>
   <div class="content-main">
-    <?php echo $this->getLayout(); ?>
+    <?php echo $this->getLayout(); ?>This is default.php
   </div>
   <?php echo $data->getFooter(); ?>
 </div>
