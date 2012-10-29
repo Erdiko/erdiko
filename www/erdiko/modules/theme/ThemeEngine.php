@@ -28,6 +28,7 @@ class ThemeEngine extends Module implements Theme
 	protected $_themeConfig;
 	protected $_extras;
 	protected $_domainName;
+	protected $_numColumns;
 	
 	public function __construct()
 	{
@@ -115,18 +116,16 @@ class ThemeEngine extends Module implements Theme
 		return "sidebar: $name";
 	}
 	
-	public function getLayout($layout = null)
+	public function setNumCloumns($cols)
 	{
-		$numColumns = "1";
-		if( isset($this->_data['layout']['columns']) )
-			$numColumns = $this->_data['layout']['columns'];
-		if($layout != null)
-			$numColumns = $layout;
-		
-		$filename = $this->_webroot.$this->_themeConfig['layouts'][$numColumns]['file'];
-		$html = $this->getTemplateFile($filename, $this);
+		$this->_numColumns = $cols; // @todo cast to int?
+	}
 
-		error_log("$numColumns:$filename");
+	public function getLayout()
+	{
+		$filename = $this->_webroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
+		$html = $this->getTemplateFile($filename, $this);
+		// error_log($this->_numColumns." : $filename");
 		
 		echo $html;
 	}
@@ -145,6 +144,17 @@ class ThemeEngine extends Module implements Theme
 			$first[] = array('file' => $js['file']);
 		
 		return $first;
+	}
+
+	public function getTemplateFile($filename, $data)
+	{			
+	    if (is_file($filename))
+		{
+			ob_start();
+			include $filename;
+			return ob_get_clean();
+	    }
+	    return false;
 	}
 	
 	/**
@@ -184,18 +194,32 @@ class ThemeEngine extends Module implements Theme
 			
 			// Templates
 			$this->_themeConfig['templates'] = $this->_themeConfig['templates'] + $parentConfig['templates'];
+
+			// Views
+			if(!isset($this->_themeConfig['views']))
+				$this->_themeConfig['views'] = array();
+			$this->_themeConfig['views'] = $this->_themeConfig['views'] + $parentConfig['views'];
 		}
 		
 		// Add any additional javascript files needed for the page.
 		if($extras['js'] != null)
 			$this->_themeConfig['js'] = $this->mergeJs($this->_themeConfig['js'], $extras['js']);
+
+		// Set default number of columns
+		$this->_numColumns = $this->_themeConfig['columns'];
 	}
 	
+	/**
+	 *
+	 */
 	public function setData($data)
 	{
 		$this->_data = $data;
 	}
 	
+	/**
+	 *
+	 */
 	public function theme($data)
 	{		
 		// modify to allow overrides of template
@@ -205,15 +229,20 @@ class ThemeEngine extends Module implements Theme
 		
 		echo $html;
 	}
-	
-	function getTemplateFile($filename, $data)
-	{			
-	    if (is_file($filename))
-		{
-			ob_start();
-			include $filename;
-			return ob_get_clean();
-	    }
-	    return false;
+
+	/**
+	 * render data given a specific 
+	 */
+	public function renderView($file = null, $data = null)
+	{
+		// if no view specified use the default
+		if($file == null)
+			$file = $this->_themeConfig['views']['default']['file'];
+		$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
+
+		// error_log("view filename, $filename");
+
+		return $this->getTemplateFile($filename, $data);
 	}
+
 }

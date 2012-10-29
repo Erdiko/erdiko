@@ -1,5 +1,3 @@
-<h1>Example Mark-Up</h1>
-
 <h1>h1 Header</h1>
 <h2>h2 Header</h2>
 <h3>h3 Header</h3>

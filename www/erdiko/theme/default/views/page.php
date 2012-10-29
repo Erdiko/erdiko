@@ -4,4 +4,4 @@
 ?>
 
 <p><?php echo $data['content']; ?></p>
-this is view erdiko home.php
+this is view erdiko page.php

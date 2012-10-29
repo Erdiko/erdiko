@@ -39,6 +39,8 @@ class Erdiko
 	 * Load a template file from a module
 	 * @param string $filename
 	 * @param mixed $data, data to expose to template
+	 * 
+	 * @todo can we deprecate this function and only use the one in the theme engine? -John
 	 */
 	public static function getTemplate($filename, $data)
 	{

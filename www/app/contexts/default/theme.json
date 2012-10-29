@@ -3,7 +3,7 @@
   "namespace": "\app\contexts\default",
   "path": "/app/contexts/default",
   "parent": "/erdiko/theme/default/theme.json",
-  "coulmns": 1,
+  "columns": 1,
   "css": [
     {
       "name": "default",

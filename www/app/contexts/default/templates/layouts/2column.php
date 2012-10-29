@@ -6,5 +6,3 @@
     <?php echo $data->getSidebar(); ?>
   </div>
 </div>
-
-2 column test (app)...

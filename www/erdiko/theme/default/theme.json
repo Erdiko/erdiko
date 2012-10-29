@@ -2,6 +2,7 @@
   "name": "default",
   "namespace": "\erdiko\theme\default",
   "path": "/erdiko/theme/default",
+  "columns": 1,
   "css": [
     {
       "name": "default",
@@ -25,9 +26,12 @@
     },
     "header": {
       "file": "/erdiko/theme/default/layout/header.php"
-    },
-    "layout-1": {
-      "file": "/erdiko/theme/default/templates/layout-1.php"
+    }
+  },
+  "views": {
+    "default": {
+      "file": "/page.php",
+      "path": "/erdiko/theme/default/views/page.php"
     }
   }
 }

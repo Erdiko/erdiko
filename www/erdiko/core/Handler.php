@@ -16,6 +16,8 @@ class Handler extends \ToroHandler
     protected $_localConfig;
 	protected $_webroot;
 	protected $_themeExtras;
+	protected $_pageData;
+	protected $_numberColumns;
 	
 	public function __construct()
 	{
@@ -29,12 +31,17 @@ class Handler extends \ToroHandler
 			'meta' => array(),
 			'title' => "",
 			);
+
+		$this->_pageData = array(
+			'data' => array('title' => null, 'content' => null), 
+			'view' => array('page' => null), 
+			);
 	}
 
 	/**
 	 * Add page title text to current page
 	 */
-	public function addPageTitle($title)
+	public function setPageTitle($title)
 	{
 		$this->_themeExtras['title'] = $title;
 	}
@@ -76,6 +83,21 @@ class Handler extends \ToroHandler
 	public function theme($data)
 	{	
 		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path'], $this->_themeExtras);
+		
+		// If no data is given load the view
+		if(!isset($data['main_content']))
+		{
+			// render the page
+			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
+
+			// could use this to render columns as well.
+			// $data['left_column'] = "";
+		}
+
+		// Alter layout if needed
+		if($this->_numberColumns)
+			$theme->setNumCloumns($this->_numberColumns);
+
 		$theme->theme($data);
 	}
 	
@@ -132,7 +154,7 @@ class Handler extends \ToroHandler
 			try 
 			{
 				$action = $name.'Action';
-				$data['main_content'] = $this->$action($arguments);
+				$this->$action($arguments); // run the action method of the handler/controller
 			}
 			catch(\Exception $e)
 			{
@@ -148,6 +170,8 @@ class Handler extends \ToroHandler
 	 * 
 	 * @param string $file
 	 * @param array $data
+	 * 
+	 * @todo deprecate this function -John 
 	 */
 	public function getView($data = null, $file = null)
 	{
@@ -155,5 +179,50 @@ class Handler extends \ToroHandler
 
 		$filename = $this->_webroot.$this->_localConfig['theme']['path'].'/views/'.$file;
 		return  Erdiko::getTemplate($filename, $data);
+	}
+
+	/**
+	 * Set data to be themed in the given view
+	 *
+	 * @param array $data
+	 */
+	public function setData($data)
+	{
+		$this->_pageData['data'] = $data;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param mixed $data
+	 */
+	public function setBodyContent($data)
+	{
+		$this->_pageData['data']['content'] = $data;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param string $title
+	 */
+	public function setBodyTitle($title)
+	{
+		$this->_pageData['data']['title'] = $title;
+	}
+
+	/**
+	 * Set the view template to be used
+	 *
+	 * @param string $view, view file
+	 */
+	public function setView($view, $type = 'page')
+	{
+		$this->_pageData['view'][$type] = $view;
+	}
+
+	public function setLayoutColumns($cols)
+	{
+		$this->_numberColumns = $cols;
 	}
 }

@@ -5,13 +5,15 @@ $topNav = array(
   array("href" => "/", "nav_title" => "home"),
   array("href" => "/markup", "nav_title" => "Example Mark-Up"),
   array("href" => "/onecolumn", "nav_title" => "1 Column Layout"),
-  array("href" => "/about", "nav_title" => "About Us")
+  array("href" => "/twocolumn", "nav_title" => "2 Column Layout"),
+  array("href" => "/threecolumn", "nav_title" => "3 Column Layout"),
+  array("href" => "/about", "nav_title" => "About Us"),
 );
 ?>
 <header id="header">
   <div class="header">
     <hgroup>
-      Company Name
+      Website Name
     </hgroup>
     <nav>
       <ul id="main-nav" class="clearfix unstyled">
