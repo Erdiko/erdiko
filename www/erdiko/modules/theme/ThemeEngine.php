@@ -129,12 +129,10 @@ class ThemeEngine extends Module implements Theme
 	{
 		// If no view specified use the default
 		if(!isset($data['view']))
-			$file = $this->_themeConfig['sidebars']['default']['file'];
+			$filename = $this->_webroot.$this->_themeConfig['sidebars']['default']['file'];
 		else
-			$file = $data['view'];
-
-		$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
-
+			$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$data['view'];
+		
 		return $this->getTemplateFile($filename, $data['content']);
 	}
 	
@@ -264,10 +262,9 @@ class ThemeEngine extends Module implements Theme
 	{
 		// if no view specified use the default
 		if($file == null)
-			$file = $this->_themeConfig['views']['default']['file'];
-		$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
-
-		// error_log("view filename, $filename");
+			$filename = $this->_webroot.$this->_themeConfig['views']['default']['file'];
+		else
+			$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
 
 		return $this->getTemplateFile($filename, $data);
 	}

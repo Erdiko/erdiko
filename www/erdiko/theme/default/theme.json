@@ -3,10 +3,15 @@
   "namespace": "\erdiko\theme\default",
   "path": "/erdiko/theme/default",
   "columns": 1,
-  "css": [
+  "css": [ 
+    {
+      "name": "reset",
+      "file":  "/erdiko/theme/default/css/reset.css",
+      "active": 1
+    },
     {
       "name": "default",
-      "file":  "/erdiko/theme/default/css/reset.css",
+      "file":  "/erdiko/theme/default/css/default.css",
       "active": 1
     }
   ],
@@ -18,26 +23,26 @@
     }
   ],
   "templates": {
-    "page": {
-      "file": "/erdiko/theme/default/layout/page.php"
+    "default": {
+      "file": "/erdiko/theme/default/templates/default.php"
     },
     "footer": {
-      "file": "/erdiko/theme/default/layout/footer.php"
+      "file": "/erdiko/theme/default/templates/page/footer.php"
     },
     "header": {
-      "file": "/erdiko/theme/default/layout/header.php"
+      "file": "/erdiko/theme/default/templates/page/header.php"
     }
   },
   "views": {
     "default": {
-      "file": "/page.php",
+      "file": "/erdiko/theme/default/views/page.php",
       "path": "/erdiko/theme/default/views/page.php"
     }
   },
   "sidebars": {
     "default": {
-      "file": "/sidebars/default.php",
-      "path": "/erdiko/theme/default/views/sidebars/page.php"
+      "file": "/erdiko/theme/default/views/sidebars/default.php",
+      "path": "/erdiko/theme/default/views/sidebars/default.php"
     }
   }
 }

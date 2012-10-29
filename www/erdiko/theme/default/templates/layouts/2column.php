@@ -3,8 +3,6 @@
     <?php echo $data->getMainContent(); ?>
   </div>
   <div class="aside">
-    <?php echo $data->getSidebar(); ?>
+    <?php echo $data->getSidebar('left'); ?>
   </div>
 </div>
-
-2 column test (core)...

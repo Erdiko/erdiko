@@ -6,8 +6,8 @@
   "columns": 1,
   "css": [
     {
-      "name": "default",
-      "file":  "/app/contexts/default/css/default.css",
+      "name": "media-queries",
+      "file":  "/app/contexts/default/css/media-queries.css",
       "active": 1
     }
   ],
@@ -21,9 +21,6 @@
       "file": "/app/contexts/default/templates/page/footer.php"
     },
     "default": {
-      "file": "/app/contexts/default/templates/default.php"
-    },
-    "page": {
       "file": "/app/contexts/default/templates/default.php"
     },
     "fullpage": {

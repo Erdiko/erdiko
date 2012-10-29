@@ -25,7 +25,7 @@ function isMobile() {
   return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 }
 if(isMobile()): ?>
-<link href="/erdiko/theme/default/css/media-queries.css" rel="stylesheet" type="text/css">
+<link href="/app/contexts/default/css/media-queries.css" rel="stylesheet" type="text/css">
 <?php endif ?>
 
 <!--[if lt IE 9]>
@@ -37,11 +37,11 @@ if(isMobile()): ?>
 <body>
 
 <div id="pagewrap">
-    <?php echo $data->getHeader(); ?>
-
+  <?php echo $data->getHeader(); ?>
+  <div class="content-main">
     <?php echo $this->getLayout(); ?>
-
-    <?php echo $data->getFooter(); ?>
+  </div>
+  <?php echo $data->getFooter(); ?>
 </div>
 
 <?php
