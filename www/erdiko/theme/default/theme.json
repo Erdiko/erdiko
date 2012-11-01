@@ -3,18 +3,14 @@
   "namespace": "\erdiko\theme\default",
   "path": "/erdiko/theme/default",
   "columns": 1,
-  "css": [ 
-    {
-      "name": "reset",
-      "file":  "/erdiko/theme/default/css/reset.css",
-      "active": 1
-    },
-    {
+  "css": [],
+  "css-named": {
+    "default": {
       "name": "default",
       "file":  "/erdiko/theme/default/css/default.css",
       "active": 1
     }
-  ],
+  },
   "js": [
     {
       "name": "jquery",

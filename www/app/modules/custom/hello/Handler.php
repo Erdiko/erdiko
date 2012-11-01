@@ -67,7 +67,7 @@ class Handler extends \erdiko\core\Handler
 	{
 		/*
 		This is an alternate way to add page content data
-		You can load a view directly into the content.  
+		You can load a view directly into the content.
 		This is not the preferred way to add content.
 		Use the setView() method when possible.
 		*/

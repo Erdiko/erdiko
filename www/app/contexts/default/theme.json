@@ -6,6 +6,11 @@
   "columns": 1,
   "css": [
     {
+      "name": "default",
+      "file":  "/app/contexts/default/css/default.css",
+      "active": 1
+    },
+    {
       "name": "media-queries",
       "file":  "/app/contexts/default/css/media-queries.css",
       "active": 1
