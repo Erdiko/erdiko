@@ -1,20 +1,16 @@
 <?php
-// move this array to a json config and load dynamicly...
+// @todo read menu from contexts/menu.json
 // $topNav = Erdiko::getMenu('primary_nav'); // for example
 $topNav = array(
-  array("href" => "/", "nav_title" => "home"),
-  array("href" => "/markup", "nav_title" => "Example Mark-Up"),
-  array("href" => "/onecolumn", "nav_title" => "1 Column Layout"),
-  array("href" => "/twocolumn", "nav_title" => "2 Column Layout"),
-  array("href" => "/threecolumn", "nav_title" => "3 Column Layout"),
-  array("href" => "/about", "nav_title" => "About Us"),
+  array("link" => "/", "title" => "home"),
+  array("link" => "/markup", "title" => "Example Mark-Up"),
+  array("link" => "/onecolumn", "title" => "1 Column Layout"),
+  array("link" => "/twocolumn", "title" => "2 Column Layout"),
+  array("link" => "/threecolumn", "title" => "3 Column Layout"),
+  array("link" => "/about", "title" => "About Us"),
 );
 
-error_log("this: ".print_r($this, true));
-
 $header = $this->getHeaderData();
-
-error_log("data header: ".print_r($header['site_name'], true));
 ?>
 <header id="header">
   <div class="header">
@@ -28,7 +24,7 @@ error_log("data header: ".print_r($header['site_name'], true));
         if($topNav){
         foreach ($topNav as $node): ?>
         <li>
-          <a href="<?php echo  $topNav[$i]["href"]; ?>"><?php echo  $topNav[$i]["nav_title"]; ?></a>
+          <a href="<?php echo  $topNav[$i]["link"]; ?>"><?php echo  $topNav[$i]["title"]; ?></a>
         </li>
         <?php $i++; ?>
       <?php
