@@ -1,19 +1,23 @@
 {
+	"site_info": {
+		"email": ""
+	},
 	"theme": {
 		"name": "default",
 		"namespace": "\app\contexts\default",
 		"path": "/app/contexts/default",
-		"config": "/app/contexts/default/theme.json"
+		"config": "/app/contexts/default/theme.json",
+		"404": ""
 	},
 	"layout" : {
 		"layout": {
 			"columns": 1
 		},
-		"title": "Erdiko Framework",
+		"title": "Erdiko Title",
 		"header": {
 			"content": "",
 			"tagline": "",
-			"site_name": "Erdiko Framework"
+			"site_name": "Erdiko Example"
 		},
 		"footer": {
 			"content": "",

@@ -3,31 +3,38 @@
  * Drupal model
  * Base model every drupal model should inherit
  * 
+ * @category   Erdiko
+ * @package    Modules
+ * @copyright  Copyright (c) 2012, Arroyo Labs, http://www.arroyolabs.com
  * @author	John Arroyo, john@arroyolabs.com
  */
-namespace app\modules\contrib\drupal;
+namespace erdiko\modules\drupal;
 include_once __DIR__."/bootstrap.php";
 
 use \Erdiko;
 
-class Model 
+class Model extends \erdiko\core\ModelAbstract
 {	
 	/**
 	 * Get node by nid or url key
+	 * @param mixed $node, options of $nid or $urlKey
 	 */
-	public function getNode($nid)
+	public function getNode($node)
 	{
 		// return \node_view(\node_load($nid), 'teaser');
 		// return \entity_load('node', array($nid));
-		
-		if(is_numeric($nid))
-			$node = \node_load($nid);
+
+		if(is_numeric($node))
+			$nid = $node;
 		else
 		{
-			$normal_path = \drupal_get_normal_path($nid);
+			$normal_path = \drupal_get_normal_path($node);
 			$nid = str_ireplace("node/",'',$normal_path);
-			$node = \node_load($nid);
 		}
+
+		$node = \node_load($nid);
+		// error_log("nid: $nid");
+		// error_log("node: ".print_r($node, true));
 		
 		return $node;
 	}
@@ -64,6 +71,9 @@ class Model
 		// return \views_get_view($viewName);
 	}	
 	
+	/**
+	 * 
+	 */
 	public function getArrayFromNodeQueue($data)
 	{
 		// get the pertinent info from the NodeQueue object
@@ -72,6 +82,9 @@ class Model
 		return $formated;
 	}
 	
+	/**
+	 * 
+	 */
 	function getPathAlias($nid)
 	{
 	    $alias = $nid;
@@ -81,14 +94,19 @@ class Model
 	    return $alias;
 	}
 	
+	/**
+	 * 
+	 */
 	public function getView($name)
 	{
 		
 	}
 	
+	/**
+	 * 
+	 */
 	public function getCategory($tid)
 	{
 		
 	}
 }
-?>

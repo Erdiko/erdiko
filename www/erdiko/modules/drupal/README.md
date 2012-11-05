@@ -1,5 +1,5 @@
-README
-======
+Drupal Module
+=============
 To leverage Drupal using Erdiko add your Drupal code at the same level as Erdiko.  For instance look at the heirarchy below
 
 
@@ -7,5 +7,5 @@ To leverage Drupal using Erdiko add your Drupal code at the same level as Erdiko
 	/drupal (Drupal root)
 	/www (Erdiko root)
 
-In your custom module where you want to use Drupal, simply inherit from the \app\modules\contrib\drupal\Model class.
-
+In your custom Model where you want to leverage Drupal, 
+simply have your Model inherit from the \erdiko\modules\drupal\Model class.

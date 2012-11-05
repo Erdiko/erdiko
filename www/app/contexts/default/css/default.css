@@ -568,3 +568,58 @@ footer {
 ----------------------------------------------- */
 /*  =Colors
 ----------------------------------------------- */
+/*  =Links
+----------------------------------------------- */
+/*  =body
+----------------------------------------------- */
+a {
+  color: #f16522;
+  text-decoration: none;
+}
+a:hover {
+  color: #bb440c;
+  text-decoration: underline;
+}
+/*  =Header
+----------------------------------------------- */
+.header {
+  height: 43px;
+}
+.header hgroup,
+.header nav {
+  float: left;
+}
+.header nav {
+  margin-left: 75px;
+}
+.header .front-signin {
+  float: right;
+}
+.header nav,
+.header .front-signin {
+  margin-top: 13px;
+}
+/*  =Footer
+----------------------------------------------- */
+.footer .unstyled {
+  margin: 0 auto 9px;
+  overflow: hidden;
+  width: 600px;
+}
+.copyright {
+  text-align: center;
+}
+.header nav li,
+.footer .unstyled li {
+  border-left: 1px solid #999999;
+  float: left;
+  line-height: 0.9;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.header nav li:first-child,
+.footer .unstyled li:first-child {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+}

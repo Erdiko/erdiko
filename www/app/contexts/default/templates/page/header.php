@@ -9,11 +9,17 @@ $topNav = array(
   array("href" => "/threecolumn", "nav_title" => "3 Column Layout"),
   array("href" => "/about", "nav_title" => "About Us"),
 );
+
+error_log("this: ".print_r($this, true));
+
+$header = $this->getHeaderData();
+
+error_log("data header: ".print_r($header['site_name'], true));
 ?>
 <header id="header">
   <div class="header">
     <hgroup>
-      Website Name
+      <h2 class="logo"><a href="/"><?php echo $header['site_name']; ?></a></h2>
     </hgroup>
     <nav>
       <ul id="main-nav" class="clearfix unstyled">

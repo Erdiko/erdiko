@@ -100,6 +100,11 @@ class ThemeEngine extends Module implements Theme
 	{
 		return $this->_data['title'];
 	}
+
+	public function getHeaderData()
+	{
+		return $this->_data['header'];
+	}
 	
 	public function getPageTitle()
 	{		
