@@ -33,4 +33,4 @@ require_once $core.'/modules/theme/Handler.php';
 // App Handlers
 // require_once $app.'/modules/custom/cms/Handler.php';
 // require_once $app.'/modules/custom/cms/models/Cms.php';
-require_once $app.'/modules/custom/hello/Handler.php';
+require_once $app.'/modules/local/hello/Handler.php';

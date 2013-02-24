@@ -7,6 +7,11 @@ or
 
 The Enterprise Mash-Up Framework
 
+Semver
+------
+
+0.5.1
+
 Goal
 ----
 
@@ -19,6 +24,15 @@ Team
 
 John Arroyo - Architect, Lead Back-End / Integration engineer
 
-Dave LaFlam - Lead Front-End / Theming Engineer
-
 * If you want to help, please do, we'd love more code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
+
+Special Thanks
+--------------
+
+Dave LaFlam - Initial Lead Front-End Engineer
+
+Arroyo Labs - For sponsoring development, http://arroyolabs.com
+
+less - dynamic stylesheet language, http://lesscss.org
+
+Toro - PHP router (micro framework), http://toroweb.org

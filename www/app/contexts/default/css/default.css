@@ -208,7 +208,7 @@ img {
   clear: both;
 }
 .hide-text {
-  font: a;
+  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -598,6 +598,12 @@ a:hover {
 .header nav,
 .header .front-signin {
   margin-top: 13px;
+}
+/* =Content
+----------------------------------------------- */
+.content-main {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /*  =Footer
 ----------------------------------------------- */
