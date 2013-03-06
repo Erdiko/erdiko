@@ -80,7 +80,7 @@ class ThemeEngine extends Module implements Theme
 	public function getHeader($name = "")
 	{	
 		$filename = $this->_webroot.$this->_themeConfig['templates']['header']['file'];
-		$html = $this->getTemplateFile($filename, $this->_siteConfig);
+		$html = $this->getTemplateFile($filename, $this->getLocalConfig());
 		
 		return $html;
 	}
@@ -89,7 +89,7 @@ class ThemeEngine extends Module implements Theme
 	{
 		// return $this->_data['footer'];
 		$filename = $this->_webroot.$this->_themeConfig['templates']['footer']['file'];
-		$html = $this->getTemplateFile($filename, $this->_data['footer']);
+		$html = $this->getTemplateFile($filename, $this->getLocalConfig());
 		
 		return $html;
 	}
