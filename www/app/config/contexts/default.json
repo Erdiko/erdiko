@@ -1,7 +1,7 @@
 {
 	"site" : {
 		"title": "Erdiko",
-		"site_name": "Erdiko",
+		"full_name": "Erdiko Framework",
 		"tagline": "The Mashup Framework"
 	},
 	"theme": {
@@ -20,18 +20,30 @@
 			"site_name": "Erdiko",
 			"tagline": "The Mashup Framework",
 			"content": ""
-		},
-		"footer": {
-			"content": "",
-			"links": [ { 
-					"link": "/",
-					"title": "Home"
-				}, 
-				{ 
-					"link": "https://github.com/arroyo/Erdiko",
-					"title": "Erdiko"
-				}
-			]
 		}
+	},
+	"menu": {
+		"main": [ {
+			"href": "/markup",
+			"title": "Example Mark-Up"
+			}, {
+			"href": "/onecolumn",
+			"title": "1 Column Layout"
+			}, {
+			"href": "/twocolumn",
+			"title": "2 Column Layout"
+			}, {
+			"href": "/threecolumn",
+			"title": "3 Column Layout"
+			}
+		],
+		"footer": [ {
+			"href": "/",
+			"title": "home"
+			}, {
+			"href": "/about",
+			"title": "about"
+			}
+		]
 	}
 }

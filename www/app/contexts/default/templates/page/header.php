@@ -1,26 +1,17 @@
-<?php
-// @todo read menu from contexts/menu.json
-// $topNav = Erdiko::getMenu('primary_nav'); // for example
-$topNav = array(
-  array("href" => "/markup", "title" => "Example Mark-Up"),
-  array("href" => "/onecolumn", "title" => "1 Column Layout"),
-  array("href" => "/twocolumn", "title" => "2 Column Layout"),
-  array("href" => "/threecolumn", "title" => "3 Column Layout"),
-);
-?>
+<?php $menu = $data['menu']['main']; ?>
 <header id="header">
   <div class="header">
     <hgroup>
-      <h1 class="logo"><a href="/"><?php echo $data['site']['site_name']; ?></a></h1>
+      <h1 class="logo"><a href="/"><?php echo $data['site']['title']; ?></a></h1>
     </hgroup>
     <nav>
       <ul id="main-nav" class="clearfix unstyled">
       <?php $i = 0 ?>
         <?php
-        if($topNav){
-        foreach ($topNav as $node): ?>
+        if($menu){
+        foreach ($menu as $item): ?>
         <li>
-          <a href="<?php echo  $topNav[$i]["href"]; ?>"><?php echo  $topNav[$i]["title"]; ?></a>
+          <a href="<?php echo  $item["href"]; ?>"><?php echo  $item["title"]; ?></a>
         </li>
         <?php $i++; ?>
       <?php

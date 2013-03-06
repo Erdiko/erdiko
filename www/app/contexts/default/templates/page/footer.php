@@ -1,19 +1,14 @@
-<?php
-$footerNav = array(
-  array("href" => "/", "title" => "home"),
-  array("href" => "/about", "title" => "About Us"),
-);
-?>
+<?php $menu = $data['menu']['footer']; ?>
 
 <footer id="footer">
   <div class="footer">
     <ul class="unstyled">
       <?php $i = 0 ?>
         <?php
-        if($footerNav){
-        foreach ($footerNav as $node): ?>
+        if($menu){
+        foreach ($menu as $item): ?>
         <li>
-          <a href="<?php echo  $footerNav[$i]["href"]; ?>"><?php echo  $footerNav[$i]["title"]; ?></a>
+          <a href="<?php echo  $item["href"]; ?>"><?php echo  $item["title"]; ?></a>
         </li>
         <?php $i++; ?>
       <?php
@@ -21,6 +16,6 @@ $footerNav = array(
         }
       ?>
     </ul>
-    <p class="copyright clearfix">Copyright &copy; <?php echo date('Y', time());?> All rights reserved. <a href="/">Site Name</a></p>
+    <p class="copyright clearfix">Copyright &copy; <?php echo date('Y', time());?> All rights reserved. <a href="/"><?php echo $data['site']['full_name']; ?></a></p>
   </div>
 </footer>
