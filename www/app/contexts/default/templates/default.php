@@ -12,7 +12,13 @@
 		echo '<meta name="'.$name.'" content="'.$content.'" >';
 ?>
 
-<title><?php echo $data->getPageTitle(); ?> - <?php echo $data->getTitle(); ?></title>
+<?php
+  // Determine page title
+  $title = $data->getTitle();
+  if( $data->getPageTitle() )
+    $title = $data->getPageTitle()." - ".$title;
+?>
+<title><?php echo $title ?></title>
 
 <?php
   // Spit out CSS

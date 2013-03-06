@@ -9,7 +9,7 @@
  * @author	John Arroyo, john@arroyolabs.com
  */
 namespace erdiko\modules\drupal;
-include_once __DIR__."/bootstrap.php";
+require_once __DIR__."/bootstrap.php";
 
 use \Erdiko;
 
@@ -60,10 +60,10 @@ class Model extends \erdiko\core\ModelAbstract
 		foreach($view as $node)
 		{
 			$nodes[] = $this->getNode($node->nid);
-			error_log('node: '.print_r($node->nid, true));
+			// error_log('node: '.print_r($node->nid, true));
 		}
 		
-		print_r($nodes);
+		// print_r($nodes);
 		
 		return $nodes;
 		

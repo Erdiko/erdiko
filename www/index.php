@@ -13,6 +13,9 @@ include_once __DIR__."/erdiko/bootstrap.php";
 
 $routes = Erdiko::getRoutes();
 
-$site = new \ToroApplication( $routes );
-
-$site->serve();
+try {
+	$site = new \ToroApplication( $routes );
+	$site->serve();
+} catch(\Exception $e) {
+	echo $e->getMessage();
+}

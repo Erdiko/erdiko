@@ -9,13 +9,11 @@ $topNav = array(
   array("link" => "/threecolumn", "title" => "3 Column Layout"),
   array("link" => "/about", "title" => "About Us"),
 );
-
-$header = $this->getHeaderData();
 ?>
 <header id="header">
   <div class="header">
     <hgroup>
-      <h2 class="logo"><a href="/"><?php echo $header['site_name']; ?></a></h2>
+      <h1 class="logo"><a href="/"><?php echo $data['site']['site_name']; ?></a></h1>
     </hgroup>
     <nav>
       <ul id="main-nav" class="clearfix unstyled">

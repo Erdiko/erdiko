@@ -1,5 +1,10 @@
 Active config files
 ===================
 application.json
-	* Defines theme settings
 
+Theme config files
+===================
+Themes are corganized into contexts
+
+contexts/default.json
+	* Defines settings for default theme

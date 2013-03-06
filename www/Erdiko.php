@@ -29,7 +29,7 @@ class Erdiko
 	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/theme/default', $extras = null)
 	{
 		// get Theme
-		$themeEngine = new \erdiko\modules\theme\ThemeEngine();
+		$themeEngine = new \erdiko\modules\theme\ThemeEngine;
 		$themeEngine->loadTheme($name, $namespace, $path, $extras);
 		
 		return $themeEngine;
@@ -52,6 +52,27 @@ class Erdiko
 		}
 		return false;
 	}
+
+	/**
+	 * Load a view from the current theme with the given data
+	 * 
+	 * @param string $file
+	 * @param array $data
+	 * 
+	 * @todo deprecate this function -John 
+	 * @todo render views with the theme engine instead
+	 * @note this based off of the core handler function of the same name
+	 */
+	public static function getView($data = null, $file = null)
+	{
+		// $this->_data['layout']['columns']
+		$webroot = WEBROOT;
+		$config = Erdiko::getConfigFile($webroot."/app/config/contexts/"."default".".json");
+		$localConfig['theme'] = $config['theme'];
+
+		$filename = $webroot.$localConfig['theme']['path'].'/views/'.$file;
+		return  Erdiko::getTemplate($filename, $data);
+	}
 	
 	/**
 	 * Read JSON config file and return array
@@ -62,9 +83,6 @@ class Erdiko
 	{
 		$data = str_replace("\\", "\\\\", file_get_contents($file));
 		$json = json_decode($data, TRUE);
-		
-		// error_log("$file raw: ".print_r($data, TRUE));
-		// error_log("$file array: ".print_r($json, TRUE));
 		
 		return $json;
 	}
@@ -85,7 +103,7 @@ class Erdiko
 	 */
 	public static function getRoutes()
 	{
-		$file = __DIR__.'/app/config/contexts/application.json';
+		$file = __DIR__.'/app/config/application.json';
 		$applicationConfig = Erdiko::getConfigFile($file);
 		
 		return $applicationConfig['routes'];
@@ -101,6 +119,48 @@ class Erdiko
 			"X-Mailer: PHP/" . phpversion();
 		
 		return mail($toEmail, $subject, $body, $headers);
+	}
+
+	/**
+	 * getModel
+	 * Currently only works with zend models
+	 * Model Factory (eventually turn it into a factory and/or leverage singletons)
+	 * @usage Erdiko::getModel('Product_Service');
+	 * @param string $modelName, with no preceeding backslash
+	 * @return 
+	 * @todo throw exception if load fails
+	 */
+	public static function getModel($modelName)
+	{
+		$class = "\\$modelName";
+		return new $class;
+	}
+
+	/**
+	 * getService
+	 * Service Factory (eventually turn it into a factory and/or leverage singletons)
+	 * @usage Erdiko::getService('product'); // first character does not have to be uppercase
+	 * @return 
+	 * @todo throw exception if load fails
+	 */
+	public static function getService($service)
+	{
+		$class = "\\".ucfirst($service)."_Service";
+		return new $class;
+	}
+	
+	/**
+	 * getTable
+	 * Service Factory (eventually turn it into a factory and/or leverage singletons)
+	 * @usage Erdiko::getTable('product'); // first character does not have to be uppercase
+	 * @usage Erdiko::getTable('Product_Index');
+	 * @return 
+	 * @todo throw exception if load fails?
+	 */
+	public static function getTable($table)
+	{
+		$class = "\\".ucfirst($table)."_Table";
+		return new $class;
 	}
 	
 }

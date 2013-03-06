@@ -1,5 +1,5 @@
 <?php 
-  if(isset($data['content']))
+  if(isset($data['title']))
     echo "<h1>".$data['title']."</h1>\n"; 
 ?>
 

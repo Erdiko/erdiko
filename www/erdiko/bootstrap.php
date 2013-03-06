@@ -1,17 +1,17 @@
 <?php
-$base = dirname(dirname(__DIR__));
-$webroot = dirname(__DIR__);
-$core = $webroot.'/erdiko';
-$app = $webroot.'/app';
+ini_set('display_errors', '1');
+define('WEBROOT', dirname(__DIR__));
+define('ZEND', false); // is zend included or not
+
+$core = WEBROOT.'/erdiko';
+$app = WEBROOT.'/app';
+$vendor = dirname(dirname(__DIR__))."/vendor";
 
 // Static functions / Factories
-require_once $webroot.'/Erdiko.php';
+require_once WEBROOT.'/Erdiko.php';
 
 // Libraries
 require_once $core.'/libraries/ToroPHP/toro.php';
-
-// Autoloader
-require_once $core.'/core/autoload.php';
 
 // Interfaces
 require_once $core.'/core/interfaces/Theme.php';
@@ -21,16 +21,20 @@ require_once $core.'/core/interfaces/Session.php';
 require_once $core.'/core/Handler.php';
 require_once $core.'/core/Module.php';
 require_once $core.'/core/ModelAbstract.php';
-require_once $core.'/core/datasource/MySql.php';
 
-// Modules
+// Core Modules
 require_once $core.'/modules/theme/ThemeEngine.php';
 require_once $core.'/modules/theme/Handler.php';
 // require_once $core.'/modules/drupal/Model.php';
 
-// @todo get the autoloader working!
+// Helpers
+require_once $core.'/core/Helper.php';
 
-// App Handlers
-// require_once $app.'/modules/custom/cms/Handler.php';
-// require_once $app.'/modules/custom/cms/models/Cms.php';
-require_once $app.'/modules/local/hello/Handler.php';
+// Autoloader(s)
+require_once $core.'/core/autoload.php';
+if(ZEND)
+	require_once $core.'/core/datasource/ZendDbSetup.php';
+require_once $core.'/core/session.php';
+
+// load the user defined bootstrapper
+require_once $app.'/appstrap.php';

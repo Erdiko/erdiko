@@ -7,7 +7,7 @@
  * @copyright	Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
  * @author 		John Arroyo, john@arroyolabs.com
  */
-namespace app\modules\custom\hello;
+namespace app\modules\local\hello;
 
 use Erdiko;
 
@@ -38,11 +38,12 @@ class Handler extends \erdiko\core\Handler
 
 	public function aboutAction($arguments = null)
 	{
-		$this->setBodyTitle('About Us');
+		error_log("about");
+
+		$this->setTitle('About Us');
 		$this->setBodyContent('Erdiko Framework.  <a href="https://github.com/arroyo/Erdiko">https://github.com/arroyo/Erdiko</a>');
 
-		// Add page title
-		$this->setPageTitle('About Us');
+		$this->setLayoutColumns(1);
 	}
 
 	public function onecolumnAction($arguments = null)

@@ -1,28 +1,36 @@
 <?php
 /**
  * Register framework autoload function
- * @category   Erdiko
- * @package    Core
- * @copyright  Copyright (c) 2012, Arroyo Labs, http://www.arroyolabs.com
- * @author	John Arroyo, john@arroyolabs.com
+ * @category 	Erdiko
+ * @package 	Core
+ * @copyright 	Copyright (c) 2012, Arroyo Labs, http://www.arroyolabs.com
+ * @author		John Arroyo, john@arroyolabs.com
  */
 
-spl_autoload_register(function($name) {
-	static $dirCache = array();
+ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . "{$vendor}" . PATH_SEPARATOR . "{$app}/common/models" . PATH_SEPARATOR . "{$core}/core");
 
-	// error_log("autoload this.");
-	// error_log("name: ".$name);
-
-	if(strpos($name,'\\') !== false)
+/*
+spl_autoload_register(function($name, $name) 
+{
+	if(strpos($name, '\\') !== false)
 	{
 		$path = str_replace('\\','/',$name);
 		$class = basename($path);
-		$dir = $webroot.'/'.dirname($path);
+		$dir = '/'.dirname($path);
+		$filename = WEBROOT.$dir.'/'.$class.'.php';
+		// error_log("file: $filename");
 
-		if(is_file($dir.'/'.$class.'.php'))
+		if(is_file($filename))
 		{
-			require_once $dir.'/'.$class.'.php';
+			require_once $filename;
 			return;
 		}
 	}
 });
+*/
+
+if(ZEND)
+{
+	require_once("Zend/Loader.php");
+	spl_autoload_register(array("Zend_Loader", "loadClass"));	
+}

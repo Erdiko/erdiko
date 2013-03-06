@@ -1,0 +1,37 @@
+{
+	"site" : {
+		"title": "Erdiko",
+		"site_name": "Erdiko",
+		"tagline": "The Mashup Framework"
+	},
+	"theme": {
+		"name": "default",
+		"namespace": "\app\contexts\default",
+		"path": "/app/contexts/default",
+		"config": "/app/contexts/default/theme.json"
+	},
+	"layout" : {
+		"layout": {
+			"columns": 1
+		},
+		"title": "Erdiko",
+		"site_name": "Erdiko",
+		"header": {
+			"site_name": "Erdiko",
+			"tagline": "The Mashup Framework",
+			"content": ""
+		},
+		"footer": {
+			"content": "",
+			"links": [ { 
+					"link": "/",
+					"title": "Home"
+				}, 
+				{ 
+					"link": "https://github.com/arroyo/Erdiko",
+					"title": "Erdiko"
+				}
+			]
+		}
+	}
+}

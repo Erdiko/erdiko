@@ -2,7 +2,7 @@
   "name": "default",
   "namespace": "\app\contexts\default",
   "path": "/app/contexts/default",
-  "parent": "/erdiko/theme/default/theme.json",
+  "parent": "/erdiko/contexts/default/theme.json",
   "columns": 1,
   "css": [
     {
@@ -19,14 +19,15 @@
   "js": [
   ],
   "templates": {
+    "default": {
+      "file": "/app/contexts/default/templates/default.php",
+      "path": "/app/contexts/default/templates/"
+    },
     "header": {
       "file": "/app/contexts/default/templates/page/header.php"
     },
     "footer": {
       "file": "/app/contexts/default/templates/page/footer.php"
-    },
-    "default": {
-      "file": "/app/contexts/default/templates/default.php"
     },
     "fullpage": {
       "file": "/app/contexts/default/templates/fullpage.php"
@@ -44,6 +45,12 @@
     },
     "3": {
       "file": "/app/contexts/default/templates/layouts/3column.php"
+    }
+  },
+  "views": {
+    "default": {
+      "file": "/app/contexts/default/views/default.php",
+      "path": "/app/contexts/default/views/default.php"
     }
   }
 }

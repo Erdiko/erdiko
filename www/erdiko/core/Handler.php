@@ -18,16 +18,18 @@ class Handler extends \ToroHandler
 	protected $_themeExtras;
 	protected $_pageData;
 	protected $_numberColumns;
+	protected $_template = null;
 	
 	public function __construct()
 	{
-		$this->_webroot = dirname(dirname(__DIR__));
-		$file = $this->_webroot.'/app/config/contexts/application.json';
+		$this->_webroot = WEBROOT;
+		$file = $this->_webroot.'/app/config/contexts/default.json';
 		$this->_localConfig = Erdiko::getConfigFile($file);
 		
 		$this->_themeExtras = array(
 			'js' => array(), 
 			'css' => array(), 
+			'phpToJs' => array(),
 			'meta' => array(),
 			'title' => "",
 			);
@@ -37,7 +39,18 @@ class Handler extends \ToroHandler
 			'view' => array('page' => null), 
 			'sidebar' => array(),
 			);
+
+        // Add an init hook for derrived controllers
+        $this->init();
 	}
+
+    /**
+     * This is just an init hook to be implemented in derived classes if needed
+     */
+    public function init()
+    {
+
+    }
 
 	/**
 	 * Add page title text to current page
@@ -45,6 +58,16 @@ class Handler extends \ToroHandler
 	public function setPageTitle($title)
 	{
 		$this->_themeExtras['title'] = $title;
+	}
+
+	/**
+	 * Set both the page title and body title at the same time
+	 * @param string $title
+	 */
+	public function setTitle($title)
+	{
+		$this->setBodyTitle($title);
+		$this->setPageTitle($title);
 	}
 
 	/**
@@ -63,6 +86,26 @@ class Handler extends \ToroHandler
 	{
 		$this->_themeExtras['css'][] = array('file' => $file);
 	}
+
+    /**
+     * Add phpToJs variable to be set on the current page
+     */
+    public function addPhpToJs($key, $value)
+    {
+        if(is_bool($value)) {
+            $value = $value ? "true" : "false";
+        }elseif(is_string($value)) {
+            $value = "\"$value\"";
+        }elseif(is_array($value)) {
+            $value = json_encode($value);
+        }elseif(is_object($value) && method_exists($value, "toArray")) {
+            $value = json_encode($value->toArray());
+        }else{
+            throw new \Exception("Can not translate a parameter from PHP to JS\n".print_r($value,true));
+        }
+
+        $this->_themeExtras['phpToJs'][$key] = $value;
+    }
 	
 	/**
 	 * Add Meta Tags to the page
@@ -83,18 +126,25 @@ class Handler extends \ToroHandler
 	 */
 	public function theme($data)
 	{	
+		// error_log("theme: ".print_r($this->_localConfig, true));
 		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path'], $this->_themeExtras);
+		$theme->setLocalConfig($this->_localConfig);
 		
 		// If no data is given load the view
 		if(!isset($data['main_content']))
 		{
 			// render the page
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
+
+			error_log("view/page: ".$this->_pageData['view']['page']);
+			error_log("data: ".$this->_pageData['data']);
+			error_log("theme:main_data: ".$data['main_content']);
 		}
 
 		// Alter layout if needed
 		if($this->_numberColumns)
 			$theme->setNumCloumns($this->_numberColumns);
+		$theme->setTemplate( $this->getTemplate() );
 
 		// Deal with sidebars for multi-column layouts
 		if(!empty($this->_pageData['sidebar']))
@@ -109,7 +159,7 @@ class Handler extends \ToroHandler
 	 */
 	public function parseArguments($arguments)
 	{
-		$arguments = explode("/", $arguments); 
+		$arguments = explode("/", $arguments);
 		return $arguments;
 	}
 	
@@ -128,6 +178,20 @@ class Handler extends \ToroHandler
 	{
 		return $this->route($name, $arguments);
 	}
+
+	/**
+	 * @param array $intArray
+	 * @return array $keyArray
+	 */
+	public function compileNameValue($intArray)
+	{
+		$keyArray = array();
+		for($i = 0; $i < count($intArray); $i += 2)
+		{
+			$keyArray[$intArray[$i]] = $intArray[$i+1];
+		}
+		return $keyArray;
+	}
 	
 	/**
 	 * Primary request router
@@ -137,7 +201,34 @@ class Handler extends \ToroHandler
 	 */
 	public function route($name, $arguments)
 	{
+		// Prepare arguments and name
 		$arguments = $this->parseArguments($arguments);
+		$splitName = $this->parseArguments($name);
+		$ct = count($splitName);
+		if($arguments == null)
+			$arguments = array('raw_url_key' => $name);
+		else
+			$arguments = array_merge(array('raw_url_key' => $name), $arguments);
+
+		// Check name for rest url components
+		// @todo check for first arg after action name is an int, if so insert it as array("id" => [int])
+		switch($ct) {
+			case 0:
+				$name = "index";
+				break;
+			case 1:
+				$name = $splitName[0];
+				break;
+			default:
+				$name = $splitName[0];
+				$len = $ct-1;
+				if( ($len % 2) > 0 )
+					$nameArgs = array_slice($splitName, 1, $len);
+				else
+					$nameArgs = $this->compileNameValue(array_slice($splitName, 1, $len));
+				$arguments = array_merge($nameArgs, $arguments);
+				break;
+		}
 		
 		// Get the theme config defined in local.inc
 		// $file = $this->_webroot.$this->_localConfig['theme']['config'];
@@ -155,7 +246,7 @@ class Handler extends \ToroHandler
 		{
 			try 
 			{
-				$action = $name.'Action';
+                $action = $this->urlToActionName($name);
 				$this->$action($arguments); // run the action method of the handler/controller
 			}
 			catch(\Exception $e)
@@ -166,7 +257,7 @@ class Handler extends \ToroHandler
 		
 		$this->theme($data);
 	}
-	
+
 	/**
 	 * Load a view from the current theme with the given data
 	 * 
@@ -174,6 +265,7 @@ class Handler extends \ToroHandler
 	 * @param array $data
 	 * 
 	 * @todo deprecate this function -John 
+	 * @todo render views with the theme engine instead
 	 */
 	public function getView($data = null, $file = null)
 	{
@@ -181,6 +273,18 @@ class Handler extends \ToroHandler
 
 		$filename = $this->_webroot.$this->_localConfig['theme']['path'].'/views/'.$file;
 		return  Erdiko::getTemplate($filename, $data);
+	}
+
+	/**
+	 * Override existing context with the supplied context
+	 * @param string $contextName
+	 * @param string $configDir, folder where the config lives (default: /app/config/contexts/)
+	 */
+	public function setContext($contextName, $configDir = "/app/config/contexts/")
+	{
+		$config = Erdiko::getConfigFile($this->_webroot.$configDir.$contextName.".json");
+		$this->_localConfig['theme'] = $config['theme']; // swap out theme configs
+		// error_log("config: ".print_r($config, true));
 	}
 
 	/**
@@ -200,7 +304,27 @@ class Handler extends \ToroHandler
 	 */
 	public function setBodyContent($data)
 	{
+		error_log("setBody: $data");
 		$this->_pageData['data']['content'] = $data;
+	}
+
+    /**
+	 * Add a page content data to be themed in the view
+	 *
+	 * @param mixed $data
+     * @return $this: Provides chaining
+	 */
+	public function addContentData($key, $value)
+	{
+        if(empty($this->_pageData['data']['content'])) {
+            $this->_pageData['data']['content'] = array();
+        }
+        // If we have a scalar value setup then just return false(maybe throw an exception in future)
+        if(!is_array($this->_pageData['data']['content'])) {
+            return false;
+        }
+        $this->_pageData['data']['content'][$key] = $value;
+        return $this;
 	}
 
 	/**
@@ -229,6 +353,34 @@ class Handler extends \ToroHandler
 	}
 
 	/**
+	 * Set layout template
+	 */
+	public function setTemplate($name)
+	{
+		$this->_template = $name;
+	}
+
+	/**
+	 * Get template name
+	 * Returns null if not overriding the template/layout
+	 * @return string $name
+	 */
+	public function getTemplate()
+	{
+		return $this->_template;
+	}
+
+    /**
+     * Modify the action name coming from the URL into proper action name
+     * @param string $name: The raw action name
+     * @return string
+     */
+    public function urlToActionName($name){
+        // just turn dash-format into upperCamelCaseFormat
+        return preg_replace("/\-(.)/e", "strtoupper('\\1')", $name) . 'Action';
+    }
+
+	/**
 	 * Set the view template to be used
 	 *
 	 * @param string $name
@@ -240,5 +392,24 @@ class Handler extends \ToroHandler
 		$this->_pageData['sidebar'][$name]['content'] = $content;
 		if($view != null)
 			$this->_pageData['sidebar'][$name]['view'] = $view;
+	}
+
+	public function redirect($url)
+	{
+		header( "Location: $url" );
+		exit;
+	}
+
+	public function getExceptionHtml($message)
+	{
+		$formData = array(
+			'title' => $this->_textConfig['exception']['title'],
+			'sub_title' => $this->_textConfig['exception']['sub_title'],
+			'description' => $this->_textConfig['exception']['description'],
+			'message' => $message,
+		);
+		
+		$filename = __DIR__.'/views/form/exception.phtml';
+		return  Erdiko::getTemplate($filename, $formData);
 	}
 }

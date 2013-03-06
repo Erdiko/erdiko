@@ -26,10 +26,12 @@ class ThemeEngine extends Module implements Theme
 	protected $_webroot;
 	protected $_path;
 	protected $_themeConfig;
+	protected $_siteConfig;
 	protected $_extras;
 	protected $_domainName;
 	protected $_numColumns;
 	protected $_sidebars;
+	protected $_template = null;
 	
 	public function __construct()
 	{
@@ -65,6 +67,10 @@ class ThemeEngine extends Module implements Theme
 	{
 		return $this->_themeConfig['js'];
 	}
+	public function getPhpToJs()
+	{
+		return $this->_themeConfig['phpToJs'];
+	}
 	
 	public function getMeta()
 	{		
@@ -73,9 +79,8 @@ class ThemeEngine extends Module implements Theme
 	
 	public function getHeader($name = "")
 	{	
-		// return $this->_data['header'];
 		$filename = $this->_webroot.$this->_themeConfig['templates']['header']['file'];
-		$html = $this->getTemplateFile($filename, $this->_data['header']);
+		$html = $this->getTemplateFile($filename, $this->_siteConfig);
 		
 		return $html;
 	}
@@ -99,11 +104,6 @@ class ThemeEngine extends Module implements Theme
 	public function getTitle()
 	{
 		return $this->_data['title'];
-	}
-
-	public function getHeaderData()
-	{
-		return $this->_data['header'];
 	}
 	
 	public function getPageTitle()
@@ -146,11 +146,30 @@ class ThemeEngine extends Module implements Theme
 		$this->_numColumns = $cols; // @todo cast to int?
 	}
 
+	public function setTemplate($name)
+	{
+		$this->_template = $name;
+	}
+
+	protected function getTemplate()
+	{
+		if($this->_template == null)
+			$file = $this->_themeConfig['templates']['default']['file'];
+		else
+			$file = $this->_themeConfig['templates']['default']['path'].$this->_template.".php";
+		
+		return $file;
+	}
+
 	public function getLayout()
 	{
+		error_log("getLayout");
+
 		$filename = $this->_webroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
 		$html = $this->getTemplateFile($filename, $this);
-		// error_log($this->_numColumns." : $filename");
+
+		error_log("file: $filename");
+		error_log("html: $html");
 		
 		echo $html;
 	}
@@ -190,25 +209,25 @@ class ThemeEngine extends Module implements Theme
 	 */
 	public function loadTheme($name, $namespace, $path, $extras)
 	{	
-		$this->_webroot = dirname(dirname(dirname(__DIR__)));
+		$this->_webroot = WEBROOT;
 		$this->_themeName = $name;
 		$this->_path = $path;
 		$this->_namespace = $namespace;
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
 		$this->_extras = $extras;
-		
-		$this->_folder = $this->_webroot.$path;
-		$file = $this->_folder.'/theme.json';		
-		$this->_themeConfig = Erdiko::getConfigFile($file);
-		
+		$this->_folder = $this->_webroot.$this->_path;
+		$file = $this->_folder.'/theme.json';
+
+		$this->_themeConfig = Erdiko::getConfigFile($file);		
 		$this->_themeConfig['meta'] = $extras['meta']; // Add injected Meta
 		$this->_themeConfig['title'] = $extras['title']; // Add injected Page title
-		
+		$this->_themeConfig['phpToJs'] = $extras['phpToJs']; // Add phpToJs variables
+
 		// If a parent theme exists, merge the theme configs
 		if( isset($this->_themeConfig['parent']) )
 		{
 			$parentConfig = Erdiko::getConfigFile($this->_webroot.$this->_themeConfig['parent']);
-			
+
 			// CSS
 			$this->_themeConfig['css'] = $this->mergeCss($parentConfig['css'], $this->_themeConfig['css']);
 			unset($parentConfig['css']);
@@ -251,9 +270,8 @@ class ThemeEngine extends Module implements Theme
 	 *
 	 */
 	public function theme($data)
-	{		
-		// modify to allow overrides of template
-		$filename = $this->_webroot.$this->_themeConfig['templates']['default']['file'];	
+	{
+		$filename = $this->_webroot.$this->getTemplate();	
 		$this->setData($data);
 		$html = $this->getTemplateFile($filename, $this);
 		
@@ -271,12 +289,49 @@ class ThemeEngine extends Module implements Theme
 		else
 			$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
 
+		error_log("renderView:filename: $filename");
+
 		return $this->getTemplateFile($filename, $data);
 	}
 
+	/**
+	 * 
+	 */
 	public function setSidebars($data)
 	{
 		$this->_sidebars = $data;
+	}
+
+	/**
+	 * 
+	 */
+	public function getThemeConfig()
+	{
+		return $this->_themeConfig;
+	}
+
+	/**
+	 * 
+	 */
+	public function setLocalConfig($config)
+	{
+		$this->_siteConfig = $config;
+	}
+
+	/**
+	 * 
+	 */
+	public function getLocalConfig()
+	{
+		return $this->_siteConfig;
+	}
+
+	/**
+	 * 
+	 */
+	public function getData()
+	{
+		return $this->_data;
 	}
 
 }
