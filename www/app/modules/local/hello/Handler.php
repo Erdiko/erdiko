@@ -38,12 +38,8 @@ class Handler extends \erdiko\core\Handler
 
 	public function aboutAction($arguments = null)
 	{
-		error_log("about");
-
 		$this->setTitle('About Us');
 		$this->setBodyContent('Erdiko Framework.  <a href="https://github.com/arroyo/Erdiko">https://github.com/arroyo/Erdiko</a>');
-
-		$this->setLayoutColumns(1);
 	}
 
 	public function onecolumnAction($arguments = null)

@@ -126,7 +126,6 @@ class Handler extends \ToroHandler
 	 */
 	public function theme($data)
 	{	
-		// error_log("theme: ".print_r($this->_localConfig, true));
 		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path'], $this->_themeExtras);
 		$theme->setLocalConfig($this->_localConfig);
 		
@@ -135,10 +134,6 @@ class Handler extends \ToroHandler
 		{
 			// render the page
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
-
-			error_log("view/page: ".$this->_pageData['view']['page']);
-			error_log("data: ".$this->_pageData['data']);
-			error_log("theme:main_data: ".$data['main_content']);
 		}
 
 		// Alter layout if needed
@@ -304,7 +299,6 @@ class Handler extends \ToroHandler
 	 */
 	public function setBodyContent($data)
 	{
-		error_log("setBody: $data");
 		$this->_pageData['data']['content'] = $data;
 	}
 

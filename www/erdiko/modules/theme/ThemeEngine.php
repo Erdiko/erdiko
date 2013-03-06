@@ -163,13 +163,8 @@ class ThemeEngine extends Module implements Theme
 
 	public function getLayout()
 	{
-		error_log("getLayout");
-
 		$filename = $this->_webroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
 		$html = $this->getTemplateFile($filename, $this);
-
-		error_log("file: $filename");
-		error_log("html: $html");
 		
 		echo $html;
 	}
@@ -288,8 +283,6 @@ class ThemeEngine extends Module implements Theme
 			$filename = $this->_webroot.$this->_themeConfig['views']['default']['file'];
 		else
 			$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
-
-		error_log("renderView:filename: $filename");
 
 		return $this->getTemplateFile($filename, $data);
 	}
