@@ -1,9 +1,7 @@
 <?php
 $footerNav = array(
-  array("href" => "/", "nav_title" => "Contact Us"),
-  array("href" => "/about", "nav_title" => "About Us"),
-  array("href" => "/", "nav_title" => "Privacy Policy"),
-  array("href" => "/", "nav_title" => "FAQ"),
+  array("href" => "/", "title" => "home"),
+  array("href" => "/about", "title" => "About Us"),
 );
 ?>
 
@@ -15,7 +13,7 @@ $footerNav = array(
         if($footerNav){
         foreach ($footerNav as $node): ?>
         <li>
-          <a href="<?php echo  $footerNav[$i]["href"]; ?>"><?php echo  $footerNav[$i]["nav_title"]; ?></a>
+          <a href="<?php echo  $footerNav[$i]["href"]; ?>"><?php echo  $footerNav[$i]["title"]; ?></a>
         </li>
         <?php $i++; ?>
       <?php
