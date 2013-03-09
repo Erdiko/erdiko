@@ -1,6 +1,7 @@
 <?php
 /**
  * Hello World Handler
+ * This is an example of how you can use erdiko.  It includes some simple use cases.
  *
  * @category 	app
  * @package   	hello
@@ -23,17 +24,15 @@ class Handler extends \erdiko\core\Handler
 		// $this->addJs('/app/contexts/default/js/jquery.orbit.js');
 		// $this->addJs('/app/contexts/default/js/orbit.js');
 
+		// Add page title
+		$this->setTitle('Home');
+
 		// Add view data
-		$this->setBodyTitle('Hello World');
+		$this->setTitle('Hello World');
 		$this->setBodyContent("Welcome to Erdiko.");
-		// Set the view template
-		$this->setView('/home.php');
-		// $this->addBlock();
 
 		// Add meta tags
-		$this->addMeta('This is Erdiko\'s hello world.', 'description');
-		// Add page title
-		$this->setPageTitle('Home');
+		$this->addMeta('This is Erdiko\'s hello world.', 'description');	
 	}
 
 	public function aboutAction($arguments = null)
@@ -66,16 +65,19 @@ class Handler extends \erdiko\core\Handler
 	public function markupAction($arguments = null)
 	{
 		/*
-		This is an alternate way to add page content data
-		You can load a view directly into the content.
-		This is not the preferred way to add content.
-		Use the setView() method when possible.
+			This is an alternate way to add page content data
+			You can load a view directly into the content.
+			This is not the preferred way to add content.
+			Use the setView() method when possible.
 		*/
 		$this->setBodyTitle('Example Mark-Up');
-		$this->setBodyContent( $this->getView(null, 'pages/markup.php') );
+		$this->setBodyContent( $this->getView(null, 'hello/markup.php') );
 
 		// Add page title
-		$this->setPageTitle('Example CSS Mark-Up');
+		$this->setTitle('Example CSS Mark-Up');
+
+		// Debug
+		error_log("hello::markup");
 	}
 
 	public function twocolumnAction($arguments = null)
