@@ -1,8 +1,11 @@
 {
 	"master": {
-		"host": "127.0.0.1",
-		"user": "dbuser",
-		"pass": "dbpassword",
-		"schema": "dbname"
-		}
+		"adapter": "Mysqli",
+		"params": {
+            "host": "127.0.0.1",
+            "username": "root",
+            "password": "daroots",
+            "dbname": "erdiko"
+        }
+	}
 }

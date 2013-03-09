@@ -2,7 +2,12 @@
 	"site" : {
 		"title": "Erdiko",
 		"full_name": "Erdiko Framework",
-		"tagline": "The Mashup Framework"
+		"tagline": "The Mashup Framework",
+		"meta": [ { 
+			"name": "description",
+			"content": "Erdiko the PHP mashup framework"
+			}
+		]
 	},
 	"theme": {
 		"name": "default",
