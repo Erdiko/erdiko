@@ -1,0 +1,1 @@
+Galleria.loadTheme("/libraries/javascript/galleria/themes/classic/galleria.classic.js");Galleria.configure({imageCrop:"width",thumbCrop:!1,transition:"fade",transitionSpeed:950,imagePan:!0,lightbox:!0,lightboxFadeSpeed:200,lightboxTransitionSpeed:400,responsive:!0,swipe:!0,_toggleInfo:!1,autoplay:2250,height:566,showCounter:!1});Galleria.run("#galleria");

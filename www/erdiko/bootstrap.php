@@ -11,7 +11,7 @@ $vendor = dirname(dirname(__DIR__))."/vendor";
 require_once WEBROOT.'/Erdiko.php';
 
 // Libraries
-require_once $core.'/libraries/ToroPHP/toro.php';
+require_once WEBROOT.'/libraries/ToroPHP/toro.php';
 
 // Interfaces
 require_once $core.'/core/interfaces/Theme.php';

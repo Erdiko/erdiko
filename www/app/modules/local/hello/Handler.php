@@ -75,9 +75,6 @@ class Handler extends \erdiko\core\Handler
 
 		// Add page title
 		$this->setTitle('Example CSS Mark-Up');
-
-		// Debug
-		error_log("hello::markup");
 	}
 
 	public function twocolumnAction($arguments = null)

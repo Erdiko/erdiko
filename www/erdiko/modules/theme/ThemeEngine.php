@@ -249,6 +249,10 @@ class ThemeEngine extends Module implements Theme
 		if($extras['js'] != null)
 			$this->_themeConfig['js'] = $this->mergeJs($this->_themeConfig['js'], $extras['js']);
 
+		// Add any additional CSS files needed for the page.
+		if($extras['css'] != null)
+			$this->_themeConfig['css'] = $this->mergeCss($this->_themeConfig['css'], $extras['css']);
+
 		// Set default number of columns
 		$this->_numColumns = $this->_themeConfig['columns'];
 	}
