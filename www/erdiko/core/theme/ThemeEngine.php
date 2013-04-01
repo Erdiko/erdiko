@@ -10,13 +10,13 @@
  *
  * @todo add interface to this module
  */
-namespace erdiko\modules\theme;
+namespace erdiko\core\theme;
 
-use erdiko\core\Module;
+use erdiko\core\ModelAbstract;
 use erdiko\core\interfaces\Theme;
 use Erdiko;
 
-class ThemeEngine extends Module implements Theme
+class ThemeEngine extends ModelAbstract implements Theme
 {
 	protected $_folder;
 	protected $_themeName;

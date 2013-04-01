@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', '1');
 define('WEBROOT', dirname(__DIR__));
-define('ZEND', false); // is zend included or not
+define('ZEND', false); // is zend included or not, @todo inject from config somehow
 
 $core = WEBROOT.'/erdiko';
 $app = WEBROOT.'/app';
@@ -17,14 +17,14 @@ require_once WEBROOT.'/libraries/ToroPHP/toro.php';
 require_once $core.'/core/interfaces/Theme.php';
 require_once $core.'/core/interfaces/Session.php';
 
-// Core 
+// Core
 require_once $core.'/core/Handler.php';
 require_once $core.'/core/Module.php';
 require_once $core.'/core/ModelAbstract.php';
 
 // Core Modules
-require_once $core.'/modules/theme/ThemeEngine.php';
-require_once $core.'/modules/theme/Handler.php';
+require_once $core.'/core/theme/ThemeEngine.php';
+// require_once $core.'/modules/theme/Handler.php';
 // require_once $core.'/modules/drupal/Model.php';
 
 // Helpers
