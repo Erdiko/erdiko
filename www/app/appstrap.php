@@ -7,7 +7,7 @@
 // App Handlers
 // require_once $app.'/modules/community/cms/Ajax.php';
 // require_once $app.'/modules/community/cms/Handler.php';
-require_once $app.'/modules/local/hello/Handler.php';
+// require_once $app.'/modules/local/hello/Handler.php'; // removed this require once to test the autoloader.php file
 
 // App models
 // require_once $app.'/modules/community/cms/models/User.php';
