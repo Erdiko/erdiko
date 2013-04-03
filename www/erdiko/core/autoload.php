@@ -9,8 +9,8 @@
 
 ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . "{$vendor}" . PATH_SEPARATOR . "{$app}/common/models" . PATH_SEPARATOR . "{$core}/core");
 
-/*
-spl_autoload_register(function($name, $name) 
+
+spl_autoload_register(function($name) 
 {
 	if(strpos($name, '\\') !== false)
 	{
@@ -27,7 +27,6 @@ spl_autoload_register(function($name, $name)
 		}
 	}
 });
-*/
 
 if(ZEND)
 {
