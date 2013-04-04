@@ -37,12 +37,14 @@ class Logger extends File{
 	 */
 	public function log($log,$logLevel=null)
 	{
-		if($logLevel==null)
-			$logLevel=Logger::INFO;
+		if($log instanceof Exception)
+			$this->logException($log->getMessage());
 		else if($logLevel==Logger::ERROR)
 			$this->logException($log);
 		else
 		{
+			if($logLevel==null)
+				$logLevel=Logger::INFO;
 			$logString=date('Y-m-d H:i:s')." ".$logLevel." ".$log.PHP_EOL;
 			$this->write($logString,$this->_logFilename,null,"a");
 		}
