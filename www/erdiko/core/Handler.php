@@ -17,8 +17,9 @@ class Handler extends \ToroHandler
 	protected $_webroot;
 	protected $_themeExtras;
 	protected $_pageData;
-	protected $_numberColumns;
+	protected $_numberColumns = 1;
 	protected $_template = null;
+	protected $_layout = null;
 	
 	public function __construct()
 	{
@@ -136,9 +137,13 @@ class Handler extends \ToroHandler
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
 		}
 
+		$theme->setTitle($this->_pageData['data']['title']);
+
 		// Alter layout if needed
 		if($this->_numberColumns)
 			$theme->setNumCloumns($this->_numberColumns);
+		if($this->_layout)
+			$theme->setLayout($this->_layout);
 		$theme->setTemplate( $this->getTemplate() );
 
 		// Deal with sidebars for multi-column layouts
@@ -384,6 +389,22 @@ class Handler extends \ToroHandler
 	public function setLayoutColumns($cols)
 	{
 		$this->_numberColumns = $cols;
+	}
+
+	/**
+	 * Set layout 
+	 */
+	public function setLayout($name)
+	{
+		$this->_layout = $name;
+	}
+
+	/**
+	 * Get layout 
+	 */
+	public function getLayout()
+	{
+		return $this->_layout;
 	}
 
 	/**
