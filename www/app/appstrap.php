@@ -3,16 +3,7 @@
  * appstrap: 
  * Add any application defined bootstrap items here
  */
+ini_set('display_errors', '1');
 
-// App Handlers
-// require_once $app.'/modules/community/cms/Ajax.php';
-// require_once $app.'/modules/community/cms/Handler.php';
-// require_once $app.'/modules/local/hello/Handler.php'; // removed this require once to test the autoloader.php file
-
-// App models
-// require_once $app.'/modules/community/cms/models/User.php';
-// require_once $app.'/modules/community/cms/models/Cms.php';
-
-// Helpers
-// require_once $app.'/modules/community/cms/helpers/User.php';
-// require_once $app.'/modules/community/cms/helpers/Sizing.php';
+// Zend
+// require_once $app.'/common/zend_bootstrap.php'; // uncomment to get Zend running

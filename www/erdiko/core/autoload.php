@@ -27,9 +27,3 @@ spl_autoload_register(function($name)
 		}
 	}
 });
-
-if(ZEND)
-{
-	require_once("Zend/Loader.php");
-	spl_autoload_register(array("Zend_Loader", "loadClass"));	
-}
