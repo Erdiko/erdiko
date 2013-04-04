@@ -163,4 +163,72 @@ class Erdiko
 		return new $class;
 	}
 	
+	/**
+	 * writeToFile
+	 * @usage Erdiko::writeToFile('sample string',filename,path,mode); 
+	 * @return 
+	 */
+	public static function writeToFile($string,$filename,$path=null,$mode=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		$fileObj->write($string,$filename,$path,$mode);
+	}
+	
+	/**
+	 * log
+	 * @usage Erdiko::logNotice('Sample notice',Logger::LogLevel)
+	 * Need to import erdiko\core\Logger to use this function
+	 * @todo add log level as a number instead of a constant
+	 * @return 
+	 */
+	public static function log($logString,$logLevel=null)
+	{
+		$logObj=new \erdiko\core\Logger();
+		$logObj->log($logString,$logLevel);
+	}
+	
+	/**
+	 * logException
+	 * @usage Erdiko::logException('Sample exception');
+	 * @return 
+	 */
+	public static function logException($exception)
+	{
+		$logObj=new \erdiko\core\Logger();
+		$logObj->logException($exception);
+	}
+	
+	/**
+	 * logWarning
+	 * @usage Erdiko::logWarning('Sample warning');
+	 * @return 
+	 */
+	public static function logWarning($warning)
+	{
+		$logObj=new \erdiko\core\Logger();
+		$logObj->log($warning,Logger::WARNING);
+	}
+	
+	/**
+	 * logInfo
+	 * @usage Erdiko::logInfo('Sample info log');
+	 * @return 
+	 */
+	public static function logInfo($info)
+	{
+		$logObj=new \erdiko\core\Logger();
+		$logObj->log($info,Logger::INFO);
+	}
+	
+	/**
+	 * logNotice
+	 * @usage Erdiko::logNotice('Sample notice');
+	 * @return 
+	 */
+	public static function logNotice($notice)
+	{
+		$logObj=new \erdiko\core\Logger();
+		$logObj->log($notice,Logger::NOTICE);
+	}
+	
 }
