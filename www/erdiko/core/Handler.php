@@ -15,6 +15,7 @@ class Handler extends \ToroHandler
 {
     protected $_localConfig;
 	protected $_webroot;
+	protected $_arguments;
 	protected $_themeExtras;
 	protected $_pageData;
 	protected $_numberColumns = 1;
@@ -33,10 +34,19 @@ class Handler extends \ToroHandler
 			'phpToJs' => array(),
 			'meta' => array(),
 			'title' => "",
+			'identifier' => array(),
+			'id' => "id"
 			);
 
 		$this->_pageData = array(
-			'data' => array('title' => null, 'content' => null), 
+			'data' => array(
+				'title' => null, 
+				'content' => null, 
+				'style' => array(
+					'class' => array()
+					),
+				'identifier' => array()
+				),
 			'view' => array('page' => null), 
 			'sidebar' => array(),
 			);
@@ -86,6 +96,39 @@ class Handler extends \ToroHandler
 	public function addCss($file)
 	{
 		$this->_themeExtras['css'][] = array('file' => $file);
+	}
+
+	/**
+	 * Add Identifier to current page
+	 * @note Not yet supported
+	 */
+	public function addIdentifier($name)
+	{
+		$this->_themeExtras['identifier'][] = $name;
+	}
+
+	/**
+	 * Get identifiers
+	 */
+	public function getIdentifiers()
+	{
+		return $this->_themeExtras['identifier'];
+	}
+
+	/**
+	 * Set id (unique name)
+	 */
+	public function setId($id)
+	{
+		$this->_themeExtras['id'] = $id;
+	}
+
+	/**
+	 * Get id (unique name)
+	 */
+	public function getId()
+	{
+		return $this->_themeExtras['id'];
 	}
 
     /**
@@ -236,6 +279,7 @@ class Handler extends \ToroHandler
 		
 		// Get data to populate page wrapper
 		$data = $this->_localConfig['layout'];
+		$this->_arguments = $arguments;
 		
 		// Determine what conetent should be called 
 		if( empty($name) )
@@ -267,6 +311,9 @@ class Handler extends \ToroHandler
 	protected function _before()
 	{
 
+		$this->addBodyStyleClass("content-body-".$this->_arguments['raw_url_key']);
+		$this->addIdentifier($this->_arguments['raw_url_key']);
+		$this->setId($this->_arguments['raw_url_key']);
 	}
 
 	/**
@@ -320,6 +367,16 @@ class Handler extends \ToroHandler
 	/**
 	 * Set page content data to be themed in the view
 	 *
+	 * @param string $title
+	 */
+	public function setBodyTitle($title)
+	{
+		$this->_pageData['data']['title'] = $title;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
 	 * @param mixed $data
 	 */
 	public function setBodyContent($data)
@@ -364,16 +421,6 @@ class Handler extends \ToroHandler
         }
         $this->_pageData['data']['content'][$key] = $value;
         return $this;
-	}
-
-	/**
-	 * Set page content data to be themed in the view
-	 *
-	 * @param string $title
-	 */
-	public function setBodyTitle($title)
-	{
-		$this->_pageData['data']['title'] = $title;
 	}
 
 	/**
