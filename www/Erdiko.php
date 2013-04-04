@@ -171,7 +171,37 @@ class Erdiko
 	public static function writeToFile($string,$filename,$path=null,$mode=null)
 	{
 		$fileObj = new \erdiko\core\datasource\File();
-		$fileObj->write($string,$filename,$path,$mode);
+		return $fileObj->write($string,$filename,$path,$mode);
+	}
+	
+	public static function readFromFile($filename,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->read($filename,$path);
+	}
+	
+	public static function deleteFile($filename,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->delete($filename,$path);
+	}
+	
+	public static function moveFile($filename,$pathTo,$pathFrom=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->move($filename,$pathTo,$pathFrom=null);
+	}
+	
+	public static function copyFile($filename,$newFilePath,$newFileName=null,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->copy($filename,$newFilePath,$newFileName,$path);
+	}
+	
+	public static function renameFile($oldName,$newName,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->rename($oldName,$newName,$path);
 	}
 	
 	/**

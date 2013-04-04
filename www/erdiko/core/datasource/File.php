@@ -40,6 +40,56 @@ class File{
 			return null;
 	}
 	
+	public function read($filename,$pathToFile=null)
+	{
+		if($pathToFile==null)
+			return file_get_contents($this->_defaultPath."/".$filename);
+		else
+			return file_get_contents($pathToFile."/".$filename);
+	}
+	
+	public function delete($filename,$pathToFile=null)
+	{
+		if($pathToFile==null)
+			$pathToFile=$this->_defaultPath;
+		if(file_exists($pathToFile."/".$filename))
+			return unlink($pathToFile."/".$filename);
+		else 
+			return null;
+	}
+	
+	public function move($filename,$pathTo,$pathFrom=null)
+	{
+		if($pathFrom==null)
+			$pathFrom=$this->_defaultPath;
+		if(file_exists($pathFrom."/".$filename))
+			return rename($pathFrom."/".$filename,$pathTo."/".$filename);
+		else 
+			return null;
+	}
+	
+	public function rename($oldName,$newName,$pathToFile=null)
+	{
+		if($pathToFile==null)
+			$pathToFile=$this->_defaultPath;
+		if(file_exists($pathToFile."/".$filename))
+			return rename($path."/".$oldName,$path."/".$newName);
+		else 
+			return null;
+	}
+	
+	public function copy($filename,$newFilePath,$newFileName=null,$pathToFile=null)
+	{
+		if($pathToFile==null)
+			$pathToFile=$this->_defaultPath;
+		if($newFileName==null)
+			$newFileName=$filename;
+		if(file_exists($pathToFile."/".$filename))
+			return copy($pathToFile."/".$filename,$newFilePath."/".$newFileName);
+		else 
+			return null;
+	}
+	
 	public function __destruct()
 	{
 	}
