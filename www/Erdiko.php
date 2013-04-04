@@ -26,10 +26,10 @@ class Erdiko
 	 * @param string $path
 	 * @return object $theme
 	 */
-	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/theme/default', $extras = null)
+	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/contexts/default', $extras = null)
 	{
 		// get Theme
-		$themeEngine = new \erdiko\modules\theme\ThemeEngine;
+		$themeEngine = new \erdiko\core\theme\ThemeEngine;
 		$themeEngine->loadTheme($name, $namespace, $path, $extras);
 		
 		return $themeEngine;

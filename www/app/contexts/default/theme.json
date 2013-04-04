@@ -16,8 +16,8 @@
       "active": 1
     }
   ],
-  "js": [
-  ],
+  "js": {
+  },
   "templates": {
     "default": {
       "file": "/app/contexts/default/templates/default.php",

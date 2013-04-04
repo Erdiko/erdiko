@@ -1,4 +1,4 @@
 Erdiko
 ======
 
-Erdiko Middleware Framework V0.5.1
+Erdiko Middleware Framework V0.5.2
