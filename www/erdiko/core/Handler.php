@@ -242,7 +242,9 @@ class Handler extends \ToroHandler
 			try 
 			{
                 $action = $this->urlToActionName($name);
+                $this->_before();
 				$this->$action($arguments); // run the action method of the handler/controller
+				$this->_after();
 			}
 			catch(\Exception $e)
 			{
@@ -251,6 +253,24 @@ class Handler extends \ToroHandler
 		}
 		
 		$this->theme($data);
+	}
+
+	/**
+	 * Before action hook
+	 * Anything here gets called immediately BEFORE the Action method runs.
+	 */
+	protected function _before()
+	{
+
+	}
+
+	/**
+	 * After action hook
+	 * anything here gets called immediately AFTER the Action method runs.
+	 */
+	protected function _after()
+	{
+		
 	}
 
 	/**
@@ -300,6 +320,26 @@ class Handler extends \ToroHandler
 	public function setBodyContent($data)
 	{
 		$this->_pageData['data']['content'] = $data;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param mixed $data
+	 */
+	public function setBodyStyle($data, $key)
+	{
+		$this->_pageData['data']['style'][$key] = $data;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param mixed $data
+	 */
+	public function addBodyStyleClass($name)
+	{
+		$this->_pageData['data']['style']['class'][] = $name;
 	}
 
     /**

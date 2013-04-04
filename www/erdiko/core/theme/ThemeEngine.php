@@ -32,6 +32,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	protected $_numColumns;
 	protected $_sidebars;
 	protected $_template = null;
+	protected $_layout = null;
 	
 	public function __construct()
 	{
@@ -48,6 +49,11 @@ class ThemeEngine extends ModelAbstract implements Theme
 	public function getThemeFolder()
 	{
 		return $this->_folder;
+	}
+
+	public function setLayout($layout)
+	{
+		$this->_layout = $layout;
 	}
 	
 	/**
@@ -101,6 +107,11 @@ class ThemeEngine extends ModelAbstract implements Theme
 	
 	// @todo need to make a clean distinction between 'title' and 'page title'
 	// @todo rename to siteName
+	public function setTitle($title)
+	{
+		$this->_data['title'] = $title;
+	}
+
 	public function getTitle()
 	{
 		return $this->_data['title'];
@@ -163,10 +174,12 @@ class ThemeEngine extends ModelAbstract implements Theme
 
 	public function getLayout()
 	{
-		$filename = $this->_webroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
-		$html = $this->getTemplateFile($filename, $this);
-		
-		echo $html;
+		if($this->_layout != null)
+			$filename = $this->_webroot.$this->_themeConfig['path'].'/templates'.$this->_layout;
+		else
+			$filename = $this->_webroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
+
+		echo $this->getTemplateFile($filename, $this);
 	}
 	
 	public function mergeCss($first, $second)
