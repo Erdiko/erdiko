@@ -1,11 +1,15 @@
 <?php
+/** important: download zend and place in /www/libraries/Zend **/
+
+// Register Zend autoloader
+require_once("Zend/Loader.php");
+spl_autoload_register(array("Zend_Loader", "loadClass"));
 
 /**  GET CONFIGS FROM json FILE ***/
-$config = Erdiko::getConfig('database');
+$config = Erdiko::getConfig('local/database');
+
 // Use the master settings for now
 $config = $config['master'];
-
-//var_dump($config);exit;
 
 /* CREATE THE DB ADABPTER OUT OF CONFIGURATIONS */
 $db = Zend_Db::factory($config['adapter'], $config['params']);
