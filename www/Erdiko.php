@@ -163,4 +163,57 @@ class Erdiko
 		return new $class;
 	}
 	
+	/**
+	 * writeToFile
+	 * @usage Erdiko::writeToFile('sample string',filename,path,mode); 
+	 * @return 
+	 */
+	public static function writeToFile($string,$filename,$path=null,$mode=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->write($string,$filename,$path,$mode);
+	}
+	
+	public static function readFromFile($filename,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->read($filename,$path);
+	}
+	
+	public static function deleteFile($filename,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->delete($filename,$path);
+	}
+	
+	public static function moveFile($filename,$pathTo,$pathFrom=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->move($filename,$pathTo,$pathFrom=null);
+	}
+	
+	public static function copyFile($filename,$newFilePath,$newFileName=null,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->copy($filename,$newFilePath,$newFileName,$path);
+	}
+	
+	public static function renameFile($oldName,$newName,$path=null)
+	{
+		$fileObj = new \erdiko\core\datasource\File();
+		return $fileObj->rename($oldName,$newName,$path);
+	}
+	
+	/**
+	 * log
+	 * @usage Erdiko::logNotice('Sample notice',Logger::LogLevel)
+	 * Need to import erdiko\core\Logger to use this function
+	 * @todo add log level as a number instead of a constant
+	 * @return 
+	 */
+	public static function log($log,$logLevel=null)
+	{
+		$logObj=new \erdiko\core\Logger();
+		$logObj->log($log,$logLevel);
+	}
 }
