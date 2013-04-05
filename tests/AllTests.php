@@ -12,7 +12,9 @@ class AllTests
 		$testFiles = $this->_getTestFiles();
 
 		foreach ($testFiles as $file) 
+		{
 			$suite->addTestFile($file);
+		}
 
 		return $suite;
 	}

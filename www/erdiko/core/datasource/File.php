@@ -72,8 +72,8 @@ class File{
 	{
 		if($pathToFile==null)
 			$pathToFile=$this->_defaultPath;
-		if(file_exists($pathToFile."/".$filename))
-			return rename($path."/".$oldName,$path."/".$newName);
+		if(file_exists($pathToFile."/".$oldName))
+			return rename($pathToFile."/".$oldName,$pathToFile."/".$newName);
 		else 
 			return null;
 	}
