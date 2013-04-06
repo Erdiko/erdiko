@@ -52,7 +52,7 @@ if(isMobile()): ?>
 
 <?php
 	// Spit out JS below the footer
-	foreach($data->getJs() as $name => $js)
+	foreach($this->getJs() as $js)
   {
     if($js['active'])
       echo "<script src='".$js['file']."'></script>\n";

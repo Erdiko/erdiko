@@ -32,7 +32,10 @@ class Handler extends \erdiko\core\Handler
 		$this->setBodyContent("Welcome to Erdiko.");
 
 		// Add meta tags
-		$this->addMeta('This is Erdiko\'s hello world.', 'description');	
+		$this->addMeta('This is Erdiko\'s hello world.', 'description');
+
+		// Add Extra js
+		$this->addJs('/app/contexts/default/js/home.js');
 	}
 
 	public function aboutAction($arguments = null)

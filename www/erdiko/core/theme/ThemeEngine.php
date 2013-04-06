@@ -189,11 +189,35 @@ class ThemeEngine extends ModelAbstract implements Theme
 		
 		return $first;
 	}
+
+	/**
+	 * Merge configs
+	 * Entries in $second will overtake $first
+	 * @param array $first
+	 * @param array $second
+	 * @return array $combined
+	 */
+	public function mergeConfig($first, $second)
+	{
+		foreach($second as $key => $data)
+			$first[$key] = $data;
+		
+		return $first;
+	}
 	
 	public function mergeJs($first, $second)
 	{
+		$base = 'js';
+		$i = 100;
+
 		foreach($second as $js)
-			$first[] = array('file' => $js['file']);
+		{
+			error_log("js ".print_r($js, true));
+			$key = "$base-$i";
+			$js['order'] = $i;
+			$first[$key] = $js;
+			$i++;
+		}
 		
 		return $first;
 	}
@@ -241,7 +265,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 			unset($parentConfig['css']);
 			
 			// JS
-			$this->_themeConfig['js'] = $this->mergeJs($parentConfig['js'], $this->_themeConfig['js']);
+			$this->_themeConfig['js'] = $this->mergeConfig($parentConfig['js'], $this->_themeConfig['js']);
 			unset($parentConfig['js']);
 			
 			// Templates
@@ -342,6 +366,16 @@ class ThemeEngine extends ModelAbstract implements Theme
 	public function getData()
 	{
 		return $this->_data;
+	}
+
+	public function sortByOrder($arr)
+	{
+		$sorted = array();
+		foreach($arr as $element)
+		{
+			$sorted[$element['order']] = $element;
+		} 
+		return $sorted;
 	}
 
 }

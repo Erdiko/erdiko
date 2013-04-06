@@ -86,7 +86,9 @@ class Handler extends \ToroHandler
 	 */
 	public function addJs($file)
 	{
-		$this->_themeExtras['js'][] = array('file' => $file);
+		$this->_themeExtras['js'][] = array(
+			'file' => $file,
+			'active' => 1);
 	}
 	
 	/**
