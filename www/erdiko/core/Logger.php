@@ -37,16 +37,22 @@ class Logger extends File{
 	 */
 	public function log($log,$logLevel=null)
 	{
-		if("Exception" == get_class($log))
-			$this->logToExceptionFile($log->getMessage());
-		else if($logLevel==Logger::ERROR)
-			$this->logToExceptionFile($log);
+		if(is_string($log))
+		{
+			if($logLevel==Logger::ERROR)
+				$this->logToExceptionFile($log);
+			else
+			{
+				if($logLevel==null)
+					$logLevel=Logger::INFO;
+				$logString=date('Y-m-d H:i:s')." ".$logLevel." ".$log.PHP_EOL;
+				$this->write($logString,$this->_logFilename,null,"a");
+			}
+		}
 		else
 		{
-			if($logLevel==null)
-				$logLevel=Logger::INFO;
-			$logString=date('Y-m-d H:i:s')." ".$logLevel." ".$log.PHP_EOL;
-			$this->write($logString,$this->_logFilename,null,"a");
+			if("Exception" == get_class($log))
+				$this->logToExceptionFile($log->getMessage());
 		}
 	}
 	
