@@ -35,7 +35,7 @@ class Erdiko
 	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/contexts/default', $extras = null)
 	{
 		// get Theme
-		$themeEngine = new \erdiko\core\theme\ThemeEngine;
+		$themeEngine = new \erdiko\modules\theme\ThemeEngine;
 		$themeEngine->loadTheme($name, $namespace, $path, $extras);
 		
 		return $themeEngine;
@@ -210,10 +210,16 @@ class Erdiko
 		return $fileObj->rename($oldName,$newName,$path);
 	}
 	
-	
-	 
-	public static function createLogs($logFiles,$logDir=null)
+	/*
+	* Called everytime to create a logger object to read and write to files
+	*/
+	public static function createLogs($logFiles=array(),$logDir=null)
 	{
+		$config=Erdiko::getConfig("contexts/default");
+		if(empty($logFiles))
+			$logFiles=$config["logs"]["files"][0];
+		if($logDir==null)
+			$logDir=$config["logs"]["path"];
 		Erdiko::$_logObject=new Logger($logFiles,$logDir);
 	}
 	

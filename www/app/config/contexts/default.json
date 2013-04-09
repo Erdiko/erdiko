@@ -1,54 +1,70 @@
 {
-	"site" : {
-		"title": "Erdiko",
-		"full_name": "Erdiko Framework",
-		"tagline": "The Mashup Framework",
-		"meta": [ { 
-			"name": "description",
-			"content": "Erdiko the PHP mashup framework"
-			}
-		]
-	},
-	"theme": {
-		"name": "default",
-		"namespace": "\app\contexts\default",
-		"path": "/app/contexts/default",
-		"config": "/app/contexts/default/theme.json"
-	},
-	"layout" : {
-		"layout": {
-			"columns": 1
-		},
-		"title": "Erdiko",
-		"site_name": "Erdiko",
-		"header": {
-			"site_name": "Erdiko",
-			"tagline": "The Mashup Framework",
-			"content": ""
+   "site":{
+      "title":"Erdiko",
+      "full_name":"Erdiko Framework",
+      "tagline":"The Mashup Framework",
+      "meta":[
+         {
+            "name":"description",
+            "content":"Erdiko the PHP mashup framework"
+         }
+      ]
+   },
+   "theme":{
+      "name":"default",
+      "namespace":"/app/contexts/default",
+      "path":"/app/contexts/default",
+      "config":"/app/contexts/default/theme.json"
+   },
+   "layout":{
+      "layout":{
+         "columns":1
+      },
+      "title":"Erdiko",
+      "site_name":"Erdiko",
+      "header":{
+         "site_name":"Erdiko",
+         "tagline":"The Mashup Framework",
+         "content":""
+      }
+   },
+   "menu":{
+      "main":[
+         {
+            "href":"/markup",
+            "title":"Example Mark-Up"
+         },
+         {
+            "href":"/onecolumn",
+            "title":"1 Column Layout"
+         },
+         {
+            "href":"/twocolumn",
+            "title":"2 Column Layout"
+         },
+         {
+            "href":"/threecolumn",
+            "title":"3 Column Layout"
+         }
+      ],
+      "footer":[
+         {
+            "href":"/",
+            "title":"home"
+         },
+         {
+            "href":"/about",
+            "title":"about"
+         }
+      ]
+   },
+   "logs":{
+      "name":"default",
+      "path":"/var/logs",
+      "files":[{
+            "default":"erdiko.log",
+            "exception":"erdiko_error.log"
 		}
-	},
-	"menu": {
-		"main": [ {
-			"href": "/markup",
-			"title": "Example Mark-Up"
-			}, {
-			"href": "/onecolumn",
-			"title": "1 Column Layout"
-			}, {
-			"href": "/twocolumn",
-			"title": "2 Column Layout"
-			}, {
-			"href": "/threecolumn",
-			"title": "3 Column Layout"
-			}
-		],
-		"footer": [ {
-			"href": "/",
-			"title": "home"
-			}, {
-			"href": "/about",
-			"title": "about"
-			}
-		]
-	}
+      ]
+   }
 }

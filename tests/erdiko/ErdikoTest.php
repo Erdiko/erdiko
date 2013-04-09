@@ -84,34 +84,35 @@ class ErdikoTest extends ErdikoTestCase
 	
 	public function testLogFunctions()
 	{
-		$logFiles=array(
+		/*$logFiles=array(
 			"default" => "erdiko_default.log",
 			"exceptionLog" => "erdiko_error.log",
 		);
-		Erdiko::createLogs($logFiles);
+		Erdiko::createLogs($logFiles);*/
+		//Erdiko::createLogs();
 		$webRoot = dirname(dirname(__DIR__));
 		Erdiko::clearLog();
 		$sampleText="This is a sample log for Erdiko class test";
 		Erdiko::log($sampleText);
-		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false );
 		
 		Erdiko::clearLog();
-		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
 		$this->assertTrue(empty($return)==true);
 		
 		Erdiko::clearLog();
 		Erdiko::log($sampleText,Logger::INFO);
-		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Info") != false);
 		
 		Erdiko::clearLog();
-		Erdiko::log($sampleText,Logger::ERROR,"exceptionLog");
+		Erdiko::log($sampleText,Logger::ERROR,"exception");
 		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Error") != false);
 		
 		Erdiko::clearLog();
-		Erdiko::log(new Exception($sampleText),null,"exceptionLog");
+		Erdiko::log(new Exception($sampleText),null,"exception");
 		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false );	
 		

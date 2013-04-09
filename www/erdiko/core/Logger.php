@@ -23,16 +23,18 @@ class Logger extends File{
 	const INFO = "Info";
 	
 	public function __construct($logFiles=array(),$logDir=null)
-	{	
+	{
 		// Set the log files
 		if(!empty($logFiles))
 			$this->_logFiles = array_merge($this->_logFiles,array_change_key_case($logFiles));
+			
+		
 		// Set the logging directory
 		if($logDir!=null && is_dir($logDir))
 			$this->_defaultPath=$logDir;
 		else
 		{
-			$rootFolder=dirname(dirname(__DIR__)); 
+			$rootFolder=dirname(dirname(__DIR__));
 			$this->_defaultPath=$rootFolder."/var/logs";
 		}
 	}
