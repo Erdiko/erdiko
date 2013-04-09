@@ -13,10 +13,15 @@ class File{
 
 	protected $_defaultPath =null;
 	
-	public function __construct()
+	public function __construct($defaultPath=null)
 	{	
-		$rootFolder=dirname(dirname(dirname(__DIR__))); 
-		$this->_defaultPath=$rootFolder."/var";
+		if(isset($defaultPath))
+			$this->_defaultPath=$defaultPath;
+		else
+		{
+			$rootFolder=dirname(dirname(dirname(__DIR__))); 
+			$this->_defaultPath=$rootFolder."/var";
+		}
 	}
 	
 	/**
@@ -37,7 +42,7 @@ class File{
 			return $ret;
 		}
 		else
-			return null;
+			return false;
 	}
 	
 	public function read($filename,$pathToFile=null)
@@ -55,7 +60,7 @@ class File{
 		if(file_exists($pathToFile."/".$filename))
 			return unlink($pathToFile."/".$filename);
 		else 
-			return null;
+			return false;
 	}
 	
 	public function move($filename,$pathTo,$pathFrom=null)
@@ -75,7 +80,7 @@ class File{
 		if(file_exists($pathToFile."/".$oldName))
 			return rename($pathToFile."/".$oldName,$pathToFile."/".$newName);
 		else 
-			return null;
+			return false;
 	}
 	
 	public function copy($filename,$newFilePath,$newFileName=null,$pathToFile=null)
@@ -87,7 +92,14 @@ class File{
 		if(file_exists($pathToFile."/".$filename))
 			return copy($pathToFile."/".$filename,$newFilePath."/".$newFileName);
 		else 
-			return null;
+			return false;
+	}
+	
+	public function fileExists($filename,$pathToFile=null)
+	{
+		if($pathToFile==null)
+			$pathToFile=$this->_defaultPath."/".$filename;
+		return is_readable($pathToFile."/".$filename);
 	}
 	
 	public function __destruct()
