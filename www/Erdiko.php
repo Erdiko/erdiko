@@ -9,8 +9,14 @@
  * @author		John Arroyo, john@arroyolabs.com
  */
 
+use erdiko\core\Logger;
+
 class Erdiko
 {
+
+	protected static $_logObject=null;
+	
+	
 	/**
 	 * Factory Module Classes
 	 */
@@ -204,16 +210,45 @@ class Erdiko
 		return $fileObj->rename($oldName,$newName,$path);
 	}
 	
+	
+	 
+	public static function createLogs($logFiles,$logDir=null)
+	{
+		Erdiko::$_logObject=new Logger($logFiles,$logDir);
+	}
+	
 	/**
 	 * log
-	 * @usage Erdiko::logNotice('Sample notice',Logger::LogLevel)
+	 * @usage Erdiko::log('Sample notice',Logger::LogLevel,'Default')
 	 * Need to import erdiko\core\Logger to use this function
 	 * @todo add log level as a number instead of a constant
 	 * @return 
 	 */
-	public static function log($log,$logLevel=null)
+	public static function log($logString,$logLevel=null,$logKey=null)
 	{
-		$logObj=new \erdiko\core\Logger();
-		$logObj->log($log,$logLevel);
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->log($logString,$logLevel,$logKey);
+	}
+	
+	public static function addLogFile($key,$logFileName)
+	{
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->addLogFile($key,$logFileName);
+	}
+	
+	public static function removeLogFile($key)
+	{
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->removeLogFile($key);
+	}
+
+	public static function clearLog($logKey=null)
+	{
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->clearLog($logKey);
 	}
 }

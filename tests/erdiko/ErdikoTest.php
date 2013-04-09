@@ -9,6 +9,7 @@ use erdiko\core\Logger;
 
 class ErdikoTest extends ErdikoTestCase
 {
+	
 	public function HelloWorldTest()
 	{
 		// @todo add assertions here...
@@ -81,30 +82,36 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::deleteFile("sample.txt",$webRoot);
 	}
 	
-	public function testLogFunctionsReadFromFile()
+	public function testLogFunctions()
 	{
+		$logFiles=array(
+			"default" => "erdiko_default.log",
+			"exceptionLog" => "erdiko_error.log",
+		);
+		Erdiko::createLogs($logFiles);
 		$webRoot = dirname(dirname(__DIR__));
+		Erdiko::clearLog();
 		$sampleText="This is a sample log for Erdiko class test";
 		Erdiko::log($sampleText);
-		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
-		$this->assertTrue(strpos($return,$sampleText) != false );	
+		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return,$sampleText) != false );
 		
-		Erdiko::clearLog(true);
-		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
+		Erdiko::clearLog();
+		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
 		$this->assertTrue(empty($return)==true);
 		
-		Erdiko::clearLog(true);
+		Erdiko::clearLog();
 		Erdiko::log($sampleText,Logger::INFO);
-		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Info") != false);
 		
-		Erdiko::clearLog(true);
-		Erdiko::log($sampleText,Logger::ERROR);
+		Erdiko::clearLog();
+		Erdiko::log($sampleText,Logger::ERROR,"exceptionLog");
 		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Error") != false);
 		
-		Erdiko::clearLog(true);
-		Erdiko::log(new Exception($sampleText));
+		Erdiko::clearLog();
+		Erdiko::log(new Exception($sampleText),null,"exceptionLog");
 		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false );	
 		
