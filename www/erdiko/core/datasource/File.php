@@ -22,6 +22,9 @@ class File{
 			$rootFolder=dirname(dirname(dirname(__DIR__))); 
 			$this->_defaultPath=$rootFolder."/var";
 		}
+		if(!is_dir($this->_defaultPath))
+			mkdir($this->_defaultPath,null,true);
+			
 	}
 	
 	/**
@@ -98,8 +101,8 @@ class File{
 	public function fileExists($filename,$pathToFile=null)
 	{
 		if($pathToFile==null)
-			$pathToFile=$this->_defaultPath."/".$filename;
-		return is_readable($pathToFile."/".$filename);
+			$pathToFile=$this->_defaultPath;
+		return file_exists($pathToFile."/".$filename);
 	}
 	
 	public function __destruct()

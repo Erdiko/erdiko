@@ -66,5 +66,11 @@
             "exception":"erdiko_error.log"
 		}
       ]
+   },
+   "cache":{
+      "default":{
+			"path":"/var/cache",
+			"type":"FileCache"
+	  }
    }
 }

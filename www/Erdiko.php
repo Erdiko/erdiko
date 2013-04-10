@@ -10,6 +10,7 @@
  */
 
 use erdiko\core\Logger;
+use erdiko\core\cache\Cache;
 
 class Erdiko
 {
@@ -211,7 +212,7 @@ class Erdiko
 	}
 	
 	/*
-	* Called everytime to create a logger object to read and write to files
+	* Called everytime to create a logger object to write to the log
 	*/
 	public static function createLogs($logFiles=array(),$logDir=null)
 	{
@@ -256,5 +257,25 @@ class Erdiko
 		if(Erdiko::$_logObject==null)
 			Erdiko::createLogs();
 		return Erdiko::$_logObject->clearLog($logKey);
+	}
+	
+	/*
+	* Get the configured cache instance using name
+	* returns the instance of the cache type
+	*/
+	
+	public static function getCache($cacheType=null)
+	{
+		$config=Erdiko::getConfig("contexts/default");
+		if(!isset($cacheType))
+			$cacheType = "default";
+		if(isset($config["cache"][$cacheType]))
+		{
+			$cacheConfig = $config["cache"][$cacheType];
+			$class = "erdiko\core\cache\\".$cacheConfig["type"];
+			return new $class;
+		}
+		else
+			return false;
 	}
 }
