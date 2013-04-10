@@ -9,8 +9,15 @@
  * @author		John Arroyo, john@arroyolabs.com
  */
 
+use erdiko\core\Logger;
+use erdiko\core\cache\Cache;
+
 class Erdiko
 {
+
+	protected static $_logObject=null;
+	
+	
 	/**
 	 * Factory Module Classes
 	 */
@@ -29,7 +36,7 @@ class Erdiko
 	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/contexts/default', $extras = null)
 	{
 		// get Theme
-		$themeEngine = new \erdiko\core\theme\ThemeEngine;
+		$themeEngine = new \erdiko\modules\theme\ThemeEngine;
 		$themeEngine->loadTheme($name, $namespace, $path, $extras);
 		
 		return $themeEngine;
@@ -204,16 +211,71 @@ class Erdiko
 		return $fileObj->rename($oldName,$newName,$path);
 	}
 	
+	/*
+	* Called everytime to create a logger object to write to the log
+	*/
+	public static function createLogs($logFiles=array(),$logDir=null)
+	{
+		$config=Erdiko::getConfig("contexts/default");
+		if(empty($logFiles))
+			$logFiles=$config["logs"]["files"][0];
+		if($logDir==null)
+			$logDir=$config["logs"]["path"];
+		Erdiko::$_logObject=new Logger($logFiles,$logDir);
+	}
+	
 	/**
 	 * log
-	 * @usage Erdiko::logNotice('Sample notice',Logger::LogLevel)
+	 * @usage Erdiko::log('Sample notice',Logger::LogLevel,'Default')
 	 * Need to import erdiko\core\Logger to use this function
 	 * @todo add log level as a number instead of a constant
 	 * @return 
 	 */
-	public static function log($log,$logLevel=null)
+	public static function log($logString,$logLevel=null,$logKey=null)
 	{
-		$logObj=new \erdiko\core\Logger();
-		$logObj->log($log,$logLevel);
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->log($logString,$logLevel,$logKey);
+	}
+	
+	public static function addLogFile($key,$logFileName)
+	{
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->addLogFile($key,$logFileName);
+	}
+	
+	public static function removeLogFile($key)
+	{
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->removeLogFile($key);
+	}
+
+	public static function clearLog($logKey=null)
+	{
+		if(Erdiko::$_logObject==null)
+			Erdiko::createLogs();
+		return Erdiko::$_logObject->clearLog($logKey);
+	}
+	
+	/*
+	* Get the configured cache instance using name
+	* returns the instance of the cache type
+	*/
+	
+	public static function getCache($cacheType=null)
+	{
+		$config=Erdiko::getConfig("contexts/default");
+		if(!isset($cacheType))
+			$cacheType = "default";
+		if(isset($config["cache"][$cacheType]))
+		{
+			$cacheConfig = $config["cache"][$cacheType];
+			$class = "erdiko\core\cache\\".$cacheConfig["type"];
+			return new $class;
+		}
+		else
+			return false;
 	}
 }

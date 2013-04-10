@@ -8,7 +8,11 @@ class LoggerTest extends ErdikoTestCase
     var $loggerObject;
 
     function setUp() {
-        $this->loggerObject = new Logger();
+		$logFiles=array(
+			"default" => "erdiko_default.log",
+			"exceptionLog" => "erdiko_error.log",
+		);
+		$this->loggerObject=new Logger($logFiles);
     }
 
     function tearDown() {
@@ -16,15 +20,37 @@ class LoggerTest extends ErdikoTestCase
     }
 
     function testLog() {
-        $this->loggerObject->log('This is a test log');
-		$this->loggerObject->log('This is a test warning log',Logger::WARNING);
-		$this->loggerObject->log('This is a test exception log',Logger::ERROR);
-		$this->loggerObject->log(new Exception("This is a test exception log 2"));
-    }
-
-    function testLogException() {
-		$this->loggerObject->logToExceptionFile('This is an exception log using the other function');
-    }
 	
+		$webRoot = dirname(dirname(__DIR__));
+		// Should log to the default log... 
+		$this->loggerObject->clearLog();
+        $this->loggerObject->log('This is a test log in default file');
+		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return,'This is a test log in default file') != false );	
+		
+		$this->loggerObject->clearLog();
+		
+		$this->loggerObject->log('This is a test warning log',Logger::WARNING);
+		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return,'This is a test warning log') != false );	
+		
+		$this->loggerObject->clearLog();
+		
+		$this->loggerObject->log('This is a test exception log',Logger::ERROR,"exceptionLog");
+		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return,'This is a test exception log') != false );
+		
+		$this->loggerObject->clearLog();
+		
+		$this->loggerObject->log(new Exception("This is a test exception log 2"),null,"exceptionLog");
+		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return,'This is a test exception log 2') != false );
+		
+		$this->loggerObject->clearLog();
+		$return=Erdiko::readFromFile("erdiko_default.log",$webRoot."/www/var/logs");
+		$return = trim($return);
+		$this->assertTrue(empty($return));	
+		
+    }
   }
 ?>
