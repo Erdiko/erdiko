@@ -121,6 +121,11 @@ class ThemeEngine extends ModelAbstract implements Theme
 	{		
 		return $this->_themeConfig['title'];
 	}
+
+	public function getLayoutData()
+	{		
+		return $this->_extras['data'];
+	}
 	
 	public function getMainContent($name = "", $options = null)
 	{

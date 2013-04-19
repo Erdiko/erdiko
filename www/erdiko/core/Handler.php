@@ -35,7 +35,8 @@ class Handler extends \ToroHandler
 			'meta' => array(),
 			'title' => "",
 			'identifier' => array(),
-			'id' => "id"
+			'id' => "id",
+			'data' => ""
 			);
 
 		$this->_pageData = array(
@@ -69,6 +70,14 @@ class Handler extends \ToroHandler
 	public function setPageTitle($title)
 	{
 		$this->_themeExtras['title'] = $title;
+	}
+
+	/**
+	 * Add data variable to the layout
+	 */
+	public function setLayoutData($data)
+	{
+		$this->_themeExtras['data'] = $data;
 	}
 
 	/**
