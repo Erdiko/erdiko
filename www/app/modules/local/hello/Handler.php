@@ -103,4 +103,20 @@ class Handler extends \erdiko\core\Handler
 		$this->setPageTitle('3 Column Page');
 	}
 
+	public function gridAction()
+	{
+		// Js Base
+		$this->setTitle('Grid');
+
+		// Data
+		$data = array(
+			'columns' => 4, 
+			'count' => 12, 
+			'items' => array()
+			);
+
+		$this->setLayoutData($data);
+		$this->setLayout('/grid/default.php');
+	}
+
 }

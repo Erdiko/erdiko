@@ -35,6 +35,10 @@
             "title":"Example Mark-Up"
          },
          {
+            "href":"/grid",
+            "title":"Grid"
+         },
+         {
             "href":"/onecolumn",
             "title":"1 Column Layout"
          },

@@ -11,15 +11,18 @@
 	<ul class="unstyled product-grid">
 
 <?php
-$artwork = array(
+$item = array(
 	'size' => $data['columns'],
-	'details' => null
+	'details' => array(
+		'name' => "Example Item",
+		'image' => "",
+		'url' => "#")
 	);
 
-for($i=0; $i<$data['items']; $i++)
+for($i=0; $i<$data['count']; $i++)
 {
-	// $artwork['details'] = $data['artwork'][$i];
-	echo Erdiko::getView($artwork, '/grid/artwork.php');
+	// $item['details'] = $data['items'][$i];
+	echo Erdiko::getView($item, '/grid/item.php');
 }
 ?>
 
