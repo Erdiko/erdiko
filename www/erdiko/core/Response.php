@@ -1,7 +1,16 @@
 <?php
-// @todo rename to \erdiko\Response or \erdiko\core\Response.  basically use namespaces
+/**
+ * Erdiko Response Object
+ * 
+ * @category    Erdiko
+ * @package     Core
+ * @copyright   Copyright (c) 2013, Arroyo Labs, http://www.arroyolabs.com
+ * @author      Hayk Hakobyan
+ * @author      John Arroyo, john@arroyolabs.com
+ */
+namespace erdiko\core;
 
-class Erdiko_Response
+class Response
 {
     protected $_success;
     protected $_messages;
@@ -88,7 +97,7 @@ class Erdiko_Response
      *
      * @param array $data
      *
-     * @return Erdiko_Response object of chaining
+     * @return Response object of chaining
      *
      */
     public function success($data = null, $messages = null) {
@@ -109,7 +118,7 @@ class Erdiko_Response
      *
      * @param array $error_messages
      *
-     * @return Erdiko_Response object for chaining
+     * @return Response object for chaining
      *
      */
     public function fail($messages = null, $data = null) {
@@ -193,7 +202,7 @@ class Erdiko_Response
      *
      * @param string $key
      * @param mix $value
-     * @returns Erdiko_Response object for chaining
+     * @returns Response object for chaining
      */
     public function addData($key, $value)
     {
