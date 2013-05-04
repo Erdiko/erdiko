@@ -10,7 +10,7 @@ The Enterprise Mash-Up Framework
 Semver
 ------
 
-0.5.1
+0.5.2
 
 Goal
 ----
@@ -24,13 +24,13 @@ Team
 
 **Author**
 
-John Arroyo - Architect, Lead Back-End / Integration engineer
+	John Arroyo - Architect, Lead Back-End / Integration engineer
 
 **Contributors**
 
-	* Varun Brahme - Back-End development and unit testing
+	*Varun Brahme - Back-End development and unit testing
 
-	* Dave LaFLam - Front-End development (default theme)
+	*Dave LaFLam - Front-End development (default theme)
 
 * If you want to help, please do, we'd love more code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
