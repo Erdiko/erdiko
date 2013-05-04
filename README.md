@@ -22,14 +22,20 @@ The code is in a preliminary architecture stage.  It is functional yet not in Al
 Team
 ----
 
+**Author**
+
 John Arroyo - Architect, Lead Back-End / Integration engineer
+
+**Contributors**
+
+	* Varun Brahme - Back-End development and unit testing
+
+	* Dave LaFLam - Front-End development (default theme)
 
 * If you want to help, please do, we'd love more code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
 Special Thanks
 --------------
-
-Dave LaFlam - Initial Lead Front-End Engineer
 
 Arroyo Labs - For sponsoring development, http://arroyolabs.com
 
