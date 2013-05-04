@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \app\modules\community\cms\models\User</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/app.html"><i class="icon-th"></i> app</a></li>
+<li><a href="../namespaces/erdiko.html"><i class="icon-th"></i> erdiko</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">645</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">16</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_createSession" title="createSession :: "><span class="description">createSession()
+        </span><pre>createSession()</pre></a></li>
+<li class="method public "><a href="#method_createUser" title="createUser :: Create new user"><span class="description">Create new user</span><pre>createUser()</pre></a></li>
+<li class="method public inherited"><a href="#method_getArrayFromNodeQueue" title="getArrayFromNodeQueue :: "><span class="description">getArrayFromNodeQueue()
+        </span><pre>getArrayFromNodeQueue()</pre></a></li>
+<li class="method public inherited"><a href="#method_getCategory" title="getCategory :: "><span class="description">getCategory()
+        </span><pre>getCategory()</pre></a></li>
+<li class="method public inherited"><a href="#method_getError" title="getError :: "><span class="description">getError()
+        </span><pre>getError()</pre></a></li>
+<li class="method public "><a href="#method_getIdentity" title="getIdentity :: "><span class="description">getIdentity()
+        </span><pre>getIdentity()</pre></a></li>
+<li class="method public inherited"><a href="#method_getNode" title="getNode :: Get node by nid or url key"><span class="description">Get node by nid or url key</span><pre>getNode()</pre></a></li>
+<li class="method public inherited"><a href="#method_getNodeQueue" title="getNodeQueue :: "><span class="description">getNodeQueue()
+        </span><pre>getNodeQueue()</pre></a></li>
+<li class="method public inherited"><a href="#method_getNodequeueView" title="getNodequeueView :: "><span class="description">getNodequeueView()
+        </span><pre>getNodequeueView()</pre></a></li>
+<li class="method public inherited"><a href="#method_getPathAlias" title="getPathAlias :: "><span class="description">getPathAlias()
+        </span><pre>getPathAlias()</pre></a></li>
+<li class="method public "><a href="#method_getUser" title="getUser :: "><span class="description">getUser()
+        </span><pre>getUser()</pre></a></li>
+<li class="method public "><a href="#method_getUserData" title="getUserData :: "><span class="description">getUserData()
+        </span><pre>getUserData()</pre></a></li>
+<li class="method public "><a href="#method_getUserId" title="getUserId :: "><span class="description">getUserId()
+        </span><pre>getUserId()</pre></a></li>
+<li class="method public "><a href="#method_getUserName" title="getUserName :: get drupal username from email address (users:name)"><span class="description">get drupal username from email address (users:name)</span><pre>getUserName()</pre></a></li>
+<li class="method public inherited"><a href="#method_getView" title="getView :: "><span class="description">getView()
+        </span><pre>getView()</pre></a></li>
+<li class="method public "><a href="#method_isEmail" title="isEmail :: "><span class="description">isEmail()
+        </span><pre>isEmail()</pre></a></li>
+<li class="method public "><a href="#method_login" title="login :: Login
+User can login via username or email"><span class="description">Login
+User can login via username or email</span><pre>login()</pre></a></li>
+<li class="method public "><a href="#method_logout" title="logout :: "><span class="description">logout()
+        </span><pre>logout()</pre></a></li>
+<li class="method public "><a href="#method_resetPassword" title="resetPassword :: "><span class="description">resetPassword()
+        </span><pre>resetPassword()</pre></a></li>
+<li class="method public inherited"><a href="#method_setError" title="setError :: "><span class="description">setError()
+        </span><pre>setError()</pre></a></li>
+<li class="method public "><a href="#method_setUserData" title="setUserData :: "><span class="description">setUserData()
+        </span><pre>setUserData()</pre></a></li>
+<li class="method public "><a href="#method_setUserId" title="setUserId :: "><span class="description">setUserId()
+        </span><pre>setUserId()</pre></a></li>
+<li class="method public "><a href="#method_submitPassword" title="submitPassword :: "><span class="description">submitPassword()
+        </span><pre>submitPassword()</pre></a></li>
+<li class="method public "><a href="#method_updateUser" title="updateUser :: "><span class="description">updateUser()
+        </span><pre>updateUser()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method__convertUserName" title="_convertUserName :: Sanitize username"><span class="description">Sanitize username</span><pre>_convertUserName()</pre></a></li>
+<li class="method protected "><a href="#method__emailToUserName" title="_emailToUserName :: "><span class="description">_emailToUserName()
+        </span><pre>_emailToUserName()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property__error" title="$_error :: "><span class="description"></span><pre>$_error</pre></a></li>
+<li class="property protected "><a href="#property__userData" title="$_userData :: "><span class="description"></span><pre>$_userData</pre></a></li>
+<li class="property protected "><a href="#property__userId" title="$_userId :: "><span class="description"></span><pre>$_userId</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_ROLE_ADMINISTRATOR" title="ROLE_ADMINISTRATOR :: "><span class="description">ROLE_ADMINISTRATOR</span><pre>ROLE_ADMINISTRATOR</pre></a></li>
+<li class="constant  "><a href="#constant_ROLE_AUTHENTICATED_USER" title="ROLE_AUTHENTICATED_USER :: "><span class="description">ROLE_AUTHENTICATED_USER</span><pre>ROLE_AUTHENTICATED_USER</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\app\modules\community\cms\models\User"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/app.html">app</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.html">modules</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.community.html">community</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.community.cms.html">cms</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.community.cms.models.html">models</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/app.modules.community.cms.models.User.html">User</a>
+</li>
+</ul>
+<div class="element class"><div class="details">
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_createSession"></a><div class="element clickable method public method_createSession" data-toggle="collapse" data-target=".method_createSession .collapse">
+<h2>createSession()
+        </h2>
+<pre>createSession() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createUser"></a><div class="element clickable method public method_createUser" data-toggle="collapse" data-target=".method_createUser .collapse">
+<h2>Create new user</h2>
+<pre>createUser(array $form) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$form</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_getArrayFromNodeQueue"></a><div class="element clickable method public method_getArrayFromNodeQueue" data-toggle="collapse" data-target=".method_getArrayFromNodeQueue .collapse">
+<h2>getArrayFromNodeQueue()
+        </h2>
+<pre>getArrayFromNodeQueue($data) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getArrayFromNodeQueue()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$data</h4></div>
+</div></div>
+</div>
+<a id="method_getCategory"></a><div class="element clickable method public method_getCategory" data-toggle="collapse" data-target=".method_getCategory .collapse">
+<h2>getCategory()
+        </h2>
+<pre>getCategory($tid) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getCategory()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$tid</h4></div>
+</div></div>
+</div>
+<a id="method_getError"></a><div class="element clickable method public method_getError" data-toggle="collapse" data-target=".method_getError .collapse">
+<h2>getError()
+        </h2>
+<pre>getError() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\core\ModelAbstract::getError()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getError()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getIdentity"></a><div class="element clickable method public method_getIdentity" data-toggle="collapse" data-target=".method_getIdentity .collapse">
+<h2>getIdentity()
+        </h2>
+<pre>getIdentity() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getNode"></a><div class="element clickable method public method_getNode" data-toggle="collapse" data-target=".method_getNode .collapse">
+<h2>Get node by nid or url key</h2>
+<pre>getNode($node) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getNode()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$node</h4></div>
+</div></div>
+</div>
+<a id="method_getNodeQueue"></a><div class="element clickable method public method_getNodeQueue" data-toggle="collapse" data-target=".method_getNodeQueue .collapse">
+<h2>getNodeQueue()
+        </h2>
+<pre>getNodeQueue($id) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getNodeQueue()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_getNodequeueView"></a><div class="element clickable method public method_getNodequeueView" data-toggle="collapse" data-target=".method_getNodequeueView .collapse">
+<h2>getNodequeueView()
+        </h2>
+<pre>getNodequeueView($id) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getNodequeueView()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_getPathAlias"></a><div class="element clickable method public method_getPathAlias" data-toggle="collapse" data-target=".method_getPathAlias .collapse">
+<h2>getPathAlias()
+        </h2>
+<pre>getPathAlias($nid) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getPathAlias()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$nid</h4></div>
+</div></div>
+</div>
+<a id="method_getUser"></a><div class="element clickable method public method_getUser" data-toggle="collapse" data-target=".method_getUser .collapse">
+<h2>getUser()
+        </h2>
+<pre>getUser($userId) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$userId</h4></div>
+</div></div>
+</div>
+<a id="method_getUserData"></a><div class="element clickable method public method_getUserData" data-toggle="collapse" data-target=".method_getUserData .collapse">
+<h2>getUserData()
+        </h2>
+<pre>getUserData() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getUserId"></a><div class="element clickable method public method_getUserId" data-toggle="collapse" data-target=".method_getUserId .collapse">
+<h2>getUserId()
+        </h2>
+<pre>getUserId() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getUserName"></a><div class="element clickable method public method_getUserName" data-toggle="collapse" data-target=".method_getUserName .collapse">
+<h2>get drupal username from email address (users:name)</h2>
+<pre>getUserName(string $email) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>$name</div>
+</div></div>
+</div>
+<a id="method_getView"></a><div class="element clickable method public method_getView" data-toggle="collapse" data-target=".method_getView .collapse">
+<h2>getView()
+        </h2>
+<pre>getView($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::getView()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_isEmail"></a><div class="element clickable method public method_isEmail" data-toggle="collapse" data-target=".method_isEmail .collapse">
+<h2>isEmail()
+        </h2>
+<pre>isEmail($email) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$email</h4></div>
+</div></div>
+</div>
+<a id="method_login"></a><div class="element clickable method public method_login" data-toggle="collapse" data-target=".method_login .collapse">
+<h2>Login
+User can login via username or email</h2>
+<pre>login($email, $password) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$email</h4></div>
+<div class="subelement argument"><h4>$password</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>$success</div>
+</div></div>
+</div>
+<a id="method_logout"></a><div class="element clickable method public method_logout" data-toggle="collapse" data-target=".method_logout .collapse">
+<h2>logout()
+        </h2>
+<pre>logout() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_resetPassword"></a><div class="element clickable method public method_resetPassword" data-toggle="collapse" data-target=".method_resetPassword .collapse">
+<h2>resetPassword()
+        </h2>
+<pre>resetPassword($email) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$email</h4></div>
+</div></div>
+</div>
+<a id="method_setError"></a><div class="element clickable method public method_setError" data-toggle="collapse" data-target=".method_setError .collapse">
+<h2>setError()
+        </h2>
+<pre>setError($error) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\core\ModelAbstract::setError()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::setError()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$error</h4></div>
+</div></div>
+</div>
+<a id="method_setUserData"></a><div class="element clickable method public method_setUserData" data-toggle="collapse" data-target=".method_setUserData .collapse">
+<h2>setUserData()
+        </h2>
+<pre>setUserData($userData) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$userData</h4></div>
+</div></div>
+</div>
+<a id="method_setUserId"></a><div class="element clickable method public method_setUserId" data-toggle="collapse" data-target=".method_setUserId .collapse">
+<h2>setUserId()
+        </h2>
+<pre>setUserId($userId) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$userId</h4></div>
+</div></div>
+</div>
+<a id="method_submitPassword"></a><div class="element clickable method public method_submitPassword" data-toggle="collapse" data-target=".method_submitPassword .collapse">
+<h2>submitPassword()
+        </h2>
+<pre>submitPassword($password, $userId) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$password</h4></div>
+<div class="subelement argument"><h4>$userId</h4></div>
+</div></div>
+</div>
+<a id="method_updateUser"></a><div class="element clickable method public method_updateUser" data-toggle="collapse" data-target=".method_updateUser .collapse">
+<h2>updateUser()
+        </h2>
+<pre>updateUser($user) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$user</h4></div>
+</div></div>
+</div>
+<a id="method__convertUserName"></a><div class="element clickable method protected method__convertUserName" data-toggle="collapse" data-target=".method__convertUserName .collapse">
+<h2>Sanitize username</h2>
+<pre>_convertUserName($name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>todo</th>
+<td>imeplement this function</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method__emailToUserName"></a><div class="element clickable method protected method__emailToUserName" data-toggle="collapse" data-target=".method__emailToUserName .collapse">
+<h2>_emailToUserName()
+        </h2>
+<pre>_emailToUserName($email) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$email</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__error"> </a><div class="element clickable property protected property__error" data-toggle="collapse" data-target=".property__error .collapse">
+<h2></h2>
+<pre>$_error </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\core\ModelAbstract::$$_error</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\modules\drupal\Model::$$_error</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property__userData"> </a><div class="element clickable property protected property__userData" data-toggle="collapse" data-target=".property__userData .collapse">
+<h2></h2>
+<pre>$_userData </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__userId"> </a><div class="element clickable property protected property__userId" data-toggle="collapse" data-target=".property__userId .collapse">
+<h2></h2>
+<pre>$_userId </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_ROLE_ADMINISTRATOR"> </a><div class="element clickable constant  constant_ROLE_ADMINISTRATOR" data-toggle="collapse" data-target=".constant_ROLE_ADMINISTRATOR .collapse">
+<h2>ROLE_ADMINISTRATOR</h2>
+<pre>ROLE_ADMINISTRATOR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ROLE_AUTHENTICATED_USER"> </a><div class="element clickable constant  constant_ROLE_AUTHENTICATED_USER" data-toggle="collapse" data-target=".constant_ROLE_AUTHENTICATED_USER .collapse">
+<h2>ROLE_AUTHENTICATED_USER</h2>
+<pre>ROLE_AUTHENTICATED_USER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-05-04T15:11:20-07:00.<br></footer></div>
+</div>
+</body>
+</html>
