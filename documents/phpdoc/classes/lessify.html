@@ -1,0 +1,2510 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Erdiko » \lessify</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Erdiko</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/app.html"><i class="icon-th"></i> app</a></li>
+<li><a href="../namespaces/erdiko.html"><i class="icon-th"></i> erdiko</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">645</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">16</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct :: Initialize any static state, can initialize parser for a file"><span class="description">Initialize any static state, can initialize parser for a file</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_accessor" title="accessor :: "><span class="description">accessor()
+        </span><pre>accessor()</pre></a></li>
+<li class="method public inherited"><a href="#method_allParsedFiles" title="allParsedFiles :: "><span class="description">allParsedFiles()
+        </span><pre>allParsedFiles()</pre></a></li>
+<li class="method public inherited"><a href="#method_append" title="append :: "><span class="description">append()
+        </span><pre>append()</pre></a></li>
+<li class="method public inherited"><a href="#method_argumentDef" title="argumentDef :: "><span class="description">argumentDef()
+        </span><pre>argumentDef()</pre></a></li>
+<li class="method public inherited"><a href="#method_argumentValues" title="argumentValues :: "><span class="description">argumentValues()
+        </span><pre>argumentValues()</pre></a></li>
+<li class="method public inherited"><a href="#method_assertColor" title="assertColor :: "><span class="description">assertColor()
+        </span><pre>assertColor()</pre></a></li>
+<li class="method public inherited"><a href="#method_assign" title="assign :: Consume an assignment operator
+Can optionally take a name that will be set to the current property name"><span class="description">Consume an assignment operator
+Can optionally take a name that will be set to the current property name</span><pre>assign()</pre></a></li>
+<li class="method public inherited"><a href="#method_ccompile" title="ccompile :: "><span class="description">ccompile()
+        </span><pre>ccompile()</pre></a></li>
+<li class="method public inherited"><a href="#method_cexecute" title="cexecute :: Execute lessphp on a .less file or a lessphp cache structure"><span class="description">Execute lessphp on a .less file or a lessphp cache structure</span><pre>cexecute()</pre></a></li>
+<li class="method public inherited"><a href="#method_clamp" title="clamp :: "><span class="description">clamp()
+        </span><pre>clamp()</pre></a></li>
+<li class="method public inherited"><a href="#method_coerceColor" title="coerceColor :: "><span class="description">coerceColor()
+        </span><pre>coerceColor()</pre></a></li>
+<li class="method public inherited"><a href="#method_color" title="color :: "><span class="description">color()
+        </span><pre>color()</pre></a></li>
+<li class="method public inherited"><a href="#method_colorArgs" title="colorArgs :: Helper function to get arguments for color functions."><span class="description">Helper function to get arguments for color functions.</span><pre>colorArgs()</pre></a></li>
+<li class="method public inherited"><a href="#method_compileBlock" title="compileBlock :: Recursively compiles a block."><span class="description">Recursively compiles a block.</span><pre>compileBlock()</pre></a></li>
+<li class="method public inherited"><a href="#method_compileMedia" title="compileMedia :: "><span class="description">compileMedia()
+        </span><pre>compileMedia()</pre></a></li>
+<li class="method public inherited"><a href="#method_compileProp" title="compileProp :: "><span class="description">compileProp()
+        </span><pre>compileProp()</pre></a></li>
+<li class="method public inherited"><a href="#method_compileValue" title="compileValue :: Compiles a primitive value into a CSS property value."><span class="description">Compiles a primitive value into a CSS property value.</span><pre>compileValue()</pre></a></li>
+<li class="method public inherited"><a href="#method_compressList" title="compressList :: "><span class="description">compressList()
+        </span><pre>compressList()</pre></a></li>
+<li class="method public "><a href="#method_dump" title="dump :: "><span class="description">dump()
+        </span><pre>dump()</pre></a></li>
+<li class="method public inherited"><a href="#method_end" title="end :: "><span class="description">end()
+        </span><pre>end()</pre></a></li>
+<li class="method public inherited"><a href="#method_eq" title="eq :: "><span class="description">eq()
+        </span><pre>eq()</pre></a></li>
+<li class="method public inherited"><a href="#method_evaluate" title="evaluate :: "><span class="description">evaluate()
+        </span><pre>evaluate()</pre></a></li>
+<li class="method public inherited"><a href="#method_expHelper" title="expHelper :: recursively parse infix equation with $lhs at precedence $minP"><span class="description">recursively parse infix equation with $lhs at precedence $minP</span><pre>expHelper()</pre></a></li>
+<li class="method public inherited"><a href="#method_expression" title="expression :: Attempt to consume an expression."><span class="description">Attempt to consume an expression.</span><pre>expression()</pre></a></li>
+<li class="method public inherited"><a href="#method_expressionList" title="expressionList :: "><span class="description">expressionList()
+        </span><pre>expressionList()</pre></a></li>
+<li class="method public inherited"><a href="#method_fileExists" title="fileExists :: "><span class="description">fileExists()
+        </span><pre>fileExists()</pre></a></li>
+<li class="method public inherited"><a href="#method_findBlocks" title="findBlocks :: "><span class="description">findBlocks()
+        </span><pre>findBlocks()</pre></a></li>
+<li class="method public inherited"><a href="#method_findImport" title="findImport :: "><span class="description">findImport()
+        </span><pre>findImport()</pre></a></li>
+<li class="method public inherited"><a href="#method_fixColor" title="fixColor :: "><span class="description">fixColor()
+        </span><pre>fixColor()</pre></a></li>
+<li class="method public inherited"><a href="#method_fixTags" title="fixTags :: "><span class="description">fixTags()
+        </span><pre>fixTags()</pre></a></li>
+<li class="method public inherited"><a href="#method_func" title="func :: "><span class="description">func()
+        </span><pre>func()</pre></a></li>
+<li class="method public inherited"><a href="#method_funcToColor" title="funcToColor :: Convert the rgb, rgba, hsl color literals of function type
+as returned by the parser into values of color type."><span class="description">Convert the rgb, rgba, hsl color literals of function type
+as returned by the parser into values of color type.</span><pre>funcToColor()</pre></a></li>
+<li class="method public inherited"><a href="#method_get" title="get :: "><span class="description">get()
+        </span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#method_guard" title="guard :: "><span class="description">guard()
+        </span><pre>guard()</pre></a></li>
+<li class="method public inherited"><a href="#method_guard_group" title="guard_group :: "><span class="description">guard_group()
+        </span><pre>guard_group()</pre></a></li>
+<li class="method public inherited"><a href="#method_guards" title="guards :: "><span class="description">guards()
+        </span><pre>guards()</pre></a></li>
+<li class="method public inherited"><a href="#method_import" title="import :: "><span class="description">import()
+        </span><pre>import()</pre></a></li>
+<li class="method public inherited"><a href="#method_keyword" title="keyword :: "><span class="description">keyword()
+        </span><pre>keyword()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib__sprintf" title="lib__sprintf :: "><span class="description">lib__sprintf()
+        </span><pre>lib__sprintf()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_alpha" title="lib_alpha :: "><span class="description">lib_alpha()
+        </span><pre>lib_alpha()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_darken" title="lib_darken :: "><span class="description">lib_darken()
+        </span><pre>lib_darken()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_desaturate" title="lib_desaturate :: "><span class="description">lib_desaturate()
+        </span><pre>lib_desaturate()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_e" title="lib_e :: "><span class="description">lib_e()
+        </span><pre>lib_e()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_fade" title="lib_fade :: "><span class="description">lib_fade()
+        </span><pre>lib_fade()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_fadein" title="lib_fadein :: "><span class="description">lib_fadein()
+        </span><pre>lib_fadein()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_fadeout" title="lib_fadeout :: "><span class="description">lib_fadeout()
+        </span><pre>lib_fadeout()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_floor" title="lib_floor :: "><span class="description">lib_floor()
+        </span><pre>lib_floor()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_hue" title="lib_hue :: "><span class="description">lib_hue()
+        </span><pre>lib_hue()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_iscolor" title="lib_iscolor :: "><span class="description">lib_iscolor()
+        </span><pre>lib_iscolor()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_isem" title="lib_isem :: "><span class="description">lib_isem()
+        </span><pre>lib_isem()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_iskeyword" title="lib_iskeyword :: "><span class="description">lib_iskeyword()
+        </span><pre>lib_iskeyword()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_isnumber" title="lib_isnumber :: "><span class="description">lib_isnumber()
+        </span><pre>lib_isnumber()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_ispercentage" title="lib_ispercentage :: "><span class="description">lib_ispercentage()
+        </span><pre>lib_ispercentage()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_ispixel" title="lib_ispixel :: "><span class="description">lib_ispixel()
+        </span><pre>lib_ispixel()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_isstring" title="lib_isstring :: "><span class="description">lib_isstring()
+        </span><pre>lib_isstring()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_lighten" title="lib_lighten :: "><span class="description">lib_lighten()
+        </span><pre>lib_lighten()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_lightness" title="lib_lightness :: "><span class="description">lib_lightness()
+        </span><pre>lib_lightness()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_mix" title="lib_mix :: "><span class="description">lib_mix()
+        </span><pre>lib_mix()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_percentage" title="lib_percentage :: "><span class="description">lib_percentage()
+        </span><pre>lib_percentage()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_rgbahex" title="lib_rgbahex :: "><span class="description">lib_rgbahex()
+        </span><pre>lib_rgbahex()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_round" title="lib_round :: "><span class="description">lib_round()
+        </span><pre>lib_round()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_saturate" title="lib_saturate :: "><span class="description">lib_saturate()
+        </span><pre>lib_saturate()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_saturation" title="lib_saturation :: "><span class="description">lib_saturation()
+        </span><pre>lib_saturation()</pre></a></li>
+<li class="method public inherited"><a href="#method_lib_spin" title="lib_spin :: "><span class="description">lib_spin()
+        </span><pre>lib_spin()</pre></a></li>
+<li class="method public inherited"><a href="#method_literal" title="literal :: "><span class="description">literal()
+        </span><pre>literal()</pre></a></li>
+<li class="method public inherited"><a href="#method_match" title="match :: "><span class="description">match()
+        </span><pre>match()</pre></a></li>
+<li class="method public inherited"><a href="#method_mediaTypes" title="mediaTypes :: "><span class="description">mediaTypes()
+        </span><pre>mediaTypes()</pre></a></li>
+<li class="method public inherited"><a href="#method_mergeBlock" title="mergeBlock :: "><span class="description">mergeBlock()
+        </span><pre>mergeBlock()</pre></a></li>
+<li class="method public inherited"><a href="#method_mixImports" title="mixImports :: "><span class="description">mixImports()
+        </span><pre>mixImports()</pre></a></li>
+<li class="method public inherited"><a href="#method_mixinTags" title="mixinTags :: "><span class="description">mixinTags()
+        </span><pre>mixinTags()</pre></a></li>
+<li class="method public inherited"><a href="#method_multiplyTags" title="multiplyTags :: "><span class="description">multiplyTags()
+        </span><pre>multiplyTags()</pre></a></li>
+<li class="method public inherited"><a href="#method_op_color_color" title="op_color_color :: "><span class="description">op_color_color()
+        </span><pre>op_color_color()</pre></a></li>
+<li class="method public inherited"><a href="#method_op_color_number" title="op_color_number :: "><span class="description">op_color_number()
+        </span><pre>op_color_number()</pre></a></li>
+<li class="method public inherited"><a href="#method_op_number_color" title="op_number_color :: "><span class="description">op_number_color()
+        </span><pre>op_number_color()</pre></a></li>
+<li class="method public inherited"><a href="#method_op_number_number" title="op_number_number :: "><span class="description">op_number_number()
+        </span><pre>op_number_number()</pre></a></li>
+<li class="method public "><a href="#method_parse" title="parse :: "><span class="description">parse()
+        </span><pre>parse()</pre></a></li>
+<li class="method public inherited"><a href="#method_parseChunk" title="parseChunk :: Parse a single chunk off the head of the buffer and place it."><span class="description">Parse a single chunk off the head of the buffer and place it.</span><pre>parseChunk()</pre></a></li>
+<li class="method public inherited"><a href="#method_parseTree" title="parseTree :: "><span class="description">parseTree()
+        </span><pre>parseTree()</pre></a></li>
+<li class="method public inherited"><a href="#method_patternMatch" title="patternMatch :: "><span class="description">patternMatch()
+        </span><pre>patternMatch()</pre></a></li>
+<li class="method public inherited"><a href="#method_patternMatchAll" title="patternMatchAll :: "><span class="description">patternMatchAll()
+        </span><pre>patternMatchAll()</pre></a></li>
+<li class="method public inherited"><a href="#method_peek" title="peek :: "><span class="description">peek()
+        </span><pre>peek()</pre></a></li>
+<li class="method public inherited"><a href="#method_pop" title="pop :: "><span class="description">pop()
+        </span><pre>pop()</pre></a></li>
+<li class="method public inherited"><a href="#method_preg_quote" title="preg_quote :: "><span class="description">preg_quote()
+        </span><pre>preg_quote()</pre></a></li>
+<li class="method public inherited"><a href="#method_propertyValue" title="propertyValue :: "><span class="description">propertyValue()
+        </span><pre>propertyValue()</pre></a></li>
+<li class="method public inherited"><a href="#method_pushBlock" title="pushBlock :: "><span class="description">pushBlock()
+        </span><pre>pushBlock()</pre></a></li>
+<li class="method public inherited"><a href="#method_pushEnv" title="pushEnv :: "><span class="description">pushEnv()
+        </span><pre>pushEnv()</pre></a></li>
+<li class="method public inherited"><a href="#method_pushSpecialBlock" title="pushSpecialBlock :: "><span class="description">pushSpecialBlock()
+        </span><pre>pushSpecialBlock()</pre></a></li>
+<li class="method public inherited"><a href="#method_quoted" title="quoted :: "><span class="description">quoted()
+        </span><pre>quoted()</pre></a></li>
+<li class="method public inherited"><a href="#method_reduce" title="reduce :: "><span class="description">reduce()
+        </span><pre>reduce()</pre></a></li>
+<li class="method public inherited"><a href="#method_registerFunction" title="registerFunction :: "><span class="description">registerFunction()
+        </span><pre>registerFunction()</pre></a></li>
+<li class="method public inherited"><a href="#method_removeComments" title="removeComments :: "><span class="description">removeComments()
+        </span><pre>removeComments()</pre></a></li>
+<li class="method public inherited"><a href="#method_seek" title="seek :: "><span class="description">seek()
+        </span><pre>seek()</pre></a></li>
+<li class="method public inherited"><a href="#method_set" title="set :: "><span class="description">set()
+        </span><pre>set()</pre></a></li>
+<li class="method public inherited"><a href="#method_string" title="string :: "><span class="description">string()
+        </span><pre>string()</pre></a></li>
+<li class="method public inherited"><a href="#method_tag" title="tag :: "><span class="description">tag()
+        </span><pre>tag()</pre></a></li>
+<li class="method public inherited"><a href="#method_tagBracket" title="tagBracket :: "><span class="description">tagBracket()
+        </span><pre>tagBracket()</pre></a></li>
+<li class="method public inherited"><a href="#method_tags" title="tags :: "><span class="description">tags()
+        </span><pre>tags()</pre></a></li>
+<li class="method public inherited"><a href="#method_throwError" title="throwError :: Uses the current value of $this-&gt;count to show line and line number"><span class="description">Uses the current value of $this-&gt;count to show line and line number</span><pre>throwError()</pre></a></li>
+<li class="method public inherited"><a href="#method_to" title="to :: "><span class="description">to()
+        </span><pre>to()</pre></a></li>
+<li class="method public inherited"><a href="#method_toBool" title="toBool :: "><span class="description">toBool()
+        </span><pre>toBool()</pre></a></li>
+<li class="method public inherited"><a href="#method_toHSL" title="toHSL :: "><span class="description">toHSL()
+        </span><pre>toHSL()</pre></a></li>
+<li class="method public inherited"><a href="#method_toName" title="toName :: "><span class="description">toName()
+        </span><pre>toName()</pre></a></li>
+<li class="method public inherited"><a href="#method_toRGB" title="toRGB :: Converts a hsl array into a color value in rgb."><span class="description">Converts a hsl array into a color value in rgb.</span><pre>toRGB()</pre></a></li>
+<li class="method public inherited"><a href="#method_toRGB_helper" title="toRGB_helper :: "><span class="description">toRGB_helper()
+        </span><pre>toRGB_helper()</pre></a></li>
+<li class="method public inherited"><a href="#method_unit" title="unit :: Consume a number and optionally a unit."><span class="description">Consume a number and optionally a unit.</span><pre>unit()</pre></a></li>
+<li class="method public inherited"><a href="#method_unregisterFunction" title="unregisterFunction :: "><span class="description">unregisterFunction()
+        </span><pre>unregisterFunction()</pre></a></li>
+<li class="method public inherited"><a href="#method_value" title="value :: "><span class="description">value()
+        </span><pre>value()</pre></a></li>
+<li class="method public inherited"><a href="#method_variable" title="variable :: "><span class="description">variable()
+        </span><pre>variable()</pre></a></li>
+<li class="method public inherited"><a href="#method_zipSetArgs" title="zipSetArgs :: "><span class="description">zipSetArgs()
+        </span><pre>zipSetArgs()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_addParsedFile" title="addParsedFile :: "><span class="description">addParsedFile()
+        </span><pre>addParsedFile()</pre></a></li>
+<li class="method protected inherited"><a href="#method_createChild" title="createChild :: "><span class="description">createChild()
+        </span><pre>createChild()</pre></a></li>
+<li class="method protected inherited"><a href="#method_injectVariables" title="injectVariables :: "><span class="description">injectVariables()
+        </span><pre>injectVariables()</pre></a></li>
+<li class="method protected inherited"><a href="#method_prepareParser" title="prepareParser :: Initialize state for a fresh parse"><span class="description">Initialize state for a fresh parse</span><pre>prepareParser()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public inherited"><a href="#property_VERSION" title="$VERSION :: "><span class="description"></span><pre>$VERSION</pre></a></li>
+<li class="property public inherited"><a href="#property_compat" title="$compat :: "><span class="description"></span><pre>$compat</pre></a></li>
+<li class="property public inherited"><a href="#property_imPrefix" title="$imPrefix :: "><span class="description"></span><pre>$imPrefix</pre></a></li>
+<li class="property public inherited"><a href="#property_importDir" title="$importDir :: "><span class="description"></span><pre>$importDir</pre></a></li>
+<li class="property public inherited"><a href="#property_importDisabled" title="$importDisabled :: "><span class="description"></span><pre>$importDisabled</pre></a></li>
+<li class="property public inherited"><a href="#property_indentChar" title="$indentChar :: "><span class="description"></span><pre>$indentChar</pre></a></li>
+<li class="property public inherited"><a href="#property_indentLevel" title="$indentLevel :: "><span class="description"></span><pre>$indentLevel</pre></a></li>
+<li class="property public inherited"><a href="#property_mPrefix" title="$mPrefix :: "><span class="description"></span><pre>$mPrefix</pre></a></li>
+<li class="property public inherited"><a href="#property_parentSelector" title="$parentSelector :: "><span class="description"></span><pre>$parentSelector</pre></a></li>
+<li class="property public inherited"><a href="#property_vPrefix" title="$vPrefix :: "><span class="description"></span><pre>$vPrefix</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_FALSE" title="$FALSE :: "><span class="description"></span><pre>$FALSE</pre></a></li>
+<li class="property protected inherited"><a href="#property_TRUE" title="$TRUE :: "><span class="description"></span><pre>$TRUE</pre></a></li>
+<li class="property protected inherited"><a href="#property_allParsedFiles" title="$allParsedFiles :: "><span class="description"></span><pre>$allParsedFiles</pre></a></li>
+<li class="property protected inherited"><a href="#property_buffer" title="$buffer :: "><span class="description"></span><pre>$buffer</pre></a></li>
+<li class="property protected inherited"><a href="#property_count" title="$count :: "><span class="description"></span><pre>$count</pre></a></li>
+<li class="property protected inherited"><a href="#property_cssColors" title="$cssColors :: "><span class="description"></span><pre>$cssColors</pre></a></li>
+<li class="property protected inherited"><a href="#property_dtypes" title="$dtypes :: "><span class="description"></span><pre>$dtypes</pre></a></li>
+<li class="property protected inherited"><a href="#property_env" title="$env :: "><span class="description"></span><pre>$env</pre></a></li>
+<li class="property protected inherited"><a href="#property_inExp" title="$inExp :: if we are in an expression then we don't need to worry about parsing font shorthand
+$inExp becomes true after the first value in an expression, or if we enter parens"><span class="description"></span><pre>$inExp</pre></a></li>
+<li class="property protected inherited"><a href="#property_inParens" title="$inParens :: if we are in parens we can be more liberal with whitespace around operators because
+it must evaluate to a single value and thus is less ambiguous."><span class="description"></span><pre>$inParens</pre></a></li>
+<li class="property protected inherited"><a href="#property_libFunctions" title="$libFunctions :: "><span class="description"></span><pre>$libFunctions</pre></a></li>
+<li class="property protected inherited"><a href="#property_line" title="$line :: "><span class="description"></span><pre>$line</pre></a></li>
+<li class="property protected inherited"><a href="#property_nextBlockId" title="$nextBlockId :: "><span class="description"></span><pre>$nextBlockId</pre></a></li>
+<li class="property protected inherited"><a href="#property_operatorString" title="$operatorString :: "><span class="description"></span><pre>$operatorString</pre></a></li>
+<li class="property protected inherited"><a href="#property_precedence" title="$precedence :: "><span class="description"></span><pre>$precedence</pre></a></li>
+<li class="property protected inherited"><a href="#property_sourceParser" title="$sourceParser :: "><span class="description"></span><pre>$sourceParser</pre></a></li>
+<li class="property protected inherited"><a href="#property_supressDivisionProps" title="$supressDivisionProps :: "><span class="description"></span><pre>$supressDivisionProps</pre></a></li>
+<li class="property protected inherited"><a href="#property_units" title="$units :: "><span class="description"></span><pre>$units</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\lessify"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/lessify.html">lessify</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">create a less file from a css file by combining blocks where appropriate</p>
+<div class="details">
+<div class="long_description"><p>Converting LESS to CSS is a two stage process. First the incoming document
+must be parsed. Parsing creates a tree in memory that represents the
+structure of the document. Then, the tree of the document is recursively
+compiled into the CSS text. The compile step has an implicit step called
+reduction, where values are brought to their lowest form before being
+turned to text, eg. mathematical equations are solved, and variables are
+dereferenced.</p>
+
+<p>The parsing stage produces the final structure of the document, for this
+reason mixins are mixed in and attribute accessors are referenced during
+the parse step. A reduction is done on the mixed in block as it is mixed in.</p>
+
+<p>See the following:
+   - entry point for parsing and compiling: lessc::parse()
+   - parsing: lessc::parseChunk()
+   - compiling: lessc::compileBlock()</p></div>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Initialize any static state, can initialize parser for a file</h2>
+<pre>__construct($fname, $opts) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fname</h4></div>
+<div class="subelement argument"><h4>$opts</h4></div>
+</div></div>
+</div>
+<a id="method_accessor"></a><div class="element clickable method public method_accessor" data-toggle="collapse" data-target=".method_accessor .collapse">
+<h2>accessor()
+        </h2>
+<pre>accessor($var) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::accessor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$var</h4></div>
+</div></div>
+</div>
+<a id="method_allParsedFiles"></a><div class="element clickable method public method_allParsedFiles" data-toggle="collapse" data-target=".method_allParsedFiles .collapse">
+<h2>allParsedFiles()
+        </h2>
+<pre>allParsedFiles() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::allParsedFiles()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_append"></a><div class="element clickable method public method_append" data-toggle="collapse" data-target=".method_append .collapse">
+<h2>append()
+        </h2>
+<pre>append($prop, $pos) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::append()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$prop</h4></div>
+<div class="subelement argument"><h4>$pos</h4></div>
+</div></div>
+</div>
+<a id="method_argumentDef"></a><div class="element clickable method public method_argumentDef" data-toggle="collapse" data-target=".method_argumentDef .collapse">
+<h2>argumentDef()
+        </h2>
+<pre>argumentDef($args, $delim) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::argumentDef()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+<div class="subelement argument"><h4>$delim</h4></div>
+</div></div>
+</div>
+<a id="method_argumentValues"></a><div class="element clickable method public method_argumentValues" data-toggle="collapse" data-target=".method_argumentValues .collapse">
+<h2>argumentValues()
+        </h2>
+<pre>argumentValues($args, $delim) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::argumentValues()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+<div class="subelement argument"><h4>$delim</h4></div>
+</div></div>
+</div>
+<a id="method_assertColor"></a><div class="element clickable method public method_assertColor" data-toggle="collapse" data-target=".method_assertColor .collapse">
+<h2>assertColor()
+        </h2>
+<pre>assertColor($value, $error) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::assertColor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$error</h4></div>
+</div></div>
+</div>
+<a id="method_assign"></a><div class="element clickable method public method_assign" data-toggle="collapse" data-target=".method_assign .collapse">
+<h2>Consume an assignment operator
+Can optionally take a name that will be set to the current property name</h2>
+<pre>assign($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::assign()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_ccompile"></a><div class="element clickable method public method_ccompile" data-toggle="collapse" data-target=".method_ccompile .collapse">
+<h2>ccompile()
+        </h2>
+<pre>ccompile($in, $out) </pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::ccompile()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$in</h4></div>
+<div class="subelement argument"><h4>$out</h4></div>
+</div></div>
+</div>
+<a id="method_cexecute"></a><div class="element clickable method public method_cexecute" data-toggle="collapse" data-target=".method_cexecute .collapse">
+<h2>Execute lessphp on a .less file or a lessphp cache structure</h2>
+<pre>cexecute(mixed $in, bool $force) : array</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The lessphp cache structure contains information about a specific
+less file having been parsed. It can be used as a hint for future
+calls to determine whether or not a rebuild is required.</p>
+
+<p>The cache structure contains two important keys that may be used
+externally:</p>
+
+<p>compiled: The final compiled CSS
+updated: The time (in seconds) the CSS was last compiled</p>
+
+<p>The cache structure is a plain-ol' PHP associative array and can
+be serialized and unserialized without a hitch.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::cexecute()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$in</h4>
+<code>mixed</code><p>Input</p></div>
+<div class="subelement argument">
+<h4>$force</h4>
+<code>bool</code><p>Force rebuild?</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>lessphp cache structure</div>
+</div></div>
+</div>
+<a id="method_clamp"></a><div class="element clickable method public method_clamp" data-toggle="collapse" data-target=".method_clamp .collapse">
+<h2>clamp()
+        </h2>
+<pre>clamp($v, $max, $min) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::clamp()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$v</h4></div>
+<div class="subelement argument"><h4>$max</h4></div>
+<div class="subelement argument"><h4>$min</h4></div>
+</div></div>
+</div>
+<a id="method_coerceColor"></a><div class="element clickable method public method_coerceColor" data-toggle="collapse" data-target=".method_coerceColor .collapse">
+<h2>coerceColor()
+        </h2>
+<pre>coerceColor($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::coerceColor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_color"></a><div class="element clickable method public method_color" data-toggle="collapse" data-target=".method_color .collapse">
+<h2>color()
+        </h2>
+<pre>color($out) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::color()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$out</h4></div>
+</div></div>
+</div>
+<a id="method_colorArgs"></a><div class="element clickable method public method_colorArgs" data-toggle="collapse" data-target=".method_colorArgs .collapse">
+<h2>Helper function to get arguments for color functions.</h2>
+<pre>colorArgs($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Accepts invalid input, non colors interpreted as being black.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::colorArgs()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_compileBlock"></a><div class="element clickable method public method_compileBlock" data-toggle="collapse" data-target=".method_compileBlock .collapse">
+<h2>Recursively compiles a block.</h2>
+<pre>compileBlock($block, $parent_tags) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::compileBlock()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$block</h4><p>the block</p></div>
+<div class="subelement argument"><h4>$parent_tags</h4></div>
+</div></div>
+</div>
+<a id="method_compileMedia"></a><div class="element clickable method public method_compileMedia" data-toggle="collapse" data-target=".method_compileMedia .collapse">
+<h2>compileMedia()
+        </h2>
+<pre>compileMedia($block) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::compileMedia()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$block</h4></div>
+</div></div>
+</div>
+<a id="method_compileProp"></a><div class="element clickable method public method_compileProp" data-toggle="collapse" data-target=".method_compileProp .collapse">
+<h2>compileProp()
+        </h2>
+<pre>compileProp($prop, $block, $tags, $_lines, $_blocks) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::compileProp()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$prop</h4></div>
+<div class="subelement argument"><h4>$block</h4></div>
+<div class="subelement argument"><h4>$tags</h4></div>
+<div class="subelement argument"><h4>$_lines</h4></div>
+<div class="subelement argument"><h4>$_blocks</h4></div>
+</div></div>
+</div>
+<a id="method_compileValue"></a><div class="element clickable method public method_compileValue" data-toggle="collapse" data-target=".method_compileValue .collapse">
+<h2>Compiles a primitive value into a CSS property value.</h2>
+<pre>compileValue($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Values in lessphp are typed by being wrapped in arrays, their format is
+typically:</p>
+
+<pre><code>array(type, contents [, additional_contents]*)
+</code></pre>
+
+<p>Will not work on non reduced values (expressions, variables, etc)</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::compileValue()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_compressList"></a><div class="element clickable method public method_compressList" data-toggle="collapse" data-target=".method_compressList .collapse">
+<h2>compressList()
+        </h2>
+<pre>compressList($items, $delim) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::compressList()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$items</h4></div>
+<div class="subelement argument"><h4>$delim</h4></div>
+</div></div>
+</div>
+<a id="method_dump"></a><div class="element clickable method public method_dump" data-toggle="collapse" data-target=".method_dump .collapse">
+<h2>dump()
+        </h2>
+<pre>dump() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_end"></a><div class="element clickable method public method_end" data-toggle="collapse" data-target=".method_end .collapse">
+<h2>end()
+        </h2>
+<pre>end() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::end()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_eq"></a><div class="element clickable method public method_eq" data-toggle="collapse" data-target=".method_eq .collapse">
+<h2>eq()
+        </h2>
+<pre>eq($left, $right) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::eq()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$left</h4></div>
+<div class="subelement argument"><h4>$right</h4></div>
+</div></div>
+</div>
+<a id="method_evaluate"></a><div class="element clickable method public method_evaluate" data-toggle="collapse" data-target=".method_evaluate .collapse">
+<h2>evaluate()
+        </h2>
+<pre>evaluate($op, $left, $right) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::evaluate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$op</h4></div>
+<div class="subelement argument"><h4>$left</h4></div>
+<div class="subelement argument"><h4>$right</h4></div>
+</div></div>
+</div>
+<a id="method_expHelper"></a><div class="element clickable method public method_expHelper" data-toggle="collapse" data-target=".method_expHelper .collapse">
+<h2>recursively parse infix equation with $lhs at precedence $minP</h2>
+<pre>expHelper($lhs, $minP) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::expHelper()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$lhs</h4></div>
+<div class="subelement argument"><h4>$minP</h4></div>
+</div></div>
+</div>
+<a id="method_expression"></a><div class="element clickable method public method_expression" data-toggle="collapse" data-target=".method_expression .collapse">
+<h2>Attempt to consume an expression.</h2>
+<pre>expression($out) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>link</th>
+<td><a href="http://en.wikipedia.org/wiki/Operator-precedence_parser#Pseudo-code">http://en.wikipedia.org/wiki/Operator-precedence_parser#Pseudo-code</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\lessc::expression()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$out</h4></div>
+</div></div>
+</div>
+<a id="method_expressionList"></a><div class="element clickable method public method_expressionList" data-toggle="collapse" data-target=".method_expressionList .collapse">
+<h2>expressionList()
+        </h2>
+<pre>expressionList($exps) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::expressionList()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$exps</h4></div>
+</div></div>
+</div>
+<a id="method_fileExists"></a><div class="element clickable method public method_fileExists" data-toggle="collapse" data-target=".method_fileExists .collapse">
+<h2>fileExists()
+        </h2>
+<pre>fileExists($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::fileExists()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_findBlocks"></a><div class="element clickable method public method_findBlocks" data-toggle="collapse" data-target=".method_findBlocks .collapse">
+<h2>findBlocks()
+        </h2>
+<pre>findBlocks($search_in, $path, $args, $seen) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::findBlocks()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$search_in</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+<div class="subelement argument"><h4>$args</h4></div>
+<div class="subelement argument"><h4>$seen</h4></div>
+</div></div>
+</div>
+<a id="method_findImport"></a><div class="element clickable method public method_findImport" data-toggle="collapse" data-target=".method_findImport .collapse">
+<h2>findImport()
+        </h2>
+<pre>findImport($url) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::findImport()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+</div></div>
+</div>
+<a id="method_fixColor"></a><div class="element clickable method public method_fixColor" data-toggle="collapse" data-target=".method_fixColor .collapse">
+<h2>fixColor()
+        </h2>
+<pre>fixColor($c) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::fixColor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$c</h4></div>
+</div></div>
+</div>
+<a id="method_fixTags"></a><div class="element clickable method public method_fixTags" data-toggle="collapse" data-target=".method_fixTags .collapse">
+<h2>fixTags()
+        </h2>
+<pre>fixTags($tags) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::fixTags()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$tags</h4></div>
+</div></div>
+</div>
+<a id="method_func"></a><div class="element clickable method public method_func" data-toggle="collapse" data-target=".method_func .collapse">
+<h2>func()
+        </h2>
+<pre>func($func) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::func()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$func</h4></div>
+</div></div>
+</div>
+<a id="method_funcToColor"></a><div class="element clickable method public method_funcToColor" data-toggle="collapse" data-target=".method_funcToColor .collapse">
+<h2>Convert the rgb, rgba, hsl color literals of function type
+as returned by the parser into values of color type.</h2>
+<pre>funcToColor($func) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::funcToColor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$func</h4></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>get()
+        </h2>
+<pre>get($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::get()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_guard"></a><div class="element clickable method public method_guard" data-toggle="collapse" data-target=".method_guard .collapse">
+<h2>guard()
+        </h2>
+<pre>guard($guard) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::guard()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$guard</h4></div>
+</div></div>
+</div>
+<a id="method_guard_group"></a><div class="element clickable method public method_guard_group" data-toggle="collapse" data-target=".method_guard_group .collapse">
+<h2>guard_group()
+        </h2>
+<pre>guard_group($guard_group) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::guard_group()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$guard_group</h4></div>
+</div></div>
+</div>
+<a id="method_guards"></a><div class="element clickable method public method_guards" data-toggle="collapse" data-target=".method_guards .collapse">
+<h2>guards()
+        </h2>
+<pre>guards($guards) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::guards()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$guards</h4></div>
+</div></div>
+</div>
+<a id="method_import"></a><div class="element clickable method public method_import" data-toggle="collapse" data-target=".method_import .collapse">
+<h2>import()
+        </h2>
+<pre>import($url, $media) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::import()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+<div class="subelement argument"><h4>$media</h4></div>
+</div></div>
+</div>
+<a id="method_keyword"></a><div class="element clickable method public method_keyword" data-toggle="collapse" data-target=".method_keyword .collapse">
+<h2>keyword()
+        </h2>
+<pre>keyword($word) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::keyword()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$word</h4></div>
+</div></div>
+</div>
+<a id="method_lib__sprintf"></a><div class="element clickable method public method_lib__sprintf" data-toggle="collapse" data-target=".method_lib__sprintf .collapse">
+<h2>lib__sprintf()
+        </h2>
+<pre>lib__sprintf($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib__sprintf()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_alpha"></a><div class="element clickable method public method_lib_alpha" data-toggle="collapse" data-target=".method_lib_alpha .collapse">
+<h2>lib_alpha()
+        </h2>
+<pre>lib_alpha($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_alpha()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_lib_darken"></a><div class="element clickable method public method_lib_darken" data-toggle="collapse" data-target=".method_lib_darken .collapse">
+<h2>lib_darken()
+        </h2>
+<pre>lib_darken($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_darken()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_desaturate"></a><div class="element clickable method public method_lib_desaturate" data-toggle="collapse" data-target=".method_lib_desaturate .collapse">
+<h2>lib_desaturate()
+        </h2>
+<pre>lib_desaturate($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_desaturate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_e"></a><div class="element clickable method public method_lib_e" data-toggle="collapse" data-target=".method_lib_e .collapse">
+<h2>lib_e()
+        </h2>
+<pre>lib_e($arg) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_e()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arg</h4></div>
+</div></div>
+</div>
+<a id="method_lib_fade"></a><div class="element clickable method public method_lib_fade" data-toggle="collapse" data-target=".method_lib_fade .collapse">
+<h2>lib_fade()
+        </h2>
+<pre>lib_fade($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_fade()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_fadein"></a><div class="element clickable method public method_lib_fadein" data-toggle="collapse" data-target=".method_lib_fadein .collapse">
+<h2>lib_fadein()
+        </h2>
+<pre>lib_fadein($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_fadein()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_fadeout"></a><div class="element clickable method public method_lib_fadeout" data-toggle="collapse" data-target=".method_lib_fadeout .collapse">
+<h2>lib_fadeout()
+        </h2>
+<pre>lib_fadeout($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_fadeout()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_floor"></a><div class="element clickable method public method_lib_floor" data-toggle="collapse" data-target=".method_lib_floor .collapse">
+<h2>lib_floor()
+        </h2>
+<pre>lib_floor($arg) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_floor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arg</h4></div>
+</div></div>
+</div>
+<a id="method_lib_hue"></a><div class="element clickable method public method_lib_hue" data-toggle="collapse" data-target=".method_lib_hue .collapse">
+<h2>lib_hue()
+        </h2>
+<pre>lib_hue($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_hue()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_lib_iscolor"></a><div class="element clickable method public method_lib_iscolor" data-toggle="collapse" data-target=".method_lib_iscolor .collapse">
+<h2>lib_iscolor()
+        </h2>
+<pre>lib_iscolor($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_iscolor()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_isem"></a><div class="element clickable method public method_lib_isem" data-toggle="collapse" data-target=".method_lib_isem .collapse">
+<h2>lib_isem()
+        </h2>
+<pre>lib_isem($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_isem()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_iskeyword"></a><div class="element clickable method public method_lib_iskeyword" data-toggle="collapse" data-target=".method_lib_iskeyword .collapse">
+<h2>lib_iskeyword()
+        </h2>
+<pre>lib_iskeyword($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_iskeyword()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_isnumber"></a><div class="element clickable method public method_lib_isnumber" data-toggle="collapse" data-target=".method_lib_isnumber .collapse">
+<h2>lib_isnumber()
+        </h2>
+<pre>lib_isnumber($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_isnumber()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_ispercentage"></a><div class="element clickable method public method_lib_ispercentage" data-toggle="collapse" data-target=".method_lib_ispercentage .collapse">
+<h2>lib_ispercentage()
+        </h2>
+<pre>lib_ispercentage($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_ispercentage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_ispixel"></a><div class="element clickable method public method_lib_ispixel" data-toggle="collapse" data-target=".method_lib_ispixel .collapse">
+<h2>lib_ispixel()
+        </h2>
+<pre>lib_ispixel($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_ispixel()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_isstring"></a><div class="element clickable method public method_lib_isstring" data-toggle="collapse" data-target=".method_lib_isstring .collapse">
+<h2>lib_isstring()
+        </h2>
+<pre>lib_isstring($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_isstring()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_lib_lighten"></a><div class="element clickable method public method_lib_lighten" data-toggle="collapse" data-target=".method_lib_lighten .collapse">
+<h2>lib_lighten()
+        </h2>
+<pre>lib_lighten($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_lighten()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_lightness"></a><div class="element clickable method public method_lib_lightness" data-toggle="collapse" data-target=".method_lib_lightness .collapse">
+<h2>lib_lightness()
+        </h2>
+<pre>lib_lightness($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_lightness()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_lib_mix"></a><div class="element clickable method public method_lib_mix" data-toggle="collapse" data-target=".method_lib_mix .collapse">
+<h2>lib_mix()
+        </h2>
+<pre>lib_mix($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_mix()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_percentage"></a><div class="element clickable method public method_lib_percentage" data-toggle="collapse" data-target=".method_lib_percentage .collapse">
+<h2>lib_percentage()
+        </h2>
+<pre>lib_percentage($number) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_percentage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$number</h4></div>
+</div></div>
+</div>
+<a id="method_lib_rgbahex"></a><div class="element clickable method public method_lib_rgbahex" data-toggle="collapse" data-target=".method_lib_rgbahex .collapse">
+<h2>lib_rgbahex()
+        </h2>
+<pre>lib_rgbahex($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_rgbahex()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_lib_round"></a><div class="element clickable method public method_lib_round" data-toggle="collapse" data-target=".method_lib_round .collapse">
+<h2>lib_round()
+        </h2>
+<pre>lib_round($arg) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_round()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arg</h4></div>
+</div></div>
+</div>
+<a id="method_lib_saturate"></a><div class="element clickable method public method_lib_saturate" data-toggle="collapse" data-target=".method_lib_saturate .collapse">
+<h2>lib_saturate()
+        </h2>
+<pre>lib_saturate($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_saturate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_lib_saturation"></a><div class="element clickable method public method_lib_saturation" data-toggle="collapse" data-target=".method_lib_saturation .collapse">
+<h2>lib_saturation()
+        </h2>
+<pre>lib_saturation($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_saturation()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_lib_spin"></a><div class="element clickable method public method_lib_spin" data-toggle="collapse" data-target=".method_lib_spin .collapse">
+<h2>lib_spin()
+        </h2>
+<pre>lib_spin($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::lib_spin()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_literal"></a><div class="element clickable method public method_literal" data-toggle="collapse" data-target=".method_literal .collapse">
+<h2>literal()
+        </h2>
+<pre>literal($what, $eatWhitespace) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::literal()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$what</h4></div>
+<div class="subelement argument"><h4>$eatWhitespace</h4></div>
+</div></div>
+</div>
+<a id="method_match"></a><div class="element clickable method public method_match" data-toggle="collapse" data-target=".method_match .collapse">
+<h2>match()
+        </h2>
+<pre>match($regex, $out, $eatWhitespace) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::match()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$regex</h4></div>
+<div class="subelement argument"><h4>$out</h4></div>
+<div class="subelement argument"><h4>$eatWhitespace</h4></div>
+</div></div>
+</div>
+<a id="method_mediaTypes"></a><div class="element clickable method public method_mediaTypes" data-toggle="collapse" data-target=".method_mediaTypes .collapse">
+<h2>mediaTypes()
+        </h2>
+<pre>mediaTypes($parts) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::mediaTypes()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$parts</h4></div>
+</div></div>
+</div>
+<a id="method_mergeBlock"></a><div class="element clickable method public method_mergeBlock" data-toggle="collapse" data-target=".method_mergeBlock .collapse">
+<h2>mergeBlock()
+        </h2>
+<pre>mergeBlock($target, $from) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::mergeBlock()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$target</h4></div>
+<div class="subelement argument"><h4>$from</h4></div>
+</div></div>
+</div>
+<a id="method_mixImports"></a><div class="element clickable method public method_mixImports" data-toggle="collapse" data-target=".method_mixImports .collapse">
+<h2>mixImports()
+        </h2>
+<pre>mixImports($block) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::mixImports()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$block</h4></div>
+</div></div>
+</div>
+<a id="method_mixinTags"></a><div class="element clickable method public method_mixinTags" data-toggle="collapse" data-target=".method_mixinTags .collapse">
+<h2>mixinTags()
+        </h2>
+<pre>mixinTags($tags) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::mixinTags()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$tags</h4></div>
+</div></div>
+</div>
+<a id="method_multiplyTags"></a><div class="element clickable method public method_multiplyTags" data-toggle="collapse" data-target=".method_multiplyTags .collapse">
+<h2>multiplyTags()
+        </h2>
+<pre>multiplyTags($parents, $current) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::multiplyTags()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$parents</h4></div>
+<div class="subelement argument"><h4>$current</h4></div>
+</div></div>
+</div>
+<a id="method_op_color_color"></a><div class="element clickable method public method_op_color_color" data-toggle="collapse" data-target=".method_op_color_color .collapse">
+<h2>op_color_color()
+        </h2>
+<pre>op_color_color($op, $left, $right) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::op_color_color()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$op</h4></div>
+<div class="subelement argument"><h4>$left</h4></div>
+<div class="subelement argument"><h4>$right</h4></div>
+</div></div>
+</div>
+<a id="method_op_color_number"></a><div class="element clickable method public method_op_color_number" data-toggle="collapse" data-target=".method_op_color_number .collapse">
+<h2>op_color_number()
+        </h2>
+<pre>op_color_number($op, $lft, $rgt) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::op_color_number()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$op</h4></div>
+<div class="subelement argument"><h4>$lft</h4></div>
+<div class="subelement argument"><h4>$rgt</h4></div>
+</div></div>
+</div>
+<a id="method_op_number_color"></a><div class="element clickable method public method_op_number_color" data-toggle="collapse" data-target=".method_op_number_color .collapse">
+<h2>op_number_color()
+        </h2>
+<pre>op_number_color($op, $lft, $rgt) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::op_number_color()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$op</h4></div>
+<div class="subelement argument"><h4>$lft</h4></div>
+<div class="subelement argument"><h4>$rgt</h4></div>
+</div></div>
+</div>
+<a id="method_op_number_number"></a><div class="element clickable method public method_op_number_number" data-toggle="collapse" data-target=".method_op_number_number .collapse">
+<h2>op_number_number()
+        </h2>
+<pre>op_number_number($op, $left, $right) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::op_number_number()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$op</h4></div>
+<div class="subelement argument"><h4>$left</h4></div>
+<div class="subelement argument"><h4>$right</h4></div>
+</div></div>
+</div>
+<a id="method_parse"></a><div class="element clickable method public method_parse" data-toggle="collapse" data-target=".method_parse .collapse">
+<h2>parse()
+        </h2>
+<pre>parse($str) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$str</h4></div>
+</div></div>
+</div>
+<a id="method_parseChunk"></a><div class="element clickable method public method_parseChunk" data-toggle="collapse" data-target=".method_parseChunk .collapse">
+<h2>Parse a single chunk off the head of the buffer and place it.</h2>
+<pre>parseChunk() : false</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::parseChunk()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>false</code>when the buffer is empty, or when there is an error.
+This function is called repeatedly until the entire document is
+parsed.
+This parser is most similar to a recursive descent parser. Single
+functions represent discrete grammatical rules for the language, and
+they are able to capture the text that represents those rules.
+Consider the function lessc::keyword(). (all parse functions are
+structured the same)
+The function takes a single reference argument. When calling the
+function it will attempt to match a keyword on the head of the buffer.
+If it is successful, it will place the keyword in the referenced
+argument, advance the position in the buffer, and return true. If it
+fails then it won't advance the buffer and it will return false.
+All of these parse functions are powered by lessc::match(), which behaves
+the same way, but takes a literal regular expression. Sometimes it is
+more convenient to use match instead of creating a new function.
+Because of the format of the functions, to parse an entire string of
+grammatical rules, you can chain them together using &&.
+But, if some of the rules in the chain succeed before one fails, then
+the buffer position will be left at an invalid state. In order to
+avoid this, lessc::seek() is used to remember and set buffer positions.
+Before parsing a chain, use $s = $this->seek() to remember the current
+position into $s. Then if a chain fails, use $this->seek($s) to
+go back where we started.</div>
+</div></div>
+</div>
+<a id="method_parseTree"></a><div class="element clickable method public method_parseTree" data-toggle="collapse" data-target=".method_parseTree .collapse">
+<h2>parseTree()
+        </h2>
+<pre>parseTree($str) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::parseTree()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$str</h4></div>
+</div></div>
+</div>
+<a id="method_patternMatch"></a><div class="element clickable method public method_patternMatch" data-toggle="collapse" data-target=".method_patternMatch .collapse">
+<h2>patternMatch()
+        </h2>
+<pre>patternMatch($block, $callingArgs) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::patternMatch()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$block</h4></div>
+<div class="subelement argument"><h4>$callingArgs</h4></div>
+</div></div>
+</div>
+<a id="method_patternMatchAll"></a><div class="element clickable method public method_patternMatchAll" data-toggle="collapse" data-target=".method_patternMatchAll .collapse">
+<h2>patternMatchAll()
+        </h2>
+<pre>patternMatchAll($blocks, $callingArgs) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::patternMatchAll()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$blocks</h4></div>
+<div class="subelement argument"><h4>$callingArgs</h4></div>
+</div></div>
+</div>
+<a id="method_peek"></a><div class="element clickable method public method_peek" data-toggle="collapse" data-target=".method_peek .collapse">
+<h2>peek()
+        </h2>
+<pre>peek($regex, $out) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::peek()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$regex</h4></div>
+<div class="subelement argument"><h4>$out</h4></div>
+</div></div>
+</div>
+<a id="method_pop"></a><div class="element clickable method public method_pop" data-toggle="collapse" data-target=".method_pop .collapse">
+<h2>pop()
+        </h2>
+<pre>pop() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::pop()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_preg_quote"></a><div class="element clickable method public method_preg_quote" data-toggle="collapse" data-target=".method_preg_quote .collapse">
+<h2>preg_quote()
+        </h2>
+<pre>preg_quote($what) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::preg_quote()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$what</h4></div>
+</div></div>
+</div>
+<a id="method_propertyValue"></a><div class="element clickable method public method_propertyValue" data-toggle="collapse" data-target=".method_propertyValue .collapse">
+<h2>propertyValue()
+        </h2>
+<pre>propertyValue($value, $keyName) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::propertyValue()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$keyName</h4></div>
+</div></div>
+</div>
+<a id="method_pushBlock"></a><div class="element clickable method public method_pushBlock" data-toggle="collapse" data-target=".method_pushBlock .collapse">
+<h2>pushBlock()
+        </h2>
+<pre>pushBlock($tags) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::pushBlock()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$tags</h4></div>
+</div></div>
+</div>
+<a id="method_pushEnv"></a><div class="element clickable method public method_pushEnv" data-toggle="collapse" data-target=".method_pushEnv .collapse">
+<h2>pushEnv()
+        </h2>
+<pre>pushEnv() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::pushEnv()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_pushSpecialBlock"></a><div class="element clickable method public method_pushSpecialBlock" data-toggle="collapse" data-target=".method_pushSpecialBlock .collapse">
+<h2>pushSpecialBlock()
+        </h2>
+<pre>pushSpecialBlock($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::pushSpecialBlock()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_quoted"></a><div class="element clickable method public method_quoted" data-toggle="collapse" data-target=".method_quoted .collapse">
+<h2>quoted()
+        </h2>
+<pre>quoted($s) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::quoted()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$s</h4></div>
+</div></div>
+</div>
+<a id="method_reduce"></a><div class="element clickable method public method_reduce" data-toggle="collapse" data-target=".method_reduce .collapse">
+<h2>reduce()
+        </h2>
+<pre>reduce($var) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::reduce()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$var</h4></div>
+</div></div>
+</div>
+<a id="method_registerFunction"></a><div class="element clickable method public method_registerFunction" data-toggle="collapse" data-target=".method_registerFunction .collapse">
+<h2>registerFunction()
+        </h2>
+<pre>registerFunction($name, $func) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::registerFunction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$func</h4></div>
+</div></div>
+</div>
+<a id="method_removeComments"></a><div class="element clickable method public method_removeComments" data-toggle="collapse" data-target=".method_removeComments .collapse">
+<h2>removeComments()
+        </h2>
+<pre>removeComments($text) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::removeComments()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$text</h4></div>
+</div></div>
+</div>
+<a id="method_seek"></a><div class="element clickable method public method_seek" data-toggle="collapse" data-target=".method_seek .collapse">
+<h2>seek()
+        </h2>
+<pre>seek($where) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::seek()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$where</h4></div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>set()
+        </h2>
+<pre>set($name, $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_string"></a><div class="element clickable method public method_string" data-toggle="collapse" data-target=".method_string .collapse">
+<h2>string()
+        </h2>
+<pre>string($string, $d) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::string()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$string</h4></div>
+<div class="subelement argument"><h4>$d</h4></div>
+</div></div>
+</div>
+<a id="method_tag"></a><div class="element clickable method public method_tag" data-toggle="collapse" data-target=".method_tag .collapse">
+<h2>tag()
+        </h2>
+<pre>tag($tag, $simple) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::tag()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$tag</h4></div>
+<div class="subelement argument"><h4>$simple</h4></div>
+</div></div>
+</div>
+<a id="method_tagBracket"></a><div class="element clickable method public method_tagBracket" data-toggle="collapse" data-target=".method_tagBracket .collapse">
+<h2>tagBracket()
+        </h2>
+<pre>tagBracket($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::tagBracket()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_tags"></a><div class="element clickable method public method_tags" data-toggle="collapse" data-target=".method_tags .collapse">
+<h2>tags()
+        </h2>
+<pre>tags($tags, $simple, $delim) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::tags()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$tags</h4></div>
+<div class="subelement argument"><h4>$simple</h4></div>
+<div class="subelement argument"><h4>$delim</h4></div>
+</div></div>
+</div>
+<a id="method_throwError"></a><div class="element clickable method public method_throwError" data-toggle="collapse" data-target=".method_throwError .collapse">
+<h2>Uses the current value of $this-&gt;count to show line and line number</h2>
+<pre>throwError($msg) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::throwError()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$msg</h4></div>
+</div></div>
+</div>
+<a id="method_to"></a><div class="element clickable method public method_to" data-toggle="collapse" data-target=".method_to .collapse">
+<h2>to()
+        </h2>
+<pre>to($what, $out, $until, $allowNewline) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::to()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$what</h4></div>
+<div class="subelement argument"><h4>$out</h4></div>
+<div class="subelement argument"><h4>$until</h4></div>
+<div class="subelement argument"><h4>$allowNewline</h4></div>
+</div></div>
+</div>
+<a id="method_toBool"></a><div class="element clickable method public method_toBool" data-toggle="collapse" data-target=".method_toBool .collapse">
+<h2>toBool()
+        </h2>
+<pre>toBool($a) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::toBool()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$a</h4></div>
+</div></div>
+</div>
+<a id="method_toHSL"></a><div class="element clickable method public method_toHSL" data-toggle="collapse" data-target=".method_toHSL .collapse">
+<h2>toHSL()
+        </h2>
+<pre>toHSL($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::toHSL()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_toName"></a><div class="element clickable method public method_toName" data-toggle="collapse" data-target=".method_toName .collapse">
+<h2>toName()
+        </h2>
+<pre>toName($val) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::toName()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$val</h4></div>
+</div></div>
+</div>
+<a id="method_toRGB"></a><div class="element clickable method public method_toRGB" data-toggle="collapse" data-target=".method_toRGB .collapse">
+<h2>Converts a hsl array into a color value in rgb.</h2>
+<pre>toRGB($color) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Expects H to be in range of 0 to 360, S and L in 0 to 100</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::toRGB()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$color</h4></div>
+</div></div>
+</div>
+<a id="method_toRGB_helper"></a><div class="element clickable method public method_toRGB_helper" data-toggle="collapse" data-target=".method_toRGB_helper .collapse">
+<h2>toRGB_helper()
+        </h2>
+<pre>toRGB_helper($comp, $temp1, $temp2) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::toRGB_helper()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$comp</h4></div>
+<div class="subelement argument"><h4>$temp1</h4></div>
+<div class="subelement argument"><h4>$temp2</h4></div>
+</div></div>
+</div>
+<a id="method_unit"></a><div class="element clickable method public method_unit" data-toggle="collapse" data-target=".method_unit .collapse">
+<h2>Consume a number and optionally a unit.</h2>
+<pre>unit($unit, $allowed) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Can also consume a font shorthand if it is a simple case.
+$allowed restricts the types that are matched.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::unit()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$unit</h4></div>
+<div class="subelement argument"><h4>$allowed</h4></div>
+</div></div>
+</div>
+<a id="method_unregisterFunction"></a><div class="element clickable method public method_unregisterFunction" data-toggle="collapse" data-target=".method_unregisterFunction .collapse">
+<h2>unregisterFunction()
+        </h2>
+<pre>unregisterFunction($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::unregisterFunction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_value"></a><div class="element clickable method public method_value" data-toggle="collapse" data-target=".method_value .collapse">
+<h2>value()
+        </h2>
+<pre>value($value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::value()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_variable"></a><div class="element clickable method public method_variable" data-toggle="collapse" data-target=".method_variable .collapse">
+<h2>variable()
+        </h2>
+<pre>variable($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::variable()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_zipSetArgs"></a><div class="element clickable method public method_zipSetArgs" data-toggle="collapse" data-target=".method_zipSetArgs .collapse">
+<h2>zipSetArgs()
+        </h2>
+<pre>zipSetArgs($args, $values) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::zipSetArgs()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+<div class="subelement argument"><h4>$values</h4></div>
+</div></div>
+</div>
+<a id="method_addParsedFile"></a><div class="element clickable method protected method_addParsedFile" data-toggle="collapse" data-target=".method_addParsedFile .collapse">
+<h2>addParsedFile()
+        </h2>
+<pre>addParsedFile($file) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::addParsedFile()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file</h4></div>
+</div></div>
+</div>
+<a id="method_createChild"></a><div class="element clickable method protected method_createChild" data-toggle="collapse" data-target=".method_createChild .collapse">
+<h2>createChild()
+        </h2>
+<pre>createChild($fname) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::createChild()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fname</h4></div>
+</div></div>
+</div>
+<a id="method_injectVariables"></a><div class="element clickable method protected method_injectVariables" data-toggle="collapse" data-target=".method_injectVariables .collapse">
+<h2>injectVariables()
+        </h2>
+<pre>injectVariables($args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::injectVariables()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_prepareParser"></a><div class="element clickable method protected method_prepareParser" data-toggle="collapse" data-target=".method_prepareParser .collapse">
+<h2>Initialize state for a fresh parse</h2>
+<pre>prepareParser($buff) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::prepareParser()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$buff</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_VERSION"> </a><div class="element clickable property public property_VERSION" data-toggle="collapse" data-target=".property_VERSION .collapse">
+<h2></h2>
+<pre>$VERSION </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$VERSION</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_compat"> </a><div class="element clickable property public property_compat" data-toggle="collapse" data-target=".property_compat .collapse">
+<h2></h2>
+<pre>$compat </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$compat</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_imPrefix"> </a><div class="element clickable property public property_imPrefix" data-toggle="collapse" data-target=".property_imPrefix .collapse">
+<h2></h2>
+<pre>$imPrefix </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$imPrefix</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_importDir"> </a><div class="element clickable property public property_importDir" data-toggle="collapse" data-target=".property_importDir .collapse">
+<h2></h2>
+<pre>$importDir </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$importDir</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_importDisabled"> </a><div class="element clickable property public property_importDisabled" data-toggle="collapse" data-target=".property_importDisabled .collapse">
+<h2></h2>
+<pre>$importDisabled </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$importDisabled</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_indentChar"> </a><div class="element clickable property public property_indentChar" data-toggle="collapse" data-target=".property_indentChar .collapse">
+<h2></h2>
+<pre>$indentChar </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$indentChar</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_indentLevel"> </a><div class="element clickable property public property_indentLevel" data-toggle="collapse" data-target=".property_indentLevel .collapse">
+<h2></h2>
+<pre>$indentLevel </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$indentLevel</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_mPrefix"> </a><div class="element clickable property public property_mPrefix" data-toggle="collapse" data-target=".property_mPrefix .collapse">
+<h2></h2>
+<pre>$mPrefix </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$mPrefix</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_parentSelector"> </a><div class="element clickable property public property_parentSelector" data-toggle="collapse" data-target=".property_parentSelector .collapse">
+<h2></h2>
+<pre>$parentSelector </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$parentSelector</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_vPrefix"> </a><div class="element clickable property public property_vPrefix" data-toggle="collapse" data-target=".property_vPrefix .collapse">
+<h2></h2>
+<pre>$vPrefix </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$vPrefix</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_FALSE"> </a><div class="element clickable property protected property_FALSE" data-toggle="collapse" data-target=".property_FALSE .collapse">
+<h2></h2>
+<pre>$FALSE </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$FALSE</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_TRUE"> </a><div class="element clickable property protected property_TRUE" data-toggle="collapse" data-target=".property_TRUE .collapse">
+<h2></h2>
+<pre>$TRUE </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$TRUE</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_allParsedFiles"> </a><div class="element clickable property protected property_allParsedFiles" data-toggle="collapse" data-target=".property_allParsedFiles .collapse">
+<h2></h2>
+<pre>$allParsedFiles </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$allParsedFiles</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_buffer"> </a><div class="element clickable property protected property_buffer" data-toggle="collapse" data-target=".property_buffer .collapse">
+<h2></h2>
+<pre>$buffer </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$buffer</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_count"> </a><div class="element clickable property protected property_count" data-toggle="collapse" data-target=".property_count .collapse">
+<h2></h2>
+<pre>$count </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$count</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_cssColors"> </a><div class="element clickable property protected property_cssColors" data-toggle="collapse" data-target=".property_cssColors .collapse">
+<h2></h2>
+<pre>$cssColors </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$cssColors</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_dtypes"> </a><div class="element clickable property protected property_dtypes" data-toggle="collapse" data-target=".property_dtypes .collapse">
+<h2></h2>
+<pre>$dtypes </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$dtypes</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_env"> </a><div class="element clickable property protected property_env" data-toggle="collapse" data-target=".property_env .collapse">
+<h2></h2>
+<pre>$env </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$env</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_inExp"> </a><div class="element clickable property protected property_inExp" data-toggle="collapse" data-target=".property_inExp .collapse">
+<h2></h2>
+<pre>$inExp </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$inExp</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_inParens"> </a><div class="element clickable property protected property_inParens" data-toggle="collapse" data-target=".property_inParens .collapse">
+<h2></h2>
+<pre>$inParens </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Consider:
+    property1: 10 -5; // is two numbers, 10 and -5
+    property2: (10 -5); // should evaluate to 5</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$inParens</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_libFunctions"> </a><div class="element clickable property protected property_libFunctions" data-toggle="collapse" data-target=".property_libFunctions .collapse">
+<h2></h2>
+<pre>$libFunctions </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$libFunctions</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_line"> </a><div class="element clickable property protected property_line" data-toggle="collapse" data-target=".property_line .collapse">
+<h2></h2>
+<pre>$line </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$line</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_nextBlockId"> </a><div class="element clickable property protected property_nextBlockId" data-toggle="collapse" data-target=".property_nextBlockId .collapse">
+<h2></h2>
+<pre>$nextBlockId </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$nextBlockId</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_operatorString"> </a><div class="element clickable property protected property_operatorString" data-toggle="collapse" data-target=".property_operatorString .collapse">
+<h2></h2>
+<pre>$operatorString </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$operatorString</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_precedence"> </a><div class="element clickable property protected property_precedence" data-toggle="collapse" data-target=".property_precedence .collapse">
+<h2></h2>
+<pre>$precedence </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$precedence</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_sourceParser"> </a><div class="element clickable property protected property_sourceParser" data-toggle="collapse" data-target=".property_sourceParser .collapse">
+<h2></h2>
+<pre>$sourceParser </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$sourceParser</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_supressDivisionProps"> </a><div class="element clickable property protected property_supressDivisionProps" data-toggle="collapse" data-target=".property_supressDivisionProps .collapse">
+<h2></h2>
+<pre>$supressDivisionProps </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\lessc::$$supressDivisionProps</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_units"> </a><div class="element clickable property protected property_units" data-toggle="collapse" data-target=".property_units .collapse">
+<h2></h2>
+<pre>$units </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>link</th>
+<td><a href="http://www.w3.org/TR/css3-values/">http://www.w3.org/TR/css3-values/</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\lessc::$$units</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-05-04T16:17:49-07:00.<br></footer></div>
+</div>
+</body>
+</html>

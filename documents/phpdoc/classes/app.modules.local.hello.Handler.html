@@ -1,0 +1,1011 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Erdiko » \app\modules\local\hello\Handler</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Erdiko</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/app.html"><i class="icon-th"></i> app</a></li>
+<li><a href="../namespaces/erdiko.html"><i class="icon-th"></i> erdiko</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">645</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">16</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___call" title="__call :: "><span class="description">__call()
+        </span><pre>__call()</pre></a></li>
+<li class="method public inherited"><a href="#method___construct" title="__construct :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_aboutAction" title="aboutAction :: "><span class="description">aboutAction()
+        </span><pre>aboutAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_addBodyStyleClass" title="addBodyStyleClass :: Set page content data to be themed in the view"><span class="description">Set page content data to be themed in the view</span><pre>addBodyStyleClass()</pre></a></li>
+<li class="method public inherited"><a href="#method_addContentData" title="addContentData :: Add a page content data to be themed in the view"><span class="description">Add a page content data to be themed in the view</span><pre>addContentData()</pre></a></li>
+<li class="method public inherited"><a href="#method_addCss" title="addCss :: Add Css file to current page"><span class="description">Add Css file to current page</span><pre>addCss()</pre></a></li>
+<li class="method public inherited"><a href="#method_addIdentifier" title="addIdentifier :: Add Identifier to current page"><span class="description">Add Identifier to current page</span><pre>addIdentifier()</pre></a></li>
+<li class="method public inherited"><a href="#method_addJs" title="addJs :: Add js file to current page"><span class="description">Add js file to current page</span><pre>addJs()</pre></a></li>
+<li class="method public inherited"><a href="#method_addMeta" title="addMeta :: Add Meta Tags to the page"><span class="description">Add Meta Tags to the page</span><pre>addMeta()</pre></a></li>
+<li class="method public inherited"><a href="#method_addPhpToJs" title="addPhpToJs :: Add phpToJs variable to be set on the current page"><span class="description">Add phpToJs variable to be set on the current page</span><pre>addPhpToJs()</pre></a></li>
+<li class="method public inherited"><a href="#method_compileNameValue" title="compileNameValue :: "><span class="description">compileNameValue()
+        </span><pre>compileNameValue()</pre></a></li>
+<li class="method public inherited"><a href="#method_get" title="get :: "><span class="description">get()
+        </span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#method_getExceptionHtml" title="getExceptionHtml :: "><span class="description">getExceptionHtml()
+        </span><pre>getExceptionHtml()</pre></a></li>
+<li class="method public inherited"><a href="#method_getId" title="getId :: Get id (unique name)"><span class="description">Get id (unique name)</span><pre>getId()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdentifiers" title="getIdentifiers :: Get identifiers"><span class="description">Get identifiers</span><pre>getIdentifiers()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLayout" title="getLayout :: Get layout"><span class="description">Get layout</span><pre>getLayout()</pre></a></li>
+<li class="method public inherited"><a href="#method_getTemplate" title="getTemplate :: Get template name
+Returns null if not overriding the template/layout"><span class="description">Get template name
+Returns null if not overriding the template/layout</span><pre>getTemplate()</pre></a></li>
+<li class="method public inherited"><a href="#method_getView" title="getView :: Load a view from the current theme with the given data"><span class="description">Load a view from the current theme with the given data</span><pre>getView()</pre></a></li>
+<li class="method public "><a href="#method_gridAction" title="gridAction :: "><span class="description">gridAction()
+        </span><pre>gridAction()</pre></a></li>
+<li class="method public "><a href="#method_indexAction" title="indexAction :: Homepage Action (index)"><span class="description">Homepage Action (index)</span><pre>indexAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_init" title="init :: This is just an init hook to be implemented in derived classes if needed"><span class="description">This is just an init hook to be implemented in derived classes if needed</span><pre>init()</pre></a></li>
+<li class="method public "><a href="#method_markupAction" title="markupAction :: "><span class="description">markupAction()
+        </span><pre>markupAction()</pre></a></li>
+<li class="method public "><a href="#method_onecolumnAction" title="onecolumnAction :: "><span class="description">onecolumnAction()
+        </span><pre>onecolumnAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_parseArguments" title="parseArguments :: "><span class="description">parseArguments()
+        </span><pre>parseArguments()</pre></a></li>
+<li class="method public inherited"><a href="#method_post" title="post :: "><span class="description">post()
+        </span><pre>post()</pre></a></li>
+<li class="method public inherited"><a href="#method_redirect" title="redirect :: "><span class="description">redirect()
+        </span><pre>redirect()</pre></a></li>
+<li class="method public inherited"><a href="#method_route" title="route :: Primary request router"><span class="description">Primary request router</span><pre>route()</pre></a></li>
+<li class="method public inherited"><a href="#method_setBodyContent" title="setBodyContent :: Set page content data to be themed in the view"><span class="description">Set page content data to be themed in the view</span><pre>setBodyContent()</pre></a></li>
+<li class="method public inherited"><a href="#method_setBodyStyle" title="setBodyStyle :: Set page content data to be themed in the view"><span class="description">Set page content data to be themed in the view</span><pre>setBodyStyle()</pre></a></li>
+<li class="method public inherited"><a href="#method_setBodyTitle" title="setBodyTitle :: Set page content data to be themed in the view"><span class="description">Set page content data to be themed in the view</span><pre>setBodyTitle()</pre></a></li>
+<li class="method public inherited"><a href="#method_setContext" title="setContext :: Override existing context with the supplied context"><span class="description">Override existing context with the supplied context</span><pre>setContext()</pre></a></li>
+<li class="method public inherited"><a href="#method_setData" title="setData :: Set data to be themed in the given view"><span class="description">Set data to be themed in the given view</span><pre>setData()</pre></a></li>
+<li class="method public inherited"><a href="#method_setId" title="setId :: Set id (unique name)"><span class="description">Set id (unique name)</span><pre>setId()</pre></a></li>
+<li class="method public inherited"><a href="#method_setLayout" title="setLayout :: Set layout"><span class="description">Set layout</span><pre>setLayout()</pre></a></li>
+<li class="method public inherited"><a href="#method_setLayoutColumns" title="setLayoutColumns :: "><span class="description">setLayoutColumns()
+        </span><pre>setLayoutColumns()</pre></a></li>
+<li class="method public inherited"><a href="#method_setLayoutData" title="setLayoutData :: Add data variable to the layout"><span class="description">Add data variable to the layout</span><pre>setLayoutData()</pre></a></li>
+<li class="method public inherited"><a href="#method_setPageTitle" title="setPageTitle :: Add page title text to current page"><span class="description">Add page title text to current page</span><pre>setPageTitle()</pre></a></li>
+<li class="method public inherited"><a href="#method_setSidebar" title="setSidebar :: Set the view template to be used"><span class="description">Set the view template to be used</span><pre>setSidebar()</pre></a></li>
+<li class="method public inherited"><a href="#method_setTemplate" title="setTemplate :: Set layout template"><span class="description">Set layout template</span><pre>setTemplate()</pre></a></li>
+<li class="method public inherited"><a href="#method_setTitle" title="setTitle :: Set both the page title and body title at the same time"><span class="description">Set both the page title and body title at the same time</span><pre>setTitle()</pre></a></li>
+<li class="method public inherited"><a href="#method_setView" title="setView :: Set the view template to be used"><span class="description">Set the view template to be used</span><pre>setView()</pre></a></li>
+<li class="method public inherited"><a href="#method_theme" title="theme :: Theme a set of data
+Generates an entire page with the given data"><span class="description">Theme a set of data
+Generates an entire page with the given data</span><pre>theme()</pre></a></li>
+<li class="method public "><a href="#method_threecolumnAction" title="threecolumnAction :: "><span class="description">threecolumnAction()
+        </span><pre>threecolumnAction()</pre></a></li>
+<li class="method public "><a href="#method_twocolumnAction" title="twocolumnAction :: "><span class="description">twocolumnAction()
+        </span><pre>twocolumnAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_urlToActionName" title="urlToActionName :: Modify the action name coming from the URL into proper action name"><span class="description">Modify the action name coming from the URL into proper action name</span><pre>urlToActionName()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method__after" title="_after :: After action hook
+anything here gets called immediately AFTER the Action method runs."><span class="description">After action hook
+anything here gets called immediately AFTER the Action method runs.</span><pre>_after()</pre></a></li>
+<li class="method protected inherited"><a href="#method__before" title="_before :: Before action hook
+Anything here gets called immediately BEFORE the Action method runs."><span class="description">Before action hook
+Anything here gets called immediately BEFORE the Action method runs.</span><pre>_before()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property__arguments" title="$_arguments :: "><span class="description"></span><pre>$_arguments</pre></a></li>
+<li class="property protected inherited"><a href="#property__layout" title="$_layout :: "><span class="description"></span><pre>$_layout</pre></a></li>
+<li class="property protected inherited"><a href="#property__localConfig" title="$_localConfig :: "><span class="description"></span><pre>$_localConfig</pre></a></li>
+<li class="property protected inherited"><a href="#property__numberColumns" title="$_numberColumns :: "><span class="description"></span><pre>$_numberColumns</pre></a></li>
+<li class="property protected inherited"><a href="#property__pageData" title="$_pageData :: "><span class="description"></span><pre>$_pageData</pre></a></li>
+<li class="property protected inherited"><a href="#property__template" title="$_template :: "><span class="description"></span><pre>$_template</pre></a></li>
+<li class="property protected inherited"><a href="#property__themeExtras" title="$_themeExtras :: "><span class="description"></span><pre>$_themeExtras</pre></a></li>
+<li class="property protected inherited"><a href="#property__webroot" title="$_webroot :: "><span class="description"></span><pre>$_webroot</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\app\modules\local\hello\Handler"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/app.html">app</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.html">modules</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.local.html">local</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/app.modules.local.hello.html">hello</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/app.modules.local.hello.Handler.html">Handler</a>
+</li>
+</ul>
+<div class="element class"><div class="details">
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___call"></a><div class="element clickable method public method___call" data-toggle="collapse" data-target=".method___call .collapse">
+<h2>__call()
+        </h2>
+<pre>__call($name, $arguments) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\ToroHandler::__call()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::__call()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>__construct()
+        </h2>
+<pre>__construct() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::__construct()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_aboutAction"></a><div class="element clickable method public method_aboutAction" data-toggle="collapse" data-target=".method_aboutAction .collapse">
+<h2>aboutAction()
+        </h2>
+<pre>aboutAction($arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_addBodyStyleClass"></a><div class="element clickable method public method_addBodyStyleClass" data-toggle="collapse" data-target=".method_addBodyStyleClass .collapse">
+<h2>Set page content data to be themed in the view</h2>
+<pre>addBodyStyleClass($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addBodyStyleClass()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_addContentData"></a><div class="element clickable method public method_addContentData" data-toggle="collapse" data-target=".method_addContentData .collapse">
+<h2>Add a page content data to be themed in the view</h2>
+<pre>addContentData($key, $value) : \erdiko\core\$this:</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addContentData()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\erdiko\core\$this:</code>Provides chaining</div>
+</div></div>
+</div>
+<a id="method_addCss"></a><div class="element clickable method public method_addCss" data-toggle="collapse" data-target=".method_addCss .collapse">
+<h2>Add Css file to current page</h2>
+<pre>addCss($file) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>note</th>
+<td>Not yet supported</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addCss()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file</h4></div>
+</div></div>
+</div>
+<a id="method_addIdentifier"></a><div class="element clickable method public method_addIdentifier" data-toggle="collapse" data-target=".method_addIdentifier .collapse">
+<h2>Add Identifier to current page</h2>
+<pre>addIdentifier($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>note</th>
+<td>Not yet supported</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addIdentifier()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_addJs"></a><div class="element clickable method public method_addJs" data-toggle="collapse" data-target=".method_addJs .collapse">
+<h2>Add js file to current page</h2>
+<pre>addJs($file) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addJs()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file</h4></div>
+</div></div>
+</div>
+<a id="method_addMeta"></a><div class="element clickable method public method_addMeta" data-toggle="collapse" data-target=".method_addMeta .collapse">
+<h2>Add Meta Tags to the page</h2>
+<pre>addMeta(string $content, $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addMeta()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code>
+</div>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_addPhpToJs"></a><div class="element clickable method public method_addPhpToJs" data-toggle="collapse" data-target=".method_addPhpToJs .collapse">
+<h2>Add phpToJs variable to be set on the current page</h2>
+<pre>addPhpToJs($key, $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::addPhpToJs()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_compileNameValue"></a><div class="element clickable method public method_compileNameValue" data-toggle="collapse" data-target=".method_compileNameValue .collapse">
+<h2>compileNameValue()
+        </h2>
+<pre>compileNameValue(array $intArray) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::compileNameValue()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$intArray</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>$keyArray</div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>get()
+        </h2>
+<pre>get($name, $arguments) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::get()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_getExceptionHtml"></a><div class="element clickable method public method_getExceptionHtml" data-toggle="collapse" data-target=".method_getExceptionHtml .collapse">
+<h2>getExceptionHtml()
+        </h2>
+<pre>getExceptionHtml($message) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::getExceptionHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$message</h4></div>
+</div></div>
+</div>
+<a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
+<h2>Get id (unique name)</h2>
+<pre>getId() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::getId()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getIdentifiers"></a><div class="element clickable method public method_getIdentifiers" data-toggle="collapse" data-target=".method_getIdentifiers .collapse">
+<h2>Get identifiers</h2>
+<pre>getIdentifiers() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::getIdentifiers()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLayout"></a><div class="element clickable method public method_getLayout" data-toggle="collapse" data-target=".method_getLayout .collapse">
+<h2>Get layout</h2>
+<pre>getLayout() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::getLayout()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getTemplate"></a><div class="element clickable method public method_getTemplate" data-toggle="collapse" data-target=".method_getTemplate .collapse">
+<h2>Get template name
+Returns null if not overriding the template/layout</h2>
+<pre>getTemplate() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::getTemplate()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>$name</div>
+</div></div>
+</div>
+<a id="method_getView"></a><div class="element clickable method public method_getView" data-toggle="collapse" data-target=".method_getView .collapse">
+<h2>Load a view from the current theme with the given data</h2>
+<pre>getView(array $data, string $file) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::getView()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_gridAction"></a><div class="element clickable method public method_gridAction" data-toggle="collapse" data-target=".method_gridAction .collapse">
+<h2>gridAction()
+        </h2>
+<pre>gridAction() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_indexAction"></a><div class="element clickable method public method_indexAction" data-toggle="collapse" data-target=".method_indexAction .collapse">
+<h2>Homepage Action (index)</h2>
+<pre>indexAction($arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>params</th>
+<td>array $arguments</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_init"></a><div class="element clickable method public method_init" data-toggle="collapse" data-target=".method_init .collapse">
+<h2>This is just an init hook to be implemented in derived classes if needed</h2>
+<pre>init() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::init()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_markupAction"></a><div class="element clickable method public method_markupAction" data-toggle="collapse" data-target=".method_markupAction .collapse">
+<h2>markupAction()
+        </h2>
+<pre>markupAction($arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_onecolumnAction"></a><div class="element clickable method public method_onecolumnAction" data-toggle="collapse" data-target=".method_onecolumnAction .collapse">
+<h2>onecolumnAction()
+        </h2>
+<pre>onecolumnAction($arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_parseArguments"></a><div class="element clickable method public method_parseArguments" data-toggle="collapse" data-target=".method_parseArguments .collapse">
+<h2>parseArguments()
+        </h2>
+<pre>parseArguments(string $arguments) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::parseArguments()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>$arguments</div>
+</div></div>
+</div>
+<a id="method_post"></a><div class="element clickable method public method_post" data-toggle="collapse" data-target=".method_post .collapse">
+<h2>post()
+        </h2>
+<pre>post($name, $arguments) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::post()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_redirect"></a><div class="element clickable method public method_redirect" data-toggle="collapse" data-target=".method_redirect .collapse">
+<h2>redirect()
+        </h2>
+<pre>redirect($url) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::redirect()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+</div></div>
+</div>
+<a id="method_route"></a><div class="element clickable method public method_route" data-toggle="collapse" data-target=".method_route .collapse">
+<h2>Primary request router</h2>
+<pre>route($name, string $arguments) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::route()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>string</code><p>remaining url params</p></div>
+</div></div>
+</div>
+<a id="method_setBodyContent"></a><div class="element clickable method public method_setBodyContent" data-toggle="collapse" data-target=".method_setBodyContent .collapse">
+<h2>Set page content data to be themed in the view</h2>
+<pre>setBodyContent(mixed $data) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setBodyContent()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code>
+</div>
+</div></div>
+</div>
+<a id="method_setBodyStyle"></a><div class="element clickable method public method_setBodyStyle" data-toggle="collapse" data-target=".method_setBodyStyle .collapse">
+<h2>Set page content data to be themed in the view</h2>
+<pre>setBodyStyle(mixed $data, $key) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setBodyStyle()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code>
+</div>
+<div class="subelement argument"><h4>$key</h4></div>
+</div></div>
+</div>
+<a id="method_setBodyTitle"></a><div class="element clickable method public method_setBodyTitle" data-toggle="collapse" data-target=".method_setBodyTitle .collapse">
+<h2>Set page content data to be themed in the view</h2>
+<pre>setBodyTitle(string $title) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setBodyTitle()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setContext"></a><div class="element clickable method public method_setContext" data-toggle="collapse" data-target=".method_setContext .collapse">
+<h2>Override existing context with the supplied context</h2>
+<pre>setContext(string $contextName, $configDir) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setContext()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contextName</h4>
+<code>string</code>
+</div>
+<div class="subelement argument"><h4>$configDir</h4></div>
+</div></div>
+</div>
+<a id="method_setData"></a><div class="element clickable method public method_setData" data-toggle="collapse" data-target=".method_setData .collapse">
+<h2>Set data to be themed in the given view</h2>
+<pre>setData(array $data) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setData()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_setId"></a><div class="element clickable method public method_setId" data-toggle="collapse" data-target=".method_setId .collapse">
+<h2>Set id (unique name)</h2>
+<pre>setId($id) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setId()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_setLayout"></a><div class="element clickable method public method_setLayout" data-toggle="collapse" data-target=".method_setLayout .collapse">
+<h2>Set layout</h2>
+<pre>setLayout($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setLayout()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_setLayoutColumns"></a><div class="element clickable method public method_setLayoutColumns" data-toggle="collapse" data-target=".method_setLayoutColumns .collapse">
+<h2>setLayoutColumns()
+        </h2>
+<pre>setLayoutColumns($cols) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setLayoutColumns()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$cols</h4></div>
+</div></div>
+</div>
+<a id="method_setLayoutData"></a><div class="element clickable method public method_setLayoutData" data-toggle="collapse" data-target=".method_setLayoutData .collapse">
+<h2>Add data variable to the layout</h2>
+<pre>setLayoutData($data) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setLayoutData()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$data</h4></div>
+</div></div>
+</div>
+<a id="method_setPageTitle"></a><div class="element clickable method public method_setPageTitle" data-toggle="collapse" data-target=".method_setPageTitle .collapse">
+<h2>Add page title text to current page</h2>
+<pre>setPageTitle($title) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setPageTitle()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$title</h4></div>
+</div></div>
+</div>
+<a id="method_setSidebar"></a><div class="element clickable method public method_setSidebar" data-toggle="collapse" data-target=".method_setSidebar .collapse">
+<h2>Set the view template to be used</h2>
+<pre>setSidebar(string $name, mixed $content, $view) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setSidebar()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>mixed</code>
+</div>
+<div class="subelement argument"><h4>$view</h4></div>
+</div></div>
+</div>
+<a id="method_setTemplate"></a><div class="element clickable method public method_setTemplate" data-toggle="collapse" data-target=".method_setTemplate .collapse">
+<h2>Set layout template</h2>
+<pre>setTemplate($name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setTemplate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_setTitle"></a><div class="element clickable method public method_setTitle" data-toggle="collapse" data-target=".method_setTitle .collapse">
+<h2>Set both the page title and body title at the same time</h2>
+<pre>setTitle(string $title) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setTitle()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setView"></a><div class="element clickable method public method_setView" data-toggle="collapse" data-target=".method_setView .collapse">
+<h2>Set the view template to be used</h2>
+<pre>setView($view, $type) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::setView()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$view</h4></div>
+<div class="subelement argument"><h4>$type</h4></div>
+</div></div>
+</div>
+<a id="method_theme"></a><div class="element clickable method public method_theme" data-toggle="collapse" data-target=".method_theme .collapse">
+<h2>Theme a set of data
+Generates an entire page with the given data</h2>
+<pre>theme(array $data) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::theme()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_threecolumnAction"></a><div class="element clickable method public method_threecolumnAction" data-toggle="collapse" data-target=".method_threecolumnAction .collapse">
+<h2>threecolumnAction()
+        </h2>
+<pre>threecolumnAction($arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_twocolumnAction"></a><div class="element clickable method public method_twocolumnAction" data-toggle="collapse" data-target=".method_twocolumnAction .collapse">
+<h2>twocolumnAction()
+        </h2>
+<pre>twocolumnAction($arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arguments</h4></div>
+</div></div>
+</div>
+<a id="method_urlToActionName"></a><div class="element clickable method public method_urlToActionName" data-toggle="collapse" data-target=".method_urlToActionName .collapse">
+<h2>Modify the action name coming from the URL into proper action name</h2>
+<pre>urlToActionName($name) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::urlToActionName()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method__after"></a><div class="element clickable method protected method__after" data-toggle="collapse" data-target=".method__after .collapse">
+<h2>After action hook
+anything here gets called immediately AFTER the Action method runs.</h2>
+<pre>_after() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::_after()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method__before"></a><div class="element clickable method protected method__before" data-toggle="collapse" data-target=".method__before .collapse">
+<h2>Before action hook
+Anything here gets called immediately BEFORE the Action method runs.</h2>
+<pre>_before() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::_before()</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__arguments"> </a><div class="element clickable property protected property__arguments" data-toggle="collapse" data-target=".property__arguments .collapse">
+<h2></h2>
+<pre>$_arguments </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_arguments</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__layout"> </a><div class="element clickable property protected property__layout" data-toggle="collapse" data-target=".property__layout .collapse">
+<h2></h2>
+<pre>$_layout </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_layout</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__localConfig"> </a><div class="element clickable property protected property__localConfig" data-toggle="collapse" data-target=".property__localConfig .collapse">
+<h2></h2>
+<pre>$_localConfig </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_localConfig</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__numberColumns"> </a><div class="element clickable property protected property__numberColumns" data-toggle="collapse" data-target=".property__numberColumns .collapse">
+<h2></h2>
+<pre>$_numberColumns </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_numberColumns</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__pageData"> </a><div class="element clickable property protected property__pageData" data-toggle="collapse" data-target=".property__pageData .collapse">
+<h2></h2>
+<pre>$_pageData </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_pageData</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__template"> </a><div class="element clickable property protected property__template" data-toggle="collapse" data-target=".property__template .collapse">
+<h2></h2>
+<pre>$_template </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_template</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__themeExtras"> </a><div class="element clickable property protected property__themeExtras" data-toggle="collapse" data-target=".property__themeExtras .collapse">
+<h2></h2>
+<pre>$_themeExtras </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_themeExtras</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property__webroot"> </a><div class="element clickable property protected property__webroot" data-toggle="collapse" data-target=".property__webroot .collapse">
+<h2></h2>
+<pre>$_webroot </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\erdiko\core\Handler::$$_webroot</td>
+</tr></table>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-05-04T16:17:49-07:00.<br></footer></div>
+</div>
+</body>
+</html>
