@@ -15,7 +15,7 @@ $item = array(
 	'size' => $data['columns'],
 	'details' => array(
 		'name' => "Example Item",
-		'image' => "",
+		'image' => "http://placehold.it/180x180/BBBBBB/EEEEEE&text=Grid+Item",
 		'url' => "#")
 	);
 
