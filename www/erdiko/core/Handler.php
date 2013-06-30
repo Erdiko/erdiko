@@ -5,11 +5,12 @@
  * 
  * @category   Erdiko
  * @package    Core
- * @copyright  Copyright (c) 2012, Arroyo Labs, http://www.arroyolabs.com
+ * @copyright  Copyright (c) 2013, Arroyo Labs, http://www.arroyolabs.com
  * @author	   John Arroyo
  */
 namespace erdiko\core;
 use Erdiko;
+use erdiko\core\Config;
 
 class Handler extends \ToroHandler 
 {
@@ -25,8 +26,7 @@ class Handler extends \ToroHandler
 	public function __construct()
 	{
 		$this->_webroot = WEBROOT;
-		$file = $this->_webroot.'/app/config/contexts/default.json';
-		$this->_localConfig = Erdiko::getConfigFile($file);
+		$this->_localConfig = Config::getConfig('default'); // @todo figure out way to switch contexts
 		
 		$this->_themeExtras = array(
 			'js' => array(), 
@@ -284,10 +284,6 @@ class Handler extends \ToroHandler
 				break;
 		}
 		
-		// Get the theme config defined in local.inc
-		// $file = $this->_webroot.$this->_localConfig['theme']['config'];
-		// $themeConfig = Erdiko::getConfigFile($file);
-		
 		// Get data to populate page wrapper
 		$data = $this->_localConfig['layout'];
 		$this->_arguments = $arguments;
@@ -360,7 +356,7 @@ class Handler extends \ToroHandler
 	 */
 	public function setContext($contextName, $configDir = "/app/config/contexts/")
 	{
-		$config = Erdiko::getConfigFile($this->_webroot.$configDir.$contextName.".json");
+		$config = Config::getConfig($contextName);
 		$this->_localConfig['theme'] = $config['theme']; // swap out theme configs
 		// error_log("config: ".print_r($config, true));
 	}

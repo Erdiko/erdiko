@@ -1,12 +1,12 @@
 <?php
 /**
  * Index file
- * Intercepts all requests ad dispatches to routing
+ * Intercepts all requests and dispatches to routing
  * 
- * @category   Erdiko
- * @package    Core
- * @copyright Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
- * @author	John Arroyo
+ * @category  	Erdiko
+ * @package   	Core
+ * @copyright 	Copyright (c) 2013, Arroyo Labs, www.arroyolabs.com
+ * @author		John Arroyo
  */
 
 include_once __DIR__."/erdiko/bootstrap.php";

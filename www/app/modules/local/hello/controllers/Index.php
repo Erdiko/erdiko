@@ -1,6 +1,6 @@
 <?php
 /**
- * Hello World Handler
+ * Hello World Index Controller
  * This is an example of how you can use erdiko.  It includes some simple use cases.
  *
  * @category 	app
@@ -8,11 +8,12 @@
  * @copyright	Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
  * @author 		John Arroyo, john@arroyolabs.com
  */
-namespace app\modules\local\hello;
+namespace app\modules\local\hello\controllers;
 
 use Erdiko;
+use erdiko\core\Config;
 
-class Handler extends \erdiko\core\Handler
+class Index extends \erdiko\core\Controller
 {
 	/**
 	 * Homepage Action (index)
@@ -119,4 +120,29 @@ class Handler extends \erdiko\core\Handler
 		$this->setLayout('/grid/default.php');
 	}
 
+	/**
+	 * Homepage Action (index)
+	 * @params array $arguments
+	 */
+	public function configAction($arguments = null)
+	{
+		// load js resources
+		// $this->addJs('/app/contexts/default/js/jquery.orbit.js');
+		// $this->addJs('/app/contexts/default/js/orbit.js');
+
+		// Add page title
+		$this->setTitle('Config');
+
+		// Add view data
+		$this->setTitle('Erdiko Config');
+		
+		// Add meta tags
+		$this->addMeta('Erdiko config settings', 'description');
+
+		Config::getConfig();
+		Config::getConfig();
+		$config = Config::getConfig();
+
+		$this->setBodyContent("Here are your config settings.<br/><pre>".print_r($config, true)."</pre>");
+	}
 }

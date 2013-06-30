@@ -1,0 +1,20 @@
+{
+	"namespaces":{
+		"local":"\app\modules\local\\",
+		"community":"\app\modules\local\\",
+		"core":"\erdiko\modules\\"
+	},
+	"modules":{
+		"hello":{
+			"namespace":"local"
+		}
+	},
+	"models":{
+	},
+	"events":{
+	},
+	"controllers":{
+	},
+	"helpers":{
+	}
+}
