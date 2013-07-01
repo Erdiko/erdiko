@@ -10,11 +10,23 @@ class Config
     protected $_configs = array();
     protected $_webroot = null;
     protected $_contexts = array();
+    protected $_context = null;
 
     /**
-     * Call this method to get singleton
+     * Private constructor for singleton
+     * 
+     * @todo read the entire config from cache
+     */
+    private function __construct()
+    {
+        $this->_webroot = WEBROOT;
+        error_log("load config");
+    }
+
+    /**
+     * Call this method to get singleton config
      *
-     * @return UserFactory
+     * @return Config
      */
     public static function getConfig($context = 'default')
     {
@@ -25,32 +37,33 @@ class Config
         if ($inst === null)
             $inst = new Config;
 
+        $inst->setContext($context);
+
         // get context
-        return $inst->getContext($context);
-        // return $inst;
+        // return $inst->getContext($context);
+        return $inst;
     }
 
     /**
-     * Private constructor so nobody else can create instance
+     * setContext
      * 
-     * @todo read the entire config from cache
+     * @param string $context 
      */
-    private function __construct()
+    public function setContext($context)
     {
-        $this->_webroot = WEBROOT;
-        error_log("load config");
+        $this->_context = $context;
     }
 
-    public function getContext($context)
+    public function getContext()
     {
-        if(empty($this->_contexts[$context]))
+        if(empty($this->_contexts[$this->_context]))
         {
-            $file = $this->_webroot."/app/config/contexts/$context.json";
-            $this->_contexts[$context] = $this->getConfigFile($file);
-            error_log("load context: $context");
+            $file = $this->_webroot."/app/config/contexts/".$this->_context.".json";
+            $this->_contexts[$this->_context] = $this->getConfigFile($file);
+            error_log("load context: ".$this->_context);
         }
-
-        return $this->_contexts[$context];
+        
+        return $this->_contexts[$this->_context];
     }
 
     /**

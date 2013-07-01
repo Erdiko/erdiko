@@ -26,7 +26,7 @@ class Handler extends \ToroHandler
 	public function __construct()
 	{
 		$this->_webroot = WEBROOT;
-		$this->_localConfig = Config::getConfig('default'); // @todo figure out way to switch contexts
+		$this->_localConfig = Config::getConfig('default')->getContext(); // @todo figure out way to switch contexts
 		
 		$this->_themeExtras = array(
 			'js' => array(), 
@@ -52,7 +52,7 @@ class Handler extends \ToroHandler
 			'sidebar' => array(),
 			);
 
-        // Add an init hook for derrived controllers
+        // Add an init hook for derived controllers
         $this->init();
 	}
 
@@ -352,11 +352,10 @@ class Handler extends \ToroHandler
 	/**
 	 * Override existing context with the supplied context
 	 * @param string $contextName
-	 * @param string $configDir, folder where the config lives (default: /app/config/contexts/)
 	 */
-	public function setContext($contextName, $configDir = "/app/config/contexts/")
+	public function setContext($context)
 	{
-		$config = Config::getConfig($contextName);
+		$config = Config::getConfig($context)->getContext();
 		$this->_localConfig['theme'] = $config['theme']; // swap out theme configs
 		// error_log("config: ".print_r($config, true));
 	}
