@@ -1,7 +1,11 @@
 <?php
 /**
- * Config singleton class
- * @author  John Arroyo, john@arroyolabs.com
+ * Config class (singleton)
+ *
+ * @category    erdiko
+ * @package     core
+ * @copyright   Copyright (c) 2013, Arroyo Labs, www.arroyolabs.com
+ * @author      John Arroyo, john@arroyolabs.com
  */
 namespace erdiko\core;
 
@@ -22,7 +26,6 @@ class Config
     private function __construct()
     {
         $this->_webroot = WEBROOT;
-        error_log("load config");
     }
 
     /**
@@ -63,7 +66,6 @@ class Config
             $file = $this->_webroot."/app/config/contexts/".$this->_context.".json";
             $this->_contexts[$this->_context] = $this->getConfigFile($file);
             $this->_theme = $this->_contexts[$this->_context]['theme']['name'];
-            error_log("load context: ".$this->_context);
         }
         
         return $this->_contexts[$this->_context];
@@ -76,7 +78,6 @@ class Config
             $context = $this->getContext();
             $file = $this->_webroot.$context['theme']['config'];
             $this->_themes[$this->_theme] = $this->getConfigFile($file);
-            error_log("load theme: ".$this->_theme);
         }
         
         return $this->_themes[$this->_theme];
