@@ -35,10 +35,9 @@ class Erdiko
 	 */
 	public static function getTheme(\erdiko\core\Config $config, $extras = null)
 	{
-		// Get Theme
+		// Get ThemeEngine object
 		$themeEngine = new \erdiko\core\theme\ThemeEngine;
-		$themeConfig = $config->getTheme();
-		$themeEngine->loadTheme($themeConfig, $extras);
+		$themeEngine->loadTheme($config, $extras);
 		
 		return $themeEngine;
 	}
@@ -267,9 +266,10 @@ class Erdiko
 	
 	public static function getCache($cacheType=null)
 	{
-		$config=Erdiko::getConfig("contexts/default");
+		$config = Erdiko::getConfig("contexts/default");
 		if(!isset($cacheType))
 			$cacheType = "default";
+
 		if(isset($config["cache"][$cacheType]))
 		{
 			$cacheConfig = $config["cache"][$cacheType];

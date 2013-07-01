@@ -19,13 +19,9 @@ use Erdiko;
 class ThemeEngine extends ModelAbstract implements Theme
 {
 	// @todo audit and remove unnecessary variables
-	protected $_folder;
-	protected $_themeName;
-	protected $_namespace;
 	protected $_templates;
 	protected $_data;
 	protected $_webroot;
-	protected $_path;
 	protected $_themeConfig;
 	protected $_contextConfig;
 	protected $_extras;
@@ -49,20 +45,12 @@ class ThemeEngine extends ModelAbstract implements Theme
 	
 	public function getThemeFolder()
 	{
-		return $this->_folder;
+		return $this->_webroot.$this->_themeConfig['path'];
 	}
 
 	public function setLayout($layout)
 	{
 		$this->_layout = $layout;
-	}
-	
-	/**
-	 * @todo get the url programmatically.
-	 */
-	public function getThemeUrl()
-	{
-		return $this->_path;
 	}
 	
 	public function getCss()
@@ -244,18 +232,13 @@ class ThemeEngine extends ModelAbstract implements Theme
 	 * @param string $path
 	 * @param array $extras
 	 */
-	public function loadTheme($themeConfig, $extras)
+	public function loadTheme($config, $extras)
 	{	
 		$this->_webroot = WEBROOT;
-		$this->_themeName = $themeConfig['name'];
-		$this->_path = $themeConfig['path'];
-		$this->_namespace = $themeConfig['namespace'];
+		$this->_themeConfig = $config->getTheme(); // Get the theme config data
+		$this->setContextConfig($config->getContext());
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
 		$this->_extras = $extras;
-		$this->_folder = $this->_webroot.$this->_path;
-		
-		$this->_themeConfig = $themeConfig;
-		$this->setContextConfig(Config::getConfig()->getContext());
 
 		$this->_themeConfig['meta'] = $extras['meta']; // Add injected Meta
 		$this->_themeConfig['title'] = $extras['title']; // Add injected Page title
