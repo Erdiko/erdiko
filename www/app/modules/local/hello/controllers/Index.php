@@ -25,10 +25,7 @@ class Index extends \erdiko\core\Controller
 		// $this->addJs('/app/contexts/default/js/jquery.orbit.js');
 		// $this->addJs('/app/contexts/default/js/orbit.js');
 
-		// Add page title
-		$this->setTitle('Home');
-
-		// Add view data
+		// Add page data
 		$this->setTitle('Hello World');
 		$this->setBodyContent("Welcome to Erdiko.");
 
@@ -126,23 +123,16 @@ class Index extends \erdiko\core\Controller
 	 */
 	public function configAction($arguments = null)
 	{
-		// load js resources
-		// $this->addJs('/app/contexts/default/js/jquery.orbit.js');
-		// $this->addJs('/app/contexts/default/js/orbit.js');
-
-		// Add page title
+		// Add title
 		$this->setTitle('Config');
-
-		// Add view data
-		$this->setTitle('Erdiko Config');
 		
 		// Add meta tags
 		$this->addMeta('Erdiko config settings', 'description');
 
 		Config::getConfig();
-		Config::getConfig();
-		$config = Config::getConfig();
+		Config::getConfig(); // testing the singleton
+		$config = Config::getConfig()->getContext(); // Get the context config settings for display
 
-		$this->setBodyContent("Here are your config settings.<br/><pre>".print_r($config, true)."</pre>");
+		$this->setBodyContent("Here are the config settings.<br/><pre>".print_r($config, true)."</pre>");
 	}
 }
