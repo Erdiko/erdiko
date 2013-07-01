@@ -129,10 +129,16 @@ class Index extends \erdiko\core\Controller
 		// Add meta tags
 		$this->addMeta('Erdiko config settings', 'description');
 
-		Config::getConfig();
+		$config = Config::getConfig();
 		Config::getConfig(); // testing the singleton
-		$config = Config::getConfig()->getContext(); // Get the context config settings for display
+		$context = $config->getContext(); // Get the context config settings for display
+		$theme = $config->getTheme();
 
-		$this->setBodyContent("Here are the config settings.<br/><pre>".print_r($config, true)."</pre>");
+		// This is just for debugging purposes.  Best practice is to use view templates/blocks
+		$body = "Here are the config settings.<br/>".
+			"<h3>Context: </h3><pre>".print_r($context, true)."</pre>".
+			"<h3>Theme: </h3><pre>".print_r($theme, true)."</pre>";
+
+		$this->setBodyContent($body);
 	}
 }

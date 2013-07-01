@@ -180,9 +180,8 @@ class Handler extends \ToroHandler
 	 * @param array $data
 	 */
 	public function theme($data)
-	{	
-		$theme = Erdiko::getTheme($this->_localConfig['theme']['name'], $this->_localConfig['theme']['namespace'], $this->_localConfig['theme']['path'], $this->_themeExtras);
-		$theme->setLocalConfig($this->_localConfig);
+	{
+		$theme = Erdiko::getTheme('default', $this->_themeExtras);
 		
 		// If no data is given load the view
 		if(!isset($data['main_content']))

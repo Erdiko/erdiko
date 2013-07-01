@@ -33,11 +33,12 @@ class Erdiko
 	 * @param string $path
 	 * @return object $theme
 	 */
-	public static function getTheme($name = 'default', $namespace = '\erdiko\theme\default', $path = '/erdiko/contexts/default', $extras = null)
+	public static function getTheme($context = 'default', $extras = null)
 	{
 		// get Theme
 		$themeEngine = new \erdiko\core\theme\ThemeEngine;
-		$themeEngine->loadTheme($name, $namespace, $path, $extras);
+		$themeConfig = \erdiko\core\Config::getConfig()->getTheme();
+		$themeEngine->loadTheme($themeConfig, $extras);
 		
 		return $themeEngine;
 	}

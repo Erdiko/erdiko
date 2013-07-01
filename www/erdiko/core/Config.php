@@ -8,9 +8,11 @@ namespace erdiko\core;
 class Config
 {
     protected $_configs = array();
-    protected $_webroot = null;
     protected $_contexts = array();
+    protected $_themes = array();
+    protected $_webroot = null;
     protected $_context = null;
+    protected $_theme = null;
 
     /**
      * Private constructor for singleton
@@ -60,10 +62,24 @@ class Config
         {
             $file = $this->_webroot."/app/config/contexts/".$this->_context.".json";
             $this->_contexts[$this->_context] = $this->getConfigFile($file);
+            $this->_theme = $this->_contexts[$this->_context]['theme']['name'];
             error_log("load context: ".$this->_context);
         }
         
         return $this->_contexts[$this->_context];
+    }
+
+    public function getTheme()
+    {
+        if(empty($this->_themes[$this->_theme]))
+        {
+            $context = $this->getContext();
+            $file = $this->_webroot.$context['theme']['config'];
+            $this->_themes[$this->_theme] = $this->getConfigFile($file);
+            error_log("load theme: ".$this->_theme);
+        }
+        
+        return $this->_themes[$this->_theme];
     }
 
     /**

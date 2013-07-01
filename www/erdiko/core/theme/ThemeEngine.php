@@ -2,22 +2,23 @@
 /**
  * default theme engine
  * 
- * @category   Erdiko
- * @package    ThemeEngine
- * @module	   Theme
- * @copyright Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
- * @author	John Arroyo
+ * @category 	Erdiko
+ * @package 	theme
+ * @copyright 	Copyright (c) 2013, Arroyo Labs, www.arroyolabs.com
+ * @author		John Arroyo
  *
- * @todo add interface to this module
+ * @todo add interface to this engine
  */
 namespace erdiko\core\theme;
 
 use erdiko\core\ModelAbstract;
 use erdiko\core\interfaces\Theme;
+use erdiko\core\Config;
 use Erdiko;
 
 class ThemeEngine extends ModelAbstract implements Theme
 {
+	// @todo audit and remove unnecessary variables
 	protected $_folder;
 	protected $_themeName;
 	protected $_namespace;
@@ -26,7 +27,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	protected $_webroot;
 	protected $_path;
 	protected $_themeConfig;
-	protected $_siteConfig;
+	protected $_contextConfig;
 	protected $_extras;
 	protected $_domainName;
 	protected $_numColumns;
@@ -86,7 +87,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	public function getHeader($name = "")
 	{	
 		$filename = $this->_webroot.$this->_themeConfig['templates']['header']['file'];
-		$html = $this->getTemplateFile($filename, $this->getLocalConfig());
+		$html = $this->getTemplateFile($filename, $this->getContextConfig());
 		
 		return $html;
 	}
@@ -95,7 +96,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	{
 		// return $this->_data['footer'];
 		$filename = $this->_webroot.$this->_themeConfig['templates']['footer']['file'];
-		$html = $this->getTemplateFile($filename, $this->getLocalConfig());
+		$html = $this->getTemplateFile($filename, $this->getContextConfig());
 		
 		return $html;
 	}
@@ -244,18 +245,19 @@ class ThemeEngine extends ModelAbstract implements Theme
 	 * @param string $path
 	 * @param array $extras
 	 */
-	public function loadTheme($name, $namespace, $path, $extras)
+	public function loadTheme($themeConfig, $extras)
 	{	
 		$this->_webroot = WEBROOT;
-		$this->_themeName = $name;
-		$this->_path = $path;
-		$this->_namespace = $namespace;
+		$this->_themeName = $themeConfig['name'];
+		$this->_path = $themeConfig['path'];
+		$this->_namespace = $themeConfig['namespace'];
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
 		$this->_extras = $extras;
 		$this->_folder = $this->_webroot.$this->_path;
-		$file = $this->_folder.'/theme.json';
+		
+		$this->_themeConfig = $themeConfig;
+		$this->setContextConfig(Config::getConfig()->getContext());
 
-		$this->_themeConfig = Erdiko::getConfigFile($file);		
 		$this->_themeConfig['meta'] = $extras['meta']; // Add injected Meta
 		$this->_themeConfig['title'] = $extras['title']; // Add injected Page title
 		$this->_themeConfig['phpToJs'] = $extras['phpToJs']; // Add phpToJs variables
@@ -342,7 +344,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	}
 
 	/**
-	 * 
+	 * Get the theme config data
 	 */
 	public function getThemeConfig()
 	{
@@ -350,19 +352,19 @@ class ThemeEngine extends ModelAbstract implements Theme
 	}
 
 	/**
-	 * 
+	 * Set the context config data
 	 */
-	public function setLocalConfig($config)
+	public function setContextConfig($config)
 	{
-		$this->_siteConfig = $config;
+		$this->_contextConfig = $config;
 	}
 
 	/**
-	 * 
+	 * Get the context config data
 	 */
-	public function getLocalConfig()
+	public function getContextConfig()
 	{
-		return $this->_siteConfig;
+		return $this->_contextConfig;
 	}
 
 	/**
