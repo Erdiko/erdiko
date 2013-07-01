@@ -14,7 +14,8 @@ use erdiko\core\Config;
 
 class Handler extends \ToroHandler 
 {
-    protected $_localConfig;
+    protected $_config;
+    protected $_contextConfig;
 	protected $_webroot;
 	protected $_arguments;
 	protected $_themeExtras;
@@ -26,7 +27,8 @@ class Handler extends \ToroHandler
 	public function __construct()
 	{
 		$this->_webroot = WEBROOT;
-		$this->_localConfig = Config::getConfig('default')->getContext(); // @todo figure out way to switch contexts
+		$this->_config = Config::getConfig('default');
+		$this->_contextConfig = $this->_config->getContext(); // @todo figure out way to switch contexts
 		
 		$this->_themeExtras = array(
 			'js' => array(), 
@@ -181,7 +183,7 @@ class Handler extends \ToroHandler
 	 */
 	public function theme($data)
 	{
-		$theme = Erdiko::getTheme('default', $this->_themeExtras);
+		$theme = Erdiko::getTheme($this->_config, $this->_themeExtras);
 		
 		// If no data is given load the view
 		if(!isset($data['main_content']))
@@ -284,7 +286,7 @@ class Handler extends \ToroHandler
 		}
 		
 		// Get data to populate page wrapper
-		$data = $this->_localConfig['layout'];
+		$data = $this->_contextConfig['layout'];
 		$this->_arguments = $arguments;
 		
 		// Determine what conetent should be called 
@@ -344,18 +346,20 @@ class Handler extends \ToroHandler
 	{
 		// $this->_data['layout']['columns']
 
-		$filename = $this->_webroot.$this->_localConfig['theme']['path'].'/views/'.$file;
+		$filename = $this->_webroot.$this->_contextConfig['theme']['path'].'/views/'.$file;
 		return  Erdiko::getTemplate($filename, $data);
 	}
 
 	/**
+	 * Switch context
 	 * Override existing context with the supplied context
 	 * @param string $contextName
 	 */
 	public function setContext($context)
 	{
-		$config = Config::getConfig($context)->getContext();
-		$this->_localConfig['theme'] = $config['theme']; // swap out theme configs
+		$this->_config = Config::getConfig($context);
+		$context = $this->_config->getContext();
+		$this->_contextConfig['theme'] = $context['theme']; // swap out theme configs
 		// error_log("config: ".print_r($config, true));
 	}
 

@@ -218,7 +218,6 @@ class ThemeEngine extends ModelAbstract implements Theme
 
 		foreach($second as $js)
 		{
-			error_log("js ".print_r($js, true));
 			$key = "$base-$i";
 			$js['order'] = $i;
 			$first[$key] = $js;
