@@ -7,10 +7,10 @@ or
 
 The Enterprise Mash-Up Framework
 
-Semver
-------
+Version (SemVer)
+----------------
 
-0.5.3
+0.5.4
 
 Vision
 ------
