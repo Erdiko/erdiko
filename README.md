@@ -10,7 +10,7 @@ The Enterprise Mash-Up Framework
 Semver
 ------
 
-0.5.2
+0.5.3
 
 Vision
 ------
