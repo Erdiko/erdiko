@@ -118,7 +118,7 @@ class Index extends \erdiko\core\Controller
 	}
 
 	/**
-	 * Homepage Action (index)
+	 * Config Action
 	 * @params array $arguments
 	 */
 	public function configAction($arguments = null)
@@ -140,5 +140,25 @@ class Index extends \erdiko\core\Controller
 			"<h3>Theme: </h3><pre>".print_r($theme, true)."</pre>";
 
 		$this->setBodyContent($body);
+	}
+
+	/**
+	 * Homepage Action (index)
+	 * @params array $arguments
+	 */
+	public function exceptionAction($arguments = null)
+	{
+		// load js resources
+		// $this->addJs('/app/contexts/default/js/jquery.orbit.js');
+		// $this->addJs('/app/contexts/default/js/orbit.js');
+
+		// Add page data
+		$this->setTitle('Page Exception');
+		$this->setBodyContent("Welcome to Erdiko.");
+
+		// Add meta tags
+		$this->addMeta('This is an exception.', 'description');
+
+		throw new \Exception("This is Exception Text.");
 	}
 }
