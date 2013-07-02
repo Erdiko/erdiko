@@ -289,24 +289,24 @@ class Handler extends \ToroHandler
 		$data = $this->_contextConfig['layout'];
 		$this->_arguments = $arguments;
 		
-		// Determine what conetent should be called 
-		if( empty($name) )
+		// Load the page content
+		try 
 		{
-			$data['main_content'] = $this->indexAction($arguments);
-		}
-		else 
-		{
-			try 
-			{
-                $action = $this->urlToActionName($name);
-                $this->_before();
+            $action = $this->urlToActionName($name);
+            $this->_before();
+
+            // Determine what content should be called 
+            if( empty($name) )
+				$this->indexAction($arguments);
+			else
 				$this->$action($arguments); // run the action method of the handler/controller
-				$this->_after();
-			}
-			catch(\Exception $e)
-			{
-				$data['main_content'] = $this->getExceptionHtml( $e->getMessage() );
-			}
+
+			$this->_after();
+		}
+		catch(\Exception $e)
+		{
+			Erdiko::log($e->getMessage());
+			$this->appendBodyContent( $this->getExceptionHtml( $e->getMessage() ) );
 		}
 		
 		$this->theme($data);
@@ -384,13 +384,33 @@ class Handler extends \ToroHandler
 	}
 
 	/**
-	 * Set page content data to be themed in the view
+	 * Set page body content data to be themed in the view
 	 *
 	 * @param mixed $data
 	 */
 	public function setBodyContent($data)
 	{
 		$this->_pageData['data']['content'] = $data;
+	}
+
+	/**
+	 * Get page body content data to be themed in the view
+	 *
+	 * @return mixed $data
+	 */
+	public function getBodyContent()
+	{
+		return $this->_pageData['data']['content'];
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param mixed $data
+	 */
+	public function appendBodyContent($data)
+	{
+		$this->_pageData['data']['content'] .= $data;
 	}
 
 	/**
@@ -513,14 +533,6 @@ class Handler extends \ToroHandler
 
 	public function getExceptionHtml($message)
 	{
-		$formData = array(
-			'title' => $this->_textConfig['exception']['title'],
-			'sub_title' => $this->_textConfig['exception']['sub_title'],
-			'description' => $this->_textConfig['exception']['description'],
-			'message' => $message,
-		);
-		
-		$filename = __DIR__.'/views/form/exception.phtml';
-		return  Erdiko::getTemplate($filename, $formData);
+		return "<div class=\"exception\">$message</div>";
 	}
 }

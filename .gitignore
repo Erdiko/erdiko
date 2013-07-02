@@ -2,3 +2,4 @@
 *.komodoproject
 *.sublime-project
 *.sublime-workspace
+var/*
