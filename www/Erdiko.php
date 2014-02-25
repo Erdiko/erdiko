@@ -73,7 +73,7 @@ class Erdiko
 	public static function getView($data = null, $file = null)
 	{
 		// $this->_data['layout']['columns']
-		$webroot = WEBROOT;
+		$webroot = APPROOT;
 		$config = Erdiko::getConfigFile($webroot."/app/config/contexts/"."default".".json");
 		$localConfig['theme'] = $config['theme'];
 

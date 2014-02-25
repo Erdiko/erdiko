@@ -1,6 +1,6 @@
 {
   "name": "default",
-  "namespace": "\app\contexts\default",
+  "namespace": "\public\contexts\default",
   "path": "/public/contexts/default",
   "parent": "/erdiko/contexts/default/theme.json",
   "columns": 1,

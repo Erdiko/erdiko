@@ -31,7 +31,7 @@ function isMobile() {
   return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 }
 if(isMobile()): ?>
-<link href="/app/contexts/default/css/media-queries.css" rel="stylesheet" type="text/css">
+<link href="/contexts/default/css/media-queries.css" rel="stylesheet" type="text/css">
 <?php endif ?>
 
 <!--[if lt IE 9]>
