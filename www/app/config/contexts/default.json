@@ -12,9 +12,9 @@
    },
    "theme":{
       "name":"default",
-      "namespace":"/app/contexts/default",
-      "path":"/app/contexts/default",
-      "config":"/app/contexts/default/theme.json"
+      "namespace":"/public/contexts/default",
+      "path":"/public/contexts/default",
+      "config":"/public/contexts/default/theme.json"
    },
    "layout":{
       "layout":{

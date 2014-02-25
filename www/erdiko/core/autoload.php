@@ -17,7 +17,7 @@ spl_autoload_register(function($name)
 		$path = str_replace('\\','/',$name);
 		$class = basename($path);
 		$dir = '/'.dirname($path);
-		$filename = WEBROOT.$dir.'/'.$class.'.php';
+		$filename = APPROOT.$dir.'/'.$class.'.php';
 		// error_log("file: $filename");
 
 		if(is_file($filename))

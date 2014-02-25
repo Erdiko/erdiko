@@ -161,4 +161,14 @@ class Index extends \erdiko\core\Controller
 
 		throw new \Exception("This is Exception Text.");
 	}
+
+	public function phpinfoAction()
+	{
+		phpinfo();
+		exit;
+		
+		// Add page data
+		$this->setTitle('PHP Info');
+		$this->setBodyContent("booyah");
+	}
 }

@@ -26,7 +26,7 @@ class Handler extends \ToroHandler
 	
 	public function __construct()
 	{
-		$this->_webroot = WEBROOT;
+		$this->_webroot = APPROOT;
 		$this->_config = Config::getConfig('default');
 		$this->_contextConfig = $this->_config->getContext(); // @todo figure out way to switch contexts
 		
@@ -506,7 +506,8 @@ class Handler extends \ToroHandler
      * @param string $name: The raw action name
      * @return string
      */
-    public function urlToActionName($name){
+    public function urlToActionName($name)
+    {
         // just turn dash-format into upperCamelCaseFormat
         return preg_replace("/\-(.)/e", "strtoupper('\\1')", $name) . 'Action';
     }

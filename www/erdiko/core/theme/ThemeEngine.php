@@ -234,7 +234,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	 */
 	public function loadTheme($config, $extras)
 	{	
-		$this->_webroot = WEBROOT;
+		$this->_webroot = APPROOT;
 		$this->_themeConfig = $config->getTheme(); // Get the theme config data
 		$this->setContextConfig($config->getContext());
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];

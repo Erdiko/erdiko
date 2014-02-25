@@ -1,15 +1,16 @@
 <?php
-define('WEBROOT', dirname(__DIR__));
+define('APPROOT', dirname(__DIR__));
+define('WEBROOT', dirname(__DIR__).'/public');
 
-$core = WEBROOT.'/erdiko';
-$app = WEBROOT.'/app';
-$vendor = dirname(__DIR__)."/libraries";
+$core = APPROOT.'/erdiko';
+$app = APPROOT.'/app';
+$vendor = APPROOT.'/libraries';
 
 // Static functions / Factories
-require_once WEBROOT.'/Erdiko.php';
+require_once APPROOT.'/Erdiko.php';
 
 // Required Libraries
-require_once WEBROOT.'/libraries/ToroPHP/toro.php';
+require_once APPROOT.'/libraries/ToroPHP/toro.php';
 
 // Interfaces
 require_once $core.'/core/interfaces/Theme.php';
