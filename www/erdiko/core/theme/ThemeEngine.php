@@ -265,8 +265,8 @@ class ThemeEngine extends ModelAbstract implements Theme
 			$this->_themeConfig['js'] = $this->mergeConfig($parentConfig['js'], $this->_themeConfig['js']);
 			unset($parentConfig['js']);
 			
-			error_log("parent: ".print_r($parentConfig, true));
-			error_log("theme: ".print_r($this->_themeConfig, true));
+			// error_log("parent: ".print_r($parentConfig, true));
+			// error_log("theme: ".print_r($this->_themeConfig, true));
 
 			// Templates
 			$this->_themeConfig['templates'] = $this->_themeConfig['templates'] + $parentConfig['templates'];
