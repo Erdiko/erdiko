@@ -1,0 +1,66 @@
+{
+  "name": "erdiko",
+  "namespace": "/themes/erdiko",
+  "path": "/themes/erdiko",
+  "parent": "/themes/base/theme.json",
+  "columns": 1,
+  "css": [
+    {
+      "name": "default",
+      "file": "/themes/erdiko/css/default.css",
+      "active": 1
+    },
+    {
+      "name": "media-queries",
+      "file": "/themes/erdiko/css/media-queries.css",
+      "active": 1
+    }
+  ],
+  "js": {
+    "jquery": {
+      "file": "http://code.jquery.com/jquery-1.8.2.js",
+      "active": 1,
+      "order": 1
+    },
+    "default": {
+      "file": "/themes/erdiko/js/default.js",
+      "active": 1,
+      "order": 2
+    }
+  },
+  "templates": {
+    "default": {
+      "file": "/themes/erdiko/templates/default.php",
+      "path": "/themes/erdiko/templates/"
+    },
+    "header": {
+      "file": "/themes/erdiko/templates/page/header.php"
+    },
+    "footer": {
+      "file": "/themes/erdiko/templates/page/footer.php"
+    },
+    "fullpage": {
+      "file": "/themes/erdiko/templates/fullpage.php"
+    }
+  },
+  "layouts": {
+    "default": {
+      "file": "/themes/erdiko/templates/layouts/1column.php"
+    },
+    "1": {
+      "file": "/themes/erdiko/templates/layouts/1column.php"
+    },
+    "2": {
+      "file": "/themes/erdiko/templates/layouts/2column.php"
+    },
+    "3": {
+      "file": "/themes/erdiko/templates/layouts/3column.php"
+    }
+  },
+  "views": {
+    "default": {
+      "file": "/themes/erdiko/views/default.php",
+      "path": "/themes/erdiko/views/default.php"
+    }
+  }
+}
