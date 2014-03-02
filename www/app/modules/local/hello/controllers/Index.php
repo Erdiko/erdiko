@@ -33,7 +33,7 @@ class Index extends \erdiko\core\Controller
 		$this->addMeta('This is Erdiko\'s hello world.', 'description');
 
 		// Add Extra js
-		$this->addJs('/contexts/default/js/home.js');
+		$this->addJs('/themes/bootstrap/js/home.js');
 	}
 
 	public function aboutAction($arguments = null)

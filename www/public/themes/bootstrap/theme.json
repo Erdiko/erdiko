@@ -8,11 +8,6 @@
       "name": "default",
       "file": "/themes/bootstrap/css/default.css",
       "active": 1
-    },
-    {
-      "name": "media-queries",
-      "file": "/themes/bootstrap/css/media-queries.css",
-      "active": 1
     }
   ],
   "js": {
@@ -21,10 +16,15 @@
       "active": 1,
       "order": 1
     },
+    "bootstrap": {
+      "file": "/themes/bootstrap/js/bootstrap.js",
+      "active": 1,
+      "order": 2
+    },
     "default": {
       "file": "/themes/bootstrap/js/default.js",
       "active": 1,
-      "order": 2
+      "order": 3
     }
   },
   "templates": {
