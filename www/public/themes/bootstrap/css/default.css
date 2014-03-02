@@ -5790,23 +5790,8 @@ a:hover {
 }
 /*  =Header
 ----------------------------------------------- */
-.header {
-  height: 44px;
-}
-.header hgroup,
-.header nav {
-  float: left;
-}
-.header nav {
-  margin-left: 75px;
-}
-.header .front-signin {
-  float: right;
-}
-.header nav,
-.header .front-signin {
-  margin-top: 13px;
-  border: 1px;
+header .navbar-toggle .icon-bar {
+  background-color: #f16522;
 }
 /* =Content
 ----------------------------------------------- */
