@@ -59,7 +59,13 @@
   "views": {
     "default": {
       "file": "/themes/bootstrap/views/default.php",
-      "path": "/themes/bootstrap/views/default.php"
+      "path": "/themes/bootstrap/views/"
+    }
+  },
+  "sidebars": {
+    "default": {
+      "file": "/themes/bootstrap/views/sidebars/default.php",
+      "path": "/themes/bootstrap/views/sidebars/"
     }
   }
 }

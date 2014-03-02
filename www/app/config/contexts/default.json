@@ -12,9 +12,9 @@
    },
    "theme":{
       "name":"erdiko",
-      "namespace":"/public/themes/erdiko",
-      "path":"/public/themes/erdiko",
-      "config":"/public/themes/erdiko/theme.json"
+      "namespace":"/themes/bootstrap",
+      "path":"/public/themes/bootstrap",
+      "config":"/public/themes/bootstrap/theme.json"
    },
    "layout":{
       "layout":{

@@ -1,6 +1,6 @@
 <?php 
 if(isset($data['title']))
-    echo "<h1>".$data['title']."</h1>\n";
+    echo '<h1 class="page-header">'.$data['title']."</h1>\n";
 
 // Determine classes (@todo move to a helper class)
 $classPre = "content-body";

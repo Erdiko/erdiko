@@ -1,23 +1,27 @@
-<?php $menu = $data['menu']['main']; ?>
-<header id="header">
-  <div class="header">
-    <hgroup>
-      <h1 class="logo"><a href="/"><?php echo $data['site']['title']; ?></a></h1>
-    </hgroup>
-    <nav>
-      <ul id="main-nav" class="clearfix unstyled">
-      <?php $i = 0 ?>
+<header class="navbar navbar-static-top" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand"><?php echo $data['site']['title']; ?></a>
+    </div>
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
         <?php
-        if($menu){
-        foreach ($menu as $item): ?>
-        <li>
-          <a href="<?php echo  $item["href"]; ?>"><?php echo  $item["title"]; ?></a>
-        </li>
-        <?php $i++; ?>
-      <?php
-        endforeach;
-        }
-      ?>
+          $menu = $data['menu']['main'];
+          if($menu):
+            foreach ($menu as $item): ?>
+              <li>
+                <a href="<?php echo  $item["href"]; ?>"><?php echo  $item["title"]; ?></a>
+              </li>
+            <?php
+            endforeach;
+          endif; ?>
       </ul>
     </nav>
   </div>

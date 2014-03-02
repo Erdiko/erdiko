@@ -1,21 +1,21 @@
-<?php $menu = $data['menu']['footer']; ?>
-
 <footer id="footer">
-  <div class="footer">
-    <ul class="unstyled">
-      <?php $i = 0 ?>
-        <?php
-        if($menu){
-        foreach ($menu as $item): ?>
-        <li>
-          <a href="<?php echo  $item["href"]; ?>"><?php echo  $item["title"]; ?></a>
-        </li>
-        <?php $i++; ?>
+  <div class="container">
+
+    <ul class="nav nav-justified">
       <?php
-        endforeach;
-        }
-      ?>
+        $menu = $data['menu']['footer'];
+        if($menu):
+          foreach ($menu as $item): ?>
+            <li><a href="<?php echo  $item["href"]; ?>"><?php echo  $item["title"]; ?></a></li>
+          <?php
+          endforeach;
+        endif; ?>
     </ul>
-    <p class="copyright clearfix">Copyright &copy; <?php echo date('Y', time());?> All rights reserved. <a href="/"><?php echo $data['site']['full_name']; ?></a></p>
+    <div class="copyright clearfix">
+      <p>Copyright &copy; <?php echo date('Y', time());?> All rights reserved. <a href="/"><?php echo $data['site']['full_name']; ?></a><br />
+      Code licensed under <a href="https://github.com/arroyo/Erdiko/blob/master/LICENSE" target="_blank">MIT</a><br />
+      Powered by <a href="https://github.com/arroyo/Erdiko" target="_blank">Edriko</a></p>
+    </div>
+
   </div>
 </footer>
