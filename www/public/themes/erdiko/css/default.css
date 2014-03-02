@@ -166,7 +166,6 @@ img {
   height: auto;
   width: auto\9;
   /* ie8 */
-
 }
 * {
   -webkit-box-sizing: border-box;
@@ -577,7 +576,8 @@ footer {
   padding-left: 0;
 }
 /*  =Secondary Navigation
------------------------------------------------ *//*  =Variables
+----------------------------------------------- */
+/*  =Variables
 ----------------------------------------------- */
 /*  =Colors
 ----------------------------------------------- */
@@ -611,6 +611,7 @@ a:hover {
 .header nav,
 .header .front-signin {
   margin-top: 13px;
+  border: 1px;
 }
 /* =Content
 ----------------------------------------------- */
@@ -642,3 +643,21 @@ a:hover {
   margin-left: 0;
   padding-left: 0;
 }
+/*  =smaller than 1024
+----------------------------------------------- */
+/*  =smaller than 960
+----------------------------------------------- */
+/*  =smaller than 768
+----------------------------------------------- */
+/*  =smaller than 650
+----------------------------------------------- */
+/*  =Landscape View - smaller than 560
+----------------------------------------------- */
+@media screen and (max-width: 480px) {
+  /* disable webkit text size adjust (for iPhone) */
+  html {
+    -webkit-text-size-adjust: none;
+  }
+}
+/*  =Retina Views
+----------------------------------------------- */

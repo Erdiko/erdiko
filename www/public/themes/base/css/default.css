@@ -166,7 +166,6 @@ img {
   height: auto;
   width: auto\9;
   /* ie8 */
-
 }
 * {
   -webkit-box-sizing: border-box;
@@ -208,7 +207,7 @@ img {
   clear: both;
 }
 .hide-text {
-  font: a;
+  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -284,7 +283,7 @@ img {
 ----------------------------------------------- */
 /*  =Body Text
 ----------------------------------------------- */
-Typographyp {
+p {
   margin: 0 0 9px;
 }
 .lead {
@@ -512,6 +511,16 @@ a:hover {
 }
 p {
   margin-bottom: 9px;
+  font-size: 13px;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
 }
 /*  =Layout
 ----------------------------------------------- */
@@ -542,6 +551,9 @@ p {
 ----------------------------------------------- */
 header {
   border-bottom: 1px solid #999999;
+}
+header h1 {
+  font-size: 30px;
 }
 /*  =Footer
 ----------------------------------------------- */
