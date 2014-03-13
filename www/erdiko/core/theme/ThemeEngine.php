@@ -20,7 +20,8 @@ class ThemeEngine extends ModelAbstract implements Theme
 {
 	// @todo audit and remove unnecessary variables
 	protected $_templates;
-	protected $_data;
+	protected $_data; // data injected by the controller
+	protected $_title; // head title tag
 	protected $_webroot;
 	protected $_themeroot;
 	protected $_themeConfig;
@@ -103,21 +104,38 @@ class ThemeEngine extends ModelAbstract implements Theme
 		
 	}
 	
-	// @todo need to make a clean distinction between 'title' and 'page title'
-	// @todo rename to siteName
-	public function setTitle($title)
+	/**
+	 * Set the title that is in the body, e.g. "My Title" renders as (<H1>[My Title]</H1>)
+	 * @param string $title
+	 */
+	public function setPageTitle($title)
 	{
 		$this->_data['title'] = $title;
 	}
 
-	public function getTitle()
+	public function getPageTitle()
 	{
 		return $this->_data['title'];
 	}
-	
-	public function getPageTitle()
+
+	public function setTitle($title)
 	{		
-		return $this->_themeConfig['title'];
+		$this->_title = $title;
+	}
+
+	public function getTitle()
+	{		
+		return $this->_title;
+	}
+	
+	public function setSiteName($title)
+	{		
+		$this->_themeConfig['name'] = $title;
+	}
+
+	public function getSiteName()
+	{		
+		return $this->_themeConfig['name'];
 	}
 
 	public function getLayoutData()
@@ -295,7 +313,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	}
 	
 	/**
-	 *
+	 * This is clobbering setPageTitle
 	 */
 	public function setData($data)
 	{

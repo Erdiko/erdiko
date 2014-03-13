@@ -30,6 +30,7 @@ class Handler extends \ToroHandler
 		$this->_config = Config::getConfig('default');
 		$this->_contextConfig = $this->_config->getContext(); // @todo figure out way to switch contexts
 		
+		// @note initializing these empty arrays minimizes logic during theming
 		$this->_themeExtras = array(
 			'js' => array(), 
 			'css' => array(), 
@@ -52,6 +53,7 @@ class Handler extends \ToroHandler
 				),
 			'view' => array('page' => null), 
 			'sidebar' => array(),
+			'title' => null
 			);
 
         // Add an init hook for derived controllers
@@ -66,15 +68,7 @@ class Handler extends \ToroHandler
 
     }
 
-	/**
-	 * Add page title text to current page
-	 */
-	public function setPageTitle($title)
-	{
-		$this->_themeExtras['title'] = $title;
-	}
-
-	/**
+    /**
 	 * Add data variable to the layout
 	 */
 	public function setLayoutData($data)
@@ -83,12 +77,31 @@ class Handler extends \ToroHandler
 	}
 
 	/**
-	 * Set both the page title and body title at the same time
-	 * @param string $title
+	 * Add page title text to current page
 	 */
 	public function setTitle($title)
 	{
-		$this->setBodyTitle($title);
+		$this->_themeExtras['title'] = $title;
+		$this->_pageData['title'] = $title;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param string $title
+	 */
+	public function setPageTitle($title)
+	{
+		$this->_pageData['data']['title'] = $title;
+	}
+
+	/**
+	 * Set both the title (header) and page title (body) at the same time
+	 * @param string $title
+	 */
+	public function setTitles($title)
+	{
+		$this->setTitle($title);
 		$this->setPageTitle($title);
 	}
 
@@ -192,7 +205,9 @@ class Handler extends \ToroHandler
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
 		}
 
-		$theme->setTitle($this->_pageData['data']['title']);
+		// Titles
+		$theme->setTitle($this->_pageData['title']);
+		$data['title'] = $this->_pageData['data']['title']; // set the page title (body)
 
 		// Alter layout if needed
 		if($this->_numberColumns)
@@ -204,6 +219,9 @@ class Handler extends \ToroHandler
 		// Deal with sidebars for multi-column layouts
 		if(!empty($this->_pageData['sidebar']))
 			$theme->setSidebars($this->_pageData['sidebar']);
+
+		// error_log("_pageData: ".print_r($this->_pageData, true));
+		// error_log("data: ".print_r($data, true)); // this clobers the 
 
 		$theme->theme($data);
 	}
@@ -374,16 +392,6 @@ class Handler extends \ToroHandler
 	}
 
 	/**
-	 * Set page content data to be themed in the view
-	 *
-	 * @param string $title
-	 */
-	public function setBodyTitle($title)
-	{
-		$this->_pageData['data']['title'] = $title;
-	}
-
-	/**
 	 * Set page body content data to be themed in the view
 	 *
 	 * @param mixed $data
@@ -442,11 +450,11 @@ class Handler extends \ToroHandler
 	public function addContentData($key, $value)
 	{
         if(empty($this->_pageData['data']['content'])) {
-            $this->_pageData['data']['content'] = array();
+        	$this->_pageData['data']['content'] = array();
         }
         // If we have a scalar value setup then just return false(maybe throw an exception in future)
         if(!is_array($this->_pageData['data']['content'])) {
-            return false;
+    		return false;
         }
         $this->_pageData['data']['content'][$key] = $value;
         return $this;
