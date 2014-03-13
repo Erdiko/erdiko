@@ -325,8 +325,6 @@ class ThemeEngine extends ModelAbstract implements Theme
 		else
 			$filename = $this->_themeroot.$this->_themeConfig['path'].'/views/'.$file;
 
-		error_log("filename: $filename");
-
 		return $this->getTemplateFile($filename, $data);
 	}
 

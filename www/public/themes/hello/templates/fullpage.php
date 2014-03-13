@@ -17,11 +17,11 @@
     echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
 ?>
 </head>
-<body>
+<body class="fullpage">
 
 <div id="pagewrap">
   <div class="content-main">
-    <?php echo $this->getLayout(); ?>
+    <?php echo $data->getMainContent(); ?>
   </div>
 </div>
 
