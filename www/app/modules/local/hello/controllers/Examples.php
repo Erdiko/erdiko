@@ -103,6 +103,16 @@ class Examples extends \erdiko\core\Controller
 	}
 
 	/**
+	 * Fullpage layout example
+	 */
+	public function fullpageAction($arguments = null)
+	{
+		$this->setTitle('Example: Fullpage layout');
+        $this->setBodyContent("This is a full page example.");
+        $this->setTemplate('fullpage'); // switch to fullpage
+	}
+
+	/**
 	 * Slideshow Action 
 	 * @params array $arguments
 	 */
