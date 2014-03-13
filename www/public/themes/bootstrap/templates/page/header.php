@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand"><?php echo $data['site']['title']; ?></a>
+      <a href="/" class="navbar-brand"><?php echo $data['site']['name']; ?></a>
     </div>
     
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">

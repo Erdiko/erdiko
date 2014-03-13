@@ -2,7 +2,7 @@
 <header id="header">
   <div class="header">
     <hgroup>
-      <h1 class="logo"><a href="/"><?php echo $data['site']['title']; ?></a></h1>
+      <h1 class="logo"><a href="/"><?php echo $data['site']['name']; ?></a></h1>
     </hgroup>
     <nav>
       <ul id="main-nav" class="clearfix unstyled">
