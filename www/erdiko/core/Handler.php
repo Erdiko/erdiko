@@ -526,6 +526,16 @@ class Handler extends \ToroHandler
 			$this->_pageData['sidebar'][$name]['view'] = $view;
 	}
 
+	/**
+	 * Set the sidebars directly as array elements
+	 * 
+	 * @param array $data, array can have 'left' and 'right' indicies
+	 */
+	public function setSidebars($data)
+	{
+		$this->_pageData['sidebar'] = $data;
+	}
+
 	public function redirect($url)
 	{
 		header( "Location: $url" );

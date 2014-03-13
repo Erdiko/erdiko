@@ -11,10 +11,10 @@
       ]
    },
    "theme":{
-      "name":"erdiko",
-      "namespace":"/themes/bootstrap",
-      "path":"/public/themes/bootstrap",
-      "config":"/public/themes/bootstrap/theme.json"
+      "name":"hello",
+      "namespace":"/themes/hello",
+      "path":"/public/themes/hello",
+      "config":"/public/themes/hello/theme.json"
    },
    "layout":{
       "layout":{
@@ -31,8 +31,12 @@
    "menu":{
       "main":[
          {
+            "href":"/examples/index",
+            "title":"Examples"
+         },
+         {
             "href":"/markup",
-            "title":"Example Mark-Up"
+            "title":"Mark-Up"
          },
          {
             "href":"/grid",

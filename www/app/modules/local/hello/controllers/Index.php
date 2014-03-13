@@ -72,7 +72,7 @@ class Index extends \erdiko\core\Controller
 			Use the setView() method when possible.
 		*/
 		$this->setBodyTitle('Example Mark-Up');
-		$this->setBodyContent( $this->getView(null, 'hello/markup.php') );
+		$this->setBodyContent( $this->getView(null, 'pages/markup.php') );
 
 		// Add page title
 		$this->setTitle('Example CSS Mark-Up');
@@ -148,10 +148,6 @@ class Index extends \erdiko\core\Controller
 	 */
 	public function exceptionAction($arguments = null)
 	{
-		// load js resources
-		// $this->addJs('/app/contexts/default/js/jquery.orbit.js');
-		// $this->addJs('/app/contexts/default/js/orbit.js');
-
 		// Add page data
 		$this->setTitle('Page Exception');
 		$this->setBodyContent("Welcome to Erdiko.");
@@ -159,16 +155,6 @@ class Index extends \erdiko\core\Controller
 		// Add meta tags
 		$this->addMeta('This is an exception.', 'description');
 
-		throw new \Exception("This is Exception Text.");
-	}
-
-	public function phpinfoAction()
-	{
-		phpinfo();
-		exit;
-		
-		// Add page data
-		$this->setTitle('PHP Info');
-		$this->setBodyContent("booyah");
+		throw new \Exception("This is the Exception Text.");
 	}
 }

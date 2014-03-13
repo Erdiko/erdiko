@@ -150,7 +150,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 		if(!isset($data['view']))
 			$filename = $this->_themeroot.$this->_themeConfig['sidebars']['default']['file'];
 		else
-			$filename = $this->_themeroot.$this->_themeConfig['path'].'/views'.$data['view'];
+			$filename = $this->_themeroot.$this->_themeConfig['path'].'/views/'.$data['view'];
 		
 		return $this->getTemplateFile($filename, $data['content']);
 	}
@@ -323,7 +323,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 		if($file == null)
 			$filename = $this->_themeroot.$this->_themeConfig['views']['default']['file'];
 		else
-			$filename = $this->_themeroot.$this->_themeConfig['path'].'/views'.$file;
+			$filename = $this->_themeroot.$this->_themeConfig['path'].'/views/'.$file;
+
+		error_log("filename: $filename");
 
 		return $this->getTemplateFile($filename, $data);
 	}

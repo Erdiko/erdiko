@@ -1,20 +1,14 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-12" role="main">
-			<?php 
-				$title = $this->getPageTitle();
-		 		if(!empty($title))
-		    		echo "<h1>".$title."</h1>\n";
-
-		    	$data = $this->getLayoutData(); // @todo rename 'templates' folder to 'layouts'
-		    	// error_log("data: ".print_r($data, true));
-			?>
+		<div class="col-md-12 col-sm-12" role="main">
+			<?php if($data->getPageTitle() != null) echo "<h1>".$data->getPageTitle()."</h1>\n"; ?>
 		</div>
 	</div>
 
       <div class="row">
-        <div class="col-md-12" role="main">
+        <div class="col-md-12 col-sm-12" role="main">
         	<?php
+        		$data = $this->getLayoutData(); // @todo rename 'templates' folder to 'layouts'
 				$item = array(
 					'size' => $data['columns'],
 					'details' => array(
