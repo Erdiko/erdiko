@@ -2,7 +2,6 @@
 	"routes": [
 		["/", "\app\modules\local\hello\controllers\Index"],
 		["([a-zA-Z0-9_\-]+)", "\app\modules\local\hello\controllers\Index"],
-		["user/([a-zA-Z0-9_\-/]+)", "\app\modules\local\hello\controllers\Index"],
 		["examples/([a-zA-Z0-9_\-/]+)", "\app\modules\local\hello\controllers\Examples"],
 		["([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_\-/]+)", "\app\modules\local\hello\controllers\Index"],
 		["([a-zA-Z0-9_\-]+)", "\app\modules\local\hello\controllers\Index"],

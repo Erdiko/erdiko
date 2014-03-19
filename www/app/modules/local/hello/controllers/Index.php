@@ -71,8 +71,8 @@ class Index extends \erdiko\core\Controller
 			This is not the preferred way to add content.
 			Use the setView() method when possible.
 		*/
-		$this->setBodyTitle('Example Mark-Up');
-		$this->setBodyContent( $this->getView(null, 'pages/markup.php') );
+		$this->setTitle('Example Mark-Up');
+		$this->setBodyContent( $this->getView(null, 'hello/markup.php') );
 
 		// Add page title
 		$this->setTitle('Example CSS Mark-Up');
@@ -80,7 +80,7 @@ class Index extends \erdiko\core\Controller
 
 	public function twocolumnAction($arguments = null)
 	{
-		$this->setBodyTitle( '2 Column Layout Page' );
+		$this->setTitle( '2 Column Layout Page' );
 		$this->setBodyContent( '2 column layout example' );
 		$this->setLayoutColumns(2);
 		$this->setSidebar('left', 'This is the left side content...');
@@ -91,7 +91,7 @@ class Index extends \erdiko\core\Controller
 
 	public function threecolumnAction($arguments = null)
 	{
-		$this->setBodyTitle( '3 Column Layout Page' );
+		$this->setTitle( '3 Column Layout Page' );
 		$this->setBodyContent( '3 column layout example' );
 		$this->setLayoutColumns(3);
 		$this->setSidebar('left', 'This is the left side content...');

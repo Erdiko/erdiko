@@ -1,15 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
 
 <?php
-	// Spit out meta tags
+	// Render meta tags
 	foreach($data->getMeta() as $name => $content)
 		echo '<meta name="'.$name.'" content="'.$content.'" >';
-?>
 
-<?php
   // Determine page title
   $title = $data->getTitle();
   if( $data->getPageTitle() )

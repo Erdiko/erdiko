@@ -1,4 +1,5 @@
-<footer id="footer">
+<footer>
+<div id="footer">
   <div class="container">
 
     <ul class="nav nav-justified">
@@ -11,11 +12,12 @@
           endforeach;
         endif; ?>
     </ul>
-    <div class="copyright clearfix">
-      <p>Copyright &copy; <?php echo date('Y', time());?> All rights reserved. <a href="/"><?php echo $data['site']['full_name']; ?></a><br />
-      Code licensed under <a href="https://github.com/arroyo/Erdiko/blob/master/LICENSE" target="_blank">MIT</a><br />
-      Powered by <a href="https://github.com/arroyo/Erdiko" target="_blank">Edriko</a></p>
-    </div>
 
+    <div class="copyright">
+      <p>Copyright &copy; <?php echo date('Y', time());?> All rights reserved. <a href="/"><?php echo $data['site']['full_name']; ?></a><br />
+      Powered by <a href="https://github.com/arroyo/Erdiko" target="_blank">Edriko</a>. Code licensed under <a href="https://github.com/arroyo/Erdiko/blob/master/LICENSE" target="_blank">MIT</a></p>
+    </div>
+  
   </div>
+</div>
 </footer>
