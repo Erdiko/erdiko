@@ -1,6 +1,7 @@
 <?php
 define('APPROOT', dirname(__DIR__));
 define('WEBROOT', dirname(__DIR__).'/public');
+define('VIEWROOT', APPROOT.'/app/views/');
 
 $core = APPROOT.'/erdiko';
 $app = APPROOT.'/app';

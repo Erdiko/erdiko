@@ -166,9 +166,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 	{
 		// If no view specified use the default
 		if(!isset($data['view']))
-			$filename = APPROOT.'/app/views/'.$this->_themeConfig['sidebars']['default']['file'];
+			$filename = VIEWROOT.$this->_themeConfig['sidebars']['default']['file'];
 		else
-			$filename = APPROOT.'/app/views/'.$data['view'];
+			$filename = VIEWROOT.$data['view'];
 		
 		return $this->getTemplateFile($filename, $data['content']);
 	}
@@ -339,9 +339,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 	{
 		// if no view specified use the default
 		if($file == null)
-			$filename = APPROOT.'/app/views/'.$this->_themeConfig['views']['default']['file'];
+			$filename = VIEWROOT.$this->_themeConfig['views']['default']['file'];
 		else
-			$filename = APPROOT.'/app/views/'.$file;
+			$filename = VIEWROOT.$file;
 
 		return $this->getTemplateFile($filename, $data);
 	}

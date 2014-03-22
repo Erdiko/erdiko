@@ -93,9 +93,6 @@ class Index extends \erdiko\core\Controller
 		*/
 		$this->setTitles('Example Mark-Up');
 		$this->setBodyContent( $this->getView(null, 'hello/markup.php') );
-
-		// Add page title
-		$this->setTitle('Example CSS Mark-Up');
 	}
 
 	public function twocolumnAction($arguments = null)
