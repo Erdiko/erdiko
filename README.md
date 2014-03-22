@@ -8,7 +8,7 @@ Erdiko is a contextual middleware framework or better yet, an enterprise Mash-Up
 Version (SemVer)
 ----------------
 
-0.6.2
+0.6.3
 
 Installation
 ------------
