@@ -58,14 +58,14 @@
   },
   "views": {
     "default": {
-      "file": "/themes/bootstrap/views/default.php",
-      "path": "/themes/bootstrap/views/"
+      "file": "/default.php",
+      "path": "/"
     }
   },
   "sidebars": {
     "default": {
-      "file": "/themes/bootstrap/views/sidebars/default.php",
-      "path": "/themes/bootstrap/views/sidebars/"
+      "file": "/sidebars/default.php",
+      "path": "/sidebars/"
     }
   }
 }

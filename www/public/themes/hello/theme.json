@@ -49,14 +49,14 @@
   },
   "views": {
     "default": {
-      "file": "/themes/hello/views/default.php",
-      "path": "/themes/hello/views/"
+      "file": "/default.php",
+      "path": "/"
     }
   },
   "sidebars": {
     "default": {
-      "file": "/themes/hello/views/sidebars/default.php",
-      "path": "/themes/hello/views/sidebars/"
+      "file": "/sidebars/default.php",
+      "path": "/sidebars/"
     }
   }
 }

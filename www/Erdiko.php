@@ -74,10 +74,10 @@ class Erdiko
 	{
 		// $this->_data['layout']['columns']
 		$webroot = APPROOT;
-		$config = Erdiko::getConfigFile($webroot."/app/config/contexts/"."default".".json");
-		$localConfig['theme'] = $config['theme'];
+		// $config = Erdiko::getConfigFile($webroot."/app/config/contexts/"."default".".json");
+		// $localConfig['theme'] = $config['theme'];
 
-		$filename = $webroot.$localConfig['theme']['path'].'/views/'.$file;
+		$filename = APPROOT.'/app/views/'.$file;
 		return  Erdiko::getTemplate($filename, $data);
 	}
 	
