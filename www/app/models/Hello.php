@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2013, Arroyo Labs, www.arroyolabs.com
  * @author 		John Arroyo, john@arroyolabs.com
  */
-namespace app\modules\local\hello\models;
+namespace app\models;
 
 use Erdiko;
 

@@ -7,7 +7,7 @@
  * @copyright	Copyright (c) 2014, Arroyo Labs, Inc.
  * @author		John Arroyo, john@arroyolabs.com
  */
-namespace app\modules\community\magento\models;
+namespace app\modules\magento\models;
 
 use \Erdiko;
 

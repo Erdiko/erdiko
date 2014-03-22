@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Arroyo Labs, www.arroyolabs.com
  * @author 		John Arroyo, john@arroyolabs.com
  */
-namespace app\modules\local\hello\controllers;
+namespace app\controllers;
 
 use Erdiko;
 use erdiko\core\Config;
@@ -41,7 +41,7 @@ class Index extends \erdiko\core\Controller
 	 */
 	public function magentoAction($arguments = null)
 	{
-		$user = new \app\modules\community\magento\models\User;
+		$user = new \app\modules\magento\models\User;
 		$user->test();
 		$adminUser = $user->getAdminUser(1);
 
