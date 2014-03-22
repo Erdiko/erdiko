@@ -1,0 +1,1 @@
+<p>Page with a single view</p>
