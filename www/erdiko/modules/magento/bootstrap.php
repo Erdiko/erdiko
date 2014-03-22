@@ -5,18 +5,8 @@
  * /www (Erdiko root)
  */
 
-/*
-// Prevent this from running under a webserver (for unit testing only)
-if (array_key_exists('REQUEST_METHOD', $_SERVER)) 
-{
-	echo 'This page is not accessible from a browser.';
-	exit(1);
-}
-*/
-
 //set the working directory and required Drupal 7 variables
 define('MAGENTO_ROOT', dirname(dirname(dirname(dirname(__DIR__)))).'/magento');
-// define('MAGENTO_ROOT', dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/magento');
 
 // request uri is not set on the command line
 if(!isset($_SERVER['REQUEST_URI'])){

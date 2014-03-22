@@ -43,9 +43,17 @@ class Index extends \erdiko\core\Controller
 	{
 		$user = new \app\modules\community\magento\models\User;
 		$user->test();
+		$adminUser = $user->getAdminUser(1);
 
-		$this->setTitle('Magento');
-		$this->setBodyContent('Booyah');
+		// @todo move to a service layer
+		$data = array(
+			'user' => $adminUser->getData(),
+			'roles' => $adminUser->getRole()->getData()
+			);
+		$content = '<pre>'.print_r($data, true).'</pre>';
+
+		$this->setTitle('Magento Example');
+		$this->setBodyContent('<h2>Admin User</h2>'.$content);
 	}
 
 	public function aboutAction($arguments = null)

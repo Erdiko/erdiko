@@ -36,10 +36,8 @@ class Model extends \erdiko\core\ModelAbstract
 		{
 			require_once MAGENTO_ROOT.'/app/Mage.php';
 			\Mage::app( self::$storeMapper[$storeId] );
-			$resource = \Mage::getSingleton('core/resource');
-
-			error_log("mage: ".get_class($resource));
-
+			// $resource = \Mage::getSingleton('core/resource');
+			// error_log("mage: ".get_class($resource));
 			define('IS_MAGENTO_ACTIVE', TRUE); // define var so we know Magento is loaded
 		}
 	}

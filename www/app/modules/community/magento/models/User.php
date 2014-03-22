@@ -23,13 +23,20 @@ class User extends \erdiko\modules\magento\Model
 		error_log("test");
 	}
 
+	public function getAdminUser($id)
+	{
+		$adminUser = \Mage::getModel('admin/user')->load($id);
+
+		return $adminUser;
+	}
+
 	/**
 	 * Create new user
 	 * @param array $form
 	 */
 	public function createUser($form)
 	{
-		
+
 	}
 
 	/**
@@ -63,7 +70,7 @@ class User extends \erdiko\modules\magento\Model
 	 */
 	public function login($email, $password)
 	{
-		
+
 	}
 
   	public function createSession()
