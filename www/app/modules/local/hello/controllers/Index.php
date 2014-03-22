@@ -26,7 +26,7 @@ class Index extends \erdiko\core\Controller
 		// $this->addJs('/app/contexts/default/js/orbit.js');
 
 		// Add page data
-		$this->setTitle('Hello World');
+		$this->setTitles('Hello World');
 		$this->setBodyContent("Welcome to Erdiko.");
 
 		// Add meta tags
@@ -34,6 +34,18 @@ class Index extends \erdiko\core\Controller
 
 		// Add Extra js
 		$this->addJs('/themes/bootstrap/js/home.js');
+	}
+
+	/**
+	 * This method assumes you have magento installed and configured inside Erdiko 
+	 */
+	public function magentoAction($arguments = null)
+	{
+		$user = new \app\modules\community\magento\models\User;
+		$user->test();
+
+		$this->setTitle('Magento');
+		$this->setBodyContent('Booyah');
 	}
 
 	public function aboutAction($arguments = null)
@@ -71,7 +83,7 @@ class Index extends \erdiko\core\Controller
 			This is not the preferred way to add content.
 			Use the setView() method when possible.
 		*/
-		$this->setTitle('Example Mark-Up');
+		$this->setTitles('Example Mark-Up');
 		$this->setBodyContent( $this->getView(null, 'hello/markup.php') );
 
 		// Add page title
@@ -104,7 +116,7 @@ class Index extends \erdiko\core\Controller
 	public function gridAction()
 	{
 		// Js Base
-		$this->setTitle('Grid');
+		$this->setTitles('Grid');
 
 		// Data
 		$data = array(
@@ -124,7 +136,7 @@ class Index extends \erdiko\core\Controller
 	public function configAction($arguments = null)
 	{
 		// Add title
-		$this->setTitle('Config');
+		$this->setTitles('Config');
 		
 		// Add meta tags
 		$this->addMeta('Erdiko config settings', 'description');
@@ -149,7 +161,7 @@ class Index extends \erdiko\core\Controller
 	public function exceptionAction($arguments = null)
 	{
 		// Add page data
-		$this->setTitle('Page Exception');
+		$this->setTitles('Page Exception');
 		$this->setBodyContent("Welcome to Erdiko.");
 
 		// Add meta tags
