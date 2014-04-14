@@ -1,16 +1,23 @@
 Erdiko
 =======
 
-The Contextual Middleware Framework
+**Enterprise Glue**
 
-or 
+Erdiko is a contextual middleware framework or better yet, an enterprise Mash-Up framework.
 
-The Enterprise Mash-Up Framework
+Version (SemVer)
+----------------
 
-Semver
-------
+0.6.4
 
-0.5.3
+Installation
+------------
+
+Clone erdiko from github and set up an apache vhost to the webroot.
+
+Webroot is located at /www/public/
+
+Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder.  Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.
 
 Vision
 ------

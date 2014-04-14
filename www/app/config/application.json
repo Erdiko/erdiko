@@ -1,11 +1,11 @@
 {
 	"routes": [
-		["/", "\app\modules\local\hello\controllers\Index"],
-		["([a-zA-Z0-9_\-]+)", "\app\modules\local\hello\controllers\Index"],
-		["user/([a-zA-Z0-9_\-/]+)", "\app\modules\local\hello\controllers\Index"],
-		["([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_\-/]+)", "\app\modules\local\hello\controllers\Index"],
-		["([a-zA-Z0-9_\-]+)", "\app\modules\local\hello\controllers\Index"],
-		["([a-zA-Z0-9_]+)/([a-zA-Z0-9_\-/]+)", "\app\modules\local\hello\controllers\Index"]
+		["/", "\app\controllers\Index"],
+		["([a-zA-Z0-9_\-]+)", "\app\controllers\Index"],
+		["examples/([a-zA-Z0-9_\-/]+)", "\app\controllers\Examples"],
+		["([0-9][0-9][0-9][0-9])/([a-zA-Z0-9_\-/]+)", "\app\controllers\Index"],
+		["([a-zA-Z0-9_\-]+)", "\app\controllers\Index"],
+		["([a-zA-Z0-9_]+)/([a-zA-Z0-9_\-/]+)", "\app\controllers\Index"]
 	],
 	"common": "zend"
 }

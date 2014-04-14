@@ -72,12 +72,7 @@ class Erdiko
 	 */
 	public static function getView($data = null, $file = null)
 	{
-		// $this->_data['layout']['columns']
-		$webroot = WEBROOT;
-		$config = Erdiko::getConfigFile($webroot."/app/config/contexts/"."default".".json");
-		$localConfig['theme'] = $config['theme'];
-
-		$filename = $webroot.$localConfig['theme']['path'].'/views/'.$file;
+		$filename = VIEWROOT.$file;
 		return  Erdiko::getTemplate($filename, $data);
 	}
 	
@@ -94,13 +89,10 @@ class Erdiko
 		return $json;
 	}
 	
-	public static function getConfig($name)
+	public static function getConfig($name = 'default')
 	{
-		// @todo check cache first
-		$webroot = __DIR__;
-		$file = $webroot."/app/config/$name.json";
-		
-		return self::getConfigFile($file);
+		return \erdiko\core\Config::getConfig($name)->getContext();
+		// return self::getConfigFile($file);
 	}
 	
 	/**
@@ -214,9 +206,10 @@ class Erdiko
 	/*
 	* Called everytime to create a logger object to write to the log
 	*/
-	public static function createLogs($logFiles=array(),$logDir=null)
+	public static function createLogs($logFiles = array(), $logDir = null)
 	{
-		$config=Erdiko::getConfig("contexts/default");
+		$config = Erdiko::getConfig();
+
 		if(empty($logFiles))
 			$logFiles=$config["logs"]["files"][0];
 		if($logDir==null)
@@ -231,18 +224,18 @@ class Erdiko
 	 * @todo add log level as a number instead of a constant
 	 * @return 
 	 */
-	public static function log($logString,$logLevel=null,$logKey=null)
+	public static function log($logString, $logLevel = null, $logKey = null)
 	{
 		if(Erdiko::$_logObject==null)
 			Erdiko::createLogs();
-		return Erdiko::$_logObject->log($logString,$logLevel,$logKey);
+		return Erdiko::$_logObject->log($logString, $logLevel, $logKey);
 	}
 	
-	public static function addLogFile($key,$logFileName)
+	public static function addLogFile($key, $logFileName)
 	{
 		if(Erdiko::$_logObject==null)
 			Erdiko::createLogs();
-		return Erdiko::$_logObject->addLogFile($key,$logFileName);
+		return Erdiko::$_logObject->addLogFile($key, $logFileName);
 	}
 	
 	public static function removeLogFile($key)

@@ -25,7 +25,7 @@ class Config
      */
     private function __construct()
     {
-        $this->_webroot = WEBROOT;
+        $this->_webroot = APPROOT;
     }
 
     /**
@@ -35,8 +35,6 @@ class Config
      */
     public static function getConfig($context = 'default')
     {
-        error_log("getConfig");
-
         // Get singleton instance
         static $inst = null;
         if ($inst === null)

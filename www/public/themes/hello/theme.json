@@ -1,0 +1,62 @@
+{
+  "name": "hello",
+  "namespace": "/themes/hello",
+  "path": "/themes/hello",
+  "columns": 1,
+  "parent": "/themes/bootstrap/theme.json",
+  "css": [
+    {
+      "name": "default",
+      "file": "/themes/hello/css/default.css",
+      "active": 1
+    }
+  ],
+  "js": {
+    "default": {
+      "file": "/themes/hello/js/default.js",
+      "active": 1,
+      "order": 3
+    }
+  },
+  "templates": {
+    "default": {
+      "file": "/themes/hello/templates/default.php",
+      "path": "/themes/hello/templates/"
+    },
+    "header": {
+      "file": "/themes/hello/templates/page/header.php"
+    },
+    "footer": {
+      "file": "/themes/hello/templates/page/footer.php"
+    },
+    "fullpage": {
+      "file": "/themes/hello/templates/fullpage.php"
+    }
+  },
+  "layouts": {
+    "default": {
+      "file": "/themes/hello/templates/layouts/1column.php"
+    },
+    "1": {
+      "file": "/themes/hello/templates/layouts/1column.php"
+    },
+    "2": {
+      "file": "/themes/hello/templates/layouts/2column.php"
+    },
+    "3": {
+      "file": "/themes/hello/templates/layouts/3column.php"
+    }
+  },
+  "views": {
+    "default": {
+      "file": "/default.php",
+      "path": "/"
+    }
+  },
+  "sidebars": {
+    "default": {
+      "file": "/sidebars/default.php",
+      "path": "/sidebars/"
+    }
+  }
+}

@@ -20,8 +20,10 @@ class ThemeEngine extends ModelAbstract implements Theme
 {
 	// @todo audit and remove unnecessary variables
 	protected $_templates;
-	protected $_data;
+	protected $_data; // data injected by the controller
+	protected $_title; // head title tag
 	protected $_webroot;
+	protected $_themeroot;
 	protected $_themeConfig;
 	protected $_contextConfig;
 	protected $_extras;
@@ -36,16 +38,24 @@ class ThemeEngine extends ModelAbstract implements Theme
 		$this->_templates = array(
 			'header' => 'header',
 		);
+
+		$this->_webroot = APPROOT;
+		$this->_themeroot = WEBROOT;
 	}
 	
 	public function getWebroot()
 	{
 		return $this->_webroot;
 	}
+
+	public function getThemeroot()
+	{
+		return $this->_themeroot;
+	}
 	
 	public function getThemeFolder()
 	{
-		return $this->_webroot.$this->_themeConfig['path'];
+		return $this->_themeroot.$this->_themeConfig['path'];
 	}
 
 	public function setLayout($layout)
@@ -74,7 +84,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	
 	public function getHeader($name = "")
 	{	
-		$filename = $this->_webroot.$this->_themeConfig['templates']['header']['file'];
+		$filename = $this->_themeroot.$this->_themeConfig['templates']['header']['file'];
 		$html = $this->getTemplateFile($filename, $this->getContextConfig());
 		
 		return $html;
@@ -83,7 +93,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	public function getFooter($name = "")
 	{
 		// return $this->_data['footer'];
-		$filename = $this->_webroot.$this->_themeConfig['templates']['footer']['file'];
+		$filename = $this->_themeroot.$this->_themeConfig['templates']['footer']['file'];
 		$html = $this->getTemplateFile($filename, $this->getContextConfig());
 		
 		return $html;
@@ -94,21 +104,38 @@ class ThemeEngine extends ModelAbstract implements Theme
 		
 	}
 	
-	// @todo need to make a clean distinction between 'title' and 'page title'
-	// @todo rename to siteName
-	public function setTitle($title)
+	/**
+	 * Set the title that is in the body, e.g. "My Title" renders as (<H1>[My Title]</H1>)
+	 * @param string $title
+	 */
+	public function setPageTitle($title)
 	{
 		$this->_data['title'] = $title;
 	}
 
-	public function getTitle()
+	public function getPageTitle()
 	{
 		return $this->_data['title'];
 	}
-	
-	public function getPageTitle()
+
+	public function setTitle($title)
 	{		
-		return $this->_themeConfig['title'];
+		$this->_title = $title;
+	}
+
+	public function getTitle()
+	{		
+		return $this->_title;
+	}
+	
+	public function setSiteName($title)
+	{		
+		$this->_themeConfig['name'] = $title;
+	}
+
+	public function getSiteName()
+	{		
+		return $this->_themeConfig['name'];
 	}
 
 	public function getLayoutData()
@@ -139,9 +166,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 	{
 		// If no view specified use the default
 		if(!isset($data['view']))
-			$filename = $this->_webroot.$this->_themeConfig['sidebars']['default']['file'];
+			$filename = VIEWROOT.$this->_themeConfig['sidebars']['default']['file'];
 		else
-			$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$data['view'];
+			$filename = VIEWROOT.$data['view'];
 		
 		return $this->getTemplateFile($filename, $data['content']);
 	}
@@ -169,9 +196,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 	public function getLayout()
 	{
 		if($this->_layout != null)
-			$filename = $this->_webroot.$this->_themeConfig['path'].'/templates'.$this->_layout;
+			$filename = $this->_themeroot.$this->_themeConfig['path'].'/templates'.$this->_layout;
 		else
-			$filename = $this->_webroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
+			$filename = $this->_themeroot.$this->_themeConfig['layouts'][$this->_numColumns]['file'];
 
 		echo $this->getTemplateFile($filename, $this);
 	}
@@ -233,8 +260,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	 * @param array $extras
 	 */
 	public function loadTheme($config, $extras)
-	{	
-		$this->_webroot = WEBROOT;
+	{
 		$this->_themeConfig = $config->getTheme(); // Get the theme config data
 		$this->setContextConfig($config->getContext());
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
@@ -247,7 +273,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 		// If a parent theme exists, merge the theme configs
 		if( isset($this->_themeConfig['parent']) )
 		{
-			$parentConfig = Erdiko::getConfigFile($this->_webroot.$this->_themeConfig['parent']);
+			$parentConfig = Erdiko::getConfigFile($this->_themeroot.$this->_themeConfig['parent']);
 
 			// CSS
 			$this->_themeConfig['css'] = $this->mergeCss($parentConfig['css'], $this->_themeConfig['css']);
@@ -257,6 +283,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 			$this->_themeConfig['js'] = $this->mergeConfig($parentConfig['js'], $this->_themeConfig['js']);
 			unset($parentConfig['js']);
 			
+			// error_log("parent: ".print_r($parentConfig, true));
+			// error_log("theme: ".print_r($this->_themeConfig, true));
+
 			// Templates
 			$this->_themeConfig['templates'] = $this->_themeConfig['templates'] + $parentConfig['templates'];
 
@@ -284,7 +313,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	}
 	
 	/**
-	 *
+	 * This is clobbering setPageTitle
 	 */
 	public function setData($data)
 	{
@@ -296,7 +325,7 @@ class ThemeEngine extends ModelAbstract implements Theme
 	 */
 	public function theme($data)
 	{
-		$filename = $this->_webroot.$this->getTemplate();	
+		$filename = $this->_themeroot.$this->getTemplate();	
 		$this->setData($data);
 		$html = $this->getTemplateFile($filename, $this);
 		
@@ -310,9 +339,9 @@ class ThemeEngine extends ModelAbstract implements Theme
 	{
 		// if no view specified use the default
 		if($file == null)
-			$filename = $this->_webroot.$this->_themeConfig['views']['default']['file'];
+			$filename = VIEWROOT.$this->_themeConfig['views']['default']['file'];
 		else
-			$filename = $this->_webroot.$this->_themeConfig['path'].'/views'.$file;
+			$filename = VIEWROOT.$file;
 
 		return $this->getTemplateFile($filename, $data);
 	}

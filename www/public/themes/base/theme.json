@@ -1,0 +1,40 @@
+{
+  "name": "base",
+  "namespace": "\themes\base",
+  "path": "/themes/base",
+  "columns": 1,
+  "credits": "Dave LaFlam & John Arroyo",
+  "css": [],
+  "css-named": {
+    "default": {
+      "name": "default",
+      "file": "/themes/base/css/default.css",
+      "active": 1
+    }
+  },
+  "js": {
+  },
+  "templates": {
+    "default": {
+      "file": "/themes/base/templates/default.php"
+    },
+    "footer": {
+      "file": "/themes/base/templates/page/footer.php"
+    },
+    "header": {
+      "file": "/themes/base/templates/page/header.php"
+    }
+  },
+  "views": {
+    "default": {
+      "file": "/themes/base/views/page.php",
+      "path": "/themes/base/views/page.php"
+    }
+  },
+  "sidebars": {
+    "default": {
+      "file": "/themes/base/views/sidebars/default.php",
+      "path": "/themes/base/views/sidebars/default.php"
+    }
+  }
+}

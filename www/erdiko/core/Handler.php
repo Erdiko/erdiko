@@ -26,10 +26,11 @@ class Handler extends \ToroHandler
 	
 	public function __construct()
 	{
-		$this->_webroot = WEBROOT;
+		$this->_webroot = APPROOT;
 		$this->_config = Config::getConfig('default');
 		$this->_contextConfig = $this->_config->getContext(); // @todo figure out way to switch contexts
 		
+		// @note initializing these empty arrays minimizes logic during theming
 		$this->_themeExtras = array(
 			'js' => array(), 
 			'css' => array(), 
@@ -52,6 +53,7 @@ class Handler extends \ToroHandler
 				),
 			'view' => array('page' => null), 
 			'sidebar' => array(),
+			'title' => null
 			);
 
         // Add an init hook for derived controllers
@@ -66,15 +68,7 @@ class Handler extends \ToroHandler
 
     }
 
-	/**
-	 * Add page title text to current page
-	 */
-	public function setPageTitle($title)
-	{
-		$this->_themeExtras['title'] = $title;
-	}
-
-	/**
+    /**
 	 * Add data variable to the layout
 	 */
 	public function setLayoutData($data)
@@ -83,12 +77,31 @@ class Handler extends \ToroHandler
 	}
 
 	/**
-	 * Set both the page title and body title at the same time
-	 * @param string $title
+	 * Add page title text to current page
 	 */
 	public function setTitle($title)
 	{
-		$this->setBodyTitle($title);
+		$this->_themeExtras['title'] = $title;
+		$this->_pageData['title'] = $title;
+	}
+
+	/**
+	 * Set page content data to be themed in the view
+	 *
+	 * @param string $title
+	 */
+	public function setPageTitle($title)
+	{
+		$this->_pageData['data']['title'] = $title;
+	}
+
+	/**
+	 * Set both the title (header) and page title (body) at the same time
+	 * @param string $title
+	 */
+	public function setTitles($title)
+	{
+		$this->setTitle($title);
 		$this->setPageTitle($title);
 	}
 
@@ -192,7 +205,9 @@ class Handler extends \ToroHandler
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
 		}
 
-		$theme->setTitle($this->_pageData['data']['title']);
+		// Titles
+		$theme->setTitle($this->_pageData['title']);
+		$data['title'] = $this->_pageData['data']['title']; // set the page title (body)
 
 		// Alter layout if needed
 		if($this->_numberColumns)
@@ -204,6 +219,9 @@ class Handler extends \ToroHandler
 		// Deal with sidebars for multi-column layouts
 		if(!empty($this->_pageData['sidebar']))
 			$theme->setSidebars($this->_pageData['sidebar']);
+
+		// error_log("_pageData: ".print_r($this->_pageData, true));
+		// error_log("data: ".print_r($data, true)); // this clobers the 
 
 		$theme->theme($data);
 	}
@@ -289,24 +307,24 @@ class Handler extends \ToroHandler
 		$data = $this->_contextConfig['layout'];
 		$this->_arguments = $arguments;
 		
-		// Determine what conetent should be called 
-		if( empty($name) )
+		// Load the page content
+		try 
 		{
-			$data['main_content'] = $this->indexAction($arguments);
-		}
-		else 
-		{
-			try 
-			{
-                $action = $this->urlToActionName($name);
-                $this->_before();
+            $action = $this->urlToActionName($name);
+            $this->_before();
+
+            // Determine what content should be called 
+            if( empty($name) )
+				$this->indexAction($arguments);
+			else
 				$this->$action($arguments); // run the action method of the handler/controller
-				$this->_after();
-			}
-			catch(\Exception $e)
-			{
-				$data['main_content'] = $this->getExceptionHtml( $e->getMessage() );
-			}
+
+			$this->_after();
+		}
+		catch(\Exception $e)
+		{
+			Erdiko::log($e->getMessage());
+			$this->appendBodyContent( $this->getExceptionHtml( $e->getMessage() ) );
 		}
 		
 		$this->theme($data);
@@ -344,9 +362,7 @@ class Handler extends \ToroHandler
 	 */
 	public function getView($data = null, $file = null)
 	{
-		// $this->_data['layout']['columns']
-
-		$filename = $this->_webroot.$this->_contextConfig['theme']['path'].'/views/'.$file;
+		$filename = VIEWROOT.$file;
 		return  Erdiko::getTemplate($filename, $data);
 	}
 
@@ -374,13 +390,23 @@ class Handler extends \ToroHandler
 	}
 
 	/**
-	 * Set page content data to be themed in the view
+	 * Set page body content data to be themed in the view
 	 *
-	 * @param string $title
+	 * @param mixed $data
 	 */
-	public function setBodyTitle($title)
+	public function setBodyContent($data)
 	{
-		$this->_pageData['data']['title'] = $title;
+		$this->_pageData['data']['content'] = $data;
+	}
+
+	/**
+	 * Get page body content data to be themed in the view
+	 *
+	 * @return mixed $data
+	 */
+	public function getBodyContent()
+	{
+		return $this->_pageData['data']['content'];
 	}
 
 	/**
@@ -388,9 +414,9 @@ class Handler extends \ToroHandler
 	 *
 	 * @param mixed $data
 	 */
-	public function setBodyContent($data)
+	public function appendBodyContent($data)
 	{
-		$this->_pageData['data']['content'] = $data;
+		$this->_pageData['data']['content'] .= $data;
 	}
 
 	/**
@@ -422,11 +448,11 @@ class Handler extends \ToroHandler
 	public function addContentData($key, $value)
 	{
         if(empty($this->_pageData['data']['content'])) {
-            $this->_pageData['data']['content'] = array();
+        	$this->_pageData['data']['content'] = array();
         }
         // If we have a scalar value setup then just return false(maybe throw an exception in future)
         if(!is_array($this->_pageData['data']['content'])) {
-            return false;
+    		return false;
         }
         $this->_pageData['data']['content'][$key] = $value;
         return $this;
@@ -493,7 +519,8 @@ class Handler extends \ToroHandler
      * @param string $name: The raw action name
      * @return string
      */
-    public function urlToActionName($name){
+    public function urlToActionName($name)
+    {
         // just turn dash-format into upperCamelCaseFormat
         return preg_replace_callback("/\-(.)/", array($this, '_replaceActionName'), $name);
     }
@@ -512,6 +539,16 @@ class Handler extends \ToroHandler
 			$this->_pageData['sidebar'][$name]['view'] = $view;
 	}
 
+	/**
+	 * Set the sidebars directly as array elements
+	 * 
+	 * @param array $data, array can have 'left' and 'right' indicies
+	 */
+	public function setSidebars($data)
+	{
+		$this->_pageData['sidebar'] = $data;
+	}
+
 	public function redirect($url)
 	{
 		header( "Location: $url" );
@@ -520,14 +557,6 @@ class Handler extends \ToroHandler
 
 	public function getExceptionHtml($message)
 	{
-		$formData = array(
-			'title' => $this->_textConfig['exception']['title'],
-			'sub_title' => $this->_textConfig['exception']['sub_title'],
-			'description' => $this->_textConfig['exception']['description'],
-			'message' => $message,
-		);
-		
-		$filename = __DIR__.'/views/form/exception.phtml';
-		return  Erdiko::getTemplate($filename, $formData);
+		return "<div class=\"exception\">$message</div>";
 	}
 }

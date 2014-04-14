@@ -1,0 +1,71 @@
+{
+  "name": "bootstrap",
+  "namespace": "/themes/bootstrap",
+  "path": "/themes/bootstrap",
+  "columns": 1,
+  "css": [
+    {
+      "name": "default",
+      "file": "/themes/bootstrap/css/default.css",
+      "active": 1
+    }
+  ],
+  "js": {
+    "jquery": {
+      "file": "http://code.jquery.com/jquery-1.11.0.js",
+      "active": 1,
+      "order": 1
+    },
+    "bootstrap": {
+      "file": "/themes/bootstrap/js/bootstrap.js",
+      "active": 1,
+      "order": 2
+    },
+    "default": {
+      "file": "/themes/bootstrap/js/default.js",
+      "active": 1,
+      "order": 3
+    }
+  },
+  "templates": {
+    "default": {
+      "file": "/themes/bootstrap/templates/default.php",
+      "path": "/themes/bootstrap/templates/"
+    },
+    "header": {
+      "file": "/themes/bootstrap/templates/page/header.php"
+    },
+    "footer": {
+      "file": "/themes/bootstrap/templates/page/footer.php"
+    },
+    "fullpage": {
+      "file": "/themes/bootstrap/templates/fullpage.php"
+    }
+  },
+  "layouts": {
+    "default": {
+      "file": "/themes/bootstrap/templates/layouts/1column.php"
+    },
+    "1": {
+      "file": "/themes/bootstrap/templates/layouts/1column.php"
+    },
+    "2": {
+      "file": "/themes/bootstrap/templates/layouts/2column.php"
+    },
+    "3": {
+      "file": "/themes/bootstrap/templates/layouts/3column.php"
+    }
+  },
+  "views": {
+    "default": {
+      "file": "/default.php",
+      "path": "/"
+    }
+  },
+  "sidebars": {
+    "default": {
+      "file": "/sidebars/default.php",
+      "path": "/sidebars/"
+    }
+  }
+}
