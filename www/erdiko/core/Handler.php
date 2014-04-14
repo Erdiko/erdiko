@@ -482,13 +482,20 @@ class Handler extends \ToroHandler
 	}
 
     /**
+     * Call back for preg_replace in urlToActionName
+     */
+    public function _replaceActionName($name) {
+        return strtoupper($name) . 'Action';
+    }
+
+    /**
      * Modify the action name coming from the URL into proper action name
      * @param string $name: The raw action name
      * @return string
      */
     public function urlToActionName($name){
         // just turn dash-format into upperCamelCaseFormat
-        return preg_replace("/\-(.)/e", "strtoupper('\\1')", $name) . 'Action';
+        return preg_replace_callback("/\-(.)/", array($this, '_replaceActionName'), $name);
     }
 
 	/**
