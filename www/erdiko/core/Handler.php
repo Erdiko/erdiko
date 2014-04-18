@@ -535,7 +535,7 @@ class Handler extends \ToroHandler
     public function urlToActionName($name)
     {
         // just turn dash-format into upperCamelCaseFormat
-        return preg_replace("/\-(.)/e", "strtoupper('\\1')", $name) . 'Action';
+        return preg_replace_callback("/\-(.)/", array($this, '_replaceActionName'), $name);
     }
 
 	/**
