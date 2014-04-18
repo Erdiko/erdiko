@@ -174,4 +174,17 @@ class Index extends \erdiko\core\Controller
 
 		throw new \Exception("This is the Exception Text.");
 	}
+
+	/**
+	 * Example of how to inject menu items from the controller
+	 */
+	public function menuAction($arguments = null)
+	{
+		$this->setTitles('Inject Menu Items');
+
+		$menu = array(
+			array('href' => '/menu', 'title' => 'Menu'),
+			);
+		$this->setMenu($menu, 'main');
+	}
 }

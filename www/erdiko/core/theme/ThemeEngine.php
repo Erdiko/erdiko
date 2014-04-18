@@ -262,7 +262,6 @@ class ThemeEngine extends ModelAbstract implements Theme
 	public function loadTheme($config, $extras)
 	{
 		$this->_themeConfig = $config->getTheme(); // Get the theme config data
-		$this->setContextConfig($config->getContext());
 		$this->_domainName = 'http://'.$_SERVER['SERVER_NAME'];
 		$this->_extras = $extras;
 
@@ -307,6 +306,16 @@ class ThemeEngine extends ModelAbstract implements Theme
 		// Add any additional CSS files needed for the page.
 		if($extras['css'] != null)
 			$this->_themeConfig['css'] = $this->mergeCss($this->_themeConfig['css'], $extras['css']);
+
+		// Add to the menu to the context if present
+		$context = $config->getContext();
+		// error_log("context menu: ".print_r($context['menu'], true));
+		// error_log("extras menu: ".print_r($extras['menu'], true));
+
+		if($extras['menu'] != null)
+			$context['menu'] = $extras['menu'] + $context['menu'];
+
+		$this->setContextConfig($context);
 
 		// Set default number of columns
 		$this->_numColumns = $this->_themeConfig['columns'];

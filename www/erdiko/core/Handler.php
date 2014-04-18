@@ -39,7 +39,8 @@ class Handler extends \ToroHandler
 			'title' => "",
 			'identifier' => array(),
 			'id' => "id",
-			'data' => ""
+			'data' => "",
+			'menu' => null,
 			);
 
 		$this->_pageData = array(
@@ -103,6 +104,17 @@ class Handler extends \ToroHandler
 	{
 		$this->setTitle($title);
 		$this->setPageTitle($title);
+	}
+
+	/**
+	 * Set menu
+	 *
+	 * @param array $menu
+	 * @param string $name
+	 */
+	public function setMenu($menu, $name='main')
+	{
+		$this->_themeExtras['menu'][$name] = $menu;
 	}
 
 	/**
@@ -204,6 +216,7 @@ class Handler extends \ToroHandler
 			// render the page
 			$data['main_content'] = $theme->renderView($this->_pageData['view']['page'], $this->_pageData['data']);
 		}
+		// error_log("content: ".print_r($data, true));
 
 		// Titles
 		$theme->setTitle($this->_pageData['title']);
@@ -220,7 +233,7 @@ class Handler extends \ToroHandler
 		if(!empty($this->_pageData['sidebar']))
 			$theme->setSidebars($this->_pageData['sidebar']);
 
-		// error_log("_pageData: ".print_r($this->_pageData, true));
+		// error_log("theme: ".print_r($theme, true));
 		// error_log("data: ".print_r($data, true)); // this clobers the 
 
 		$theme->theme($data);
@@ -506,6 +519,13 @@ class Handler extends \ToroHandler
 	{
 		return $this->_template;
 	}
+
+    /**
+     * Call back for preg_replace in urlToActionName
+     */
+    public function _replaceActionName($name) {
+        return strtoupper($name) . 'Action';
+    }
 
     /**
      * Modify the action name coming from the URL into proper action name
