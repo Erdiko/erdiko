@@ -17,6 +17,7 @@ class Model extends \erdiko\core\ModelAbstract
 {
 	protected $_storeId = null;
 	public static $storeMapper = array(
+			'0' => 'admin',
 			'1' => 'default'
 		);
 
