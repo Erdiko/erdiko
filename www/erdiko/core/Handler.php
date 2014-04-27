@@ -523,8 +523,9 @@ class Handler extends \ToroHandler
     /**
      * Call back for preg_replace in urlToActionName
      */
-    public function _replaceActionName($name) {
-        return strtoupper($name) . 'Action';
+    public function _replaceActionName($parts) 
+    {
+        return strtoupper($parts[1]);
     }
 
     /**
@@ -534,8 +535,12 @@ class Handler extends \ToroHandler
      */
     public function urlToActionName($name)
     {
-        // just turn dash-format into upperCamelCaseFormat
-        return preg_replace_callback("/\-(.)/", array($this, '_replaceActionName'), $name);
+        // convert to camelcase if there are dashes
+        $function = preg_replace_callback("/\-(.)/", array($this, '_replaceActionName'), $name);
+        // Add action to it
+        $function .= 'Action';
+
+		return $function;
     }
 
 	/**
