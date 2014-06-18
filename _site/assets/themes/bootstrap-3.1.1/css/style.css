@@ -1,0 +1,22 @@
+/*Layout*/
+/*
+body{
+  padding-top:50px;
+}
+*/
+
+
+/*Jumbotron*/
+.jumbotron{
+  text-align:center;
+}
+
+/*GlyphIcons*/
+
+.glyphicon{
+  font-size: 3em;
+  display: block;
+  margin:auto;
+  color:#3a87ad;
+  text-align: center;
+}

@@ -187,4 +187,10 @@ class Index extends \erdiko\core\Controller
 			);
 		$this->setMenu($menu, 'main');
 	}
+
+	public function fourAction()
+	{
+		$this->setTitles('4 World');
+		$this->setBodyContent("Welcome to Four.");
+	}
 }

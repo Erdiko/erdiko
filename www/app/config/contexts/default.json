@@ -53,6 +53,14 @@
          {
             "href":"/threecolumn",
             "title":"3 Column Layout"
+         },
+         {
+            "href":"/four",
+            "title":"4 Layout"
+         },
+         {
+            "href":"/examples/bmi",
+            "title":"BMI"
          }
       ],
       "footer":[

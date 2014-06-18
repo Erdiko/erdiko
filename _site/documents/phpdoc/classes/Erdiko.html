@@ -1,0 +1,521 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \Erdiko</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/app.html"><i class="icon-th"></i> app</a></li>
+<li><a href="../namespaces/erdiko.html"><i class="icon-th"></i> erdiko</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">645</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">16</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addLogFile" title="addLogFile :: "><span class="description">addLogFile()
+        </span><pre>addLogFile()</pre></a></li>
+<li class="method public "><a href="#method_clearLog" title="clearLog :: "><span class="description">clearLog()
+        </span><pre>clearLog()</pre></a></li>
+<li class="method public "><a href="#method_copyFile" title="copyFile :: "><span class="description">copyFile()
+        </span><pre>copyFile()</pre></a></li>
+<li class="method public "><a href="#method_createLogs" title="createLogs :: "><span class="description">createLogs()
+        </span><pre>createLogs()</pre></a></li>
+<li class="method public "><a href="#method_deleteFile" title="deleteFile :: "><span class="description">deleteFile()
+        </span><pre>deleteFile()</pre></a></li>
+<li class="method public "><a href="#method_getCache" title="getCache :: "><span class="description">getCache()
+        </span><pre>getCache()</pre></a></li>
+<li class="method public "><a href="#method_getConfig" title="getConfig :: "><span class="description">getConfig()
+        </span><pre>getConfig()</pre></a></li>
+<li class="method public "><a href="#method_getConfigFile" title="getConfigFile :: Read JSON config file and return array"><span class="description">Read JSON config file and return array</span><pre>getConfigFile()</pre></a></li>
+<li class="method public "><a href="#method_getModel" title="getModel :: getModel
+Currently only works with zend models
+Model Factory (eventually turn it into a factory and/or leverage singletons)"><span class="description">getModel
+Currently only works with zend models
+Model Factory (eventually turn it into a factory and/or leverage singletons)</span><pre>getModel()</pre></a></li>
+<li class="method public "><a href="#method_getModule" title="getModule :: Factory Module Classes"><span class="description">Factory Module Classes</span><pre>getModule()</pre></a></li>
+<li class="method public "><a href="#method_getRoutes" title="getRoutes :: Get the compiled application routes from the config files"><span class="description">Get the compiled application routes from the config files</span><pre>getRoutes()</pre></a></li>
+<li class="method public "><a href="#method_getService" title="getService :: getService
+Service Factory (eventually turn it into a factory and/or leverage singletons)"><span class="description">getService
+Service Factory (eventually turn it into a factory and/or leverage singletons)</span><pre>getService()</pre></a></li>
+<li class="method public "><a href="#method_getTable" title="getTable :: getTable
+Service Factory (eventually turn it into a factory and/or leverage singletons)"><span class="description">getTable
+Service Factory (eventually turn it into a factory and/or leverage singletons)</span><pre>getTable()</pre></a></li>
+<li class="method public "><a href="#method_getTemplate" title="getTemplate :: Load a template file from a module"><span class="description">Load a template file from a module</span><pre>getTemplate()</pre></a></li>
+<li class="method public "><a href="#method_getTheme" title="getTheme :: get the registered theme"><span class="description">get the registered theme</span><pre>getTheme()</pre></a></li>
+<li class="method public "><a href="#method_getView" title="getView :: Load a view from the current theme with the given data"><span class="description">Load a view from the current theme with the given data</span><pre>getView()</pre></a></li>
+<li class="method public "><a href="#method_log" title="log :: log"><span class="description">log</span><pre>log()</pre></a></li>
+<li class="method public "><a href="#method_moveFile" title="moveFile :: "><span class="description">moveFile()
+        </span><pre>moveFile()</pre></a></li>
+<li class="method public "><a href="#method_readFromFile" title="readFromFile :: "><span class="description">readFromFile()
+        </span><pre>readFromFile()</pre></a></li>
+<li class="method public "><a href="#method_removeLogFile" title="removeLogFile :: "><span class="description">removeLogFile()
+        </span><pre>removeLogFile()</pre></a></li>
+<li class="method public "><a href="#method_renameFile" title="renameFile :: "><span class="description">renameFile()
+        </span><pre>renameFile()</pre></a></li>
+<li class="method public "><a href="#method_sendEmail" title="sendEmail :: send email"><span class="description">send email</span><pre>sendEmail()</pre></a></li>
+<li class="method public "><a href="#method_writeToFile" title="writeToFile :: writeToFile"><span class="description">writeToFile</span><pre>writeToFile()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property__logObject" title="$_logObject :: "><span class="description"></span><pre>$_logObject</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Erdiko"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Erdiko.html">Erdiko</a>
+</li>
+</ul>
+<div class="element class"><div class="details">
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addLogFile"></a><div class="element clickable method public method_addLogFile" data-toggle="collapse" data-target=".method_addLogFile .collapse">
+<h2>addLogFile()
+        </h2>
+<pre>addLogFile($key, $logFileName) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument"><h4>$logFileName</h4></div>
+</div></div>
+</div>
+<a id="method_clearLog"></a><div class="element clickable method public method_clearLog" data-toggle="collapse" data-target=".method_clearLog .collapse">
+<h2>clearLog()
+        </h2>
+<pre>clearLog($logKey) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$logKey</h4></div>
+</div></div>
+</div>
+<a id="method_copyFile"></a><div class="element clickable method public method_copyFile" data-toggle="collapse" data-target=".method_copyFile .collapse">
+<h2>copyFile()
+        </h2>
+<pre>copyFile($filename, $newFilePath, $newFileName, $path) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$filename</h4></div>
+<div class="subelement argument"><h4>$newFilePath</h4></div>
+<div class="subelement argument"><h4>$newFileName</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+</div></div>
+</div>
+<a id="method_createLogs"></a><div class="element clickable method public method_createLogs" data-toggle="collapse" data-target=".method_createLogs .collapse">
+<h2>createLogs()
+        </h2>
+<pre>createLogs($logFiles, $logDir) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$logFiles</h4></div>
+<div class="subelement argument"><h4>$logDir</h4></div>
+</div></div>
+</div>
+<a id="method_deleteFile"></a><div class="element clickable method public method_deleteFile" data-toggle="collapse" data-target=".method_deleteFile .collapse">
+<h2>deleteFile()
+        </h2>
+<pre>deleteFile($filename, $path) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$filename</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+</div></div>
+</div>
+<a id="method_getCache"></a><div class="element clickable method public method_getCache" data-toggle="collapse" data-target=".method_getCache .collapse">
+<h2>getCache()
+        </h2>
+<pre>getCache($cacheType) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$cacheType</h4></div>
+</div></div>
+</div>
+<a id="method_getConfig"></a><div class="element clickable method public method_getConfig" data-toggle="collapse" data-target=".method_getConfig .collapse">
+<h2>getConfig()
+        </h2>
+<pre>getConfig($name) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="method_getConfigFile"></a><div class="element clickable method public method_getConfigFile" data-toggle="collapse" data-target=".method_getConfigFile .collapse">
+<h2>Read JSON config file and return array</h2>
+<pre>getConfigFile($file) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>$config</div>
+</div></div>
+</div>
+<a id="method_getModel"></a><div class="element clickable method public method_getModel" data-toggle="collapse" data-target=".method_getModel .collapse">
+<h2>getModel
+Currently only works with zend models
+Model Factory (eventually turn it into a factory and/or leverage singletons)</h2>
+<pre>getModel($modelName) : </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>usage</th>
+<td>Erdiko::getModel('Product_Service');</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>throw exception if load fails</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$modelName</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"></div>
+</div></div>
+</div>
+<a id="method_getModule"></a><div class="element clickable method public method_getModule" data-toggle="collapse" data-target=".method_getModule .collapse">
+<h2>Factory Module Classes</h2>
+<pre>getModule($moduleName) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$moduleName</h4></div>
+</div></div>
+</div>
+<a id="method_getRoutes"></a><div class="element clickable method public method_getRoutes" data-toggle="collapse" data-target=".method_getRoutes .collapse">
+<h2>Get the compiled application routes from the config files</h2>
+<pre>getRoutes() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>todo</th>
+<td>cache the loaded/compiled routes</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getService"></a><div class="element clickable method public method_getService" data-toggle="collapse" data-target=".method_getService .collapse">
+<h2>getService
+Service Factory (eventually turn it into a factory and/or leverage singletons)</h2>
+<pre>getService($service) : </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>usage</th>
+<td>Erdiko::getService('product'); // first character does not have to be uppercase</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>throw exception if load fails</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$service</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"></div>
+</div></div>
+</div>
+<a id="method_getTable"></a><div class="element clickable method public method_getTable" data-toggle="collapse" data-target=".method_getTable .collapse">
+<h2>getTable
+Service Factory (eventually turn it into a factory and/or leverage singletons)</h2>
+<pre>getTable($table) : </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>usage</th>
+<td>Erdiko::getTable('product'); // first character does not have to be uppercase</td>
+</tr>
+<tr>
+<th>usage</th>
+<td>Erdiko::getTable('Product_Index');</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>throw exception if load fails?</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$table</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"></div>
+</div></div>
+</div>
+<a id="method_getTemplate"></a><div class="element clickable method public method_getTemplate" data-toggle="collapse" data-target=".method_getTemplate .collapse">
+<h2>Load a template file from a module</h2>
+<pre>getTemplate(string $filename, $data) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>todo</th>
+<td>can we deprecate this function and only use the one in the theme engine? -John</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code>
+</div>
+<div class="subelement argument"><h4>$data</h4></div>
+</div></div>
+</div>
+<a id="method_getTheme"></a><div class="element clickable method public method_getTheme" data-toggle="collapse" data-target=".method_getTheme .collapse">
+<h2>get the registered theme</h2>
+<pre>getTheme(string $name, string $namespace, string $path, $extras) : object</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument"><h4>$extras</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>$theme</div>
+</div></div>
+</div>
+<a id="method_getView"></a><div class="element clickable method public method_getView" data-toggle="collapse" data-target=".method_getView .collapse">
+<h2>Load a view from the current theme with the given data</h2>
+<pre>getView(array $data, string $file) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>todo</th>
+<td>deprecate this function -John</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>render views with the theme engine instead</td>
+</tr>
+<tr>
+<th>note</th>
+<td>this based off of the core handler function of the same name</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_log"></a><div class="element clickable method public method_log" data-toggle="collapse" data-target=".method_log .collapse">
+<h2>log</h2>
+<pre>log($logString, $logLevel, $logKey) : </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>usage</th>
+<td>Erdiko::log('Sample notice',Logger::LogLevel,'Default')
+Need to import erdiko\core\Logger to use this function</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>add log level as a number instead of a constant</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$logString</h4></div>
+<div class="subelement argument"><h4>$logLevel</h4></div>
+<div class="subelement argument"><h4>$logKey</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"></div>
+</div></div>
+</div>
+<a id="method_moveFile"></a><div class="element clickable method public method_moveFile" data-toggle="collapse" data-target=".method_moveFile .collapse">
+<h2>moveFile()
+        </h2>
+<pre>moveFile($filename, $pathTo, $pathFrom) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$filename</h4></div>
+<div class="subelement argument"><h4>$pathTo</h4></div>
+<div class="subelement argument"><h4>$pathFrom</h4></div>
+</div></div>
+</div>
+<a id="method_readFromFile"></a><div class="element clickable method public method_readFromFile" data-toggle="collapse" data-target=".method_readFromFile .collapse">
+<h2>readFromFile()
+        </h2>
+<pre>readFromFile($filename, $path) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$filename</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+</div></div>
+</div>
+<a id="method_removeLogFile"></a><div class="element clickable method public method_removeLogFile" data-toggle="collapse" data-target=".method_removeLogFile .collapse">
+<h2>removeLogFile()
+        </h2>
+<pre>removeLogFile($key) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$key</h4></div>
+</div></div>
+</div>
+<a id="method_renameFile"></a><div class="element clickable method public method_renameFile" data-toggle="collapse" data-target=".method_renameFile .collapse">
+<h2>renameFile()
+        </h2>
+<pre>renameFile($oldName, $newName, $path) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$oldName</h4></div>
+<div class="subelement argument"><h4>$newName</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+</div></div>
+</div>
+<a id="method_sendEmail"></a><div class="element clickable method public method_sendEmail" data-toggle="collapse" data-target=".method_sendEmail .collapse">
+<h2>send email</h2>
+<pre>sendEmail($toEmail, $subject, $body, $fromEmail) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$toEmail</h4></div>
+<div class="subelement argument"><h4>$subject</h4></div>
+<div class="subelement argument"><h4>$body</h4></div>
+<div class="subelement argument"><h4>$fromEmail</h4></div>
+</div></div>
+</div>
+<a id="method_writeToFile"></a><div class="element clickable method public method_writeToFile" data-toggle="collapse" data-target=".method_writeToFile .collapse">
+<h2>writeToFile</h2>
+<pre>writeToFile($string, $filename, $path, $mode) : </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>usage</th>
+<td>Erdiko::writeToFile('sample string',filename,path,mode);</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$string</h4></div>
+<div class="subelement argument"><h4>$filename</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+<div class="subelement argument"><h4>$mode</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__logObject"> </a><div class="element clickable property protected property__logObject" data-toggle="collapse" data-target=".property__logObject .collapse">
+<h2></h2>
+<pre>$_logObject </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-05-04T15:11:20-07:00.<br></footer></div>
+</div>
+</body>
+</html>
