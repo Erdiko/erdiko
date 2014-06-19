@@ -24,8 +24,13 @@ body{
 }
 
 .menu{
+    margin-top: 80px;
     position: fixed;
     z-index: 1000; /* so the menu or its navicon stays above all content */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+}
+
+.tutorials{
+    margin-top: 70px;
 }
