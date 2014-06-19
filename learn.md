@@ -29,6 +29,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 3. Open a web brower and go to localhost
 
 4. If you can see the Hello world page, it works!
+
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	<strong>Heads up!</strong> Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder. Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.
@@ -36,36 +37,34 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 
 <div id = "Learn_3"></div>
 
-## Create a Hello World page
+## Create add a Hello World page to the framework
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
+1. Open Erdiko/www/app/config/contexts/default.json
 
 
 <div id = "Learn_4"></div>
 
-## Update Author Attributes
+## File Structure
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
 
-The theme should reference these variables whenever needed.
+####Erdiko/www/app/config/contexts/default.json
+This is the configuration file of the main framework.
+
+####Erdiko/www/app/config/application.json
+This is the configuration file of the routing.
+
+####Erdiko/www/app/controllers/Index.php
+This is the default controller.
+
+####Erdiko/www/app/view/
+This is the folder for view.
+
+####Erdiko/www/public/theme
+This folder stores the themes.
+
+####Erdiko/www/public/theme/hello
+This is the defualt theme
+
 
 
 <div id = "Learn_5"></div>
