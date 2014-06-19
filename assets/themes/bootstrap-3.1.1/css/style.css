@@ -22,3 +22,10 @@ body{
   color:#3a87ad;
   text-align: center;
 }
+
+.menu{
+    position: fixed;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
