@@ -1,5 +1,3 @@
-
-
  <h1>Body Mass Index Calculator</h1>
     <p>Enter your height:
         <input type="text" id="height" />
