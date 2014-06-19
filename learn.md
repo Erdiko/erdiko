@@ -39,8 +39,53 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 
 ## Create add a Hello World page to the framework
 
-1. Open Erdiko/www/app/config/contexts/default.json
+1. We will first need to add a tab to the menu. To do so, open the main config file located at Erdiko/www/app/config/contexts/default.json
 
+2. Find the menu session and insert the following code.
+
+		,
+	         {
+	            "href":"/helloworld",
+	            "title":"HelloWorld"
+	         }
+
+3. After inserting the code above, the menu session should look like this.
+
+		"menu":{
+		      "main":[
+		         {
+		            "href":"/examples/index",
+		            "title":"Examples"
+		         },
+		         {
+		            "href":"/markup",
+		            "title":"Mark-Up"
+		         },
+		         {
+		            "href":"/grid",
+		            "title":"Grid"
+		         },
+		         {
+		            "href":"/onecolumn",
+		            "title":"1 Column Layout"
+		         },
+		         {
+		            "href":"/twocolumn",
+		            "title":"2 Column Layout"
+		         },
+		         {
+		            "href":"/threecolumn",
+		            "title":"3 Column Layout"
+		         },
+		         {
+		            "href":"/helloworld",
+		            "title":"HelloWorld"
+		         }
+		      ],
+
+4. Open the page config file located at www/app/controllers/index.php
+
+5. 
 
 <div id = "Learn_4"></div>
 
