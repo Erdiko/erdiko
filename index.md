@@ -21,8 +21,8 @@ title: Home
                 Download 
               </a > 
 
-              <a class =" btn btn-default btn-lg" href ="./Learn.html" > 
-                Learn
+              <a class =" btn btn-default btn-lg" href ="./getStarted.html" > 
+                Get Started
               </a > 
               
     				 </p > 

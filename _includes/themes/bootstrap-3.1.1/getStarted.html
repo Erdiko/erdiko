@@ -1,4 +1,22 @@
-<div id = "Learn_1"></div>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+ <script>
+
+ $(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 120
+        }, 300);
+        return false;
+      }
+    }
+  });
+});
+
+</script>
 
 <div class="row">
   <div class="col-xs-12">

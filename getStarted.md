@@ -1,10 +1,11 @@
 ---
-layout: learn
-title: Learn 
-header: Learn
+layout: getStarted
+title: GetStarted 
+header: GetStarted
 ---
 {% include JB/setup %}
 
+<div id = "Learn_1"></div>
 
 ## Download Erdiko
 
@@ -265,19 +266,19 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 
 		,
          {
-            "href":"/myNewRoute/bmi_version2",
+            "href":"/Calculator/bmi_version2",
             "title":"BMI"
          }
 
 3. 	Open the routing config file located at `Erdiko/www/app/config/application.json`.
 	Add a new rule to the route.
 
-		["myNewRoute/([a-zA-Z0-9_\-/]+)", "\app\controllers\myNewRoute"],
+		["Calculator/([a-zA-Z0-9_\-/]+)", "\app\controllers\Calculator"],
 
 4.  Then, we will need to create a new controller for the new route.
-	To create a new controller, create `myNewRoute.php` under the folder `Erdiko/www/app/controllers/`
+	To create a new controller, create `Calculator.php` under the folder `Erdiko/www/app/controllers/`
 
-5.  Paste the following code inside the myNewRoute.php
+5.  Paste the following code inside the Calculator.php
 
 			<?php
 
