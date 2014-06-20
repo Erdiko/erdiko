@@ -61,6 +61,10 @@
          {
             "href":"/examples/bmi",
             "title":"BMI"
+         },
+         {
+             "href":"/myNewRoute/bmi_version2",
+             "title":"BMI"
          }
       ],
       "footer":[
