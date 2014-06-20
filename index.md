@@ -17,7 +17,7 @@ title: Home
     				 <p class =" lead" > The Open Source Middleware Framework </p > 
 
     				 <p class =" btn-group" > 
-              <a class =" btn btn-success btn-lg" href ="https://github.com/colemantung/Erdiko/" > 
+              <a class =" btn btn-success btn-lg" href ="./getStarted.html#download_link" > 
                 Download 
               </a > 
 

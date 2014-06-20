@@ -24,7 +24,7 @@ body{
 }
 
 .menu{
-    margin-top: 80px;
+    margin-top: 50px;
     position: fixed;
     z-index: 1000; /* so the menu or its navicon stays above all content */
     overflow-y: auto;
@@ -32,7 +32,16 @@ body{
 }
 
 .tutorials{
-    margin-top: 70px;
+    margin-top: 30px;
+}
+
+.page-header{
+    margin-bottom: 0px;
+}
+
+
+div#footer {
+    margin-top: 100px;
 }
 
 
@@ -45,6 +54,5 @@ hr {
     margin: 0 0 1.0em;
     border: none; 
 }
-
 
 

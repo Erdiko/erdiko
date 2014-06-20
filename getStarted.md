@@ -8,7 +8,8 @@ header: GetStarted
 <div id = "Learn_01"></div>
 
 ## System requirements
-<hr>
+---
+
 #####Web server
 * Apache, Nginx, or Microsoft IIS
 
@@ -22,19 +23,19 @@ header: GetStarted
   <p>If you do not have a web server installed, you can install <a href="http://www.apache.org" class="alert-link">Apache</a>, LAMP (Linux), MAMP (Mac), or WAMP (Windows).</p>
 </div>
 
-
+<div id = "download_link"></div>
 <div id = "Learn_0"></div>
 
 ## Quick Installation
-<hr>
-* Step #1: [Download Erdiko](#Learn_1)
+---
+* Step #1: [Download Erdiko](#download)
 * Step #2: [Setup web environment](#Learn_2)
 
 
-<div id = "Learn_1"></div>
+<div id = "download"></div>
 
 ## Download Erdiko
-<hr>
+---
 To download Erdiko from our Git repository, enter the following command in command prompt:
 
 	git clone https://github.com/arroyo/Erdiko
@@ -45,34 +46,35 @@ It will clone our Git repository to your local machince.
 <div id = "Learn_2"></div>
 
 ## Setup web environment
-<hr>
-1. Open the configuration file of your web server
+---
+1. Open the config file of your web server
 
 2. Change the webroot to `[your computer path]/Erdiko/www/public`
 
-3. Save changes of the configuration file and restart your web server.
+3. Save changes of the config file and restart your web server.
 
-3. Type http://localhost into your browser
+4. Type http://localhost into your browser
 
-4. If you can see the Hello world page, you have successfully installed Erdiko!
+5. If you can see the Hello world page, you have successfully installed Erdiko!
 
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <h4>Warning!</h4>
-  <p>If you cannot open the Hello world page, go back to the the configuration file of the web server to check if the port number is 80.</p>
+  <p>If you cannot open the Hello world page, go back to the config file of your web server to check if the port is 80.  If the port is other than 80, you need to specify the port in Step 4. For example, if you port is 8080, the URL link will be http://localhost:8080 .</p>
 </div>
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
-	<strong>Heads up!</strong> Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder. Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.
+	<strong>Heads up!</strong> 
+	<p>Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder. Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.</p>
 </div>
 
 
 <div id = "Learn_3"></div>
 
 ## Create add your first page
-<hr>
-1. We will first need to add a tab to the menu. To do so, open the main config file located at `Erdiko/www/app/config/contexts/default.json`
+---
+1. We will first need to add a tab to the menu.  To do so, open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
 2. Find the menu section and insert the following code.
 
@@ -124,15 +126,15 @@ It will clone our Git repository to your local machince.
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	<strong>Heads up!</strong> When you click on the tab, it will show error.
-   It is normal because you have not set any contents to the page.
+    <p>It is normal because you have not set any contents to the page. </p>
 </div>
 
 
 <div id = "Learn_4"></div>
 
 ## Set content of a page
-<hr>
-5. To add contents to a page, Open the page config file located at `www/app/controllers/index.php`.
+---
+5. To add contents to a page, open the page config file located at `www/app/controllers/index.php`.
 
 6. Add the following function inside the Index class
 
@@ -149,27 +151,30 @@ It will clone our Git repository to your local machince.
 
 <div class="alert alert-dismissable alert-success">
   <button type="button" class="close" data-dismiss="alert">×</button>
-  <strong>Well done!</strong> You successfully create your first page using Erdiko.
+  <strong>Well done!</strong>
+  <p>You successfully create your first page using Erdiko.</p>
 </div>
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
-	<strong>Heads up!</strong> If you want to create a full page, you can add the following line in the myfirstpageAction function. <br>
+	<strong>Heads up!</strong>
+	<p>If you want to create a full page, you can add the following line in the myfirstpageAction function. <br>
 	<p align="center">$this->setTemplate('fullpage');</p>
+	</p>
 </div>
 
 
 <div id = "Learn_5"></div>
 
 ## Use PHP for a page
-<hr>
-1. Open the corresponding .php file under the folder Erdiko/www/app/controllers/.
+---
+1. Open the corresponding .php file under the folder `Erdiko/www/app/controllers/`.
 
 2. Inside the .php file, find the function of the page you want to use Javascript.
 
 3. Insert the following code:
 
-	$this->setView('[Path of the .php file]');
+		$this->setView('[Path of the .php file]');
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
@@ -183,14 +188,14 @@ It will clone our Git repository to your local machince.
 <div id = "Learn_6"></div>
 
 ## Use Javacript for a page
-<hr>
-1. Open the corresponding .js file under the folder Erdiko/www/app/controllers/.
+---
+1. Open the corresponding .js file under the folder `Erdiko/www/app/controllers/`.
 
 2. Inside the .js file, find the function of the page you want to use Javascript.
 
 3. Insert the following code:
 
-	$this->addJs('[Path of the .js file]');
+		$this->addJs('[Path of the .js file]');
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
@@ -203,7 +208,7 @@ It will clone our Git repository to your local machince.
 <div id = "Learn_7"></div>
 
 ## Add a BMI calculator page using Javascript
-<hr>
+---
 1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
 2. 	Find the menu section and insert the following code.
@@ -288,8 +293,8 @@ It will clone our Git repository to your local machince.
 
 <div id = "Learn_8"></div>
 
-## Add a BMI calculator page using external .php and new route
-<hr>
+## Add a BMI calculator page using new route
+---
 1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
 2. 	Find the menu section and insert the following code.
@@ -365,48 +370,12 @@ It will clone our Git repository to your local machince.
 		?>
 
 
-10.  Save all changes, and open a web brower.
+10.  Save all changes, and open the site in your web brower.
 
-11.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
-
-
-
-<div id = "Learn_9"></div>
-
-## File Structure
-<hr>
-####Erdiko/www/app/config/contexts/default.json
-This is the configuration file of the main framework.
-
-####Erdiko/www/app/config/application.json
-This is the configuration file of the routing.
-
-####Erdiko/www/app/controllers/Index.php
-This is the default controller.
-
-####Erdiko/www/app/view/
-This is the folder for view.
-
-####Erdiko/www/public/theme
-This folder stores the themes.
-
-####Erdiko/www/public/theme/hello/
-This is the theme of the hello page
+11.  Click the BMI tab on the menu, and then you should see the result.
 
 
-<div id = "Learn_10"></div>
 
-## Update Author Attributes
-<hr>
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
 
-The theme should reference these variables whenever needed.
+
 
