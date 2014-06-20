@@ -168,65 +168,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 </div>
 
 
-
 <div id = "Learn_7"></div>
-
-## Add a BMI calculator page in five minutes
-Step 1 - 3 are same as the last tutorial. If you have already done that, you can move on to next step.
-
-1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
-
-2. 	Find the menu section and insert the following code.
-
-		,
-         {
-            "href":"/new/bmi",
-            "title":"BMI"
-         }
-3. 	Open the routing config file located at `Erdiko/www/app/config/application.json`.
-	We can see that sites located at `/` will be routed to the controller Index and sites located at `/examples/` will be routed to the controller Example.
-
-4.  Open the controller Example located at `Erdiko/www/app/controllers/Examples.php`
-
-5.  Add the following function inside the Examples class
-
-		public function bmiAction()
-		{
-			$this->setTitles('BMI Example');
-			$this->setView('/examples/bmi.php');
-		}
-
-6.  Create a file called `bmi.php` under Erdiko/www/app/views/examples/
-
-7.  Open the bmi.php and add the following code:
-
-		<form action ="<?php echo $_SERVER['PHP_SELF'] ?>" method = "post">
-	    Weight(kgs): <input type = "text" name = "wt">
-	    Height (m) : <input type = "text" name = "ht">
-	    <input type = "submit" name="sub_form">
-	    
-		</form>
-
-		<?php
-	    if(isset($_POST['sub_form'])){
-	        if($_POST['wt']<= 0 ||$_POST['ht'] <= 0) die("Enter valid values.");
-	        $wt = $_POST['wt'];
-	        $ht = $_POST['ht'];
-	        $ht = $ht * $ht;
-	        $bmi =     round($wt/$ht,2);
-	        if($bmi < 20)die( 'You are underweight. Your BMI is '.$bmi);
-	        if($bmi >25) die ('You are overweight. Your BMI is '.$bmi);
-	        echo "You weight is optimum. Your BMI is ".$bmi;
-	    }
-		?>
-
-
-8.  Save all changes, and open a web brower.
-
-9.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
-
-
-<div id = "Learn_8"></div>
 
 ## Add a BMI calculator page using Javascript
 
@@ -310,6 +252,91 @@ Step 1 - 3 are same as the last tutorial. If you have already done that, you can
 8.  Save all changes, and open a web brower.
 
 9.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
+
+
+
+<div id = "Learn_8"></div>
+
+## Add a BMI calculator page using external .php and new route
+
+1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
+
+2. 	Find the menu section and insert the following code.
+
+		,
+         {
+            "href":"/myNewRoute/bmi_version2",
+            "title":"BMI"
+         }
+
+3. 	Open the routing config file located at `Erdiko/www/app/config/application.json`.
+	Add a new rule to the route.
+
+		["myNewRoute/([a-zA-Z0-9_\-/]+)", "\app\controllers\myNewRoute"],
+
+4.  Then, we will need to create a new controller for the new route.
+	To create a new controller, create `myNewRoute.php` under the folder `Erdiko/www/app/controllers/`
+
+5.  Paste the following code inside the myNewRoute.php
+
+			<?php
+
+			namespace app\controllers;
+
+			use Erdiko;
+			use erdiko\core\Config;
+
+			class Examples extends \erdiko\core\Controller
+			{
+
+				public function bmi_version2Action()
+				{
+					$this->setTitles('BMI Example');
+					$this->setView('/examples/bmi.php');
+				}
+
+				public function bmi_postAction()
+				{
+					$this->setTitles('BMI Post');
+					$this->setView('/examples/bmi_post.php');
+				}
+				
+			}
+
+			?>
+
+6.  Create a file called `bmi.php` under Erdiko/www/app/views/examples/
+
+7.  Open the bmi.php and add the following code:
+
+		<form action ="bmi_post" method = "post">
+	    Weight(kgs): <input type = "text" name = "wt">
+	    Height (m) : <input type = "text" name = "ht">
+	    <input type = "submit" name="sub_form">
+	    
+		</form>
+
+8.  Create a file called `bmi_post.php` under Erdiko/www/app/views/examples/
+
+9.  Open the bmi_post.php and add the following code:
+
+		<?php
+	    if(isset($_POST['sub_form'])){
+	        if($_POST['wt']<= 0 ||$_POST['ht'] <= 0) die("Enter valid values.");
+	        $wt = $_POST['wt'];
+	        $ht = $_POST['ht'];
+	        $ht = $ht * $ht;
+	        $bmi =     round($wt/$ht,2);
+	        if($bmi < 20)die( 'You are underweight. Your BMI is '.$bmi);
+	        if($bmi >25) die ('You are overweight. Your BMI is '.$bmi);
+	        echo "You weight is optimum. Your BMI is ".$bmi;
+	    }
+		?>
+
+
+10.  Save all changes, and open a web brower.
+
+11.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
 
 
 <div id = "Learn_9"></div>
