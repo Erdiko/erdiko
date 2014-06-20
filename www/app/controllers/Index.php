@@ -193,4 +193,5 @@ class Index extends \erdiko\core\Controller
 		$this->setTitles('4 World');
 		$this->setBodyContent("Welcome to Four.");
 	}
+
 }
