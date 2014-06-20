@@ -63,7 +63,7 @@
             "title":"BMI"
          },
          {
-             "href":"/myNewRoute/bmi_version2",
+             "href":"/Calculator/bmi_version2",
              "title":"BMI_V2"
          }
       ],

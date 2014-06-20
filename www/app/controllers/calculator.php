@@ -4,7 +4,7 @@ namespace app\controllers;
 use Erdiko;
 use erdiko\core\Config;
 
-class myNewRoute extends \erdiko\core\Controller
+class Calculator extends \erdiko\core\Controller
 {
 
      public function bmi_version2Action()
