@@ -35,6 +35,16 @@ body{
     margin-top: 70px;
 }
 
-.tutorial{
-    margin-top: 150px;
+
+hr {
+    background: #ddd; 
+    clear: both; 
+    float: none; 
+    width: 100%; 
+    height: 1px;
+    margin: 0 0 1.0em;
+    border: none; 
 }
+
+
+

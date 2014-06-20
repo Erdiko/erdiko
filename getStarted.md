@@ -5,41 +5,73 @@ header: GetStarted
 ---
 {% include JB/setup %}
 
-<div id = "Learn_1"></div>
+<div id = "Learn_01"></div>
 
-## Download Erdiko
+## System requirements
+<hr>
+#####Web server
+* Apache, Nginx, or Microsoft IIS
 
-To download Erdiko from Git, enter the follow command in the command prompt:
+#####PHP
+* PHP 5.2.5 or higher (5.3 recommended).
 
-	git clone https://github.com/arroyo/Erdiko
 
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <h4>Warning!</h4>
-  <p>If you do not have a web server installed, you can install <a href="http://www.apache.org" class="alert-link">Apache</a>, LAMP, or MAMP.</p>
+  <p>If you do not have a web server installed, you can install <a href="http://www.apache.org" class="alert-link">Apache</a>, LAMP (Linux), MAMP (Mac), or WAMP (Windows).</p>
 </div>
+
+
+<div id = "Learn_0"></div>
+
+## Quick Installation
+<hr>
+* Step #1: [Download Erdiko](#Learn_1)
+* Step #2: [Setup web environment](#Learn_2)
+
+
+<div id = "Learn_1"></div>
+
+## Download Erdiko
+<hr>
+To download Erdiko from our Git repository, enter the following command in command prompt:
+
+	git clone https://github.com/arroyo/Erdiko
+
+It will clone our Git repository to your local machince.
+
 
 <div id = "Learn_2"></div>
 
 ## Setup web environment
-
+<hr>
 1. Open the configuration file of your web server
 
-2. Change the webroot to `[Your computer path]/Erdiko/www/public`
+2. Change the webroot to `[your computer path]/Erdiko/www/public`
 
-3. Open a web brower and go to localhost
+3. Save changes of the configuration file and restart your web server.
 
-4. If you can see the Hello world page, it works!
+3. Type http://localhost into your browser
+
+4. If you can see the Hello world page, you have successfully installed Erdiko!
+
+<div class="alert alert-dismissable alert-warning">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>Warning!</h4>
+  <p>If you cannot open the Hello world page, go back to the the configuration file of the web server to check if the port number is 80.</p>
+</div>
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	<strong>Heads up!</strong> Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder. Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.
 </div>
 
+
 <div id = "Learn_3"></div>
 
 ## Create add your first page
-
+<hr>
 1. We will first need to add a tab to the menu. To do so, open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
 2. Find the menu section and insert the following code.
@@ -99,7 +131,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 <div id = "Learn_4"></div>
 
 ## Set content of a page
-
+<hr>
 5. To add contents to a page, Open the page config file located at `www/app/controllers/index.php`.
 
 6. Add the following function inside the Index class
@@ -130,8 +162,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 <div id = "Learn_5"></div>
 
 ## Use PHP for a page
-
-
+<hr>
 1. Open the corresponding .php file under the folder Erdiko/www/app/controllers/.
 
 2. Inside the .php file, find the function of the page you want to use Javascript.
@@ -148,11 +179,11 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 </div>
 
 
+
 <div id = "Learn_6"></div>
 
 ## Use Javacript for a page
-
-
+<hr>
 1. Open the corresponding .js file under the folder Erdiko/www/app/controllers/.
 
 2. Inside the .js file, find the function of the page you want to use Javascript.
@@ -172,8 +203,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 <div id = "Learn_7"></div>
 
 ## Add a BMI calculator page using Javascript
-
-
+<hr>
 1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
 2. 	Find the menu section and insert the following code.
@@ -259,7 +289,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 <div id = "Learn_8"></div>
 
 ## Add a BMI calculator page using external .php and new route
-
+<hr>
 1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
 2. 	Find the menu section and insert the following code.
@@ -340,10 +370,11 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 11.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
 
 
+
 <div id = "Learn_9"></div>
 
 ## File Structure
-
+<hr>
 ####Erdiko/www/app/config/contexts/default.json
 This is the configuration file of the main framework.
 
@@ -366,7 +397,7 @@ This is the theme of the hello page
 <div id = "Learn_10"></div>
 
 ## Update Author Attributes
-
+<hr>
 In `_config.yml` remember to specify your own data:
     
     title : My Blog =)
