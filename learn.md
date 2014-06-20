@@ -41,7 +41,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 
 1. We will first need to add a tab to the menu. To do so, open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
-2. Find the menu session and insert the following code.
+2. Find the menu section and insert the following code.
 
 		,
 	         {
@@ -49,7 +49,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 	            "title":"My First Page"
 	         }
 
-3. After inserting the code above, the menu session should look like this.
+3. After inserting the code above, the menu section should look like this.
 
 		"menu":{
 		      "main":[
@@ -95,6 +95,8 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 </div>
 
 
+<div id = "Learn_4"></div>
+
 ## Set content of a page
 
 5. To add contents to a page, Open the page config file located at `www/app/controllers/index.php`.
@@ -124,7 +126,7 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 </div>
 
 
-<div id = "Learn_4"></div>
+<div id = "Learn_5"></div>
 
 ## Use PHP for a page
 
@@ -144,7 +146,8 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 	the path will be `/example/test.php`.
 </div>
 
-<div id = "Learn_5"></div>
+
+<div id = "Learn_6"></div>
 
 ## Use Javacript for a page
 
@@ -166,18 +169,18 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 
 
 
-<div id = "Learn_6"></div>
+<div id = "Learn_7"></div>
 
 ## Add a BMI calculator page in five minutes
-
+Step 1 - 3 are same as the last tutorial. If you have already done that, you can move on to next step.
 
 1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
 
-2. 	Find the menu session and insert the following code.
+2. 	Find the menu section and insert the following code.
 
 		,
          {
-            "href":"/examples/bmi",
+            "href":"/new/bmi",
             "title":"BMI"
          }
 3. 	Open the routing config file located at `Erdiko/www/app/config/application.json`.
@@ -223,12 +226,22 @@ To download Erdiko from Git, enter the follow command in the command prompt:
 9.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
 
 
-<div id = "Learn_7"></div>
+<div id = "Learn_8"></div>
 
 ## Add a BMI calculator page using Javascript
 
 
-Step 1 - 3 are same as the last tutorial. If you have already done that, you can move on to next step.
+1. 	Open the main config file located at `Erdiko/www/app/config/contexts/default.json`
+
+2. 	Find the menu section and insert the following code.
+
+		,
+         {
+            "href":"/examples/bmi",
+            "title":"BMI"
+         }
+3. 	Open the routing config file located at `Erdiko/www/app/config/application.json`.
+	We can see that sites located at `/` will be routed to the controller Index and sites located at `/examples/` will be routed to the controller Example.
 
 4.  Open the controller Example located at `Erdiko/www/app/controllers/Examples.php`
 
@@ -299,7 +312,7 @@ Step 1 - 3 are same as the last tutorial. If you have already done that, you can
 9.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
 
 
-<div id = "Learn_8"></div>
+<div id = "Learn_9"></div>
 
 ## File Structure
 
@@ -321,27 +334,6 @@ This folder stores the themes.
 ####Erdiko/www/public/theme/hello/
 This is the theme of the hello page
 
-
-<div id = "Learn_9"></div>
-
-## File Structure
-
-####Erdiko/www/app/config/contexts/default.json
-This is the configuration file of the main framework.
-
-####Erdiko/www/app/config/application.json
-This is the configuration file of the routing.
-
-####Erdiko/www/app/controllers/Index.php
-This is the default controller.
-
-####Erdiko/www/app/view/
-This is the folder for view.
-
-####Erdiko/www/public/theme
-This folder stores the themes.
-
-####Erdiko/www/public/theme/h
 
 <div id = "Learn_10"></div>
 
