@@ -121,8 +121,6 @@ It will clone our Git repository to your local machince.
 4. Save the changes of the file, and open the site in your browser.
    You should be able to see that there is a new tab on the menu.
 
-    !!!!!!!!img here!!!!!!!
-
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	<strong>Heads up!</strong> When you click on the tab, it will show error.
@@ -146,8 +144,6 @@ It will clone our Git repository to your local machince.
 
 7. Save the changes and open the site in your browser.
    You should be able to see your first page.
-
-   !!!!!!!!img here!!!!!!!
 
 <div class="alert alert-dismissable alert-success">
   <button type="button" class="close" data-dismiss="alert">×</button>
@@ -287,7 +283,7 @@ It will clone our Git repository to your local machince.
 
 8.  Save all changes, and open a web brower.
 
-9.  Go to localhost, click the BMI tab on the menu, and then you should see the result.
+9.  Go to localhost, click the BMI tab on the menu, and then you should see [this](./assets/themes/bootstrap-3.1.1/img/getStarted/BMI_V1_1.png).
 
 
 
@@ -372,10 +368,11 @@ It will clone our Git repository to your local machince.
 
 10.  Save all changes, and open the site in your web brower.
 
-11.  Click the BMI tab on the menu, and then you should see the result.
+11.  Click the BMI tab on the menu, and then you should see the following results.
 
-
-
+	 [BMI Version 2](./assets/themes/bootstrap-3.1.1/img/getStarted/BMI_V2_1.png)
+	
+	 [BMI Version 2 Result](./assets/themes/bootstrap-3.1.1/img/getStarted/BMI_V2_2.png)
 
 
 
