@@ -63,8 +63,8 @@
             "title":"BMI"
          },
          {
-             "href":"/Calculator/bmi_version2",
-             "title":"BMI_V2"
+            "href":"/calculator/bmi_version2",
+            "title":"BMI_V2"
          }
       ],
       "footer":[

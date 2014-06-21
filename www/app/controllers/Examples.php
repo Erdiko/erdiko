@@ -163,10 +163,4 @@ class Examples extends \erdiko\core\Controller
 		$this->addJs('/themes/hello/js/example.js');
 	}
 
-	public function bmi_postAction()
-	{
-		$this->setTitles('BMI_Post');
-		$this->setView('/examples/bmi_post.php');
-	}
-
 }
