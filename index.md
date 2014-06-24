@@ -16,7 +16,7 @@ title: Home
     				<h1> Erdiko by Arroyo </h1>
     				 <p class =" lead" > The Open Source Middleware Framework </p > 
 
-    				 <p class =" btn-group" > 
+    				 <p class =" btn-group btn-group-justified"> 
               <a class =" btn btn-success btn-lg" href ="./getStarted.html#download_link" > 
                 Download 
               </a > 
@@ -32,7 +32,7 @@ title: Home
     </div >
 
 
-    <div class ="row" >
+    <div class ="row text-center" >
         <div class ="col-sm-4" > 
           <b class ="glyphicon glyphicon-camera" > </b> 
           <h2> Delete photo &amp; video based on a timer </h2 > 
