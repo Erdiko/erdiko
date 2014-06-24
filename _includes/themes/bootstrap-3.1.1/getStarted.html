@@ -5,6 +5,7 @@
  <script>
 
  $(function() {
+
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -17,17 +18,25 @@
       }
     }
   });
+
+ $('#sidebar a').on('click', function () {
+    $(this).closest('div').find('.collapse').collapse('hide');
+    $(this).collapse('show');
+  });
+
 });
 
 </script>
 
 <div class="row">
   <div class="col-xs-12">
+    <div class="panel panel-default">
+  	<div class="col-xm-12 col-sm-3 col-md-3 list-group menu" id="sidebar" role="navigation">
 
-  	<div class="col-xm col-sm-3 col-md-3 sidebar-offcanvas menu" id="sidebar" role="navigation">
-          <div class="list-group">
-            <a class="list-group-item active"><font size="+2"><b>Get Started</b></font></a>
-            <a href="#Learn_01" class="list-group-item">System requirements</a>
+            <a href="#getStarted" class="list-group-item active" data-toggle="collapse" data-parent="#sidebar"><i class="icon-group"></i><font size="+2"><b>Get Started</b></font></a>
+
+            <div id="getStarted" class="list-group subitem collapse in"> 
+            <a href="#Learn_01" class="list-group-item"> <i class="icon-caret-right"></i>System requirements</a>
             <a href="#Learn_0" class="list-group-item">Quick Installation</a>
             <a href="#download" class="list-group-item">Download Erdiko</a>
             <a href="#Learn_2" class="list-group-item">Setup web environment</a>
@@ -35,11 +44,16 @@
             <a href="#Learn_4" class="list-group-item">Set content of a page</a>
             <a href="#Learn_5" class="list-group-item">Use PHP for a page</a>
             <a href="#Learn_6" class="list-group-item">Use Javacript for a page</a>
-            <a class="list-group-item active"><font size="+2"><b>Tutorial</b></font></a>
+            </div>
+            
+            <a href="#tutorial" class="list-group-item active" data-toggle="collapse" data-parent="#sidebar"><i class="icon-group"></i><font size="+2"><b>Tutorial</b></font></a>
+
+            <div id="tutorial" class="list-group subitem collapse in"> 
             <a href="#Learn_7" class="list-group-item">Add a calculator using Javascript</a>
             <a href="#Learn_8" class="list-group-item">Add a calculator using new route</a>
-          </div>
-	</div>
+            </div>
+	   </div>
+   </div>
 
 
     <div class="col-xs-12 col-sm-8 col-sm-offset-4 content tutorials">

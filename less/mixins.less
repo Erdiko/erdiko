@@ -1,1 +1,36 @@
 // mixins
+
+@media (min-width: @screen-sm-min) {
+
+    .menu{
+    margin-top: 80px;
+    position: fixed;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+	}
+
+	.menu2{
+    width: 300px;
+    margin-top: 80px;
+    position: fixed;
+    border-width: 2px;
+}
+
+}
+
+@media (max-width: 978px) {
+    
+    .menu{
+    margin-top: 80px;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+	}
+
+	.menu2{
+    width: 300px;
+    margin-top: 50px;
+    border-width: 2px;
+	}
+}
