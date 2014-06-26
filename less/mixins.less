@@ -11,26 +11,32 @@
 	}
 
 	.menu2{
-    width: 300px;
+	include : affix-top;
+	data-spy: "affix";
+    data-offset-top: "80";
+
     margin-top: 80px;
     position: fixed;
     border-width: 2px;
-}
+	}
 
 }
 
-@media (max-width: 978px) {
+@media (max-width: 768px) {
+
+	body{
+		margin-top: 30px;
+	}
     
     .menu{
-    margin-top: 100px;
+    margin-top: 30px;
     z-index: 1000; /* so the menu or its navicon stays above all content */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 	}
 
 	.menu2{
-    width: 300px;
-    margin-top: 50px;
+    margin-top: 30px;
     border-width: 2px;
 	}
 }

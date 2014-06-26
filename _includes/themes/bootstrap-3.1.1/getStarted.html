@@ -1,4 +1,4 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <hr>
 
@@ -22,6 +22,9 @@
  $('#sidebar a').on('click', function () {
     $(this).closest('div').find('.subitem').collapse('show');
     $(this).closest('div').find('.subitem').collapse('hide');
+    //$(this).closest('.list-group').collapse('toggle');
+    //$(this).closest('div').find('.subitem').collapse('hide');
+    //console.log($(this).closest('div').find('.subitem'));
   });
 
 });
@@ -56,7 +59,7 @@
    </div>
 
 
-    <div class="col-xs-12 col-sm-8 col-sm-offset-4 content tutorials">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-4 content my-content">
       {{ content }}
     </div>
 

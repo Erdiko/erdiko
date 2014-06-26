@@ -5773,6 +5773,40 @@ button.close {
     display: none !important;
   }
 }
+@media (min-width: 768px) {
+  .menu {
+    margin-top: 80px;
+    position: fixed;
+    z-index: 1000;
+    /* so the menu or its navicon stays above all content */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu2 {
+    include: affix-top;
+    data-spy: "affix";
+    data-offset-top: "80";
+    margin-top: 80px;
+    position: fixed;
+    border-width: 2px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    margin-top: 30px;
+  }
+  .menu {
+    margin-top: 30px;
+    z-index: 1000;
+    /* so the menu or its navicon stays above all content */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu2 {
+    margin-top: 30px;
+    border-width: 2px;
+  }
+}
 .navbar {
   border-width: 0;
 }
@@ -5972,36 +6006,6 @@ input:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media (min-width: 768px) {
-  .menu {
-    margin-top: 80px;
-    position: fixed;
-    z-index: 1000;
-    /* so the menu or its navicon stays above all content */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .menu2 {
-    width: 300px;
-    margin-top: 80px;
-    position: fixed;
-    border-width: 2px;
-  }
-}
-@media (max-width: 978px) {
-  .menu {
-    margin-top: 100px;
-    z-index: 1000;
-    /* so the menu or its navicon stays above all content */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .menu2 {
-    width: 300px;
-    margin-top: 50px;
-    border-width: 2px;
-  }
-}
 /*Layout*/
 .container {
   max-width: 1100px;
@@ -6018,7 +6022,7 @@ input:focus {
   color: #3a87ad;
   text-align: center;
 }
-.tutorials {
+.my-content {
   margin-top: 30px;
   margin-bottom: 30px;
 }
