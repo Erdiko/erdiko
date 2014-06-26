@@ -17,6 +17,14 @@
       }
     }
   });
+
+  var offsetHeight = 80;
+  var scrollPos = $('body > .container > .my-content2').find($(this).attr('href')).offset().top - (offsetHeight - 1);
+
+  $('body').scrollspy({
+   offset: offsetHeight
+  });
+
 });
 
 </script>
@@ -29,7 +37,7 @@
         <!--<ul class="nav nav-tabs nav-stacked affix-top" data-spy="affix" data-offset-top="125">-->
         <!--<ul class="nav nav-pills nav-stacked menu2" style="max-width: 300px;">-->
                 <li class="active" style="background-color : #2c3e50">
-                  <a class="active" href="#section-0">
+                  <a class="list-group-item active" href="#section-0">
                     <font color="#ffffff"size="+2"><b>Documentation</b></font>
                   </a>
                 </li>
@@ -50,7 +58,7 @@
      </div>
 
 
-    <div class="col-xs-12 col-sm-8 col-sm-offset-4 content my-content">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-4 content my-content2" data-offset-top="80">
       {{ content }}
     </div>
 

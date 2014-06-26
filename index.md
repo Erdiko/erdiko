@@ -9,7 +9,7 @@ title: Home
     
 
     <!-- Carousel --> 
-    <div id =" myCarousel" class =" carousel slide jumbotron" > 
+    <div id ="myCarousel" class =" carousel slide jumbotron"> 
     	<div class =" container" > 
     		<div class =" carousel-inner" > 
     			<div class =" item active" > 
