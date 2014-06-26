@@ -5,6 +5,8 @@
  <script>
 
  $(function() {
+
+  /*
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -17,13 +19,24 @@
       }
     }
   });
+*/
 
-  var offsetHeight = 80;
-  var scrollPos = $('body > .container > .my-content2').find($(this).attr('href')).offset().top - (offsetHeight - 1);
+var offsetHeight = 80;
 
-  $('body').scrollspy({
-   offset: offsetHeight
-  });
+$('body').scrollspy({
+    offset: offsetHeight
+});
+
+$('a[href*=#]:not([href=#])').click(function (event) {
+    var scrollPos = $('body > .container').find($(this).attr('href')).offset().top - (offsetHeight - 1);
+    $('body,html').animate({
+        scrollTop: scrollPos
+    }, 300, function () {
+        $("ul li").click();
+    });
+    return false;
+});
+
 
 });
 
@@ -38,7 +51,7 @@
         <!--<ul class="nav nav-pills nav-stacked menu2" style="max-width: 300px;">-->
                 <li class="active" style="background-color : #2c3e50">
                   <a class="list-group-item active" href="#section-0">
-                    <font color="#ffffff"size="+2"><b>Documentation</b></font>
+                    <font color="#ffffff"size="+2" style="text-align:center"><b>Documentation</b></font>
                   </a>
                 </li>
                 <li><a href="#config">Config</a></li>

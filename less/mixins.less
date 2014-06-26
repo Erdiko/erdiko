@@ -11,11 +11,15 @@
 	}
 
 	.menu2{
+    width: 20%;
 	include : affix-top;
 	data-spy: "affix";
     data-offset-top: "80";
 
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     margin-top: 80px;
+    padding-bottom: 50px;
     position: fixed;
     border-width: 2px;
 	}
@@ -27,16 +31,16 @@
 	body{
 		margin-top: 30px;
 	}
-    
+
     .menu{
-    margin-top: 30px;
+    margin-top: 50px;
     z-index: 1000; /* so the menu or its navicon stays above all content */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 	}
 
 	.menu2{
-    margin-top: 30px;
+    margin-top: 50px;
     border-width: 2px;
 	}
 }
