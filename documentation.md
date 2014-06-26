@@ -120,16 +120,6 @@ If you want to help, please do, we'd love more code! Make your enhancements and 
 
 ---
 
-
-<div id = "roadmap"></div>
-
-## Roadmap
-
-Coming soon.......
-
-
----
-
 <div id = "special_thanks"></div>
 
 ##Special Thanks
