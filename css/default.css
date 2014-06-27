@@ -5800,7 +5800,7 @@ button.close {
     margin-top: 30px;
   }
   .menu {
-    margin-top: 50px;
+    margin-top: 50px !important;
     z-index: 1000;
     /* so the menu or its navicon stays above all content */
     overflow-y: auto;
