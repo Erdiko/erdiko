@@ -5781,6 +5781,13 @@ button.close {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
+  .menu2 {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 80px;
+    padding-bottom: 50px;
+    border-width: 2px;
+  }
 }
 @media (min-width: 768px) {
   .menu {
@@ -5790,6 +5797,11 @@ button.close {
     /* so the menu or its navicon stays above all content */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  .menu2 {
+    position: fixed;
+    margin-top: 50px;
+    border-width: 2px;
   }
 }
 .navbar {
