@@ -1,40 +1,67 @@
-# Jekyll-Bootstrap
-
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
-
-## Usage
-
-For all usage and documentation please see: <http://jekyllbootstrap.com>
-
-## Version
-
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
-
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
-
-## Contributing
+#Erdiko
 
 
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
+**Enterprise Glue**
 
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
+Erdiko is a contextual middleware framework or better yet, an enterprise Mash-Up framework.
 
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
+##Version (SemVer)
 
-**Jekyll-Bootstrap Documentation Website.**
 
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
+0.6.4
 
+##Installation
+
+
+Clone erdiko from github and set up an apache vhost to the webroot.
+
+Webroot is located at /www/public/
+
+Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder.  Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.
+
+##Vision
+
+
+This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara).  Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
+
+The framework seeks to make custom app development and leveraging multiple open source projects an easier task.  If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot.  If you want a clean, light weight framework you have also come to the right place.
+
+##Notes
+
+
+The code is a work in progress, and although stable, may contain items that need more refinement.  It is a functional Alpha codebase that will be post Beta later this year.  There are various production sites currently using this software yet it is best to consider it pre-beta, so be sure you know what your doing before you use it in a production environment.
+
+We value feedback and would love to hear your thoughts about the architecture and ease of use of this framework.  There are a lot of possibilities for Erdiko, we value your ideas and thoughts about where to take this codebase.
+
+##Team
+
+
+**Author**
+
+	John Arroyo - Architect, Lead Back-End / Integration engineer
+
+**Contributors**
+
+	* Varun Brahme - Back-End development and unit testing
+	* Dave LaFLam - Front-End development (default theme)
+	* Coleman Tung -  Offical site development
+
+* If you want to help, please do, we'd love more code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
+
+##Roadmap
+
+
+Coming Soon...
+
+##Special Thanks
+
+Arroyo Labs - For sponsoring development, http://arroyolabs.com
+
+less - dynamic stylesheet language, http://lesscss.org
+
+Toro - PHP router (micro framework), http://toroweb.org
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
