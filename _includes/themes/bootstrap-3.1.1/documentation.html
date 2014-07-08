@@ -21,7 +21,7 @@
   });
 
 
-var offsetHeight = 80;
+var offsetHeight = 120;
 
 $('body').scrollspy({
     offset: offsetHeight
@@ -44,8 +44,7 @@ $('a[href*=#]:not([href=#])').click(function (event) {
 </script>
 
 <div class="row">
-  <div class="col-xs-12 ">
-     <div class="col-xs-12 col-sm-3" id="myScrollspy">
+     <div class="col-xs-12 col-sm-3 col-md-3" id="myScrollspy">
 
       <ul class="nav nav-pills nav-stacked menu2">
         <!--<ul class="nav nav-tabs nav-stacked affix-top" data-spy="affix" data-offset-top="125">-->
@@ -71,9 +70,8 @@ $('a[href*=#]:not([href=#])').click(function (event) {
      </div>
 
 
-    <div class="col-xs-12 col-sm-8 col-sm-offset-4 content my-content2" data-offset-top="80">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-3 content my-content2" data-offset-top="80">
       {{ content }}
     </div>
 
-    </div>
 </div>
