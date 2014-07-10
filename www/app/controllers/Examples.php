@@ -156,11 +156,4 @@ class Examples extends \erdiko\core\Controller
 		$this->setView('examples/setview2.php');
 	}
 
-	public function bmiAction()
-	{
-		$this->setTitles('BMI Example');
-		$this->setView('/examples/bmi.php');
-		$this->addJs('/themes/hello/js/example.js');
-	}
-
 }
