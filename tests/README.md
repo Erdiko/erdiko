@@ -1,4 +1,9 @@
 Unit Tests
 ==========
 
-Unit Tests go here.
+Add your unit tests here
+------------------------
+
+to run tests:
+
+phpunit AllTests

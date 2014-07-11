@@ -26,6 +26,8 @@ This software is a clean middleware framework, hence the name Erdiko which means
 
 The framework seeks to make custom app development and leveraging multiple open source projects an easier task.  If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot.  If you want a clean, light weight framework you have also come to the right place.
 
+The goal is to have a self contained MVC framework that is complete and flexible yet assumes that other self contained projects can be added while maintaining a clean architecture.  Hence the mashup.  We hope that by having good design patterns for mixing other projects may be added then when warranted.  
+
 Notes
 -----
 
