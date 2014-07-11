@@ -1,0 +1,77 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+<hr>
+
+ <script>
+
+ $(function() {
+
+  
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 80
+        }, 300);
+        return false;
+      }
+    }
+  });
+
+
+var offsetHeight = 120;
+
+$('body').scrollspy({
+    offset: offsetHeight
+});
+
+/*
+$('a[href*=#]:not([href=#])').click(function (event) {
+    var scrollPos = $('body > .container').find($(this).attr('href')).offset().top - (offsetHeight - 1);
+    $('body,html').animate({
+        scrollTop: scrollPos
+    }, 300, function () {
+        $("ul li").click();
+    });
+    return false;
+});
+*/
+
+});
+
+</script>
+
+<div class="row">
+     <div class="col-xs-12 col-sm-3 col-md-3" id="myScrollspy">
+
+      <ul class="nav nav-pills nav-stacked menu2">
+        <!--<ul class="nav nav-tabs nav-stacked affix-top" data-spy="affix" data-offset-top="125">-->
+        <!--<ul class="nav nav-pills nav-stacked menu2" style="max-width: 300px;">-->
+                <li class="active" style="background-color : #2c3e50">
+                  <a class="list-group-item active" href="#section-0">
+                    <font color="#ffffff"size="+2" style="text-align:center"><b>Documentation</b></font>
+                  </a>
+                </li>
+                <li><a href="#config">Config</a></li>
+                <li><a href="#routes">Routes</a></li>
+                <li><a href="#hooks">Hooks</a></li>
+                <li><a href="#controllers">Controllers</a></li>
+                <li><a href="#views">Views</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#release_note">Release Note</a>
+                <li><a href="#about_erdiko">About Erdiko</a></li>
+                <li><a href="#note">Note / Roadmap</a>
+                <li><a href="#team">Team</a>
+                <li><a href="#special_thanks">Special Thanks</a>
+                </li>
+        </ul>
+     </div>
+
+
+    <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-3 content my-content2" data-offset-top="80">
+      {{ content }}
+    </div>
+
+</div>
