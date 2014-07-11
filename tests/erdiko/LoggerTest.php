@@ -25,6 +25,14 @@ class LoggerTest extends ErdikoTestCase
         unset($this->loggerObject);
     }
 
+    static function tearDownAfterClass()
+    {
+        $webRoot = dirname(dirname(__DIR__));
+        $return = Erdiko::deleteFile("erdiko_test_temp_log.log", $webRoot."/www/var/logs");
+    }
+
+
+
     function testLog() {
 	
 		$webRoot = dirname(dirname(__DIR__));
@@ -60,5 +68,30 @@ class LoggerTest extends ErdikoTestCase
 		$this->assertTrue(strpos($return,'This is a test error log 2') != false );
 		
     }
+
+    function testAddLogFile(){
+
+    	$webRoot = dirname(dirname(__DIR__));
+
+    	$this->loggerObject->addLogFile("temp", "erdiko_test_temp_log.log");
+    	$this->loggerObject->log('This is a test log in test temp file', null, "temp");
+    	$return=Erdiko::readFromFile("erdiko_test_temp_log.log" ,$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return, 'This is a test log in test temp file') != false );	
+
+    }
+
+    /**
+     * @depends testAddLogFile
+     */
+    function testRemoveLogFile(){
+
+    	$webRoot = dirname(dirname(__DIR__));
+
+    	$this->loggerObject->removeLogFile( "temp");
+    	$this->loggerObject->log('This is a test log in test temp file 2', null, "temp");
+    	$return=Erdiko::readFromFile("erdiko_test_temp_log.log" ,$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return, 'This is a test log in test temp file 2') != true );
+    }
+
   }
 ?>
