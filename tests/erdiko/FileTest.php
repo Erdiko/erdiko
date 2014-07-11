@@ -19,6 +19,7 @@ class FileTest extends ErdikoTestCase
         $this->fileObj = new File();
 
         $this->webRoot = dirname(dirname(__DIR__));
+        //echo $this->webRoot;
     }
 
     // called after the test functions are executed
