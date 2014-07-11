@@ -14,7 +14,7 @@ You can:
 Or
 
 * Create a [Github issue](https://github.com/arroyo/Erdiko/issues)
-* Email to us arroyo@arroyolabs.com
+* Email to us erdiko@arroyolabs.com
 
 
 
