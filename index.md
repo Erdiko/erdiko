@@ -40,8 +40,8 @@ title: Home
 
         <div class ="col-sm-4" > 
           <b class ="glyphicon glyphicon-retweet" > </b> 
-          <h2>Recycle</h2 > 
-            <p>Erdiko can act as a middleware framework, hence the name which means middle in the Basque language (Euskara).  If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then you have come to the right place.</p>
+          <h2>Remix / Recycle</h2 > 
+            <p>Erdiko can act as a middleware framework, hence the name which means 'middle' in the Basque language (Euskara).  Use Erdiko if you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application.</p>
         </div>
 
         <div class ="col-sm-4" > 
