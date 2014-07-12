@@ -107,15 +107,15 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::log($sampleText,Logger::INFO);
 		$return=Erdiko::readFromFile("default.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Info") != false);
-		
+
 		Erdiko::clearLog();
 		Erdiko::log($sampleText,Logger::ERROR,"exception");
-		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("exception.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Error") != false);
 		
 		Erdiko::clearLog();
 		Erdiko::log(new Exception($sampleText),null,"exception");
-		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("exception.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false );	
 		
 	}
