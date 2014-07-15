@@ -6,8 +6,6 @@
  * @package 	theme
  * @copyright 	Copyright (c) 2013, Arroyo Labs, www.arroyolabs.com
  * @author		John Arroyo
- *
- * @todo add interface to this engine
  */
 namespace erdiko\core\theme;
 
