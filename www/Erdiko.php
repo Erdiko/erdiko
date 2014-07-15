@@ -208,7 +208,7 @@ class Erdiko
 	*/
 	public static function createLogs($logFiles = array(), $logDir = null)
 	{
-		$config = Erdiko::getConfig();
+		$config = Erdiko::getConfig("contexts/default");
 
 		if(empty($logFiles))
 			$logFiles=$config["logs"]["files"][0];

@@ -61,7 +61,7 @@ class Config
     {
         if(empty($this->_contexts[$this->_context]))
         {
-            $file = $this->_webroot."/app/config/contexts/".$this->_context.".json";
+            $file = $this->_webroot."/app/config/".$this->_context.".json";
             $this->_contexts[$this->_context] = $this->getConfigFile($file);
             $this->_theme = $this->_contexts[$this->_context]['theme']['name'];
         }

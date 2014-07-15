@@ -53,6 +53,18 @@
          {
             "href":"/threecolumn",
             "title":"3 Column Layout"
+         },
+         {
+            "href":"/four",
+            "title":"4 Layout"
+         },
+         {
+            "href":"/calculator/bmi",
+            "title":"BMI"
+         },
+         {
+            "href":"/calculator/bmi_version2",
+            "title":"BMI_V2"
          }
       ],
       "footer":[

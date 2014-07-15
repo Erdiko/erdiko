@@ -40,7 +40,7 @@ class Examples extends \erdiko\core\Controller
 	public function setviewAction($arguments = null)
 	{
 		$this->setTitles('Example: Page with a single view');
-		$this->setView('examples/setview.php');
+		$this->setView('examples/setview.php', $data);
 	}
 
 	public function setbodycontentAction($arguments = null)
@@ -155,4 +155,5 @@ class Examples extends \erdiko\core\Controller
 		$this->setTitle('This is the title in the browser tab');		
 		$this->setView('examples/setview2.php');
 	}
+
 }

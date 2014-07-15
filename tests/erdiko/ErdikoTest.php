@@ -59,6 +59,7 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::renameFile("sample.txt","sample2.txt",$webRoot."/www");
 		$this->assertTrue(file_exists($webRoot."/www/sample2.txt") == true);
 		Erdiko::deleteFile("sample2.txt",$webRoot."/www");
+		$this->assertFalse(file_exists($webRoot."/www/sample2.txt") == true);
 	}
 	
 	/*
@@ -80,6 +81,7 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::deleteFile("sample.txt");
 		Erdiko::deleteFile("sample.txt",$webRoot."/www");
 		Erdiko::deleteFile("sample.txt",$webRoot);
+		Erdiko::deleteFile("sample2.txt",$webRoot);
 	}
 	
 	public function testLogFunctions()
@@ -91,30 +93,33 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::createLogs($logFiles);*/
 		//Erdiko::createLogs();
 		$webRoot = dirname(dirname(__DIR__));
+
 		Erdiko::clearLog();
 		$sampleText="This is a sample log for Erdiko class test";
+
 		Erdiko::log($sampleText);
-		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("default.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false );
 		
 		Erdiko::clearLog();
-		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("default.log",$webRoot."/www/var/logs");
 		$this->assertTrue(empty($return)==true);
 		
 		Erdiko::clearLog();
 		Erdiko::log($sampleText,Logger::INFO);
-		$return=Erdiko::readFromFile("erdiko.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("default.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Info") != false);
-		
+
 		Erdiko::clearLog();
 		Erdiko::log($sampleText,Logger::ERROR,"exception");
-		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
+		$return=Erdiko::readFromFile("exception.log",$webRoot."/www/var/logs");
 		$this->assertTrue(strpos($return,$sampleText) != false && strpos($return,"Error") != false);
 		
 		Erdiko::clearLog();
 		Erdiko::log(new Exception($sampleText),null,"exception");
-		$return=Erdiko::readFromFile("erdiko_error.log",$webRoot."/www/var/logs");
-		$this->assertTrue(strpos($return,$sampleText) != false );	
-		
+		$return=Erdiko::readFromFile("exception.log",$webRoot."/www/var/logs");
+		$this->assertTrue(strpos($return,$sampleText) != false );
+
+		Erdiko::deleteFile("exception.log", $webRoot."/www/var/logs");		
 	}
 }

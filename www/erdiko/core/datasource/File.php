@@ -73,7 +73,7 @@ class File{
 		if(file_exists($pathFrom."/".$filename))
 			return rename($pathFrom."/".$filename,$pathTo."/".$filename);
 		else 
-			return null;
+			return false;
 	}
 	
 	public function rename($oldName,$newName,$pathToFile=null)
