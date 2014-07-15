@@ -59,6 +59,7 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::renameFile("sample.txt","sample2.txt",$webRoot."/www");
 		$this->assertTrue(file_exists($webRoot."/www/sample2.txt") == true);
 		Erdiko::deleteFile("sample2.txt",$webRoot."/www");
+		$this->assertFalse(file_exists($webRoot."/www/sample2.txt") == true);
 	}
 	
 	/*
@@ -80,6 +81,7 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::deleteFile("sample.txt");
 		Erdiko::deleteFile("sample.txt",$webRoot."/www");
 		Erdiko::deleteFile("sample.txt",$webRoot);
+		Erdiko::deleteFile("sample2.txt",$webRoot);
 	}
 	
 	public function testLogFunctions()
@@ -116,7 +118,8 @@ class ErdikoTest extends ErdikoTestCase
 		Erdiko::clearLog();
 		Erdiko::log(new Exception($sampleText),null,"exception");
 		$return=Erdiko::readFromFile("exception.log",$webRoot."/www/var/logs");
-		$this->assertTrue(strpos($return,$sampleText) != false );	
-		
+		$this->assertTrue(strpos($return,$sampleText) != false );
+
+		Erdiko::deleteFile("exception.log", $webRoot."/www/var/logs");		
 	}
 }
