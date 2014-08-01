@@ -1,7 +1,7 @@
 <?php
 /**
  * Index file
- * Intercepts all requests and dispatches to routing
+ * Intercepts all requests and dispatches routing
  * 
  * @category  	Erdiko
  * @package   	Public
@@ -9,7 +9,7 @@
  * @author		John Arroyo
  */
 
-include_once dirname(__DIR__)."/vendor/erdiko/bootstrap.php";
+include_once dirname(__DIR__)."/bootstrap.php";
 
 try {
 	$routes = Erdiko::getRoutes();

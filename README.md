@@ -3,12 +3,12 @@ Erdiko
 
 **Enterprise Glue**
 
-Erdiko is a contextual middleware framework or better yet, an enterprise Mash-Up framework.
+Erdiko is an MVC micro framework or better yet, an enterprise Mash-Up framework.
 
 Version (SemVer)
 ----------------
 
-0.6.4
+0.8.2
 
 Installation
 ------------
@@ -42,7 +42,11 @@ Team
 
 	John Arroyo - Architect, Lead Back-End / Integration engineer
 
-**Contributors**
+**Current Contributors**
+
+	* Coleman Tung - Back-End development and unit testing
+
+**Past Contributors**
 
 	* Varun Brahme - Back-End development and unit testing
 	* Dave LaFLam - Front-End development (default theme)

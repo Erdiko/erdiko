@@ -1,6 +1,6 @@
 {
-    "name":"erdiko/erdiko",
-    "description": "Enterprise Glue (Micro MVC)",
+    "name": "erdiko/erdiko",
+    "description": "Enterprise glue (MVC micro framework)",
     "keywords": ["framework", "erdiko"],
     "homepage": "http://erdiko.org",
     "license": "MIT",
