@@ -1,0 +1,98 @@
+{
+   "site":{
+      "name":"ErdikoMicro",
+      "full_name":"Erdiko Micro Framework",
+      "tagline":"The Micro Mashup Framework",
+      "meta":[
+         {
+            "name":"description",
+            "content":"Erdiko Micro, Enterprise glue"
+         }
+      ]
+   },
+   "theme":{
+      "name":"bootstrap",
+      "namespace":"/app/themes/bootstrap",
+      "public":"/public/themes/bootstrap"
+   },
+   "layout":{
+      "layout":{
+         "columns":1
+      },
+      "title":"Erdiko",
+      "site_name":"Erdiko",
+      "header":{
+         "site_name":"Erdiko",
+         "tagline":"The Mashup Framework",
+         "content":""
+      }
+   },
+   "menu":{
+      "main":[
+         {
+            "href":"/examples/index",
+            "title":"Examples"
+         },
+         {
+            "href":"/examples/markup",
+            "title":"Mark-Up"
+         },
+         {
+            "href":"/examples/grid",
+            "title":"Grid"
+         },
+         {
+            "href":"/examples/twocolumn",
+            "title":"2 Column Layout"
+         },
+         {
+            "href":"/threecolumn",
+            "title":"3 Column Layout"
+         }
+      ],
+      "footer":[
+         {
+            "href":"/",
+            "title":"home"
+         },
+         {
+            "href":"/config",
+            "title":"view config"
+         },
+         {
+            "href":"/exception",
+            "title":"exception example"
+         },
+         {
+            "href":"/about",
+            "title":"about"
+         }
+      ]
+   },
+   "logs":{
+      "name":"default",
+      "path":"/var/logs",
+      "files":[{
+            "default":"default.log",
+            "exception":"exception.log"
+		}
+      ]
+   },
+   "cache":{
+      "default":{			
+			"type":"File",
+         "class":"\erdiko\core\cache\File",
+         "path":"/var/cache"
+	  },
+     "memcached":{        
+         "type":"Memcached",
+         "class":"\erdiko\core\cache\Memcached",
+         "path":"/var/cache"
+     }
+   },
+   "analytics":{
+      "google":{
+         "id":""
+      }
+   }
+}
