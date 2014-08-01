@@ -73,21 +73,20 @@
       "name":"default",
       "path":"/var/logs",
       "files":[{
-            "default":"default.log",
+            "default":"system.log",
             "exception":"exception.log"
 		}
       ]
    },
    "cache":{
-      "default":{			
+      "default":{
 			"type":"File",
          "class":"\erdiko\core\cache\File",
          "path":"/var/cache"
 	  },
-     "memcached":{        
+     "memcached":{
          "type":"Memcached",
-         "class":"\erdiko\core\cache\Memcached",
-         "path":"/var/cache"
+         "class":"\erdiko\core\cache\Memcached"
      }
    },
    "analytics":{
