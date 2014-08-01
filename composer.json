@@ -15,7 +15,7 @@
         "erdiko/core": "0.8.*"
     },
     "config": {
-        "vendor-dir": "src/vendor",
+        "vendor-dir": "vendor",
         "minimum-stability": "dev"
     }
 }
