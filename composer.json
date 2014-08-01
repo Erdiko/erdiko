@@ -1,7 +1,7 @@
 {
-	"name":"erdiko/erdiko",
+    "name":"erdiko/erdiko",
     "description": "Enterprise Glue (Micro MVC)",
-    "keywords": ["framework, erdiko"],
+    "keywords": ["framework", "erdiko"],
     "homepage": "http://erdiko.org",
     "license": "MIT",
     "authors": [
@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-    	"php": ">=5.3.3",
-        "erdiko/core": "0.7.*",
+        "php": ">=5.3.3",
+        "erdiko/core": "0.8.*"
     },
     "config": {
         "vendor-dir": "src/vendor",
