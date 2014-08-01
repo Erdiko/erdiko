@@ -1,1 +1,0 @@
-// js specific to the homepage (added here for demo purposes)
