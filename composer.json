@@ -14,6 +14,23 @@
         "php": ">=5.3.3",
         "erdiko/core": "0.8.*"
     },
+    "scripts": {
+        "post-root-package-install": [      //Run after "composer create-project erdiko/erdiko" is excuted
+            "if [ -d \"app/core/\" ] \nthen \nrm -R app/core/ \nfi",
+            "if [ -d \"vendor/erdiko/core/\" ] \nthen \nmv vendor/erdiko/core/ app/core/  \nfi",
+            "if [ -d \"vendor/erdiko//\" ] \nthen \nrm -R vendor/erdiko/ \nfi"
+        ],
+        "post-install-cmd": [               //Run after "composer install" is excuted
+            "if [ -d \"app/core/\" ] \nthen \nrm -R app/core/ \nfi",
+            "if [ -d \"vendor/erdiko/core/\" ] \nthen \nmv vendor/erdiko/core/ app/core/  \nfi",
+            "if [ -d \"vendor/erdiko//\" ] \nthen \nrm -R vendor/erdiko/ \nfi"
+        ],
+        "post-update-cmd": [                //Run after "composer update" is excuted
+            "if [ -d \"app/core/\" ] \nthen \nrm -R app/core/ \nfi",
+            "if [ -d \"vendor/erdiko/core/\" ] \nthen \nmv vendor/erdiko/core/ app/core/  \nfi",
+            "if [ -d \"vendor/erdiko//\" ] \nthen \nrm -R vendor/erdiko/ \nfi"
+        ]
+    },
     "config": {
         "vendor-dir": "vendor",
         "minimum-stability": "dev"
