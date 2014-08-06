@@ -13,8 +13,6 @@ You can:
 
 Or
 
-* Create a [Github issue](https://github.com/arroyo/Erdiko/issues)
+* Create a [Github issue](https://github.com/arroyolabs/erdiko/issues)
 * Email to us erdiko@arroyolabs.com
-
-
 

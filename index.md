@@ -16,14 +16,14 @@ title: Home
     				<h1>Erdiko</h1>
     				 <h2>Enterprise Glue</h2>
              			<p class ="lead">The MVC Mash-Up framework</p>
-    				<p class ="btn-group btn-group-justified">
-              				<a class ="btn btn-success btn-lg" href ="./getStarted.html#download_link">Download</a> 
-					<a class =" btn btn-default btn-lg" href ="./getStarted.html">Get Started</a > 
-              			</p > 
-    			</div > 
-    		</div >
-    	</div > 
-    </div >
+    				      <p class ="btn-group btn-group-justified">
+              			<a class ="btn btn-success btn-lg" href ="./getStarted.html#download_link">Download</a> 
+					           <a class =" btn btn-default btn-lg" href ="./getStarted.html">Get Started</a > 
+              		</p> 
+    			</div>
+    		</div>
+    	</div> 
+    </div>
 
     <div class ="row text-center" >
         <div class ="col-sm-4" > 
