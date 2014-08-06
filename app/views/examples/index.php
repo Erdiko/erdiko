@@ -9,4 +9,10 @@
 	<li><a href="/examples/carousel">Carousel</a></li>
 	<li><a href="/examples/twocolumn">2 column Layout</a></li>
 	<li><a href="/examples/threecolumn">3 column Layout</a></li>
+	<br>
+	<li><a href="/shopify/installation">Shopify Installation</a></li>
+	<li><a href="/shopify/accessToken">Shopify Get Token</a></li>
+	<li><a href="/shopify/product">Shopify Product</a></li>
+	<li><a href="/shopify/order">Shopify Order</a></li>
+	<li><a href="/shopify/customer">Shopify Customer</a></li>
 </ul>

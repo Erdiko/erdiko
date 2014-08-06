@@ -6,6 +6,8 @@ define('VARROOT', ROOT.'/var');
 
 define('VENDOR', ROOT.'/vendor');
 define('ERDIKO', VENDOR.'/erdiko/core/src/erdiko');
+//define('ERDIKO', APPROOT.'core/src/erdiko');
+define('SHOPIFY', VENDOR.'/erdiko/shopify/');
 define('VIEWS', APPROOT.'/views/');
 
 // Memcache @todo move to config file
@@ -35,6 +37,7 @@ require_once ERDIKO.'/core/cache/File.php';
 require_once ERDIKO.'/core/Cache.php';
 require_once ERDIKO.'/core/Logger.php';
 require_once ERDIKO.'/core/cache/Memcached.php';
+require_once VENDOR.'/erdiko/shopify/Shopify.php';
 
 // Composer
 require_once VENDOR.'/autoload.php';
