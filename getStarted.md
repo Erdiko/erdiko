@@ -78,45 +78,11 @@ It will clone our Git repository to your local machince.
 
 2. Find the menu section and insert the following code.
 
-		,
-	         {
-	            "href":"/myfirstpage",
-	            "title":"My First Page"
-	         }
+<script src="https://gist.github.com/colemantung/77e795c36662e2c5b8a4.js"></script>
 
 3. After inserting the code above, the menu section should look like this.
 
-		"menu":{
-		      "main":[
-		         {
-		            "href":"/examples/index",
-		            "title":"Examples"
-		         },
-		         {
-		            "href":"/markup",
-		            "title":"Mark-Up"
-		         },
-		         {
-		            "href":"/grid",
-		            "title":"Grid"
-		         },
-		         {
-		            "href":"/onecolumn",
-		            "title":"1 Column Layout"
-		         },
-		         {
-		            "href":"/twocolumn",
-		            "title":"2 Column Layout"
-		         },
-		         {
-		            "href":"/threecolumn",
-		            "title":"3 Column Layout"
-		         },
-		         {
-	           		 "href":"/myfirstpage",
-	            	"title":"My First Page"
-	        	 }
-		      ],
+<script src="https://gist.github.com/colemantung/070eb875dc5fe5779932.js"></script>
 
 4. Save the changes of the file, and open the site in your browser.
    You should be able to see that there is a new tab on the menu.
@@ -132,15 +98,11 @@ It will clone our Git repository to your local machince.
 
 ## Set content of a page
 ---
-5. To add contents to a page, open the page config file located at `www/app/controllers/index.php`.
+5. To add contents to a page, open the page config file located at `Erdiko/www/app/controllers/index.php`.
 
 6. Add the following function inside the Index class
 
-		public function myfirstpageAction()
-		{
-			$this->setTitles('My First page');
-			$this->setBodyContent("This is my first page");
-		}
+<script src="https://gist.github.com/colemantung/c02660ab203eb97375a5.js"></script>
 
 7. Save the changes and open the site in your browser.
    You should be able to see your first page.
@@ -229,69 +191,21 @@ It will clone our Git repository to your local machince.
 			$this->addJs('/themes/hello/js/example.js'); //Link JS to the page
 		}
 
-6.  Create a file called `bmi.php` under Erdiko/www/app/views/examples/
+6.  Create a file called `bmi.php` under `Erdiko/www/app/views/examples/`
 
 7.  Open the bmi.php and add the following code:
 
-		 <h1>Body Mass Index Calculator</h1>
-	    <p>Enter your height:
-	        <input type="text" id="height" />
-	        <select type="multiple" id="heightunits">
-	            <option value="metres" selected="selected">metres</option>
-	            <option value="inches">inches</option>
-	        </select>
-	    </p>
-	    <p>Enter your weight:
-	        <input type="text" id="weight" />
-	        <select type="multiple" id="weightunits">
-	            <option value="kg" selected="selected">kilograms</option>
-	            <option value="lb">pounds</option>
-	        </select>
-	    </p>
-	    <input type="button" value="computeBMI" onclick="computeBMI()"/>
-	     <h1>Your BMI is: <span id="output">?</span></h1>
-
-	    <h2>This means you are: value = <span id='comment'></span> </h2> 
+<script src="https://gist.github.com/colemantung/3cff36bbc3ac250db19f.js"></script> 
 
 8.  Create `example.js` under the folder `Erdiko/www/public/themes/hello/js/`
 
 9.  Paste the following code to `example.js`
 
-		 function computeBMI() {
-		      //Obtain user inputs
-		     var height = Number(document.getElementById("height").value);
-		     var heightunits = document.getElementById("heightunits").value;
-		     var weight = Number(document.getElementById("weight").value);
-		     var weightunits = document.getElementById("weightunits").value;
+<script src="https://gist.github.com/colemantung/6fb653cd88415e427a14.js"></script>
 
+10.  Save all changes, and open a web brower.
 
-		     //Convert all units to metric
-		     if (heightunits == "inches") height /= 39.3700787;
-		     if (weightunits == "lb") weight /= 2.20462;
-
-		     //Perform calculation
-		     var BMI = weight / Math.pow(height, 2);
-
-		     //Display result of calculation
-			document.getElementById("output").innerHTML = 
-													Math.round(BMI * 100)/100;
-
-		     if (BMI < 18.5) 
-		     	document.getElementById("comment").innerHTML = "Underweight";
-		     if (BMI >= 18.5 && BMI <= 25) 
-		     	document.getElementById("comment").innerHTML = "Normal";
-		     if (BMI >= 25 && BMI <= 30) 
-		     	document.getElementById("comment").innerHTML = "Obese";
-		     if (BMI > 30) 
-		     	document.getElementById("comment").innerHTML = "Overweight";
-
-		     document.getElementById("answer").value = output;
-		 }
-
-
-8.  Save all changes, and open a web brower.
-
-9.  Go to localhost, click the BMI tab on the menu, and then you should see [this](./assets/themes/bootstrap-3.1.1/img/getStarted/BMI_V1_1.png).
+11.  Go to localhost, click the BMI tab on the menu, and then you should see [this](./assets/themes/bootstrap-3.1.1/img/getStarted/BMI_V1_1.png).
 
 
 
@@ -317,62 +231,21 @@ It will clone our Git repository to your local machince.
 4.  Then, we will need to create a new controller for the new route.
 	To create a new controller, create `Calculator.php` under the folder `Erdiko/www/app/controllers/`
 
-5.  Paste the following code inside the Calculator.php
+5.  Paste the following code inside the `Calculator.php`
 
-			<?php
+<script src="https://gist.github.com/colemantung/2154a0c0d36b96529cc7.js"></script>
 
-			namespace app\controllers;
-
-			use Erdiko;
-			use erdiko\core\Config;
-
-			class Examples extends \erdiko\core\Controller
-			{
-
-				public function bmi_version2Action()
-				{
-					$this->setTitles('BMI Example');
-					$this->setView('/examples/bmi.php');
-				}
-
-				public function bmi_postAction()
-				{
-					$this->setTitles('BMI Post');
-					$this->setView('/examples/bmi_post.php');
-				}
-				
-			}
-
-			?>
-
-6.  Create a file called `bmi.php` under Erdiko/www/app/views/examples/
+6.  Create a file called `bmi.php` under `Erdiko/www/app/views/examples/`
 
 7.  Open the bmi.php and add the following code:
 
-		<form action ="bmi_post" method = "post">
-	    Weight(kgs): <input type = "text" name = "wt">
-	    Height (m) : <input type = "text" name = "ht">
-	    <input type = "submit" name="sub_form">
-	    
-		</form>
+<script src="https://gist.github.com/colemantung/c45003580e391cff6239.js"></script>
 
-8.  Create a file called `bmi_post.php` under Erdiko/www/app/views/examples/
+8.  Create a file called `bmi_post.php` under `Erdiko/www/app/views/examples/`
 
 9.  Open the bmi_post.php and add the following code:
 
-		<?php
-	    if(isset($_POST['sub_form'])){
-	        if($_POST['wt']<= 0 ||$_POST['ht'] <= 0) die("Enter valid values.");
-	        $wt = $_POST['wt'];
-	        $ht = $_POST['ht'];
-	        $ht = $ht * $ht;
-	        $bmi =     round($wt/$ht,2);
-	        if($bmi < 20)die( 'You are underweight. Your BMI is '.$bmi);
-	        if($bmi >25) die ('You are overweight. Your BMI is '.$bmi);
-	        echo "You weight is optimum. Your BMI is ".$bmi;
-	    }
-		?>
-
+<script src="https://gist.github.com/colemantung/ffffdf39b78d650a4734.js"></script>
 
 10.  Save all changes, and open the site in your web brower.
 
