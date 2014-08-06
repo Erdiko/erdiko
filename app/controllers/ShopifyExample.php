@@ -18,6 +18,7 @@ use Shopify;
 class ShopifyExample extends \erdiko\core\Controller
 {
 	private $cacheObj;
+	protected $shopify;
 
 	/** Before */
 	public function _before()
@@ -32,10 +33,11 @@ class ShopifyExample extends \erdiko\core\Controller
 			$this->cacheObj->put('code', $_GET['code']);
 			$this->cacheObj->put('shop', $_GET['shop']);
 		}
+
 		if(!$this->cacheObj->has('code'))
 		{
-			$shop = 'beshbox.myshopify.com';
-			$shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
+			$shop = returnSite();
+			$this->shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
         	// get the URL to the current page
         
       		$pageURL = 'http';
@@ -59,9 +61,27 @@ class ShopifyExample extends \erdiko\core\Controller
 	        //echo($pageURL);
 			//$pageURL = 'http://local.erdiko2.org/shopify/product';
 	        // redirect to authorize url
-	        header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
+	        header("Location: " . $this->shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
 		}
 
+
+			$this->shopify = new Shopify($this->cacheObj->get('shop'), "", self::returnApiKey(), self::returnSecret());
+
+       		if(!$this->cacheObj->has('token'))
+        	{
+        		$token = $this->shopify->getAccessToken($this->cacheObj->get('code'));
+        		$this->cacheObj->put('token', $token);
+        	}
+
+        	$this->shopify->setToken($this->cacheObj->get('token'));
+
+
+	}
+
+	private function returnSite()
+	{
+        $config = \Erdiko::getConfig('local/shopify');
+        return $config['site'][0];
 	}
 
 	private function returnApiKey()
@@ -129,7 +149,7 @@ class ShopifyExample extends \erdiko\core\Controller
 	public function getInstallation()
 	{
 		$shop = 'beshbox.myshopify.com';
-		$shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
+		$this->shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
 
         // get the URL to the current page
         
@@ -144,7 +164,7 @@ class ShopifyExample extends \erdiko\core\Controller
 		//echo($pageURL);
 		$pageURL = 'http://local.erdiko2.org/shopify/accessToken';
         // redirect to authorize url
-        header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
+        header("Location: " . $this->shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
         exit;
 	}
 
@@ -166,11 +186,11 @@ class ShopifyExample extends \erdiko\core\Controller
 		self::$code = $_GET['code'];
 		self::$shop = $_GET['shop'];
         
-        $shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
+        $this->shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
         //session_unset();
 
         // Now, request the token and store it in your session.
-        $_SESSION['token'] = $shopify->getAccessToken($_GET['code']);
+        $_SESSION['token'] = $this->shopify->getAccessToken($_GET['code']);
         if ($_SESSION['token'] != '')
             $_SESSION['shop'] = $_GET['shop'];
 
@@ -197,7 +217,7 @@ class ShopifyExample extends \erdiko\core\Controller
 	public function getCustomer()
 	{
 		$shop = 'beshbox.myshopify.com';
-		$shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
+		$this->shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
 
         // get the URL to the current page
         
@@ -213,7 +233,7 @@ class ShopifyExample extends \erdiko\core\Controller
 		//$pageURL = 'http://local.erdiko2.org/shopify/takingCustomer';
         $pageURL = 'http://local.erdiko2.org/shopify/takingCustomer';
         // redirect to authorize url
-        header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
+        header("Location: " . $this->shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
         exit;
 	}
 
@@ -232,18 +252,18 @@ class ShopifyExample extends \erdiko\core\Controller
 		self::$code = $_GET['code'];
 		self::$shop = $_GET['shop'];
         
-        $shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
+        $this->shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
         //session_unset();
 
         // Now, request the token and store it in your session.
-        $_SESSION['token'] = $shopify->getAccessToken($_GET['code']);
+        $_SESSION['token'] = $this->shopify->getAccessToken($_GET['code']);
         if ($_SESSION['token'] != '')
             $_SESSION['shop'] = $_GET['shop'];
 
-        $shopify->setToken($_SESSION['token']);
+        $this->shopify->setToken($_SESSION['token']);
         //var_dump($_SESSION);
         // Get all products
-        $products = $shopify->call('GET', '/admin/customers.json', array());
+        $products = $this->shopify->call('GET', '/admin/customers.json', array());
         // header('Content-Type: application/json');
         $json_string = json_encode($products, JSON_PRETTY_PRINT);
         echo "<pre>".$json_string."</pre>";
@@ -265,7 +285,7 @@ class ShopifyExample extends \erdiko\core\Controller
 	public function getOrder()
 	{
 		$shop = 'beshbox.myshopify.com';
-		$shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
+		$this->shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
 
         // get the URL to the current page
         
@@ -280,7 +300,7 @@ class ShopifyExample extends \erdiko\core\Controller
 		//echo($pageURL);
 		$pageURL = 'http://local.erdiko2.org/shopify/takingOrder';
         // redirect to authorize url
-        header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
+        header("Location: " . $this->shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
         exit;
 	}
 
@@ -299,18 +319,18 @@ class ShopifyExample extends \erdiko\core\Controller
 		self::$code = $_GET['code'];
 		self::$shop = $_GET['shop'];
         
-        $shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
+        $this->shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
         //session_unset();
 
         // Now, request the token and store it in your session.
-        $_SESSION['token'] = $shopify->getAccessToken($_GET['code']);
+        $_SESSION['token'] = $this->shopify->getAccessToken($_GET['code']);
         if ($_SESSION['token'] != '')
             $_SESSION['shop'] = $_GET['shop'];
 
-        $shopify->setToken($_SESSION['token']);
+        $this->shopify->setToken($_SESSION['token']);
         //var_dump($_SESSION);
         // Get all products
-        $products = $shopify->call('GET', '/admin/orders.json', array('published_status'=>'published'));
+        $products = $this->shopify->call('GET', '/admin/orders.json', array('published_status'=>'published'));
         // header('Content-Type: application/json');
         $json_string = json_encode($products, JSON_PRETTY_PRINT);
         echo "<pre>".$json_string."</pre>";
@@ -331,22 +351,9 @@ class ShopifyExample extends \erdiko\core\Controller
 	 */
 	public function getProduct()
 	{
-        $shopify = new Shopify($this->cacheObj->get('shop'), "", self::returnApiKey(), self::returnSecret());
-
-        if(!$this->cacheObj->has('token'))
-        {
-        	$token = $shopify->getAccessToken($this->cacheObj->get('code'));
-        	$this->cacheObj->put('token', $token);
-        }
-
-        $shopify->setToken($this->cacheObj->get('token'));
-
         // Get all products
-        $products = $shopify->call('GET', '/admin/products.json', array());
-   
-        //$json_string = json_encode($products, JSON_PRETTY_PRINT);
-        //echo "<pre>".$json_string."</pre>";
-		
+        $products = $this->shopify->call('GET', '/admin/products.json', array());
+ 
 		$data = array(
 			'columns' => 4
 			//'count' => 16
