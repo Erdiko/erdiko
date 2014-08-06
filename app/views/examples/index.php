@@ -13,6 +13,7 @@
 	<li><a href="/shopify/installation">Shopify Installation</a></li>
 	<li><a href="/shopify/accessToken">Shopify Get Token</a></li>
 	<li><a href="/shopify/product">Shopify Product</a></li>
+	<li><a href="/shopify/takingProduct">Shopify Taking Product</a></li>
 	<li><a href="/shopify/order">Shopify Order</a></li>
 	<li><a href="/shopify/customer">Shopify Customer</a></li>
 </ul>

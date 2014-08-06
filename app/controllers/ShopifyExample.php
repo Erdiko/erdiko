@@ -17,14 +17,51 @@ use Shopify;
  */
 class ShopifyExample extends \erdiko\core\Controller
 {
-	static $code;
- 	static $shop;
- 	
+	private $cacheObj;
+
 	/** Before */
 	public function _before()
 	{
 		$this->setThemeName('bootstrap');
 		$this->prepareTheme();
+
+		$this->cacheObj = \Erdiko::getCache();
+
+		if(isset($_GET['code']))
+		{
+			$this->cacheObj->put('code', $_GET['code']);
+			$this->cacheObj->put('shop', $_GET['shop']);
+		}
+		if(!$this->cacheObj->has('code'))
+		{
+			$shop = 'beshbox.myshopify.com';
+			$shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
+        	// get the URL to the current page
+        
+      		$pageURL = 'http';
+	       // if ($_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
+	        $pageURL .= "://";
+	        if ($_SERVER["SERVER_PORT"] != "80") {
+	            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	        } else {
+	            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	        }
+			
+			// get the URL to the current page
+	        $pageURL = 'http';
+	        if ($_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
+	        $pageURL .= "://";
+	        if ($_SERVER["SERVER_PORT"] != "80") {
+	            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	        } else {
+	            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	        }
+	        //echo($pageURL);
+			//$pageURL = 'http://local.erdiko2.org/shopify/product';
+	        // redirect to authorize url
+	        header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
+		}
+
 	}
 
 	private function returnApiKey()
@@ -155,73 +192,6 @@ class ShopifyExample extends \erdiko\core\Controller
 	}
 
 	/**
-	 * Get Product
-	 */
-	public function getProduct()
-	{
-		$shop = 'beshbox.myshopify.com';
-		$shopify = new Shopify($shop, "", self::returnApiKey(), self::returnSecret());
-
-        // get the URL to the current page
-        
-        $pageURL = 'http';
-       // if ($_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
-        $pageURL .= "://";
-        if ($_SERVER["SERVER_PORT"] != "80") {
-            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-        } else {
-            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-        }
-		//echo($pageURL);
-		$pageURL = 'http://local.erdiko2.org/shopify/takingProduct';
-        // redirect to authorize url
-        header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
-        exit;
-	}
-
-	/**
-	 * Taking Product
-	 */
-	public function getTakingProduct()
-	{
-		$json_string = json_encode($_GET, JSON_PRETTY_PRINT);
-		//echo "<pre>".$json_string."</pre>";
-
-		if (isset($_GET['code'])) { // if the code param has been sent to this page... we are in Step 2
-        // Step 2: do a form POST to get the access token
-		//echo '<p> Code: '.self::$code.'</p>';
-		//echo '<p> Shop: '.self::$shop.'</p>';
-		self::$code = $_GET['code'];
-		self::$shop = $_GET['shop'];
-        
-        $shopify = new Shopify($_GET['shop'], "", self::returnApiKey(), self::returnSecret());
-        //session_unset();
-
-        // Now, request the token and store it in your session.
-        $_SESSION['token'] = $shopify->getAccessToken($_GET['code']);
-        if ($_SESSION['token'] != '')
-            $_SESSION['shop'] = $_GET['shop'];
-
-        $shopify->setToken($_SESSION['token']);
-        //var_dump($_SESSION);
-        // Get all products
-        $products = $shopify->call('GET', '/admin/products.json', array());
-        // header('Content-Type: application/json');
-        $json_string = json_encode($products, JSON_PRETTY_PRINT);
-        echo "<pre>".$json_string."</pre>";
-
-        //header("Location: http://local.erdiko2.org/");
-
-        exit;  
-   		}
-   		else
-   		{
-   			echo('Please install the APP first!');
-   		}
-	}
-
-
-	/**
 	 * Get Customer
 	 */
 	public function getCustomer()
@@ -240,7 +210,8 @@ class ShopifyExample extends \erdiko\core\Controller
             $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
         }
 		//echo($pageURL);
-		$pageURL = 'http://local.erdiko2.org/shopify/takingCustomer';
+		//$pageURL = 'http://local.erdiko2.org/shopify/takingCustomer';
+        $pageURL = 'http://local.erdiko2.org/shopify/takingCustomer';
         // redirect to authorize url
         header("Location: " . $shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
         exit;
@@ -354,4 +325,58 @@ class ShopifyExample extends \erdiko\core\Controller
    		}
 	}
 
+
+	/**
+	 * Get Product
+	 */
+	public function getProduct()
+	{
+        $shopify = new Shopify($this->cacheObj->get('shop'), "", self::returnApiKey(), self::returnSecret());
+
+        if(!$this->cacheObj->has('token'))
+        {
+        	$token = $shopify->getAccessToken($this->cacheObj->get('code'));
+        	$this->cacheObj->put('token', $token);
+        }
+
+        $shopify->setToken($this->cacheObj->get('token'));
+
+        // Get all products
+        $products = $shopify->call('GET', '/admin/products.json', array());
+   
+        //$json_string = json_encode($products, JSON_PRETTY_PRINT);
+        //echo "<pre>".$json_string."</pre>";
+		
+		$data = array(
+			'columns' => 4
+			//'count' => 16
+			);
+
+		for($i = 0; $i<count($products); $i++)
+		{
+			$data['products'][$i]['title'] = $products[$i]['title'];
+			$data['products'][$i]['image'] = $products[$i]['image']['src'];
+		}
+		
+		//var_dump($data);
+		//$json_string = json_encode($data, JSON_PRETTY_PRINT);
+        //echo "<pre>".$json_string."</pre>";
+
+		$this->setTitle('Example: Grid');
+		$this->setContent( $this->getLayout('grid/shopify', $data) );
+	}
+
+	/**
+	 * Get grid
+	 */
+	public function getGrid()
+	{
+		$data = array(
+			'columns' => 4,
+			'count' => 12
+			);
+		
+		$this->setTitle('Example: Grid');
+		$this->setContent( $this->getLayout('grid/default', $data) );
+	}
 }

@@ -3,17 +3,18 @@
         <div role="main">
         	<?php
         		$data = $data->getData(); // temporary hack
-        		var_dump($data);
-				$item = array(
+
+				for($i=0; $i<count($data['products']); $i++)
+				{
+					$item = array(
 					'size' => $data['columns'],
 					'details' => array(
-						'name' => "Example Product",
-						'image' => "http://placehold.it/180x180/BBBBBB/EEEEEE&text=Grid+Item",
-						'url' => "#")
+							'name' => $data['products'][$i]['title'],
+							'image' => $data['products'][$i]['image'],
+							'url' => "#"
+							)
 					);
 
-				for($i=0; $i<$data['count']; $i++)
-				{
 					echo Erdiko::getView('examples/grid/item', $item);
 				}
 			?>
