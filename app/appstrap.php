@@ -12,6 +12,7 @@ ini_set('display_errors', '1');
  * Hooks
  */
 ToroHook::add("404", function($msg = null) {
+	Erdiko::log('404 Error', null, 'system');
     // Simple text only page
     // echo "Sorry, we cannot find that URL";
     // die; // don't let the calling controller continue
@@ -30,5 +31,6 @@ ToroHook::add("404", function($msg = null) {
 });
 
 ToroHook::add("500", function($msg = "") {
+	Erdiko::log('500 Error', 'Exception', 'exception');
     echo "Sorry, something went wrong";
 });
