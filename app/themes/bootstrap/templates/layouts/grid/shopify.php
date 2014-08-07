@@ -4,18 +4,18 @@
         	<?php
         		$data = $data->getData(); // temporary hack
 
-				for($i=0; $i<count($data['products']); $i++)
+				for($i=0; $i<count($data); $i++)
 				{
 					$item = array(
-					'size' => $data['columns'],
+					'size' => count($data),
 					'details' => array(
-							'name' => $data['products'][$i]['title'],
-							'image' => $data['products'][$i]['image'],
+							'name' => $data[$i]['title'],
+							'image' => $data[$i]['image']['src'],
 							'url' => "#"
 							)
 					);
 
-					echo Erdiko::getView('examples/grid/item', $item);
+					echo Erdiko::getView('shopify/grid/item', $item);
 				}
 			?>
         </div>

@@ -103,12 +103,16 @@ class ShopifyExample extends \erdiko\core\Controller
 	}
 
 
-	/** Get Hello */
-	public function getHello()
+	/**
+	 * Homepage Action (index)
+	 */
+	public function getIndex()
 	{
-		//$this->setTitle('Hello World');
-		//$this->setContent("Hello World");
+		// Add page data
+		$this->setTitle('Shopify');
+		$this->addView('shopify/index');
 	}
+
 
 	/**
 	 * Get
@@ -351,26 +355,10 @@ class ShopifyExample extends \erdiko\core\Controller
 	 */
 	public function getProduct()
 	{
-        // Get all products
         $products = $this->shopify->call('GET', '/admin/products.json', array());
- 
-		$data = array(
-			'columns' => 4
-			//'count' => 16
-			);
 
-		for($i = 0; $i<count($products); $i++)
-		{
-			$data['products'][$i]['title'] = $products[$i]['title'];
-			$data['products'][$i]['image'] = $products[$i]['image']['src'];
-		}
-		
-		//var_dump($data);
-		//$json_string = json_encode($data, JSON_PRETTY_PRINT);
-        //echo "<pre>".$json_string."</pre>";
-
-		$this->setTitle('Example: Grid');
-		$this->setContent( $this->getLayout('grid/shopify', $data) );
+		$this->setTitle('Shopify: Grid');
+		$this->setContent( $this->getLayout('grid/shopify', $products) );
 	}
 
 	/**
