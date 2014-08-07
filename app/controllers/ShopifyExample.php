@@ -49,22 +49,9 @@ class ShopifyExample extends \erdiko\core\Controller
 	        } else {
 	            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	        }
-			
-			// get the URL to the current page
-	        $pageURL = 'http';
-	        //if ($_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
-	        $pageURL .= "://";
-	        if ($_SERVER["SERVER_PORT"] != "80") {
-	            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	        } else {
-	            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	        }
-	      	//echo($pageURL);
-			//$pageURL = 'http://local.erdiko2.org/shopify/product';
-	        // redirect to authorize url
+
 	        header("Location: " . $this->shopify->getAuthorizeUrl(self::returnScope(), $pageURL));
 		}
-
 
 			$this->shopify = new Shopify($this->cacheObj->get('shop'), "", self::returnApiKey(), self::returnSecret());
 
@@ -137,9 +124,10 @@ class ShopifyExample extends \erdiko\core\Controller
 	 */
 	public function getCustomer()
 	{
-		$products = $this->shopify->call('GET', '/admin/customers.json', array());
-		$this->setTitle('Shopify: Grid');
-		$this->setContent( $this->getLayout('grid/shopify', $products) );
+		$data = $this->shopify->call('GET', '/admin/customers.json', array());
+		var_dump($data);
+		//$this->setTitle('Shopify: Grid');
+		//$this->setContent( $this->getLayout('grid/shopify', $data) );
 	}
 
 	/**
@@ -147,9 +135,10 @@ class ShopifyExample extends \erdiko\core\Controller
 	 */
 	public function getOrder()
 	{
-		$products = $this->shopify->call('GET', '/admin/orders.json', array());
-		$this->setTitle('Shopify: Grid');
-		$this->setContent( $this->getLayout('grid/shopify', $products) );
+		$data = $this->shopify->call('GET', '/admin/orders.json', array());
+		var_dump($data);
+		//$this->setTitle('Shopify: Grid');
+		//$this->setContent( $this->getLayout('grid/shopify', $products) );
 	}
 
 
@@ -158,9 +147,9 @@ class ShopifyExample extends \erdiko\core\Controller
 	 */
 	public function getProduct()
 	{
-        $products = $this->shopify->call('GET', '/admin/products.json', array());
+        $data = $this->shopify->call('GET', '/admin/products.json', array());
 		$this->setTitle('Shopify: Grid');
-		$this->setContent( $this->getLayout('grid/shopify', $products) );
+		$this->setContent( $this->getLayout('grid/shopify', $data) );
 	}
 
 }
