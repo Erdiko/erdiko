@@ -125,9 +125,8 @@ class ShopifyExample extends \erdiko\core\Controller
 	public function getCustomer()
 	{
 		$data = $this->shopify->call('GET', '/admin/customers.json', array());
-		var_dump($data);
-		//$this->setTitle('Shopify: Grid');
-		//$this->setContent( $this->getLayout('grid/shopify', $data) );
+		$this->setTitle('Shopify: Customers');
+		$this->setContent( $this->getLayout('json', $data) );
 	}
 
 	/**
@@ -136,9 +135,8 @@ class ShopifyExample extends \erdiko\core\Controller
 	public function getOrder()
 	{
 		$data = $this->shopify->call('GET', '/admin/orders.json', array());
-		var_dump($data);
-		//$this->setTitle('Shopify: Grid');
-		//$this->setContent( $this->getLayout('grid/shopify', $products) );
+		$this->setTitle('Shopify: Orders');
+		$this->setContent( $this->getLayout('json', $data) );
 	}
 
 
