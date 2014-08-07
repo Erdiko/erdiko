@@ -17,7 +17,9 @@ use Shopify;
  */
 class ShopifyExample extends \erdiko\core\Controller
 {
+	/** Cache Object */
 	private $cacheObj;
+	/** Shopify Object */
 	protected $shopify;
 
 	/** Before */
@@ -66,24 +68,44 @@ class ShopifyExample extends \erdiko\core\Controller
 
 	}
 
+	/**
+	 *	Get the shop URL
+	 *
+	 *	@return URL
+	 **/
 	private function returnSite()
 	{
         $config = \Erdiko::getConfig('local/shopify');
         return $config['shop']['erdiko'];
 	}
 
+	/**
+	 *	Get the API Key
+	 *
+	 *	@return string
+	 **/
 	private function returnApiKey()
 	{
         $config = \Erdiko::getConfig('local/shopify');
         return $config['appInfo']['SHOPIFY_API_KEY'];
 	}
 
+	/**
+	 *	Get the API Secret
+	 *
+	 *	@return string
+	 **/
 	private function returnSecret()
 	{
         $config = \Erdiko::getConfig('local/shopify');
         return $config['appInfo']['SHOPIFY_SECRET'];
 	}
 
+	/**
+	 *	Get the API Scope
+	 *
+	 *	@return string
+	 **/
 	private function returnScope()
 	{
         $config = \Erdiko::getConfig('local/shopify');
