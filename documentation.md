@@ -19,10 +19,7 @@ The default config file is /Erdiko/www/app/config/contexts/default.json
 
 ## Routes
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
-
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
-
+The MVC Erdiko utilizes [Toro PHP router](#http://toroweb.org/) to render pages. 
 ---
 
 <div id = "hooks"></div>
@@ -64,6 +61,17 @@ The framework seeks to make custom app development and leveraging multiple open 
 This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
 
 The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
+
+---
+
+
+<div id = "Shopify"></div>
+
+## Shopify
+
+The Shopify module is installed with the Erdiko framework by default. If you do not need Shopify module, you can open the composer.json in Erdiko root folder and detele the line `"erdiko/shopify": "xx.x.x"`.
+
+If you want to know more about the usage of the Shopify module, please look at the Shopify example controller at `app/controllers/ShopifyExample.php`.  Before using the Shopify module, you should update the setting in Shopify config file at `app/config/local/shopify.json`.
 
 ---
 
