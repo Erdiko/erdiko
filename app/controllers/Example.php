@@ -159,9 +159,9 @@ class Example extends \erdiko\core\Controller
 	 * Get Mark Up
 	 *
 	 * @usage This is an alternate way to add page content data
-	    You can load a view directly into the content.
-	 	This is not the preferred way to add content.
-	 	Use the addView() method or a Layout when possible.
+	 * You can load a view directly into the content.
+	 * This is not the preferred way to add content.
+	 * Use the addView() method or a Layout when possible.
 	 */
 	public function getMarkup()
 	{
