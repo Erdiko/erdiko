@@ -58,13 +58,7 @@ class Example extends \erdiko\core\Controller
 	{	
 		// Add page data
 		$this->setTitle('Examples');
-		
-		$data = array(
-					'example' => $this->getView('examples/index'),
-					'shopify' => $this->getView('shopify/index')
-					);
-
-		$this->setContent( $this->getLayout('menu', $data) );
+		$this->addView('examples/index');
 	}
 
 	/**
