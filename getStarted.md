@@ -52,7 +52,7 @@ This command will download and install a fresh copy of Erdiko in a new project-n
 ---
 To download Erdiko from our Git repository, enter the following command in command prompt:
 
-	git clone https://github.com/arroyo/Erdiko
+	git clone https://github.com/arroyolabs/erdiko
 
 It will clone our Git repository to your local machince.
 
