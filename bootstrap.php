@@ -37,7 +37,7 @@ require_once ERDIKO.'/core/cache/File.php';
 require_once ERDIKO.'/core/Cache.php';
 require_once ERDIKO.'/core/Logger.php';
 require_once ERDIKO.'/core/cache/Memcached.php';
-require_once VENDOR.'/erdiko/shopify/Shopify.php';
+require_once VENDOR.'/erdiko/shopify/src/Shopify.php';
 
 // Composer
 require_once VENDOR.'/autoload.php';
