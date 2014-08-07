@@ -28,6 +28,7 @@ header: GetStarted
 
 ## Quick Installation
 ---
+
 ####Via Composer
 
 The Eridko framework utilizes Composer for installation and dependency management. If you haven not install Composer, start by installing Composer.
@@ -37,6 +38,7 @@ After you installed Composer, you can run the following command in your terminal
 	composer create-project erdiko/erdiko project-name
 
 This command will download and install a fresh copy of Erdiko in a new project-name folder within your current directory.
+
 
 ####Via Github
 
