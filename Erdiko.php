@@ -44,9 +44,14 @@ class Erdiko
 	 * @param string $viewName
 	 * @param array $data
 	 */
-	public static function getView($viewName, $data = null)
+	public static function getView($viewName, $data = null, $templateRootFolder = null)
 	{
 		$view = new \erdiko\core\View($viewName, $data);
+		//echo $templateRootFolder;
+		if ($templateRootFolder != null)
+		{
+			$view->setTemplateRootFolder($templateRootFolder);
+		}
 		return  $view->toHtml();
 	}
 	
