@@ -10,9 +10,16 @@
             "email": "info@arroyolabs.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "/Users/ColemanTung/ArroyoLabs/erdiko-shopify"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
-        "erdiko/core": "0.8.*"
+        "erdiko/core": "0.8.*",
+        "erdiko/shopify": "1.*"
     },
     "config": {
         "vendor-dir": "vendor",
