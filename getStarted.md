@@ -54,7 +54,9 @@ To download Erdiko from our Git repository, enter the following command in comma
 
 	git clone https://github.com/arroyolabs/erdiko
 
-It will clone our Git repository to your local machince.
+It will clone our Git repository to your local machince. Then, go to the Erdiko root folder and install Erdiko using Composer.
+
+	composer install
 
 
 <div id = "Learn_2"></div>
