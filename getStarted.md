@@ -28,6 +28,20 @@ header: GetStarted
 
 ## Quick Installation
 ---
+
+####Via Composer
+
+The Eridko framework utilizes Composer for installation and dependency management. If you haven not install Composer, start by installing Composer.
+
+After you installed Composer, you can run the following command in your terminal:
+
+	composer create-project erdiko/erdiko project-name
+
+This command will download and install a fresh copy of Erdiko in a new project-name folder within your current directory.
+
+
+####Via Github
+
 * Step #1: [Download Erdiko](#download)
 * Step #2: [Setup web environment](#Learn_2)
 
@@ -40,7 +54,9 @@ To download Erdiko from our Git repository, enter the following command in comma
 
 	git clone https://github.com/arroyolabs/erdiko
 
-It will clone our Git repository to your local machince.
+It will clone our Git repository to your local machince. Then, go to the Erdiko root folder and install Erdiko using Composer.
+
+	composer install
 
 
 <div id = "Learn_2"></div>
