@@ -1,0 +1,10 @@
+{
+	 "appInfo":{        
+         "SHOPIFY_API_KEY": "ec29dd93ee7e40a8f1d9b914ab16ba04",
+         "SHOPIFY_SECRET": "6451dac2ba28f48fecb1ec8aa3d0bcb8",
+         "SHOPIFY_SCOPE": "write_products,write_orders,write_customers"
+     },
+     "shop":{
+     	 "erdiko": "beshbox.myshopify.com"
+     }
+}

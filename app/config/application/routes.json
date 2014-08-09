@@ -3,6 +3,7 @@
 		"/": "\app\controllers\Example",
 		"examples/:alpha": "\app\controllers\Example",
 		"ajax/:alpha": "\app\controllers\AjaxExample",
+		"shopify/:alpha": "\erdiko\shopify\controllers\ShopifyExample",
 		"/:alpha": "\app\controllers\Example"
 	}
 }

@@ -55,7 +55,7 @@ class Example extends \erdiko\core\Controller
 	 * Homepage Action (index)
 	 */
 	public function getIndex()
-	{
+	{	
 		// Add page data
 		$this->setTitle('Examples');
 		$this->addView('examples/index');
