@@ -12,8 +12,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "erdiko/core": "0.8.*",
-        "erdiko/shopify": "1.*"
+        "erdiko/core": "0.8.*"
     },
     "config": {
         "vendor-dir": "vendor",
