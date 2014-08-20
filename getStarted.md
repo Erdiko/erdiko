@@ -14,14 +14,7 @@ header: GetStarted
 * Apache, Nginx, or Microsoft IIS
 
 #####PHP
-* PHP 5.2.5 or higher (5.3 recommended).
-
-
-<div class="alert alert-dismissable alert-warning">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <h4>Warning!</h4>
-  <p>If you do not have a web server installed, you can install <a href="http://www.apache.org" class="alert-link">Apache</a>, LAMP (Linux), MAMP (Mac), or WAMP (Windows).</p>
-</div>
+* PHP 5.3 or higher.
 
 <div id = "download_link"></div>
 <div id = "Learn_0"></div>
@@ -49,9 +42,9 @@ It will clone our Git repository to your local machince.
 ---
 1. Open the config file of your web server
 
-2. Change the webroot to `[your computer path]/Erdiko/www/public`
+2. Change the webroot to `[your computer path]/erdiko/public`
 
-3. Save changes of the config file and restart your web server.
+3. Save changes and restart your web server.
 
 4. Type http://localhost into your browser
 
@@ -65,8 +58,11 @@ It will clone our Git repository to your local machince.
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
-	<strong>Heads up!</strong> 
-	<p>Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder. Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.</p>
+	<strong>Heads up!</strong>
+	<p>
+		All of your server side application code should go in the /app folder while any js file, css file or asset should go in the /public folder.
+	</p>
+	<p>Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder. Do not modify files in /vendor/erdiko/* if you want to maintain an easy upgrade path with Erdiko.</p>
 </div>
 
 

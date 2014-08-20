@@ -10,8 +10,9 @@ header: Documentation
 
 ## Config
 
-The main config folder is located at /Erdiko/www/app/config/contexts/
-The default config file is /Erdiko/www/app/config/contexts/default.json
+The config folder is located at /app/config/
+
+The default application config file is /app/config/application/default.json
 
 ---
 
@@ -19,19 +20,18 @@ The default config file is /Erdiko/www/app/config/contexts/default.json
 
 ## Routes
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
+Application routes are defined in the file, /app/config/application/routes.json 
+Update your app's routes in this file.
 
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
+Erdiko uses the same routing conventions defined by ToroPHP (modeled after Tornado, a python framework)
 
----
+E.g. To route the root of the site to the Example controller add
+"/": "\app\controllers\Example"
 
-<div id = "hooks"></div>
+E.g. To route example.com/examples/token, where token is a name used in the controller
+"examples/:alpha": "\app\controllers\Example"
 
-## Hooks
-
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
-
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
+For more information on routing see https://github.com/anandkunal/ToroPHP#routing-basics
 
 ---
 
@@ -39,9 +39,7 @@ The framework seeks to make custom app development and leveraging multiple open 
 
 ## Controllers
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
-
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
+The controllers are located at `app/controllers/’.
 
 ---
 
@@ -50,9 +48,7 @@ The framework seeks to make custom app development and leveraging multiple open 
 
 ## Views
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
-
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
+The views are located at `app/views/’.
 
 ---
 
@@ -61,19 +57,15 @@ The framework seeks to make custom app development and leveraging multiple open 
 
 ## Models
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
-
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
+Coming Soon
 
 ---
 
-<div id = "release_note"></div>
+<div id = "hooks"></div>
 
-## Release Notes
+## Hooks
 
-* <a href="#">Erdiko 0.6.4</a>
-* <a href="#">Erdiko 0.3.0</a>
-* <a href="#">Erdiko 0.1.0</a>
+For more hooks information see https://github.com/anandkunal/ToroPHP#torohook-callbacks
 
 ---
 
@@ -81,7 +73,13 @@ The framework seeks to make custom app development and leveraging multiple open 
 
 ## About Erdiko
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
+Erdiko wants to make your php development easier. If you need a lightweight MVC framework you have come to the right place. Our goal is to offer a clean framework to create sites optimized for mobile devices, APIs and multiple browsers.  Get work done without a lot of unneccessary plumbing to get in the way.  It is camptible with composer, which makes it easy to use with other PHP projects like Doctrine
+
+
+Erdiko can act as a middleware framework, hence the name which means 'middle' in the Basque language (Euskara). Use Erdiko if you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application.
+
+
+hence the name Erdiko which means middle in the Basque language (Euskara). Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
 
 The framework seeks to make custom app development and leveraging multiple open source projects an easier task. If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot. If you want a clean, light weight framework you have also come to the right place.
 
@@ -110,9 +108,9 @@ We value feedback and would love to hear your thoughts about the architecture an
 <br>
 
 ####Contributors
+* Coleman Tung - Back-End development, Documentation and unit testing
 * Varun Brahme - Back-End development and unit testing
-* Dave LaFLam - Front-End development (default theme)
-* Coleman Tung - Offical site development
+* Dave LaFLam - Front-End development (original theme)
 
 <br>
 		
