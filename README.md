@@ -13,13 +13,13 @@ Version (SemVer)
 Installation
 ------------
 
-***via composer:***
+***via composer***
 
 at the commandline run,
 
 	composer create-project erdiko/erdiko
 
-***via git & composer: ***
+***via git & composer***
 
 Clone erdiko from github and run "composer install" in the root folder /
 
@@ -27,7 +27,7 @@ Clone erdiko from github and run "composer install" in the root folder /
 2. cd erdiko
 3. composer install
 
-***Server:***
+***Server***
 
 Now that you have the latest code, set up an apache vhost to the webroot which is located at /public/
 
