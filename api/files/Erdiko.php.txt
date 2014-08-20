@@ -6,7 +6,6 @@
  * 
  * @category	Erdiko
  * @package		Erdiko
- * @version 	1.0.1
  * @copyright 	Copyright (c) 2014, Arroyo Labs, www.arroyolabs.com
  * @author		John Arroyo, john@arroyolabs.com
  */
