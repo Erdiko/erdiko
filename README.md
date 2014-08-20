@@ -13,19 +13,22 @@ Version (SemVer)
 Installation
 ------------
 
-via composer: 
+***via composer:***
+
 at the commandline run,
 
-composer create-project erdiko/erdiko
+	composer create-project erdiko/erdiko
 
-via git & composer: 
+***via git & composer: ***
+
 Clone erdiko from github and run "composer install" in the root folder /
 
 1. git clone git@github.com:ArroyoLabs/erdiko.git
 2. cd erdiko
 3. composer install
 
-Server:
+***Server:***
+
 Now that you have the latest code, set up an apache vhost to the webroot which is located at /public/
 
 In general, downloadable files go in the /public folder while application code goes in the /app/ folder.  Erdiko core code is in the /vendor/erdiko/ folder.
