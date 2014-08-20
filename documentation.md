@@ -26,9 +26,11 @@ Update your app's routes in this file.
 Erdiko uses the same routing conventions defined by ToroPHP (modeled after Tornado, a python framework)
 
 E.g. To route the root of the site to the Example controller 
+	
 	"/": "\app\controllers\Example"
 
 E.g. To route example.com/examples/token, where the token is an alpha only name used in the controller
+	
 	"examples/:alpha": "\app\controllers\Example"
 
 For more information on routing see [Toro PHP routing](https://github.com/anandkunal/ToroPHP#routing-basics)
