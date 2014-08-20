@@ -2,12 +2,10 @@
       <div class="row">
         <div role="main">
         	<?php
-        		$data = $data->getData(); // temporary hack
-
-				$json_string = json_encode($data, JSON_PRETTY_PRINT);
-            	echo "<pre>".$json_string."</pre>";
+        		$data = $data->getData();
+				$jsonString = json_encode($data, JSON_PRETTY_PRINT);
+            	echo "<pre>".$jsonString."</pre>";
 			?>
         </div>
   	</div>
 </div>
-
