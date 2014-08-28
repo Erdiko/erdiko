@@ -11,13 +11,12 @@ markdown: kramdown
 # so be sure to set them if your theme uses them.
 #
 title : Erdiko
-tagline: The Open Source Middleware Framework
+tagline: Enterprise Glue (PHP Micro Framework)
 author : 
-  name : Coleman Tung
-  email : coleman@arroyolabs.com
-  github : colemantung
-  twitter : colemantung
-  feedburner : feedname
+  name : John Arroyo
+  email : john@arroyolabs.com
+  github : arroyo
+  twitter : arroyolabs
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -27,7 +26,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://colemantung.github.io/Erdiko
+production_url : http://erdiko.org
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #

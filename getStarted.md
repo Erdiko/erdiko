@@ -10,8 +10,8 @@ header: GetStarted
 ## System requirements
 ---
 
-#####Web server
-* Apache, Nginx, or Microsoft IIS
+#####Webserver
+* Apache with mod rewrite (or equivalent server)
 
 #####PHP
 * PHP 5.3 or higher.
