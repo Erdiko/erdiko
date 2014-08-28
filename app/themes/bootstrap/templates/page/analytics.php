@@ -10,5 +10,3 @@
 
     </script>
   <?php endif ?>
-
-  <?php error_log("analytics") ?>

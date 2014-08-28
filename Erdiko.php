@@ -119,18 +119,19 @@ class Erdiko
 		if(Erdiko::$_logObject==null)
 		{
 			$config = Erdiko::getConfig("application/default");
-			$logFiles=$config["logs"]["files"][0];				
-			$logDir=$config["logs"]["path"];
-			Erdiko::$_logObject=new erdiko\core\Logger($logFiles,$logDir);
+			$logFiles = $config["logs"]["files"][0];				
+			$logDir = $config["logs"]["path"];
+
+			Erdiko::$_logObject = new erdiko\core\Logger($logFiles, $logDir);
 		}
 		return Erdiko::$_logObject->log($logString, $logLevel, $logKey);
 	}
 	
 	/**
-	* Get the configured cache instance using name
-	* 
-	* @return cache $cache returns the instance of the cache type
-	*/	
+	 * Get the configured cache instance using name
+	 * 
+	 * @return cache $cache returns the instance of the cache type
+	 */	
 	public static function getCache($cacheType=null)
 	{
 		$config = Erdiko::getConfig("application/default");

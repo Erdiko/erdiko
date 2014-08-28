@@ -62,7 +62,7 @@ class Example extends \erdiko\core\Controller
 	}
 
 	/**
-	 * Get base line
+	 * Get baseline, the simplest page around town
 	 */
 	public function getBaseline()
 	{
