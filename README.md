@@ -71,7 +71,7 @@ Coming Soon...
 Special Thanks
 --------------
 
-Arroyo Labs - For sponsoring development, http://arroyolabs.com
+Arroyo Labs - For sponsoring development, [http://arroyolabs.com](http://arroyolabs.com)
 
 Toro - PHP router (micro framework), http://toroweb.org
 
