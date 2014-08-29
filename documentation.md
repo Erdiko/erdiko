@@ -71,7 +71,14 @@ In a controller class, every function whose name starts with 'get' represents th
 
 ## Views
 
-The views are located at `app/views/’.
+The views are stored in `app/views/’ directory.  Views is similar to Layout, however, they are not actually the same. Layout can set inside a layout or a view which view can only contain Layout. Moreover, you can put any HTML or PHP code inside a view.
+
+Here is an example of a view:
+
+	<p>This is a view template.</p>
+	<p><?php echo $data[0] ?> world</p>
+
+It supports HTML tags and ables to use PHP to retrieve variables.
 
 ---
 
