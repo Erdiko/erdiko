@@ -10,9 +10,16 @@ header: Documentation
 
 ## Config
 
-The config folder is located at /app/config/
+The config folder is stored in `/app/config/` directory and the default application config file is located at `/app/config/application/default.json`.
+In the config file, you can modify some settings of the site and plugins, such as logging, cache, and analytics.  
 
-The default application config file is /app/config/application/default.json
+If you wish to store configurations for other applications, we recommend you to create a new config file under `/app/config/` directory. Moreover, all config files are stored in JSON format and you can retrieve config from the config file though the getConfig function in Erdiko class.  
+
+For example, to read the configuration of Cache which is located at `/app/config/cache.json` directory, you can use the following code:
+
+		$config = \Erdiko::getConfig("local/cache");
+		$host = $config["memcached"]["host"];				
+		$port = $config["memcached"]["port"];
 
 ---
 
@@ -20,7 +27,7 @@ The default application config file is /app/config/application/default.json
 
 ## Routes
 
-Application routes are defined in the file, /app/config/application/routes.json 
+Application routes are defined in the file, `/app/config/application/routes.json` 
 Update your app's routes in this file.
 
 Erdiko uses the same routing conventions defined by ToroPHP (modeled after Tornado, a python framework)
@@ -41,7 +48,7 @@ For more information on routing see [Toro PHP routing](https://github.com/anandk
 
 ## Controllers
 
-If you have already configurated the routes file, the next step would be creating controllers which determine the content of pages.  Controllers are typically stored in `app/controllers/’ directory.  Since Erdiko uses Composer to auto-load our PHP classes, you may place controllers in other directory as long as they have the same namespace anc corresponding folder structure.
+If you have already configurated the routes file, the next step would be creating controllers which determine the content of pages.  Controllers are typically stored in `app/controllers/` directory.  Since Erdiko uses Composer to auto-load our PHP classes, you may place controllers in other directory as long as they have the same namespace anc corresponding folder structure.
 
 Here is an example of a basic controller class:
 
@@ -62,7 +69,7 @@ Here is an example of a basic controller class:
 		}
 	}
 
-In a controller class, every function whose name starts with 'get' represents the logic of a page. For example, if you are running the site on your local machine, the url of the site on the example above would be http://localhost/hello.
+In a controller class, every function whose name starts with 'get' represents the logic of a page. For example, if you are running the site on your local machine, the url of the site on the example above would be `http://localhost/hello`.
 
 ---
 
@@ -71,7 +78,7 @@ In a controller class, every function whose name starts with 'get' represents th
 
 ## Views
 
-The views are stored in `app/views/’ directory.  Views is similar to Layout, however, they are not actually the same. Layout can set inside a layout or a view which view can only contain Layout. Moreover, you can put any HTML or PHP code inside a view.
+The views are stored in `app/views/` directory.  Views is similar to Layout, however, they are not actually the same. Layout can set inside a layout or a view which view can only contain Layout. Moreover, you can put any HTML or PHP code inside a view.
 
 Here is an example of a view:
 
