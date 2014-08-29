@@ -104,7 +104,9 @@ Here is a link to a tutorial of basic usage.
 
 ## Hooks
 
-For more hooks information see https://github.com/anandkunal/ToroPHP#torohook-callbacks
+In Erdiko, Hook is mainly driven by the router ToroPHP. Hook is very useful in Erdiko framework and it allows you to excute code before and after a controller is called.  It can also increase the security when communicating with third party applications.  For example, when you made a request to a third party application which is going to do a call-back action to your site, you can use hooks to hooks to verfiy the session.
+
+For more hooks information, please see https://github.com/anandkunal/ToroPHP#torohook-callbacks
 
 ---
 
