@@ -213,4 +213,33 @@ class Example extends \erdiko\core\Controller
 		$this->setTitle('Example: Grid');
 		$this->setContent( $this->getLayout('grid/default', $data) );
 	}
+
+	//Footer
+
+	/**
+	 * Get Config
+	 */
+	public function getConfig()
+	{
+		$data = \Erdiko::getConfig("application/default");
+		$this->setTitle('Shopify: Customers');
+		$this->setContent( $this->getLayout('json', $data) );
+	}
+
+	/**
+	 * Get Exception
+	 */
+	public function getException()
+	{
+		$this->setContent( $this->getLayout('notExist', null) );
+	}
+
+	/**
+	 * Get About
+	 */
+	public function getAbout()
+	{
+		$this->setTitle( "About" );
+		$this->setContent( "Arroyolabs - We don't make websites, we build businesses" );
+	}
 }
