@@ -41,7 +41,28 @@ For more information on routing see [Toro PHP routing](https://github.com/anandk
 
 ## Controllers
 
-The controllers are located at `app/controllers/’.
+If you have already configurated the routes file, the next step would be creating controllers which determine the content of pages.  Controllers are typically stored in `app/controllers/’ directory.  Since Erdiko uses Composer to auto-load our PHP classes, you may place controllers in other directory as long as they have the same namespace anc corresponding folder structure.
+
+Here is an example of a basic controller class:
+
+	class Example extends \erdiko\core\Controller
+	{
+		/** Before */
+		public function _before()
+		{
+			$this->setThemeName('bootstrap');
+			$this->prepareTheme();
+		}
+
+		/** Get Hello */
+		public function getHello()
+		{
+			$this->setTitle('Hello World');
+			$this->setContent("Hello World");
+		}
+	}
+
+In a controller class, every function whose name starts with 'get' represents the logic of a page. For example, if you are running the site on your local machine, the url of the site on the example above would be http://localhost/hello.
 
 ---
 
