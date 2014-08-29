@@ -86,7 +86,10 @@ It supports HTML tags and ables to use PHP to retrieve variables.
 
 ## Models
 
-The models are located at `app/models/’.
+Erdiko is a mash-up framework and our goal is to make Erdiko be able to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, Zend, and etc.  There are lots of different models out there and it is not feasible to cover all of that.  Therefore, you may design your model layer depending on your needs.
+
+For example, if you site is using database MySQL, Oracle, Microsoft SQL Server, PostgreSQL, SAP Sybase SQL Anywhere, SQLite, or Drizzle, you may consider to adopt Doctrine's Database Abstraction Layer framework to Erdiko.
+Here is a link to a tutorial of basic usage.
 
 ---
 
