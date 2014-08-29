@@ -67,6 +67,7 @@ class Example extends \erdiko\core\Controller
 	public function getBaseline()
 	{
 		$this->setContent( "The simplest page possible" );
+		// $test = Erdiko::log("This is my log message."); // testing the logger
 	}
 
 	/**
@@ -214,7 +215,7 @@ class Example extends \erdiko\core\Controller
 		$this->setContent( $this->getLayout('grid/default', $data) );
 	}
 
-	//Footer
+	/* Footer */
 
 	/**
 	 * Get Config
@@ -240,6 +241,8 @@ class Example extends \erdiko\core\Controller
 	public function getAbout()
 	{
 		$this->setTitle( "About" );
-		$this->setContent( "Arroyolabs - We don't make websites, we build businesses" );
+
+		$data = \Erdiko::getConfig("application/default");
+		$this->setContent( "<h2>{$data['site']['full_name']}</h2> <h3>{$data['site']['tagline']}</h3> <p>{$data['site']['description']}</p>" );
 	}
 }

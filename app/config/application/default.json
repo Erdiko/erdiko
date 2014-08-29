@@ -1,12 +1,13 @@
 {
    "site":{
-      "name":"ErdikoMicro",
-      "full_name":"Erdiko Micro Framework",
-      "tagline":"The Micro Mashup Framework",
+      "name":"Erdiko",
+      "full_name":"Erdiko",
+      "tagline":"Enterprise Glue (PHP Micro Framework)",
+      "description":"Erdiko wants to make your php development easier. If you need a lightweight MVC framework you have come to the right place. Our goal is to offer a clean framework to create sites optimized for mobile devices, APIs and multiple browsers.",
       "meta":[
          {
             "name":"description",
-            "content":"Erdiko Micro, Enterprise glue"
+            "content":"Enterprise Glue (PHP Micro Framework)"
          }
       ]
    },
@@ -73,10 +74,9 @@
       "name":"default",
       "path":"/var/logs",
       "files":[{
-            "default":"system.log",
-            "exception":"exception.log"
-		}
-      ]
+         "default":"system.log",
+         "exception":"exception.log"
+	   }]
    },
    "cache":{
       "default":{
