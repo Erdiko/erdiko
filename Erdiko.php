@@ -63,8 +63,17 @@ class Erdiko
 	 */
 	public static function getConfigFile($file)
 	{
-		$data = str_replace("\\", "\\\\", file_get_contents($file));
-		$json = json_decode($data, TRUE);
+		if(is_file($file))
+		{
+			$data = str_replace("\\", "\\\\", file_get_contents($file));
+			$json = json_decode($data, TRUE);
+
+			if(empty($json))
+				throw new \Exception("Config file has a json parse error, $file");
+
+		} else {
+			throw new \Exception("Config file not found, $file");
+		}
 		
 		return $json;
 	}
