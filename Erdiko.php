@@ -29,6 +29,7 @@ class Erdiko
 	 */
 	public static function getTemplate($filename, $data)
 	{
+		$filename = escapeshellarg($filename);
 		if (is_file($filename))
 		{
 			ob_start();
@@ -47,8 +48,8 @@ class Erdiko
 	public static function getView($viewName, $data = null, $templateRootFolder = null)
 	{
 		$view = new \erdiko\core\View($viewName, $data);
-		//echo $templateRootFolder;
-		if ($templateRootFolder != null)
+
+		if ($templateRootFolder !== null)
 		{
 			$view->setTemplateRootFolder($templateRootFolder);
 		}
@@ -63,6 +64,7 @@ class Erdiko
 	 */
 	public static function getConfigFile($file)
 	{
+		$file = escapeshellarg($file);
 		if(is_file($file))
 		{
 			$data = str_replace("\\", "\\\\", file_get_contents($file));
@@ -85,8 +87,6 @@ class Erdiko
 	{
 		$filename = APPROOT.'/config/'.$name.'.json';
 		return self::getConfigFile($filename);
-		// return \erdiko\core\Config::getConfig($name)->getContext();
-		// return self::getConfigFile($file);
 	}
 	
 	/**
@@ -125,7 +125,7 @@ class Erdiko
 	 */
 	public static function log($logString, $logLevel = null, $logKey = null)
 	{
-		if(Erdiko::$_logObject==null)
+		if(Erdiko::$_logObject===null)
 		{
 			$config = Erdiko::getConfig("application/default");
 			$logFiles = $config["logs"]["files"][0];				
@@ -141,12 +141,10 @@ class Erdiko
 	 * 
 	 * @return cache $cache returns the instance of the cache type
 	 */	
-	public static function getCache($cacheType=null)
+	public static function getCache($cacheType="default")
 	{
 		$config = Erdiko::getConfig("application/default");
-		if(!isset($cacheType))
-			$cacheType = "default";
-
+		
 		if(isset($config["cache"][$cacheType]))
 		{
 			$cacheConfig = $config["cache"][$cacheType];
