@@ -58,11 +58,11 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 ---
 1. Open the config file of your web server
 
-2. Change the webroot to `[your computer path]/erdiko/public`
+2. Change the webroot to `[local erdiko code path]/public`
 
 3. Save changes and restart your web server.
 
-4. Type http://localhost into your browser
+4. Type http://localhost into your browser (or your virtual host name)
 
 5. If you can see the Hello world page, you have successfully installed Erdiko!
 
