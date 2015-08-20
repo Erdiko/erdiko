@@ -6,7 +6,7 @@
  * 
  * @category	Erdiko
  * @package		Erdiko
- * @copyright 	Copyright (c) 2014, Arroyo Labs, www.arroyolabs.com
+ * @copyright 	Copyright (c) 2015, Arroyo Labs, www.arroyolabs.com
  * @author		John Arroyo, john@arroyolabs.com
  */
 
@@ -29,7 +29,7 @@ class Erdiko
 	 */
 	public static function getTemplate($filename, $data)
 	{
-		$filename = escapeshellarg($filename);
+		$filename = escapeshellcmd($filename);
 		if (is_file($filename))
 		{
 			ob_start();
@@ -64,7 +64,7 @@ class Erdiko
 	 */
 	public static function getConfigFile($file)
 	{
-		$file = escapeshellarg($file);
+		$file = escapeshellcmd($file);
 		if(is_file($file))
 		{
 			$data = str_replace("\\", "\\\\", file_get_contents($file));
