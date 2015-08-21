@@ -21,7 +21,7 @@ ToroHook::add("404", function($vars = array()) {
     if(!isset($vars['path_info']))
     	$vars['path_info'] = "";
 
-    Erdiko::log("404 {$vars['path_info']}, {$vars['error']}", \erdiko\core\Logger::LOG);
+    Erdiko::log(\Psr\Log\LogLevel::ERROR, "404 {$vars['path_info']} {$vars['error']}");
 
     // For a simple text only 404 page use this...
     // echo "Sorry, we cannot find that URL";
@@ -39,6 +39,6 @@ ToroHook::add("404", function($vars = array()) {
 
 ToroHook::add("500", function($vars = array()) {
 	// error_log("vars: ".print_r($vars, true));
-	Erdiko::log("500 {$vars['path_info']}, {$vars['error']}", \erdiko\core\Logger::EXCEPTION, 'exception');
+    Erdiko::log(\Psr\Log\LogLevel::ERROR, "500 {$vars['path_info']} {$vars['error']}");
     echo "Sorry, something went wrong";
 });

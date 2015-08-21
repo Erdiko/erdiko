@@ -19,7 +19,7 @@
   ],
   "js": {
     "jquery": {
-      "file": "https://code.jquery.com/jquery-1.11.3.js",
+      "file": "http://code.jquery.com/jquery-1.11.3.js",
       "active": 1,
       "order": 1
     },
