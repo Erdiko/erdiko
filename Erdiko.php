@@ -30,6 +30,7 @@ class Erdiko
 	public static function getTemplate($filename, $data)
 	{
 		$filename = addslashes($filename);
+
 		if (is_file($filename))
 		{
 			ob_start();
