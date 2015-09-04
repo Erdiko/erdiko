@@ -29,7 +29,8 @@ class Erdiko
 	 */
 	public static function getTemplate($filename, $data)
 	{
-		$filename = escapeshellcmd($filename);
+		$filename = addslashes($filename);
+
 		if (is_file($filename))
 		{
 			ob_start();
@@ -62,19 +63,19 @@ class Erdiko
 	 * @param string $file
 	 * @return array $config
 	 */
-	public static function getConfigFile($file)
+	public static function getConfigFile($filename)
 	{
-		$file = escapeshellcmd($file);
-		if(is_file($file))
+		$filename = addslashes($filename);
+		if(is_file($filename))
 		{
-			$data = str_replace("\\", "\\\\", file_get_contents($file));
+			$data = str_replace("\\", "\\\\", file_get_contents($filename));
 			$json = json_decode($data, TRUE);
 
 			if(empty($json))
-				throw new \Exception("Config file has a json parse error, $file");
+				throw new \Exception("Config file has a json parse error, $filename");
 
 		} else {
-			throw new \Exception("Config file not found, $file");
+			throw new \Exception("Config file not found, $filename");
 		}
 		
 		return $json;
@@ -123,18 +124,17 @@ class Erdiko
 	 * @todo add log level as a number instead of a constant
 	 * @return bool $sucess
 	 */
-	public static function log($logString, $logLevel = null, $logKey = null)
-	{
-		if(Erdiko::$_logObject===null)
-		{
-			$config = Erdiko::getConfig("application/default");
-			$logFiles = $config["logs"]["files"][0];				
-			$logDir = $config["logs"]["path"];
+    public static function log($level, $message, array $context = array()){
+        if(Erdiko::$_logObject==null)
+        {
+            $config = Erdiko::getConfig("application/default");
+            $logFiles = $config["logs"]["files"][0];
+            $logDir = $config["logs"]["path"];
 
-			Erdiko::$_logObject = new erdiko\core\Logger($logFiles, $logDir);
-		}
-		return Erdiko::$_logObject->log($logString, $logLevel, $logKey);
-	}
+            Erdiko::$_logObject = new erdiko\core\Logger($logFiles, $logDir);
+        }
+        return Erdiko::$_logObject->log($level, $message, $context);
+    }
 	
 	/**
 	 * Get the configured cache instance using name
