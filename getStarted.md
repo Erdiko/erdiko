@@ -60,11 +60,14 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 2. Change the webroot to `[local erdiko code path]/public`
 
-3. Save changes and restart your web server.
+3. Create a folder named var in  `[local erdiko code path]/` and change the group of the `/var` folder to `www-data` using chgrp www-data 
+   `[local erdiko code path]/var`
 
-4. Type http://localhost into your browser (or your virtual host name)
+4. Save changes and restart your web server.
 
-5. If you can see the Hello world page, you have successfully installed Erdiko!
+5. Type http://localhost into your browser (or your virtual host name)
+
+6. If you can see the Hello world page, you have successfully installed Erdiko!
 
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
@@ -114,7 +117,7 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 6. Add the following function inside the Index class
 
-<script src="https://gist.github.com/colemantung/c02660ab203eb97375a5.js"></script>
+<script src="https://gist.github.com/rajesh28892/e705c62d5e623a2ede57.js"></script>
 
 7. Save the changes and open the site in your browser.
    You should be able to see your first page.
@@ -128,7 +131,7 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	<strong>Heads up!</strong>
-	<p>If you want to create a full page, you can add the following line in the myfirstpageAction function. <br>
+	<p>If you want to create a full page, you can add the following line in the getMyfirstpage function. <br>
 	<p align="center">$this->setTemplate('fullpage');</p>
 	</p>
 </div>
@@ -144,13 +147,13 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 3. Insert the following code:
 
-		$this->setView('[Path of the .php file]');
+		$this->addView('[Path of the .php file]');
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	<strong>Heads up!</strong> The root of the path is `Erdiko/app/views`.<br>
 	For example, if you want to use the php file located at `Erdiko/app/views/example/test.php`,
-	the path will be `/example/test.php`.
+	the path will be `/example/test`.
 </div>
 
 
@@ -165,7 +168,7 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 3. Insert the following code:
 
-		$this->addJs('[Path of the .js file]');
+		$this->getResponse()->getTheme()->addJs('[Path of the .js file]');
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
@@ -195,13 +198,7 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 5.  Add the following function inside the Examples class
 
-		public function bmiAction()
-		{
-			$this->setTitles('BMI Example');
-			$this->setView('/examples/bmi.php');
-
-			$this->addJs('/themes/hello/js/example.js'); //Link JS to the page
-		}
+<script src="https://gist.github.com/rajesh28892/20a1af56027064effdb9.js"></script>
 
 6.  Create a file called `bmi.php` under `Erdiko/app/views/examples/`
 
@@ -245,7 +242,7 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 5.  Paste the following code inside the `Calculator.php`
 
-<script src="https://gist.github.com/colemantung/2154a0c0d36b96529cc7.js"></script>
+<script src="https://gist.github.com/rajesh28892/dc523f2739b48b1ff224.js"></script>
 
 6.  Create a file called `bmi.php` under `Erdiko/app/views/examples/`
 
