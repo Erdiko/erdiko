@@ -4,34 +4,36 @@
 <meta charset="utf-8">
 
 <?php
-	// Spit out meta tags
-	foreach($data->getMeta() as $name => $content)
-		echo '<meta name="'.$name.'" content="'.$content.'" >';
+    // Spit out meta tags
+foreach ($data->getMeta() as $name => $content) {
+    echo '<meta name="'.$name.'" content="'.$content.'" >';
+}
 ?>
 
 <title><?php echo $data->getPageTitle(); ?></title>
 
 <?php
   // Spit out CSS
-  foreach($data->getCss() as $css)
-  {
-    if($css['active'])
-      echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
-  }
+foreach ($data->getCss() as $css) {
+    if ($css['active']) {
+        echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
+    }
+}
 ?>
 </head>
 <body>
 
 <div id="pagewrap">
-  <div class="container content-main">
+    <div class="container content-main">
     <?php echo $this->getContent(); ?>
-  </div>
+    </div>
 </div>
 
 <?php
-	// Spit out JS below the footer
-	foreach($data->getJs() as $js)
-		echo "<script src='".$js['file']."'></script>\n";
+    // Spit out JS below the footer
+foreach ($data->getJs() as $js) {
+    echo "<script src='".$js['file']."'></script>\n";
+}
 ?>
 <script type="text/javascript">/* <![CDATA[ */
 $(document).ready(function() {
