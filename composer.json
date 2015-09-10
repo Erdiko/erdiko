@@ -13,9 +13,7 @@
     "require": {
         "php": ">=5.3.3",
         "erdiko/core": "0.8.*",
-        "twbs/bootstrap": "^3.3",
-        "Psr/Log": "^1.0",
-        "squizlabs/php_codesniffer": "^2.3"
+        "twbs/bootstrap": "^3.3"
     },
     "config": {
         "vendor-dir": "vendor",
