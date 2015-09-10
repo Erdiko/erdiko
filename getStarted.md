@@ -60,11 +60,14 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 2. Change the webroot to `[local erdiko code path]/public`
 
-3. Save changes and restart your web server.
+3. Create a folder named var in  `[local erdiko code path]/` and change the group of the `/var` folder to `www-data` using chgrp www-data 
+   `[local erdiko code path]/var`
 
-4. Type http://localhost into your browser (or your virtual host name)
+4. Save changes and restart your web server.
 
-5. If you can see the Hello world page, you have successfully installed Erdiko!
+5. Type http://localhost into your browser (or your virtual host name)
+
+6. If you can see the Hello world page, you have successfully installed Erdiko!
 
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
