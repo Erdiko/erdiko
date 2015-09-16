@@ -115,22 +115,30 @@ class Erdiko
     }
     
     /**
-     * log
+     * log message to log file
+     * If you enter null for level it will default to 'debug'
      *
-     * @usage Erdiko::log('Sample notice',Logger::LogLevel,'Default')
-     * Need to import erdiko\core\Logger to use this function
-     * @todo add log level as a number instead of a constant
-     * @return bool $sucess
+     * @usage \Erdiko::log('debug',"Message here...", array())
+     *
+     * @param string $level
+     * @param string $message
+     * @param array $context
+     * @return bool $success
      */
     public static function log($level, $message, array $context = array())
     {
-        if (Erdiko::$_logObject==null) {
+        if(Erdiko::$_logObject==null)
+        {
             $config = Erdiko::getConfig("application/default");
             $logFiles = $config["logs"]["files"][0];
             $logDir = $config["logs"]["path"];
 
             Erdiko::$_logObject = new erdiko\core\Logger($logFiles, $logDir);
         }
+
+        if(empty($level))
+            $level = \Psr\Log\LogLevel::DEBUG; // Default to debug for convenience
+
         return Erdiko::$_logObject->log($level, $message, $context);
     }
     
