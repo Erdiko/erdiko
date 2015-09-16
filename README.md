@@ -8,7 +8,7 @@ Erdiko is an MVC micro framework or better yet, an enterprise Mash-Up framework.
 Version (SemVer)
 ----------------
 
-0.8.9
+0.8.12
 
 Installation
 ------------
