@@ -26,7 +26,7 @@ class AjaxExample extends \erdiko\core\AjaxController
 		if($var != null)
 		{
 			// load action
-			return $this->autoaction($var);
+			return $this->_autoaction($var);
 		}
 
 		$m = new \Mustache_Engine;
