@@ -1,11 +1,11 @@
 {
-	"master": {
-		"adapter": "Mysqli",
-		"params": {
+    "master": {
+        "adapter": "Mysqli",
+        "params": {
             "host": "127.0.0.1",
             "username": "root",
             "password": "",
             "dbname": "erdiko"
         }
-	}
+    }
 }

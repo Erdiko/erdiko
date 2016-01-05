@@ -8,30 +8,40 @@ Erdiko is an MVC micro framework or better yet, an enterprise Mash-Up framework.
 Version (SemVer)
 ----------------
 
-0.8.2
+0.8.12
 
 Installation
 ------------
 
-Clone erdiko from github and set up an apache vhost to the webroot.
+***via composer***
 
-Webroot is located at /www/public/
+at the commandline run,
 
-Theme/view files go in the /www/public folder while application code goes in the /www/app/ folder.  Do not modify files outside of app and public folder if you want to maintain an easy upgrade path with Erdiko.
+	composer create-project erdiko/erdiko
+
+***via git & composer***
+
+Clone erdiko from github and run "composer install" in the root folder /
+
+1. git clone git@github.com:ArroyoLabs/erdiko.git
+2. cd erdiko
+3. composer install
+
+***Server***
+
+Now that you have the latest code, set up an apache vhost to the webroot which is located at /public/
+
+In general, downloadable files go in the /public folder while application code goes in the /app/ folder.  Erdiko core code is in the /vendor/erdiko/ folder.
 
 Vision
 ------
 
-This software is a clean middleware framework, hence the name Erdiko which means middle in the Basque language (Euskara).  Our goal is to offer a lightweight framework to create sites optimized for mobile devices, APIs and multiple browsers.
+Erdiko wants to make your php development easier. If you need a lightweight MVC framework then this is the tool for you. Our goal is to offer a clean platform to create sites optimized for mobile devices, APIs and multiple browsers.
 
-The framework seeks to make custom app development and leveraging multiple open source projects an easier task.  If you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application then give Erdiko a shot.  If you want a clean, light weight framework you have also come to the right place.
-
-The goal is to have a self contained MVC framework that is complete and flexible yet assumes that other self contained projects can be added while maintaining a clean architecture.  Hence the mashup.  We hope that by having good design patterns for mixing other projects may be added then when warranted.  
+Erdiko can act as a mash-up or middleware framework, hence the name 'Erdiko' which means 'middle' in the Basque language (Euskara). Use Erdiko if you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application.
 
 Notes
 -----
-
-The code is a work in progress, and although stable, may contain items that need more refinement.  It is a functional Alpha codebase that will be post Beta later this year.  There are various production sites currently using this software yet it is best to consider it pre-beta, so be sure you know what your doing before you use it in a production environment.
 
 We value feedback and would love to hear your thoughts about the architecture and ease of use of this framework.  There are a lot of possibilities for Erdiko, we value your ideas and thoughts about where to take this codebase.
 
@@ -61,9 +71,8 @@ Coming Soon...
 Special Thanks
 --------------
 
-Arroyo Labs - For sponsoring development, http://arroyolabs.com
-
-less - dynamic stylesheet language, http://lesscss.org
+Arroyo Labs - For sponsoring development, [http://arroyolabs.com](http://arroyolabs.com)
 
 Toro - PHP router (micro framework), http://toroweb.org
 
+LESS - dynamic stylesheet language, http://lesscss.org

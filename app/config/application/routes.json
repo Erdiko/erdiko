@@ -1,8 +1,8 @@
 {
-	"routes": {
-		"/": "\app\controllers\Example",
-		"examples/:alpha": "\app\controllers\Example",
-		"ajax/:alpha": "\app\controllers\AjaxExample",
-		"/:alpha": "\app\controllers\Example"
-	}
+    "routes": {
+        "/": "\app\controllers\Example",
+        "examples/:alpha": "\app\controllers\Example",
+        "ajax/:alpha": "\app\controllers\AjaxExample",
+        "/:alpha": "\app\controllers\Example"
+    }
 }

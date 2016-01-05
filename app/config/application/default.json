@@ -1,97 +1,97 @@
 {
-   "site":{
-      "name":"ErdikoMicro",
-      "full_name":"Erdiko Micro Framework",
-      "tagline":"The Micro Mashup Framework",
-      "meta":[
-         {
+    "site":{
+        "name":"Erdiko",
+        "full_name":"Erdiko",
+        "tagline":"Enterprise Glue (PHP Micro Framework)",
+        "description":"Erdiko wants to make your php development easier. If you need a lightweight MVC framework you have come to the right place. Our goal is to offer a clean framework to create sites optimized for mobile devices, APIs and multiple browsers.",
+        "meta":[
+        {
             "name":"description",
-            "content":"Erdiko Micro, Enterprise glue"
-         }
-      ]
-   },
-   "theme":{
-      "name":"bootstrap",
-      "namespace":"/app/themes/bootstrap",
-      "public":"/public/themes/bootstrap"
-   },
-   "layout":{
-      "layout":{
-         "columns":1
-      },
-      "title":"Erdiko",
-      "site_name":"Erdiko",
-      "header":{
-         "site_name":"Erdiko",
-         "tagline":"The Mashup Framework",
-         "content":""
-      }
-   },
-   "menu":{
-      "main":[
-         {
+            "content":"Enterprise Glue (PHP Micro Framework)"
+        }
+        ]
+    },
+    "theme":{
+        "name":"bootstrap",
+        "namespace":"/app/themes/bootstrap",
+        "public":"/public/themes/bootstrap"
+    },
+    "layout":{
+        "layout":{
+            "columns":1
+        },
+        "title":"Erdiko",
+        "site_name":"Erdiko",
+        "header":{
+            "site_name":"Erdiko",
+            "tagline":"The Mashup Framework",
+            "content":""
+        }
+    },
+    "menu":{
+        "main":[
+        {
             "href":"/examples/index",
             "title":"Examples"
-         },
-         {
+        },
+        {
             "href":"/examples/markup",
             "title":"Mark-Up"
-         },
-         {
+        },
+        {
             "href":"/examples/grid",
             "title":"Grid"
-         },
-         {
+        },
+        {
             "href":"/examples/twocolumn",
             "title":"2 Column Layout"
-         },
-         {
+        },
+        {
             "href":"/threecolumn",
             "title":"3 Column Layout"
-         }
-      ],
-      "footer":[
-         {
+        }
+        ],
+        "footer":[
+        {
             "href":"/",
             "title":"home"
-         },
-         {
+        },
+        {
             "href":"/config",
             "title":"view config"
-         },
-         {
+        },
+        {
             "href":"/exception",
-            "title":"exception example"
-         },
-         {
+        "title":"exception example"
+        },
+        {
             "href":"/about",
             "title":"about"
-         }
-      ]
-   },
-   "logs":{
-      "name":"default",
-      "path":"/var/logs",
-      "files":[{
+        }
+    ]
+    },
+    "logs":{
+        "name":"default",
+        "path":"/var/logs",
+        "files":[{
             "default":"system.log",
             "exception":"exception.log"
-		}
-      ]
-   },
-   "cache":{
-      "default":{
-			"type":"File",
-         "class":"\erdiko\core\cache\File",
-         "path":"/var/cache"
-	  },
-     "memcached":{
-         "type":"Memcached",
-         "class":"\erdiko\core\cache\Memcached"
-     }
-   },
-   "analytics":{
-      "google":{
-         "id":""
-      }
-   }
+        }]
+    },
+    "cache":{
+        "default":{
+            "type":"File",
+            "class":"\erdiko\core\cache\File",
+            "path":"/var/cache"
+    },
+    "memcached":{
+        "type":"Memcached",
+        "class":"\erdiko\core\cache\Memcached"
+    }
+    },
+    "analytics":{
+        "google":{
+            "id":""
+    }
+    }
 }
