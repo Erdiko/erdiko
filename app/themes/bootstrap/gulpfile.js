@@ -1,6 +1,19 @@
 var _    = require('lodash'),
-    gulp = require('gulp');
+    gulp = require('gulp'),
+    less = require('gulp-less'),
+    path = require('path');
 
+// compile less
+gulp.task('less', function () {
+  return gulp.src('./less/**/*.less')
+  .pipe(less({
+    paths: [ path.join(__dirname, 'less', 'includes') ]
+  }))
+  .pipe(gulp.dest('./css'));
+});
+
+
+// copy assests to public dir
 gulp.task('copy-assets', function() {
     var assets = {
         js: [
@@ -11,8 +24,8 @@ gulp.task('copy-assets', function() {
             './js/default.js'
         ],
         css: [
-          './node_modules/bootstrap/dist/css/bootstrap.min.css',
-          './node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+          //'./node_modules/bootstrap/dist/css/bootstrap.css',
+          //'./node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
           './css/carousel.css',
           './css/home.css',
           './css/default.css'

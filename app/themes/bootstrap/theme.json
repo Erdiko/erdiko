@@ -14,7 +14,7 @@
       {
           "name": "default",
           "file": "/themes/bootstrap/css/bootstrap.min.css",
-          "active": 1
+          "active": 0
       },
       {
           "name": "default",
