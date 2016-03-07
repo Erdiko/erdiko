@@ -5,6 +5,8 @@ Erdiko
 
 Erdiko is an MVC micro framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
 
+http://erdiko.org/
+
 Version (SemVer)
 ----------------
 
@@ -33,12 +35,22 @@ Now that you have the latest code, set up an apache vhost to the webroot which i
 
 In general, downloadable files go in the /public folder while application code goes in the /app/ folder.  Erdiko core code is in the /vendor/erdiko/ folder.
 
+Documentation
+-------------
+
+See our full documentation at http://erdiko.org/
+
 Vision
 ------
 
 Erdiko wants to make your php development easier. If you need a lightweight MVC framework then this is the tool for you. Our goal is to offer a clean platform to create sites optimized for mobile devices, APIs and multiple browsers.
 
-Erdiko can act as a mash-up or middleware framework, hence the name 'Erdiko' which means 'middle' in the Basque language (Euskara). Use Erdiko if you need to mash-up multiple applications/frameworks like Drupal, Magento, WordPress, and Zend into a unified application.
+Erdiko can act as a mash-up or middleware framework too, hence the name 'Erdiko' which means 'middle' in the Basque language (Euskara). Use Erdiko if you need to mash-up multiple components, applications or even full frameworks. Combine things like Symfony Components, Drupal, Magento, WordPress, and Zend into a unified application.
+
+Security Vulnerabilities
+------------------------
+
+If you discover any security vulnerabilities within Erdiko, please create a github issue and send an e-mail to John Arroyo at john@arroyolabs.com. Security is top concern and all vulnerabilities will be quickly addressed.
 
 Notes
 -----
@@ -48,20 +60,20 @@ We value feedback and would love to hear your thoughts about the architecture an
 Team
 ----
 
-**Author**
+**Active Contributors**
 
-	John Arroyo - Architect, Lead Back-End / Integration engineer
-
-**Current Contributors**
-
-	* Coleman Tung - Back-End development and unit testing
+	* John Arroyo
+    * Andy Armstrong
+    * Leo Daidone
 
 **Past Contributors**
 
-	* Varun Brahme - Back-End development and unit testing
-	* Dave LaFLam - Front-End development (default theme)
+    * Fangxiang Wang
+    * Coleman Tung
+	* Varun Brahme
+	* Dave LaFLam
 
-* If you want to help, please do, we'd love more code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
+* If you want to help, please do, we'd love more brains and code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
 Roadmap
 -------
