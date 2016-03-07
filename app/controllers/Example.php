@@ -33,24 +33,6 @@ class Example extends \erdiko\core\Controller
     }
 
     /**
-     * Get
-     *
-     * @param mixed $var
-     * @return mixed
-     */
-    public function get($var = null)
-    {
-        // error_log("var: $var");
-        if (!empty($var)) {
-        // load action based off of naming conventions
-            return $this->_autoaction($var, 'get');
-
-        } else {
-            return $this->getIndex();
-        }
-    }
-
-    /**
      * Homepage Action (index)
      */
     public function getIndex()

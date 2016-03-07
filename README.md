@@ -3,12 +3,12 @@ Erdiko
 
 **Enterprise Glue**
 
-Erdiko is an MVC micro framework or better yet, an enterprise Mash-Up framework.
+Erdiko is an MVC micro framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
 
 Version (SemVer)
 ----------------
 
-0.8.12
+0.8.14
 
 Installation
 ------------
