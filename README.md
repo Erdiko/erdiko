@@ -5,12 +5,9 @@ Erdiko
 
 Erdiko is an MVC micro framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
 
+Get work done without the bloat!
+
 http://erdiko.org/
-
-Version (SemVer)
-----------------
-
-0.8.14
 
 Installation
 ------------
@@ -62,7 +59,7 @@ Team
 
 **Active Contributors**
 
-	* John Arroyo
+    * John Arroyo
     * Andy Armstrong
     * Leo Daidone
 
@@ -70,10 +67,10 @@ Team
 
     * Fangxiang Wang
     * Coleman Tung
-	* Varun Brahme
-	* Dave LaFLam
+    * Varun Brahme
+    * Dave LaFLam
 
-* If you want to help, please do, we'd love more brains and code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
+* If you want to help, please do, we'd love more brains and clever code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
 Roadmap
 -------

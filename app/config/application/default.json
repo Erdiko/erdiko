@@ -57,15 +57,15 @@
             "title":"home"
         },
         {
-            "href":"/config",
+            "href":"/examples/config",
             "title":"view config"
         },
         {
-            "href":"/exception",
+            "href":"/examples/exception",
         "title":"exception example"
         },
         {
-            "href":"/about",
+            "href":"/examples/about",
             "title":"about"
         }
     ]
