@@ -5,13 +5,11 @@
  *
  * @category    app
  * @package     Example
- * @copyright   Copyright (c) 2014, Arroyo Labs, www.arroyolabs.com
+ * @copyright   Copyright (c) 2016, Arroyo Labs, www.arroyolabs.com
  * @author      John Arroyo, john@arroyolabs.com
  */
 namespace app\controllers;
 
-use Erdiko;
-use erdiko\core\Config;
 
 /**
  * Example Controller Class
