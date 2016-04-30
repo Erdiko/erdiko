@@ -82,7 +82,7 @@ class Erdiko
     /**
      * Get configuration
      */
-    public static function getConfig($name = 'default')
+    public static function getConfig($name = 'application/default')
     {
         $filename = APPROOT.'/config/'.$name.'.json';
         return self::getConfigFile($filename);

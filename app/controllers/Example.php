@@ -5,13 +5,11 @@
  *
  * @category    app
  * @package     Example
- * @copyright   Copyright (c) 2014, Arroyo Labs, www.arroyolabs.com
+ * @copyright   Copyright (c) 2016, Arroyo Labs, www.arroyolabs.com
  * @author      John Arroyo, john@arroyolabs.com
  */
 namespace app\controllers;
 
-use Erdiko;
-use erdiko\core\Config;
 
 /**
  * Example Controller Class
@@ -30,24 +28,6 @@ class Example extends \erdiko\core\Controller
     {
         $this->setTitle('Hello World');
         $this->setContent("Hello World");
-    }
-
-    /**
-     * Get
-     *
-     * @param mixed $var
-     * @return mixed
-     */
-    public function get($var = null)
-    {
-        // error_log("var: $var");
-        if (!empty($var)) {
-        // load action based off of naming conventions
-            return $this->_autoaction($var, 'get');
-
-        } else {
-            return $this->getIndex();
-        }
     }
 
     /**

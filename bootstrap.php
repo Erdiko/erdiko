@@ -6,8 +6,6 @@ define('VARROOT', ROOT.'/var');
 
 define('VENDOR', ROOT.'/vendor');
 define('ERDIKO', VENDOR.'/erdiko/core/src/erdiko');
-//define('ERDIKO', APPROOT.'core/src/erdiko');
-//define('SHOPIFY', VENDOR.'/erdiko/shopify/');
 define('VIEWS', APPROOT.'/views/');
 
 // Memcache @todo move to config file
