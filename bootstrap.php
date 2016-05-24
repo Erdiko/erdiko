@@ -5,7 +5,7 @@ define('APPROOT', ROOT.'/app');
 define('VARROOT', ROOT.'/var');
 
 define('VENDOR', ROOT.'/vendor');
-define('ERDIKO', VENDOR.'/erdiko/core/src/erdiko');
+define('ERDIKO', VENDOR.'/erdiko/core/src');
 define('VIEWS', APPROOT.'/views/');
 
 // Memcache @todo move to config file
@@ -17,7 +17,7 @@ require_once ROOT.'/Erdiko.php';
 
 // Core
 require_once ERDIKO.'/Toro.php';
-require_once ERDIKO.'/core/autoload.php';
+require_once ERDIKO.'/autoload.php';
 
 // Composer
 require_once VENDOR.'/autoload.php';
