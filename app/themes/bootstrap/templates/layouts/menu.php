@@ -3,7 +3,7 @@
         <h1>Basic usage</h1>
         <div class="col-md-3" id="column-left">
         <?php
-            $data = $data->getData();
+            $data = $this->getData();
 
             echo $data['example']
         ?>

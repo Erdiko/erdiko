@@ -5,16 +5,16 @@
 
 <?php
     // Spit out meta tags
-foreach ($data->getMeta() as $name => $content) {
+foreach ($this->getMeta() as $name => $content) {
     echo '<meta name="'.$name.'" content="'.$content.'" >';
 }
 ?>
 
-<title><?php echo $data->getPageTitle(); ?></title>
+<title><?php echo $this->getPageTitle(); ?></title>
 
 <?php
   // Spit out CSS
-foreach ($data->getCss() as $css) {
+foreach ($this->getCss() as $css) {
     if ($css['active']) {
         echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
     }
@@ -31,7 +31,7 @@ foreach ($data->getCss() as $css) {
 
 <?php
     // Spit out JS below the footer
-foreach ($data->getJs() as $js) {
+foreach ($this->getJs() as $js) {
     echo "<script src='".$js['file']."'></script>\n";
 }
 ?>
@@ -41,7 +41,7 @@ $(document).ready(function() {
 });
 /* ]]> */</script>
 
-<?php echo $data->getTemplateHtml('analytics') ?>
+<?php echo $this->getTemplateHtml('analytics') ?>
 
 </body>
 </html>

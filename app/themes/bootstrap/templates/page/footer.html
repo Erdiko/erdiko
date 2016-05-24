@@ -1,16 +1,17 @@
-<footer id="footer">
-    <div class="container">
-
-    <ul class="nav nav-justified">
-        {{# menu.footer}}
-            <li><a href="{{href}}">{{title}}</a></li>
-        {{/ menu.footer}}
-    </ul>
-
-    <div class="copyright clearfix">
-    <p>Copyright &copy; 2016 All rights reserved. <a href="/">{{site.full_name}}</a><br />
+    <div class="spacer">&nbsp;</div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-inline">
+                <li class="pull-right"><a href="#top">Back to top</a></li>
+                {{# menu.footer}}
+                    <li><a href="{{href}}">{{title}}</a></li>
+                {{/ menu.footer}}
+            </ul>
+            <p>{{site.copyright}} <a href="/">{{site.full_name}}</a><br />
     Powered by <a href="https://github.com/arroyo/Erdiko" target="_blank">Edriko</a></p>
-    </div>
-
-</div>
-</footer>
+          </div>
+        </div>
+      </div>
+    </footer>

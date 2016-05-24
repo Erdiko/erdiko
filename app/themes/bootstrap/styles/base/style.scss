@@ -1,0 +1,62 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/bootswatch-sass/flatly/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../node_modules/bootswatch-sass/flatly/bootstrap";
+
+
+/* Variables
+-------------------------------------------------- */
+$gray-blue:             #639db2;
+$green-dark:            #0E5806;
+$green-light:           #04BF05;
+
+$brand-primary:         $green-dark;
+$brand-success:         $green-light;
+$navbar-default-bg:     $brand-primary;
+
+
+/* General
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+body > .container, body > .container-fluid {
+  padding: 60px 15px 0;
+}
+.spacer {
+  height: 42px;
+}
+.msgs-header {
+  padding-bottom: 0;
+  margin: 10px 0 0;
+}
+.msgs-header + .container {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.btn-toolbar {
+    .active {
+        background-color: $gray-blue !important;
+        border-color: $gray-blue !important;
+    }
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top:10px;
+
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: $gray-lighter;
+}
