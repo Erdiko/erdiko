@@ -1,64 +1,34 @@
-/*  =body
------------------------------------------------ */
-a {
-  color: @linkColor;
-  text-decoration: none;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
-a:hover {
-  color: @linkColorHover;
-  text-decoration: underline;
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 160px;
 }
-
-
-/*  =Header
------------------------------------------------ */
-header {
-  .navbar-toggle .icon-bar {
-    background-color: @orange;
-  }
+body > .container {
+  padding: 60px 15px 0;
 }
-
-
-/* =Content
------------------------------------------------ */
-.content-main {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-
-/*  =Footer
------------------------------------------------ */
 .footer {
-  .unstyled {
-    margin: 0 auto 9px;
-    overflow: hidden;
-    width: 600px;
-  }
-}
-.copyright {
-  text-align: center;
-}
-.header nav,
-.footer .unstyled {
-    li {
-      border-left: 1px solid @grayLight;
-      float: left;
-      line-height: 1.1;
-      margin-left: 10px;
-      padding-left: 10px;
-      &:first-child {
-        border-left: none;
-        margin-left: 0;
-        padding-left: 0;
-      }
-    }
-}
-
-
-/*  =Carousel
------------------------------------------------ */
-
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  position: absolute;
+  bottom: 0;
   width: 100%;
+  padding-top:10px;
+
+  /* Set the fixed height of the footer here */
+  height: 160px;
+  background-color: @gray-lighter;
+}
+.spacer {
+  height: 42px;
+}
+.msgs-header {
+  padding-bottom: 0;
+  margin: 10px 0 0;
+}
+.msgs-header + .container {
+  margin-top: 0;
+  padding-top: 0;
 }
