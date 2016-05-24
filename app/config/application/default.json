@@ -3,16 +3,17 @@
         "name": "Erdiko",
         "full_name": "Erdiko Micro Framework",
         "tagline": "Enterprise Glue (PHP Micro Framework)",
+        "copyright": "Copyright © 2016",
         "description": "Erdiko wants to make your php development easier. If you need a lightweight MVC framework you have come to the right place. Our goal is to offer a clean framework to create sites optimized for mobile devices, APIs and multiple browsers.",
         "meta": [{
             "name": "description",
-            "content": "Enterprise Glue (PHP Micro Framework)"
+            "content": "Erdiko MVC micro framework (enterprise glue)"
         }]
     },
     "theme": {
         "name": "bootstrap",
         "namespace": "/app/themes/bootstrap",
-        "public": "/public/themes/bootstrap2",
+        "public": "/public/themes/bootstrap",
         "defaults": {
             "layout": {
                 "columns": 1
@@ -22,7 +23,7 @@
     },
     "menu": {
         "main": [{
-            "href": "/examples/index",
+            "href": "/examples/examples",
             "title": "Examples"
         }, {
             "href": "/examples/markup",
@@ -43,9 +44,6 @@
         }, {
             "href": "/examples/config",
             "title": "view config"
-        }, {
-            "href": "/examples/exception",
-            "title": "exception example"
         }, {
             "href": "/examples/about",
             "title": "about"
