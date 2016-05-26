@@ -37,8 +37,9 @@ In general, downloadable files go in the /public folder while application code g
 
 If you want to run your new site using docker use our bundled container scripts by
 
-`cd docker
-docker-compose up`
+	cd docker
+
+	docker-compose up
 
 
 Documentation
