@@ -1,15 +1,16 @@
 Erdiko
 =======
 
-**Enterprise Glue**
-
 [![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko)
+
+**Erdiko is Enterprise Glue**
 
 Erdiko is an MVC micro framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
 
 Get work done without the bloat!
 
 http://erdiko.org/
+
 
 Installation
 ------------
@@ -34,10 +35,17 @@ Now that you have the latest code, set up an apache vhost to the webroot which i
 
 In general, downloadable files go in the /public folder while application code goes in the /app/ folder.  Erdiko core code is in the /vendor/erdiko/ folder.
 
+If you want to run your new site using docker use our bundled container scripts by
+
+`cd docker
+docker-compose up`
+
+
 Documentation
 -------------
 
 See our full documentation at http://erdiko.org/
+
 
 Vision
 ------
@@ -45,6 +53,7 @@ Vision
 Erdiko wants to make your php development easier. If you need a lightweight MVC framework then this is the tool for you. Our goal is to offer a clean platform to create sites optimized for mobile devices, APIs and multiple browsers.
 
 Erdiko can act as a mash-up or middleware framework too, hence the name 'Erdiko' which means 'middle' in the Basque language (Euskara). Use Erdiko if you need to mash-up multiple components, applications or even full frameworks. Combine things like Symfony Components, Drupal, Magento, WordPress, and Zend into a unified application.
+
 
 Security Vulnerabilities
 ------------------------
@@ -55,6 +64,7 @@ Notes
 -----
 
 We value feedback and would love to hear your thoughts about the architecture and ease of use of this framework.  There are a lot of possibilities for Erdiko, we value your ideas and thoughts about where to take this codebase.
+
 
 Team
 ----
@@ -74,10 +84,12 @@ Team
 
 * If you want to help, please do, we'd love more brains and clever code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
+
 Roadmap
 -------
 
 Coming Soon...
+
 
 Special Thanks
 --------------
