@@ -19,7 +19,7 @@ Installation
 
 at the commandline run,
 
-	composer create-project erdiko/erdiko
+	composer create erdiko/erdiko
 
 ***via git & composer***
 
@@ -33,13 +33,14 @@ Clone erdiko from github and run "composer install" in the root folder /
 
 Now that you have the latest code, set up an apache vhost to the webroot which is located at /public/
 
-In general, downloadable files go in the /public folder while application code goes in the /app/ folder.  Erdiko core code is in the /vendor/erdiko/ folder.
+In general, files that are downloaded in the browser go in the /public folder while application code goes in the /app folder.  Erdiko core code is in the /vendor/erdiko/ folder.
 
-If you want to run your new site using docker use our bundled container scripts by
+***Docker***
+If you want to run your new site using docker use our bundled container scripts by running docker-compose in the docker folder.
 
 	cd docker
 
-	docker-compose up
+	docker-compose up -d
 
 
 Documentation
@@ -56,10 +57,11 @@ Erdiko wants to make your php development easier. If you need a lightweight MVC 
 Erdiko can act as a mash-up or middleware framework too, hence the name 'Erdiko' which means 'middle' in the Basque language (Euskara). Use Erdiko if you need to mash-up multiple components, applications or even full frameworks. Combine things like Symfony Components, Drupal, Magento, WordPress, and Zend into a unified application.
 
 
-Security Vulnerabilities
-------------------------
+Security 
+--------
 
 If you discover any security vulnerabilities within Erdiko, please create a github issue and send an e-mail to John Arroyo at john@arroyolabs.com. Security is top concern and all vulnerabilities will be quickly addressed.
+
 
 Notes
 -----
