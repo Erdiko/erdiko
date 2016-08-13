@@ -10,7 +10,7 @@
 ############################################################
 
 # Set the base image to Ubuntu
-FROM ubuntu:latest
+FROM ubuntu:trusty
 
 # File Author / Maintainer
 MAINTAINER John Arroyo, john@arroyolabs.com
@@ -32,11 +32,6 @@ RUN apt-get update && apt-get install -y \
     php5-curl \
     php5-mcrypt \
 && apt-get clean
-
-# apache mods
-# RUN apache2ctl restart
-# RUN a2enmod rewrite
-# RUN apachectl restart
 
 # Bundle scripts in this folder on your instance and run setup
 ARG folder

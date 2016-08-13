@@ -4,8 +4,9 @@
 a2enmod rewrite
 # a2enmod ssl
 
-# point apache to the correct webroot
-rm -rf /var/www/html
+# point apache to a symlinked webroot
+mkdir -p /var/www/code/public
+mv /var/www/html /var/www/code/public
 ln -s /var/www/code/public /var/www/html
 
 # copy apache config(s)
