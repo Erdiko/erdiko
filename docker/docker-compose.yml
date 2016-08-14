@@ -7,6 +7,7 @@ services:
       context: .
       args:
         folder: ./apache
+    env_file: environment.env
     image: erdiko_lamp
     volumes:
       - ../:/var/www/code

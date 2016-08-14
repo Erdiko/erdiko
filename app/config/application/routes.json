@@ -1,7 +1,0 @@
-{
-    "routes": {
-        "/": "\app\controllers\Example",
-        "examples/:alpha": "\app\controllers\Example",
-        "ajax/:alpha": "\app\controllers\AjaxExample"
-    }
-}

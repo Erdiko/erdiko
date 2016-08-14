@@ -4,24 +4,18 @@
     "credits": "John Arroyo",
     "namespace": "/app/themes/bootstrap",
     "public": "/public/themes/bootstrap",
-    "rules": {
-        "header": {
-            "condition": {
-                "route": "/"
-            },
-            "view": "slideshow"
+    "css": {
+        "default":{
+            "file": "/themes/bootstrap/css/styles.min.css",
+            "order": 1,
+            "active": 1
         }
     },
-    "css": [{
-        "name": "default",
-        "file": "/themes/bootstrap/css/styles.min.css",
-        "active": 1
-    }],
     "js": {
         "default": {
             "file": "/themes/bootstrap/js/scripts.min.js",
-            "active": 1,
-            "order": 1
+            "order": 1,
+            "active": 1
         }
     },
     "templates": {

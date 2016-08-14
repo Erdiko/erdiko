@@ -12,15 +12,16 @@ define('VIEWS', APPROOT.'/views/');
 define('MEMCACHED_HOST', '127.0.0.1');
 define('MEMCACHED_PORT', '11211');
 
-// Core framework functions (static functions)
-require_once ROOT.'/Erdiko.php';
-
-// Core
-require_once ERDIKO.'/Toro.php';
-require_once ERDIKO.'/autoload.php';
-
 // Composer
 require_once VENDOR.'/autoload.php';
 
+// Core
+require_once ERDIKO.'/Toro.php';
+require_once ERDIKO.'/autoload.php'; // auto loading for the app
+
+// Core framework functions (static functions)
+require_once ROOT.'/Erdiko.php';
+
 // load the application bootstrapper (user defined)
+// @todo make the appstrap context specific
 require_once APPROOT.'/appstrap.php';

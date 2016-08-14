@@ -24,7 +24,7 @@ class Mustache extends \erdiko\core\Controller
 
     public function getMustacheTest2()
     {
-        return $this->getView('examples/examples');
+        return $this->getView('examples/one');
     }
 
     /** 
@@ -51,7 +51,6 @@ class Mustache extends \erdiko\core\Controller
                 }
             );
         $content = $m->render($string, $data);
-        // $content .= " data: ".print_r($data, true);
 
         $this->setTitle('Mustache');
         $this->setContent($content);
@@ -63,6 +62,7 @@ class Mustache extends \erdiko\core\Controller
      */
     public function getMustacheview()
     {
+        // Send data and attach a function to mustache
         $data = array(
             'planet' => 'world',
             'get_region' => function($name) { 

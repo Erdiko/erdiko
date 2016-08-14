@@ -4,10 +4,9 @@
 <meta charset="utf-8">
 
 <?php
-    // Spit out meta tags
-foreach ($this->getMeta() as $name => $content) {
-    echo '<meta name="'.$name.'" content="'.$content.'" >';
-}
+    /** Spit out meta tags **/
+    foreach ($this->getMeta() as $name => $content)
+        echo "<meta name=\"{$name}\" content=\"{$content}\">\n";
 ?>
 
 <title><?php echo $this->getPageTitle(); ?></title>
