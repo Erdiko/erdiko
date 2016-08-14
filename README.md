@@ -15,15 +15,13 @@ http://erdiko.org/
 Installation
 ------------
 
-***via composer***
+We recommend installing using composer.  At the commandline run,
 
-at the commandline run,
-
-	composer create erdiko/erdiko
+	composer create erdiko/erdiko [your-app-name]
 
 ***via git & composer***
 
-Clone erdiko from github and run "composer install" in the root folder /
+If you prefer to install yourself you can clone erdiko from github and run "composer install" in the root folder.
 
 1. git clone git@github.com:ArroyoLabs/erdiko.git
 2. cd erdiko
@@ -33,9 +31,12 @@ Clone erdiko from github and run "composer install" in the root folder /
 
 Now that you have the latest code, set up an apache vhost to the webroot which is located at /public/
 
-In general, files that are downloaded in the browser go in the /public folder while application code goes in the /app folder.  Erdiko core code is in the /vendor/erdiko/ folder.
+In general, files that are downloaded in the browser go in the /public folder while application code goes in the /app folder.  Erdiko packages are located in the /vendor/erdiko/ folder.
 
-***Docker***
+
+Docker
+------
+
 If you want to run your new site using docker use our bundled container scripts by running docker-compose in the docker folder.
 
 	cd docker
@@ -78,27 +79,8 @@ Team
     * Andy Armstrong
     * Leo Daidone
 
-**Past Contributors**
-
-    * Fangxiang Wang
-    * Coleman Tung
-    * Varun Brahme
-    * Dave LaFLam
-
 * If you want to help, please do, we'd love more brains and clever code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
+**Who is behind Erdiko?**
 
-Roadmap
--------
-
-Coming Soon...
-
-
-Special Thanks
---------------
-
-Arroyo Labs - For sponsoring development, [http://arroyolabs.com](http://arroyolabs.com)
-
-Toro - PHP router (micro framework), http://toroweb.org
-
-LESS - dynamic stylesheet language, http://lesscss.org
+	Erdiko was developed by Arroyo Labs, [http://arroyolabs.com](http://arroyolabs.com).
