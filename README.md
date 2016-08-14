@@ -79,9 +79,9 @@ If you are upgrading from version 0.9.0 or earier than you need to adjust the co
 Team
 ----
 
-**Active Contributors**
+**Primary Contributors**
 
-    * John Arroyo
+    * John Arroyo (Lead)
     * Andy Armstrong
     * Leo Daidone
 
@@ -89,4 +89,4 @@ Team
 
 **Who is behind Erdiko?**
 
-	Erdiko was developed by Arroyo Labs, [http://arroyolabs.com](http://arroyolabs.com).
+Erdiko was created by [Arroyo Labs](http://arroyolabs.com)
