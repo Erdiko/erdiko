@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.4.0",
         "erdiko/core": "0.10.*",
-        "twbs/bootstrap": "^3.3.*"
+        "twbs/bootstrap": "^3.3.6"
     },
     "config": {
         "vendor-dir": "vendor",
