@@ -70,6 +70,12 @@ Notes
 We value feedback and would love to hear your thoughts about the architecture and ease of use of this framework.  There are a lot of possibilities for Erdiko, we value your ideas and thoughts about where to take this codebase.
 
 
+Upgrades
+--------
+
+If you are upgrading from version 0.9.0 or earier than you need to adjust the configs in app/config folder.  The structure has changed slightly.  Move app/config/application/default.json to app/config/default/application.json and app/config/application/routes.json to app/config/default/routes.json.  Take a look at the latest configs in this repo and make sure they adhere to the new structure.
+
+
 Team
 ----
 
