@@ -7,22 +7,22 @@ header: GetStarted
 
 <div id = "requirements"></div>
 
-## System requirements
----
+System requirements
+-------------------
 
-#####Webserver
+##### Webserver
 * Apache with mod rewrite (or equivalent server)
 
-#####PHP
-* PHP 5.3 or higher.
+##### PHP
+* PHP 5.4 or higher
 
 <div id = "download_link"></div>
 <div id = "installation"></div>
 
-## Quick Installation
----
+Quick Installation
+------------------
 
-####Via Composer
+#### Via Composer
 
 * The Eridko framework utilizes Composer for installation and dependency management. If you have not install Composer, start by installing Composer.
 
@@ -33,7 +33,7 @@ After you installed Composer, you can run the following command in your terminal
 This command will download and install a fresh copy of Erdiko in a new project-name folder within your current directory. Then, you can move to next step to [Setup web environment](#setup)
 
 
-####Via Github
+#### Via Github
 
 * Step #1: [Download Erdiko](#download)
 * Step #2: [Setup web environment](#setup)
@@ -41,8 +41,9 @@ This command will download and install a fresh copy of Erdiko in a new project-n
 
 <div id = "download"></div>
 
-## Download Erdiko
----
+Download Erdiko
+---------------
+
 To download Erdiko from our Git repository, enter the following command in command prompt:
 
 	git clone https://github.com/arroyolabs/erdiko
@@ -54,8 +55,9 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 <div id = "setup"></div>
 
-## Setup web environment
----
+Setup web environment
+---------------------
+
 1. Open the config file of your web server
 
 2. Change the webroot to `[local erdiko code path]/public`
@@ -87,8 +89,9 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 <div id = "createYourFirstPage"></div>
 
-## Create add your first page
----
+Create add your first page
+--------------------------
+
 1. We will first need to add a tab to the menu.  To do so, open the main config file located at `Erdiko/app/config/application/default.json`
 
 2. Find the menu section and insert the following code.
@@ -111,8 +114,9 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 <div id = "setContent"></div>
 
-## Set content of a page
----
+Set content of a page
+---------------------
+
 5. To add contents to a page, open the page config file located at `Erdiko/app/controllers/Example.php`.
 
 6. Add the following function inside the Index class
@@ -139,8 +143,9 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 <div id = "phpPage"></div>
 
-## Use PHP for a page
----
+Use a PHP template
+------------------
+
 1. Open the corresponding controller file under the folder `Erdiko/app/controllers/`.
 
 2. Inside the controller, find the function of the page you want to use PHP.
@@ -160,29 +165,31 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 <div id = "javascriptPage"></div>
 
-## Use Javacript for a page
----
+Add JavaScript to a page
+------------------------
+
 1. Open the corresponding controller file under the folder `Erdiko/www/app/controllers/`.
 
 2. Inside the controller, find the function of the page you want to use Javascript.
 
 3. Insert the following code:
 
-		$this->getResponse()->getTheme()->addJs('[Path of the .js file]');
+		$this->addJs('[Path of the .js file]');
 
 <div class="alert alert-dismissable alert-info">
 	<button type="button" class="close" data-dismiss="alert">×</button>
-	<strong>Heads up!</strong> The root of the path is `Erdiko/public/`.<br>
-	For example, if you want to include the .js file located at `Erdiko/app/themes/bootstrap/js/test.js`,
+	<strong>Heads up!</strong> The root of the path is `/public/`.<br>
+	For example, if you want to include the .js file located at `/app/themes/bootstrap/js/test.js`,
 	the path will be `/themes/bootstrap/js/test.js`.
 </div>
 
 
 <div id = "javascriptCalculator"></div>
 
-## Add a BMI calculator page using Javascript
----
-1. 	Open the main config file located at `Erdiko/app/config/application/default.json`
+Add a BMI calculator page using Javascript
+------------------------------------------
+
+1. 	Open the main config file located at `/app/config/default/application.json`
 
 2. 	Find the menu section and insert the following code.
 
@@ -191,22 +198,22 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
             "href":"/examples/bmi",
             "title":"BMI"
          }
-3. 	Open the routing config file located at `Erdiko/app/config/routes.json`.
+3. 	Open the routing config file located at `/app/config/default/routes.json`.
 	We can see that sites located at `/` will be routed to the controller Index and sites located at `/examples/` will be routed to the controller Example.
 
-4.  Open the controller Example located at `Erdiko/app/controllers/Examples.php`
+4.  Open the controller Example located at `/app/controllers/Examples.php`
 
 5.  Add the following function inside the Examples class
 
 <script src="https://gist.github.com/rajesh28892/20a1af56027064effdb9.js"></script>
 
-6.  Create a file called `bmi.php` under `Erdiko/app/views/examples/`
+6.  Create a file called `bmi.php` under `/app/views/examples/`
 
 7.  Open the bmi.php and add the following code:
 
 <script src="https://gist.github.com/colemantung/3cff36bbc3ac250db19f.js"></script> 
 
-8.  Create `example.js` under the folder `Erdiko/app/themes/hello/js/`
+8.  Create `example.js` under the folder `/app/themes/hello/js/`
 
 9.  Paste the following code to `example.js`
 
@@ -220,9 +227,10 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
 
 <div id = "calculator"></div>
 
-## Add a BMI calculator page using new route
----
-1. 	Open the main config file located at `Erdiko/app/config/application/default.json`
+Add a BMI calculator page using new route
+-----------------------------------------
+
+1. 	Open the main config file located at `/app/config/default/application.json`
 
 2. 	Find the menu section and insert the following code.
 
@@ -232,25 +240,25 @@ It will clone our Git repository to your local machince. Then, go to the Erdiko 
             "title":"BMI"
          }
 
-3. 	Open the routing config file located at `Erdiko/app/config/routes.json`.
+3. 	Open the routing config file located at `Erdiko/app/config/default/routes.json`.
 	Add a new rule to the route.
 
 		["Calculator/([a-zA-Z0-9_\-/]+)", "\app\controllers\Calculator"],
 
 4.  Then, we will need to create a new controller for the new route.
-	To create a new controller, create `Calculator.php` under the folder `Erdiko/app/controllers/`
+	To create a new controller, create `Calculator.php` under the folder `/app/controllers/`
 
 5.  Paste the following code inside the `Calculator.php`
 
 <script src="https://gist.github.com/rajesh28892/dc523f2739b48b1ff224.js"></script>
 
-6.  Create a file called `bmi.php` under `Erdiko/app/views/examples/`
+6.  Create a file called `bmi.php` under `/app/views/examples/`
 
 7.  Open the bmi.php and add the following code:
 
 <script src="https://gist.github.com/colemantung/c45003580e391cff6239.js"></script>
 
-8.  Create a file called `bmi_post.php` under `Erdiko/app/views/examples/`
+8.  Create a file called `bmi_post.php` under `/app/views/examples/`
 
 9.  Open the bmi_post.php and add the following code:
 
