@@ -14,8 +14,8 @@ title: Home
     		<div class =" carousel-inner" > 
     			<div class =" item active" > 
     				<h1>Erdiko</h1>
-    				 <h2>Enterprise Glue</h2>
-             			<p class ="lead">The micro mash-up framework</p>
+    				 <h2>The micro MVC framework</h2>
+             			<p class ="lead">Enterprise Glue</p>
     				      <p class ="btn-group btn-group-justified">
               			<a class ="btn btn-success btn-lg" href ="./getStarted.html#download_link">Download</a> 
 					           <a class =" btn btn-default btn-lg" href ="./getStarted.html">Get Started</a > 

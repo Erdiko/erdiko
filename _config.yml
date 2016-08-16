@@ -3,7 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
+highlighter: true
 
 markdown: kramdown
 
@@ -11,7 +11,7 @@ markdown: kramdown
 # so be sure to set them if your theme uses them.
 #
 title : Erdiko
-tagline: Enterprise Glue (PHP Micro Framework)
+tagline: The Micro MVC Framework (Enterprise Glue)
 author : 
   name : John Arroyo
   email : john@arroyolabs.com
