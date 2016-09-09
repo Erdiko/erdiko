@@ -9,12 +9,8 @@
  * @author      John Arroyo
  */
 
-include_once dirname(__DIR__)."/bootstrap.php";
-
-// @todo move to bootstrap or appstrap?
-if(empty(getenv('ERDIKO_CONTEXT')))
-	putenv("ERDIKO_CONTEXT=default");
-// $_ENV['ERDIKO_CONTEXT'] = 'default';
+// Bootstrap your app and erdiko
+include_once dirname(dirname(__DIR__))."/app/bootstrap.php";
 
 try {
     $routes = Erdiko::getRoutes(getenv('ERDIKO_CONTEXT'));

@@ -1,6 +1,17 @@
 <?php
 /**
- * appstrap:
+ * Define the project root and load up erdiko's core bootrap
+ * You shouldn't have to change anything here unless you are 
+ * hacking together something unique
+ */
+define('ERDIKO_ROOT', dirname(__DIR__));
+define('ERDIKO_VENDOR', ERDIKO_ROOT.'/vendor');
+define('ERDIKO_SRC', ERDIKO_VENDOR.'/erdiko/core/src');
+require_once ERDIKO_SRC.'/bootstrap.php';
+
+/**
+ * Appstrap
+ * Here you can modify safely based on your needs.
  * Add any application defined bootstrap items here
  */
 ini_set('display_errors', '1');
@@ -32,8 +43,10 @@ ToroHook::add("404", function ($vars = array()) {
 
     // For a themed 404 page...
     $theme = new \erdiko\core\Theme('bootstrap');
-    $theme->addCss('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
-    $theme->addCss('/themes/bootstrap/css/font-awesome-animation.css');
+    $theme->addCss('font-awesome', 
+        '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+    $theme->addCss('font-awesome-animation',
+        '/themes/bootstrap/css/font-awesome-animation.css');
 
     $response = new \erdiko\core\Response($theme);
     $response->setContent(\Erdiko::getView('404', $vars));

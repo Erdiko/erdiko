@@ -5,7 +5,7 @@ Erdiko
 
 **Erdiko is Enterprise Glue**
 
-Erdiko is an MVC micro framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
+Erdiko is a micro MVC framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
 
 Get work done without the bloat!
 
