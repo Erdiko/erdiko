@@ -101,7 +101,7 @@ gulp.task('minify-css', function() {
         suffix: '.min',
         extname: '.css'
      }))
-    .pipe(gulp.dest('../../../public/themes/bootstrap/css'));
+    .pipe(gulp.dest('../../../public/default/themes/bootstrap/css'));
 });
 
 // minify JS and put in the public dir
@@ -117,6 +117,6 @@ gulp.task('minify-js', function () {
       ]))
       .pipe($.concat('scripts.min.js'))
       .pipe($.uglify())
-      .pipe(gulp.dest('../../../public/themes/bootstrap/js'));
+      .pipe(gulp.dest('../../../public/default/themes/bootstrap/js'));
 
 });
