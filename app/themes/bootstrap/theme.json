@@ -3,70 +3,51 @@
     "description": "Bootstrap based Erdiko theme",
     "credits": "John Arroyo",
     "namespace": "/app/themes/bootstrap",
-    "public":"/public/themes/bootstrap",
-    "rules": {
-    "header": {
-        "condition": { "route":"/" },
-        "view": "slideshow"
-    }
+    "public": "/public/themes/bootstrap",
+    "css": {
+        "default":{
+            "file": "/themes/bootstrap/css/styles.min.css",
+            "order": 1,
+            "active": 1
+        }
     },
-    "css": [
-      {
-          "name": "default",
-          "file": "/themes/bootstrap/css/bootstrap.min.css",
-          "active": 0
-      },
-      {
-          "name": "default",
-          "file": "/themes/bootstrap/css/default.css",
-          "active": 1
-      }
-    ],
     "js": {
-    "jquery": {
-        "file": "http://code.jquery.com/jquery-1.11.3.js",
-        "active": 1,
-        "order": 1
+        "default": {
+            "file": "/themes/bootstrap/js/scripts.min.js",
+            "order": 1,
+            "active": 1
+        }
     },
-    "bootstrap": {
-        "file": "/themes/bootstrap/js/bootstrap.js",
-        "active": 1,
-        "order": 2
-    },
-    "default": {
-        "file": "/themes/bootstrap/js/default.js",
-        "active": 1,
-        "order": 3
-    }
-  },
     "templates": {
-    "default": {
-        "file": "default"
-    },
-    "fullpage": {
-        "file": "fullpage"
-    },
-    "header": {
-        "file": "page/header"
-    },
-    "footer": {
-        "file": "page/footer"
-    },
-    "analytics": {
-        "file": "page/analytics"
-    }
+        "default": {
+            "file": "default"
+        },
+        "fullpage": {
+            "file": "fullpage"
+        },
+        "header": {
+            "file": "page/header"
+        },
+        "footer": {
+            "file": "page/footer"
+        },
+        "analytics": {
+            "file": "page/analytics"
+        },
+        "messages": {
+            "file": "page/messages"
+        }
     },
     "layouts": {
-    "1column": {
-        "file": "/themes/bootstrap/templates/layouts/1column"
+        "1column": {
+            "file": "/themes/bootstrap/templates/layouts/1column"
+        },
+        "2column": {
+            "file": "/themes/bootstrap/templates/layouts/2column"
+        },
+        "3column": {
+            "file": "/themes/bootstrap/templates/layouts/3column"
+        }
     },
-    "2column": {
-        "file": "/themes/bootstrap/templates/layouts/2column"
-    },
-    "3column": {
-        "file": "/themes/bootstrap/templates/layouts/3column"
-    }
-    },
-    "views": {
-    }
+    "views": {}
 }

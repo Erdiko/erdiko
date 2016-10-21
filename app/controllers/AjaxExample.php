@@ -4,7 +4,7 @@
  * Multiple examples of how you can use erdiko.  It includes some simple use cases.
  *
  * @category    app
- * @package     Example
+ * @package     controllers
  * @copyright   Copyright (c) 2016, Arroyo Labs, www.arroyolabs.com
  * @author      John Arroyo, john@arroyolabs.com
  */
@@ -16,9 +16,10 @@ namespace app\controllers;
  */
 class AjaxExample extends \erdiko\core\AjaxController
 {
-  /**
-   * Get
-   */
+	
+	/**
+     * Get
+     */
 	public function get($var = null)
 	{
 		if($var != null)
@@ -27,9 +28,6 @@ class AjaxExample extends \erdiko\core\AjaxController
 			return $this->_autoaction($var);
 		}
 
-		$m = new \Mustache_Engine;
-		$test = $m->render('Hello, {{ planet }}!', array('planet' => 'world')); // Hello, world!
-
 		$data = array("hello", "world");
 		$view = new \erdiko\core\View('examples/helloworld', $data);
 		
@@ -37,8 +35,8 @@ class AjaxExample extends \erdiko\core\AjaxController
 	}
 
 	/**
-   * Get Example
-   */
+   	 * Get Example
+   	 */
 	public function getExample()
 	{
 		$content = array(

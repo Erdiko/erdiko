@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  webserver:
+    container_name: erdiko_nginx
+    image: nginx:latest
+    env_file: environment.env
+    volumes:
+      - .:/code
+      - ./docker/nginx/site.conf:/etc/nginx/conf.d/site.conf
+      - ./docker/nginx/fastcgi.conf:/etc/nginx/fastcgi.conf
+    ports:
+      - "8088:80"
+  php:
+    container_name: erdiko_php7
+    env_file: environment.env
+    image: erdiko_php7fpm
+    build:
+      context: ./docker/php7
+    volumes:
+      - .:/code
+      - ./docker/php7/conf.d:/usr/local/etc/php/conf.d

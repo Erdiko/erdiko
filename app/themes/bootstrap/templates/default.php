@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <?php
-// Spit out meta tags
-foreach ($data->getMeta() as $meta) {
-    echo '<meta name="'.$meta['name'].'" content="'.$meta['content'].'" >';
-}
+    /** Spit out meta tags **/
+    foreach ($this->getMeta() as $name => $content)
+        echo "<meta name=\"{$name}\" content=\"{$content}\">\n";
 ?>
 
-<title><?php echo $data->getPageTitle() ?></title>
+<title><?php echo $this->getPageTitle() ?></title>
 
 <?php
 // Spit out CSS
-foreach ($data->getCss() as $css) {
+foreach ($this->getCss() as $css) {
     if ($css['active']) {
         echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
     }
@@ -25,13 +24,10 @@ foreach ($data->getCss() as $css) {
 </head>
 <body>
 
-<div id="pagewrap">
-    <?php echo $data->getTemplateHtml('header'); ?>
-    <div class="container content-main">
-        <?php echo $this->getContent(); ?>
-    </div>
-    <?php echo $data->getTemplateHtml('footer'); ?>
-</div>
+    <?php echo $this->getTemplateHtml('header'); ?>
+    <?php echo $this->getTemplateHtml('messages'); ?>
+    <?php echo $this->getContent(); ?>
+    <?php echo $this->getTemplateHtml('footer'); ?>
 
 <?php
     // Spit out JS below the footer
@@ -47,7 +43,7 @@ $(document).ready(function() {
 });
 /* ]]> */</script>
 
-<?php echo $data->getTemplateHtml('analytics') ?>
+<?php echo $this->getTemplateHtml('analytics') ?>
 
 </body>
 </html>

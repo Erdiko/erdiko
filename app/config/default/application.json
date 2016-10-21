@@ -1,0 +1,75 @@
+{
+    "site": {
+        "name": "Erdiko",
+        "full_name": "Erdiko Micro Framework",
+        "tagline": "Enterprise Glue (PHP Micro Framework)",
+        "copyright": "Copyright © 2016",
+        "description": "Erdiko wants to make your php development easier. If you need a lightweight MVC framework you have come to the right place. Our goal is to offer a clean framework to create sites optimized for mobile devices, APIs and multiple browsers.",
+        "meta": {
+            "description": "Erdiko MVC micro framework (enterprise glue)"
+        }
+    },
+    "theme": {
+        "name": "bootstrap",
+        "namespace": "/app/themes/bootstrap",
+        "public": "/public/themes/bootstrap",
+        "defaults": {
+            "layout": {
+                "columns": 1
+            },
+            "home_url":"/"
+        }
+    },
+    "menu": {
+        "main": [{
+            "href": "/examples/examples",
+            "title": "Examples"
+        }, {
+            "href": "/examples/markup",
+            "title": "Mark-Up"
+        }, {
+            "href": "/examples/grid",
+            "title": "Grid"
+        }, {
+            "href": "/examples/twocolumn",
+            "title": "2 Column Layout"
+        }, {
+            "href": "/threecolumn",
+            "title": "3 Column Layout"
+        }],
+        "footer": [{
+            "href": "/",
+            "title": "home"
+        }, {
+            "href": "/examples/config",
+            "title": "view config"
+        }, {
+            "href": "/examples/about",
+            "title": "about"
+        }]
+    },
+    "logs": {
+        "name": "default",
+        "path": "/var/logs",
+        "files": [{
+            "default": "system.log",
+            "exception": "exception.log"
+        }]
+    },
+    "cache": {
+        "default": {
+            "type": "File",
+            "class": "\\erdiko\\core\\cache\\File",
+            "path": "/var/cache"
+        },
+        "memcached": {
+            "type": "Memcached",
+            "class": "\\erdiko\\core\\cache\\Memcached"
+        }
+    },
+    "analytics": {
+        "google": {
+            "id": ""
+        }
+    }
+}

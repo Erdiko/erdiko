@@ -4,7 +4,7 @@
     <figure>
     <div class="product-img-wrapper" data-index="0">
         <a href="<?php echo $data['details']['url']; ?>">
-            <img class="product-img" src="<?php echo $data['details']['image']; ?>" alt="Grid Item"></a>
+            <img class="img-responsive" src="<?php echo $data['details']['image']; ?>" alt="Grid Item"></a>
     </div>
     <figcaption>
         <h2 class="grid"><a href="<?php echo $data['details']['url']; ?>">
