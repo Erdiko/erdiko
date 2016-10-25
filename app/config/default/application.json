@@ -59,12 +59,12 @@
     "cache": {
         "default": {
             "type": "File",
-            "class": "\\erdiko\\core\\cache\\File",
+            "class": "\erdiko\core\cache\File",
             "path": "/var/cache"
         },
         "memcached": {
             "type": "Memcached",
-            "class": "\\erdiko\\core\\cache\\Memcached"
+            "class": "\erdiko\core\cache\Memcached"
         }
     },
     "analytics": {

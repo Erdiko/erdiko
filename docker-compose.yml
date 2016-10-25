@@ -14,7 +14,7 @@ services:
   php:
     container_name: erdiko_php7
     env_file: environment.env
-    image: erdiko_php7fpm
+    image: erdiko_php7fpm_dev
     build:
       context: ./docker/php7
     volumes:
