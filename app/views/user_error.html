@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="well" style="background-color: red">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                {{#message}}
+                <h3><i class="fa fa-wrench faa-wrench animated"></i>
+                    &nbsp;&nbsp;&nbsp;{{type}}
+                <h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <div class="col-lg-5 col-md-5 col-sm-5">Code:</div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">{{code}}</div>
+                    </li>
+                    <li>
+                        <div class="col-lg-5 col-md-5 col-sm-5">Description:</div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">{{description}}</div>
+                    </li>
+                    <li>
+                        <div class="col-lg-5 col-md-5 col-sm-5">Paht:</div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">{{path_info}}</div>
+                    </li>
+                </ul>
+                {{/message}}
+            </div>
+        </div>
+    </div>
+</div>
