@@ -187,8 +187,7 @@ class Example extends \erdiko\core\Controller
 
         // Inject the carousel js code
         $this->getResponse()
-            ->getTheme()
-            ->addJs('carousel', '/themes/bootstrap/js/carousel.js');
+            ->getTheme();
     }
 
     /**

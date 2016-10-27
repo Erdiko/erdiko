@@ -37,6 +37,7 @@ gulp.task('build', function(callback) {
    $.runSequence(
       'clean:stage',
       ['styles', 'scripts'],
+      ['copy-assets'],
       ['minify-css', 'minify-js'],
       'notify:buildComplete',
       callback
@@ -88,6 +89,16 @@ gulp.task('scripts', function(callback) {
    return gulp.src('scripts/**/*.js')
       // copy scripts to stage
       .pipe(gulp.dest('stage/scripts'), callback);
+});
+
+// copy node module assets locally
+gulp.task('copy-assets', function(callback) {
+   return gulp.src([
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+            'node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+        ])
+      .pipe(gulp.dest('stage/scripts/vendor'), callback);
 });
 
 // Minify CSS and put it in the public dir
