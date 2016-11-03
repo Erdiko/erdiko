@@ -19,6 +19,7 @@ foreach ($data->getCss() as $css) {
         echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
     }
 }
+echo $this->getTemplateHtml('gtm_header');
 ?>
 </head>
 <body>
@@ -46,6 +47,7 @@ $(document).ready(function() {
 /* ]]> */</script>
 
 <?php echo $data->getTemplateHtml('analytics') ?>
+<?php echo $this->getTemplateHtml('gtm_body') ?>
 
 </body>
 </html>
