@@ -87,16 +87,12 @@
     "memcached":{
         "type":"Memcached",
         "class":"\erdiko\core\cache\Memcached"
-    }
     },
-    "analytics":{
-        "google":{
-            "id":""
-    },
-    "google_tag_manager": {
-        "container": {
-            "key": ""
-        }
-    }
+    "google":{
+      "analytics":{
+        "tracking_id":""
+      },
+      "tag_manager":[
+      ]
     }
 }
