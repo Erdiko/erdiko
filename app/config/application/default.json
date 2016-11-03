@@ -89,10 +89,11 @@
         "class":"\erdiko\core\cache\Memcached"
     },
     "google":{
-      "analytics":{
-        "tracking_id":""
-      },
-      "tag_manager":[
-      ]
+        "analytics":{
+            "tracking_id":""
+        },
+        "tag_manager":[
+            {"container_id": ""}
+        ]
     }
 }
