@@ -47,14 +47,11 @@
     "footer": {
         "file": "page/footer"
     },
-    "analytics": {
-        "file": "page/analytics"
+    "google_body": {
+        "file": "page/google_body"
     },
-    "gtm_body": {
-        "file": "page/gtm_body"
-    },
-    "gtm_header": {
-        "file": "page/gtm_header"
+    "google_header": {
+        "file": "page/google_header"
     },
     },
     "layouts": {
