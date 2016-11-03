@@ -92,6 +92,11 @@
     "analytics":{
         "google":{
             "id":""
+    },
+    "google_tag_manager": {
+        "container": {
+            "key": ""
+        }
     }
     }
 }
