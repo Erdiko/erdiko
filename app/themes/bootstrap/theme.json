@@ -19,27 +19,24 @@
         }
     },
     "templates": {
-        "default": {
-            "file": "default"
-        },
-        "fullpage": {
-            "file": "fullpage"
-        },
-        "header": {
-            "file": "page/header"
-        },
-        "footer": {
-            "file": "page/footer"
-        },
-        "gtm_body": {
-            "file": "page/gtm_body"
-        },
-        "gtm_header": {
-            "file": "page/gtm_header"
-        },
-        "messages": {
-            "file": "page/messages"
-        }
+    "default": {
+        "file": "default"
+    },
+    "fullpage": {
+        "file": "fullpage"
+    },
+    "header": {
+        "file": "page/header"
+    },
+    "footer": {
+        "file": "page/footer"
+    },
+    "google_body": {
+        "file": "page/google_body"
+    },
+    "google_header": {
+        "file": "page/google_header"
+    },
     },
     "layouts": {
         "1column": {
