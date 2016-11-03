@@ -13,9 +13,11 @@
 endif ?>
 
 <?php if (!empty($data['google']['tag_manager'])) : ?>
-<?php foreach ($data['google']['tag_manager'] as $tag) : ?>
+    <?php foreach ($data['google']['tag_manager'] as $tag) : ?>
+        <?php if (!empty($tag['container_id'])) : ?>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $tag['container_id'] ?>"
                           height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<?php endforeach;
+        <?php endif;
+    endforeach;
 endif ?>
 
