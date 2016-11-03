@@ -5,7 +5,7 @@
     "namespace": "/app/themes/bootstrap",
     "public": "/public/themes/bootstrap",
     "css": {
-        "default":{
+        "default": {
             "file": "/themes/bootstrap/css/styles.min.css",
             "order": 1,
             "active": 1
@@ -31,8 +31,11 @@
         "footer": {
             "file": "page/footer"
         },
-        "analytics": {
-            "file": "page/analytics"
+        "gtm_body": {
+            "file": "page/gtm_body"
+        },
+        "gtm_header": {
+            "file": "page/gtm_header"
         },
         "messages": {
             "file": "page/messages"
