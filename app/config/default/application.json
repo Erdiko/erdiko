@@ -8,7 +8,7 @@
         "meta": {
             "description": "Erdiko MVC micro framework (enterprise glue)"
         },
-        "debug": "1"
+        "debug": 1
     },
     "theme": {
         "name": "bootstrap",

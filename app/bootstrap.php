@@ -17,11 +17,8 @@ require_once ERDIKO_SRC.'/bootstrap.php';
 $debug = getenv("ERDIKO_DEBUG");
 ini_set('display_errors', $debug);
 
-
-
 // To turn on Session (uncomment line below)
 // require_once ERDIKO.'/core/session.php';
-
 
 // Error Management
 \erdiko\core\ErrorHandler::init();
@@ -46,14 +43,13 @@ ToroHook::add("404", function ($vars = array()) {
 	$vars['code'] = 404;
 
 	$theme = new \erdiko\core\Theme( 'bootstrap' );
-
 	$theme->addCss( 'font-awesome',
 		'//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
 	$theme->addCss( 'font-awesome-animation',
 		'/themes/bootstrap/css/font-awesome-animation.css' );
 
 	$response = new \erdiko\core\Response( $theme );
-	$response->setContent( \Erdiko::getView( '404', $vars ) );
+	$response->setContent( \Erdiko::getView('error', $vars) );
 	$response->send();
 });
 
@@ -61,24 +57,17 @@ ToroHook::add("500", function ($vars = array()) {
 	// Toro::serve Legacy
 	$vars['debug'] = \erdiko\core\ErrorHandler::isDebug();
 	$vars['code'] = 500;
+	$vars['message'] = "Sorry, something went wrong.";
 	Erdiko::log(\Psr\Log\LogLevel::ERROR, "{$vars['code']}: {$vars['path_info']} {$vars['error']}");
 
-
-	if($vars['debug']){
-		$vars['message'] = "500 {$vars['path_info']} {$vars['error']}";
-	} else {
-		$vars['message'] = "Sorry, something went wrong.";
-	}
-
 	$theme = new \erdiko\core\Theme( 'bootstrap' );
-
 	$theme->addCss( 'font-awesome',
 		'//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
 	$theme->addCss( 'font-awesome-animation',
 		'/themes/bootstrap/css/font-awesome-animation.css' );
 
 	$response = new \erdiko\core\Response( $theme );
-	$response->setContent( \Erdiko::getView( '500', $vars ) );
+	$response->setContent( \Erdiko::getView('error', $vars) );
 	$response->send();
 });
 
@@ -97,6 +86,6 @@ ToroHook::add("general_error", function ($vars = array()) {
 		'/themes/bootstrap/css/font-awesome-animation.css');
 
 	$response = new \erdiko\core\Response($theme);
-	$response->setContent(\Erdiko::getView('general_error', $vars));
+	$response->setContent(\Erdiko::getView('error', $vars));
 	$response->send();
 });

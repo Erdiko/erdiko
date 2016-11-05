@@ -1,15 +1,17 @@
-<div class="container error-500">
-    <div id="500" class="overlapped">
+<div class="container error-404">
+    <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>
+                <i class="fa fa-wrench faa-wrench animated"></i> &nbsp; {{code}} Error
+            <h1>
+          </div>
+        </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <a href="/">
-                    <img src="/images/ErdikoShieldLogo.png" alt="Erdiko Shield Logo"/>
-                </a>
-
                 <div class="well">
-                    <h3><i class="fa fa-wrench faa-wrench animated"></i> PHP Internal Error
-                        <h3>
-                            <h4>Sorry, something went wrong.</h4>
+                    <h3>{{message}}</h3>
+
                     {{#debug}}
                     <div id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="card">
@@ -34,27 +36,9 @@
                                             <table class="table table-bordered table-condensed">
                                                 <tr>
                                                     <td class="col-lg-2 col-md-2 col-sm-2">
-                                                        <strong>Error string</strong>
+                                                        <strong>Error Message</strong>
                                                     </td>
-                                                    <td class="col-lg-5 col-md-5 col-sm-5">
-                                                        {{error}}
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="col-lg-2 col-md-2 col-sm-2">
-                                                        <strong>Message Type</strong>
-                                                    </td>
-                                                    <td class="col-lg-5 col-md-5 col-sm-5">
-                                                        {{msg_type}}
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="col-lg-2 col-md-2 col-sm-2">
-                                                        <strong>Description</strong>
-                                                    </td>
-                                                    <td class="col-lg-5 col-md-5 col-sm-5">
-                                                        <pre>{{msg_description}}</pre>
-                                                    </td>
+                                                    <td class="col-lg-5 col-md-5 col-sm-5">{{error}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="col-lg-2 col-md-2 col-sm-2">
