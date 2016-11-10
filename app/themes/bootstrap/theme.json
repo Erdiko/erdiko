@@ -5,7 +5,7 @@
     "namespace": "/app/themes/bootstrap",
     "public": "/public/themes/bootstrap",
     "css": {
-        "default":{
+        "default": {
             "file": "/themes/bootstrap/css/styles.min.css",
             "order": 1,
             "active": 1
@@ -19,24 +19,24 @@
         }
     },
     "templates": {
-        "default": {
-            "file": "default"
-        },
-        "fullpage": {
-            "file": "fullpage"
-        },
-        "header": {
-            "file": "page/header"
-        },
-        "footer": {
-            "file": "page/footer"
-        },
-        "analytics": {
-            "file": "page/analytics"
-        },
-        "messages": {
-            "file": "page/messages"
-        }
+    "default": {
+        "file": "default"
+    },
+    "fullpage": {
+        "file": "fullpage"
+    },
+    "header": {
+        "file": "page/header"
+    },
+    "footer": {
+        "file": "page/footer"
+    },
+    "google_body": {
+        "file": "page/google_body"
+    },
+    "google_header": {
+        "file": "page/google_header"
+    }
     },
     "layouts": {
         "1column": {

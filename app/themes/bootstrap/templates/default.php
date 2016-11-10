@@ -20,6 +20,7 @@ foreach ($this->getCss() as $css) {
         echo "<link rel='stylesheet' href='".$css['file']."' type='text/css' />\n";
     }
 }
+echo $this->getTemplateHtml('google_header');
 ?>
 </head>
 <body>
@@ -43,7 +44,7 @@ $(document).ready(function() {
 });
 /* ]]> */</script>
 
-<?php echo $this->getTemplateHtml('analytics') ?>
+<?php echo $this->getTemplateHtml('google_body') ?>
 
 </body>
 </html>
