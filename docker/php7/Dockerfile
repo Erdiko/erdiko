@@ -7,7 +7,7 @@
 #
 # This is a good container for php development and includes 
 # common tools needed in a PHP app.  Use with or without 
-# Erdiko.  It can be used in prod but is intended for dev
+# Erdiko.  It is lean enough for prod but intended for dev
 ############################################################
 
 FROM php:fpm
@@ -31,8 +31,11 @@ RUN apt-get update \
         gd \
     && apt-get clean
 
+# Install additional scripts (composer and phpunit)
 COPY scripts /src
-RUN cd /src && chmod 770 phpunit.sh && ./phpunit.sh
+RUN cd /src && chmod 770 *.sh
+RUN /src/composer.sh
+RUN /src/phpunit.sh
 
 EXPOSE 9000
 
