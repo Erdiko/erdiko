@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# from https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 ACTUAL_SIGNATURE=$(php -r "echo hash_file('SHA384', 'composer-setup.php');")
@@ -14,4 +15,9 @@ fi
 php composer-setup.php --quiet
 RESULT=$?
 rm composer-setup.php
+
+# Convenient alias (add by Erdiko)
+mv composer.phar /usr/local/bin/composer
+alias composer='php /usr/local/bin/composer'
+
 exit $RESULT
