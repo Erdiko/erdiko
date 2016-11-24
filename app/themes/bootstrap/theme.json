@@ -28,6 +28,9 @@
         "header": {
             "file": "page/header"
         },
+        "messages": {
+            "file": "page/messages"
+        },
         "footer": {
             "file": "page/footer"
         },
