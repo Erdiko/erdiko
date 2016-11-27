@@ -3,11 +3,11 @@ Erdiko
 
 [![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko)
 
-**Erdiko is Enterprise Glue**
+**Erdiko Micro MVC**
 
-Erdiko is a micro MVC framework or better yet, an enterprise framework for APIs, lean front-ends and mash-ups.
+Erdiko is a micro MVC framework or better yet, a framework for APIs, lean web front-ends and web apps (start up friendly).
 
-Get work done without the bloat!
+Iterate on your app without a bloated PHP stack!
 
 http://erdiko.org/
 
