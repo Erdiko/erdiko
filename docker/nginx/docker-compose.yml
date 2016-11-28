@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  webserver:
+    container_name: erdiko_nginx
+    image: nginx:latest
+    env_file: ../environment.env
+    volumes:
+      - ../../:/code
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+      - ./fastcgi.conf:/etc/nginx/fastcgi.conf
+    ports:
+      - "80:80"

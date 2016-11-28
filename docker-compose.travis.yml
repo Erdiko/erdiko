@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  webserver:
+    extends:
+      file: ./docker/nginx/docker-compose.yml
+      service: webserver
+  php:
+    extends:
+      file: ./docker/php/7.0/docker-compose.yml
+      service: php
+  php71:
+    extends:
+      file: ./docker/php/7.1/docker-compose.yml
+      service: php
+  php56:
+    extends:
+      file: ./docker/php/5.6/docker-compose.yml
+      service: php
+  php55:
+    extends:
+      file: ./docker/php/5.5/docker-compose.yml
+      service: php
+  php55:
+    extends:
+      file: ./docker/php/5.4/docker-compose.yml
+      service: php

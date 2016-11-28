@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  php:
+    container_name: erdiko_php_5.5
+    env_file: ../../environment.env
+    image: erdiko_phpfpm_5.5
+    build:
+      context: ./
+    volumes:
+      - ../../../:/code
+      - ./conf.d:/usr/local/etc/php/conf.d

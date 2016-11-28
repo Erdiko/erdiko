@@ -7,10 +7,10 @@
 #
 # This is a good container for php development and includes 
 # common tools needed in a PHP app.  Use with or without 
-# Erdiko.  It is lean enough for prod but intended for dev
+# Erdiko.  It is lean enough for prod or dev.
 ############################################################
 
-FROM php:fpm
+FROM php:7.0-fpm
 
 # File Author / Maintainer
 MAINTAINER John Arroyo, john@arroyolabs.com
