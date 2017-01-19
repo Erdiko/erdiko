@@ -20,9 +20,6 @@ ini_set('display_errors', $debug);
 // To turn on Session (uncomment line below)
 // require_once ERDIKO.'/core/session.php';
 
-// Error Management
-\erdiko\core\ErrorHandler::init();
-
 /**
  * Hooks
  */

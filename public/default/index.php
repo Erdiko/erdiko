@@ -13,6 +13,7 @@
 include_once dirname(dirname(__DIR__))."/app/bootstrap.php";
 
 try {
+	\erdiko\core\ErrorHandler::init(); // Front-end error management
     $routes = Erdiko::getRoutes(getenv('ERDIKO_CONTEXT'));
     Toro::serve($routes);
 
