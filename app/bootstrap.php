@@ -23,7 +23,7 @@ ini_set('display_errors', $debug);
 /**
  * Hooks
  */
-ToroHook::add("404", function ($vars = array()) {
+\erdiko\core\ToroHook::add("404", function ($vars = array()) {
 	// Toro::serve Legacy
 	$vars['debug'] = \erdiko\core\ErrorHandler::isDebug();
 	if (empty($vars['message'])) {
@@ -50,7 +50,7 @@ ToroHook::add("404", function ($vars = array()) {
 	$response->send();
 });
 
-ToroHook::add("500", function ($vars = array()) {
+\erdiko\core\ToroHook::add("500", function ($vars = array()) {
 	// Toro::serve Legacy
 	$vars['debug'] = \erdiko\core\ErrorHandler::isDebug();
 	$vars['code'] = 500;
@@ -69,7 +69,7 @@ ToroHook::add("500", function ($vars = array()) {
 });
 
 // Error management & beautify output.
-ToroHook::add("general_error", function ($vars = array()) {
+\erdiko\core\ToroHook::add("general_error", function ($vars = array()) {
 	$vars['debug'] = \erdiko\core\ErrorHandler::isDebug();
 	if(!isset($vars['path_info'])){
 		$vars['path_info'] = $_SERVER['REQUEST_URI'];
