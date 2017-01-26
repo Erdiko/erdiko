@@ -1,15 +1,14 @@
 <?php
 /**
  * Index file
- * Intercepts all requests and dispatch routes
+ * Intercepts request and dispatch routes
  *
- * @category    Erdiko
- * @package     Public
- * @copyright   Copyright (c) 2016, Arroyo Labs, www.arroyolabs.com
- * @author      John Arroyo
+ * @package	 	erdiko/erdiko
+ * @copyright   2012-2017 Arroyo Labs, Inc. http://www.arroyolabs.com
+ * @author      John Arroyo <john@arroyolabs.com>
  */
 
-// Bootstrap your app and erdiko
+// Bootstrap your app (and erdiko)
 include_once dirname(dirname(__DIR__))."/app/bootstrap.php";
 
 try {
@@ -18,5 +17,5 @@ try {
 
 } catch (\Exception $e) {
     echo $e->getMessage();
-    // @todo return a 500 error & log error
+    Erdiko::error("Failed to serve route. ".$e->getMessage());
 }
