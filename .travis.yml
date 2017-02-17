@@ -1,0 +1,32 @@
+sudo: required
+
+language: php
+php:
+  - '5.4'
+
+install:
+  - curl -sSL https://get.docker.com/ | sudo sh
+  - sudo pip install docker-compose
+  - pwd
+  - ls -lah
+
+before_script:
+  - cd ../
+  - wget https://raw.githubusercontent.com/ArroyoLabs/erdiko/master/docker/php/7.0/scripts/composer.sh
+  - chmod 770 composer.sh
+  - ./composer.sh
+
+script:
+  - echo "$TRAVIS_BRANCH"
+  - cd erdiko
+  - ls -lah
+  - composer update
+  - sudo chmod 770 vendor/erdiko/core/scripts/*.sh
+  - ./vendor/erdiko/core/scripts/ci-logic.sh
+  - sudo docker-compose ps
+  - cd vendor/erdiko/core
+  - ls -lah
+
+notifications:
+  email:
+    - john@arroyolabs.com 
