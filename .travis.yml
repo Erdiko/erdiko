@@ -25,7 +25,7 @@ script:
   - ./vendor/erdiko/core/scripts/ci-logic.sh
   - sudo docker-compose ps
   - sudo chmod 770 docker/scripts/*.sh
-  - sudo docker exec erdiko_php /code/docker/scripts/travis-debug.sh
+  #- sudo docker exec erdiko_php /code/docker/scripts/travis-debug.sh
 
 notifications:
   email:
