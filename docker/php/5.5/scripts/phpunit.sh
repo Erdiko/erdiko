@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Install Phpunit, https://phpunit.de
-wget https://phar.phpunit.de/phpunit.phar
-chmod +x phpunit.phar
-mv phpunit.phar /usr/local/bin/phpunit
+wget https://phar.phpunit.de/phpunit-4.8.phar
+chmod +x phpunit-4.8.phar
+mv phpunit-4.8.phar /usr/local/bin/phpunit
+phpunit --version
