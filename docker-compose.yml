@@ -9,6 +9,6 @@ services:
       - "8088:80"
   php:
     extends:
-      file: ./docker/php/7.0/docker-compose.yml
+      file: ./docker/php/7.1/docker-compose.yml
       service: php
     container_name: erdiko_php

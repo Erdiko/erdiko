@@ -1,7 +1,7 @@
 Erdiko
 =======
 
-[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko)
+[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/ArroyoLabs/erdiko.svg?branch=master)](https://travis-ci.org/ArroyoLabs/erdiko)
 
 **Erdiko Micro MVC**
 
