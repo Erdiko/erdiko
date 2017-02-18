@@ -90,3 +90,10 @@ Team
 **Who is behind Erdiko?**
 
 Erdiko was created by [Arroyo Labs](http://arroyolabs.com)
+
+
+License
+-------
+
+Erdiko is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
