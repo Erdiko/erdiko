@@ -1,7 +1,7 @@
 Erdiko
 =======
 
-[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/ArroyoLabs/erdiko.svg?branch=master)](https://travis-ci.org/ArroyoLabs/erdiko)
+[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/ArroyoLabs/erdiko.svg?branch=master)](https://travis-ci.org/ArroyoLabs/erdiko) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/?branch=master) [![License](https://poser.pugx.org/erdiko/erdiko/license)](https://packagist.org/packages/erdiko/erdiko)
 
 **Erdiko Micro MVC**
 
