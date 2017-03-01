@@ -9,7 +9,7 @@ services:
 
   webserver:
     extends:
-      file: ./nginx/docker-compose.yml
+      file: ./docker/nginx/docker-compose.yml
       service: webserver
     env_file: ./docker/environment.env
     volumes_from: [data]
