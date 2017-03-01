@@ -1,14 +1,21 @@
 version: '2'
 
 services:
+
+  data:
+    image: busybox
+    volumes:
+      - ./:/code
+
   webserver:
     extends:
-      file: ./docker/nginx/docker-compose.yml
+      file: ./nginx/docker-compose.yml
       service: webserver
-    ports:
-      - "8088:80"
+    env_file: ./docker/environment.env
+    volumes_from: [data]
+
   php:
-    extends:
-      file: ./docker/php/7.1/docker-compose.yml
-      service: php
     container_name: erdiko_php
+    env_file: ./docker/environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
