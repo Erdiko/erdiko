@@ -12,7 +12,7 @@ install:
 
 before_script:
   - cd ../
-  - wget https://raw.githubusercontent.com/ArroyoLabs/erdiko/master/docker/php/7.0/scripts/composer.sh
+  - wget https://raw.githubusercontent.com/Erdiko/docker/master/php/scripts/composer.sh
   - chmod 770 composer.sh
   - ./composer.sh
 
