@@ -3,13 +3,48 @@ Erdiko
 
 [![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/ArroyoLabs/erdiko.svg?branch=master)](https://travis-ci.org/ArroyoLabs/erdiko) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/?branch=master) [![License](https://poser.pugx.org/erdiko/erdiko/license)](https://packagist.org/packages/erdiko/erdiko)
 
-**Erdiko Micro MVC**
+**Erdiko Micro MVC Framework**
 
-Erdiko is a micro MVC framework or better yet, a framework for APIs, lean web front-ends and web apps (start up friendly).
+Erdiko is a micro MVC framework, or better yet, a lean framework for APIs, web front-ends and web apps.  Erdiko is start up friendly.
 
-Iterate on your app without a bloated PHP stack!
+Take a lean approach to your next PHP project.
 
-http://erdiko.org/
+[http://erdiko.org](http://erdiko.org)
+
+
+Erdiko Slim
+-----------
+
+Initial attempts to migrate erdiko to slim.  It uses the slim skeleton as a starting point (slim/slim-skeleton).  
+
+### Requires PHP 7
+
+If you use the latest Erdiko PHP-FPM container from dockerhub you will have everything you need to run erdiko slim, https://hub.docker.com/r/erdiko/php-fpm/
+
+## Docker 
+
+To run your erdiko slim app clone this repo and run docker-compose in the main folder.
+
+    docker-compose up -d
+
+
+History & Resources
+-------------------
+
+The concepts and libraries for the transistion of erdiko to slim started in Summer 2016.  Lots of brainstorming and research went into this effort.  
+
+A post last year about the move to Slim, http://blog.arroyolabs.com/2016/08/moving-to-slimphp/
+
+Inspiration for better frameworks, http://blog.arroyolabs.com/2016/05/a-new-framework-architecture-for-2016/
+
+Learn more about Erdiko, http://erdiko.org/
+
+Roadmap
+-------
+
+After the initial development of erdiko slim, we will merge this repo into the main erdiko/erdiko and erdiko/core libraries.  At that point we will keep this repo up as an archive.
+
+We hope the new framework will be ready sometime summer 2017.  Once the new framework is ready we can update all the erdiko packages to be compatible, especially [erdiko/user-admin](https://github.com/Erdiko/user-admin) and [arroyolabs/erdiko-wordpress](https://github.com/ArroyoLabs/erdiko-wordpress)
 
 
 Installation
@@ -64,32 +99,28 @@ Security
 If you discover any security vulnerabilities within Erdiko, please create a github issue and send an e-mail to John Arroyo at john@arroyolabs.com. Security is top concern and all vulnerabilities will be quickly addressed.
 
 
-Notes
------
+Feedback
+--------
 
 We value feedback and would love to hear your thoughts about the architecture and ease of use of this framework.  There are a lot of possibilities for Erdiko, we value your ideas and thoughts about where to take this codebase.
 
+We switched from Trello to github issues. If you have any bugs or feature requests, please submit an issue.
 
-Upgrades
+
+Credits
+-------
+
+* John Arroyo
+* Andy Armstrong
+* Leo Daidone
+
+* If you want to help, please do, we'd love more brainpower!  Fork, commit your enhancements and do a pull request.  If you want to get to even more involved please contact us!
+
+
+Sponsors
 --------
 
-If you are upgrading from version 0.9.0 or earier than you need to adjust the configs in app/config folder.  The structure has changed slightly.  Move app/config/application/default.json to app/config/default/application.json and app/config/application/routes.json to app/config/default/routes.json.  Take a look at the latest configs in this repo and make sure they adhere to the new structure.
-
-
-Team
-----
-
-**Primary Contributors**
-
-    * John Arroyo (Lead)
-    * Andy Armstrong
-    * Leo Daidone
-
-* If you want to help, please do, we'd love more brains and clever code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
-
-**Who is behind Erdiko?**
-
-Erdiko was created by [Arroyo Labs](http://arroyolabs.com)
+[Arroyo Labs](http://www.arroyolabs.com/)
 
 
 License

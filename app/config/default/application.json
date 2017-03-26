@@ -1,42 +1,34 @@
 {
-  "site": {
-    "name": "Erdiko",
-    "full_name": "Erdiko Micro Framework",
-    "tagline": "Enterprise Glue (PHP Micro Framework)",
-    "copyright": "Copyright © 2016",
-    "description": "Erdiko wants to make your php development easier. If you need a lightweight MVC framework you have come to the right place. Our goal is to offer a clean framework to create sites optimized for mobile devices, APIs and multiple browsers.",
-    "meta": {
-      "description": "Erdiko MVC micro framework (enterprise glue)"
-    },
-    "debug": 1
+  "name": "Erdiko",
+  "full_name": "Erdiko Framework",
+  "tagline": "Enterprise Glue (Micro MVC Framework)",
+  "copyright": "Copyright © 2017",
+  "description": "Erdiko is a lean approach to application development in PHP",
+  "meta": {
+    "description": "Erdiko micro MVC framework (enterprise glue)"
   },
+  "home": "/",
   "theme": {
     "name": "bootstrap",
-    "namespace": "/app/themes/bootstrap",
-    "public": "/public/themes/bootstrap",
+    "namespace": "/themes/bootstrap",
     "defaults": {
-      "layout": {
-        "columns": 1
-      },
-      "home_url": "/"
+      "template": "layouts/1column.html",
+      "view": "erdiko.html"
     }
   },
   "menu": {
     "main": [{
-      "href": "/examples/examples",
+      "href": "/examples",
       "title": "Examples"
+    }, {
+      "href": "/examples/controller/john",
+      "title": "Controller"
+    }, {
+      "href": "/examples/grid/12",
+      "title": "Grid"
     }, {
       "href": "/examples/markup",
       "title": "Mark-Up"
-    }, {
-      "href": "/examples/grid",
-      "title": "Grid"
-    }, {
-      "href": "/examples/twocolumn",
-      "title": "2 Column Layout"
-    }, {
-      "href": "/threecolumn",
-      "title": "3 Column Layout"
     }],
     "footer": [{
       "href": "/",
@@ -48,25 +40,6 @@
       "href": "/examples/about",
       "title": "about"
     }]
-  },
-  "logs": {
-    "name": "default",
-    "path": "/var/logs",
-    "files": [{
-      "default": "system.log",
-      "exception": "exception.log"
-    }]
-  },
-  "cache": {
-    "default": {
-      "type": "File",
-      "class": "\erdiko\core\cache\File",
-      "path": "/var/cache"
-    },
-    "memcached": {
-      "type": "Memcached",
-      "class": "\erdiko\core\cache\Memcached"
-    }
   },
   "google": {
     "analytics": {
