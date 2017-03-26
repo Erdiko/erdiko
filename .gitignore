@@ -6,3 +6,4 @@ var/*
 .idea
 .idea/*
 node_modules/*
+vendor/
