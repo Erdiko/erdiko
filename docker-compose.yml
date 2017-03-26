@@ -6,16 +6,17 @@ services:
     image: busybox
     volumes:
       - ./:/code
+      - ../theme:/theme
+      - ../erdiko-core:/erdiko-core
 
   webserver:
     extends:
       file: ./docker/nginx/docker-compose.yml
       service: webserver
-    env_file: ./docker/environment.env
     volumes_from: [data]
 
   php:
     container_name: erdiko_php
-    env_file: ./docker/environment.env
+    env_file: ./environment.env
     image: erdiko/php-fpm:latest
     volumes_from: [data]

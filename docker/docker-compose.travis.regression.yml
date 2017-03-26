@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+
+  data:
+    image: busybox
+    volumes:
+      - ./:/code
+
+  php71:
+    container_name: erdiko_phpfpm_7.1
+    env_file: ./docker/environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
+
+  php70:
+    container_name: erdiko_phpfpm_7.0
+    env_file: ./docker/environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
+
+  php56:
+    container_name: erdiko_phpfpm_5.6
+    env_file: ./docker/environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
+
+  php55:
+    container_name: erdiko_phpfpm_5.5
+    env_file: ./docker/environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
+
+  php54:
+    container_name: erdiko_phpfpm_5.4
+    env_file: ./docker/environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
