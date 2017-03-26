@@ -1,0 +1,19 @@
+// Base includes
+/*--------------------------------------------------------------------------*/
+@import "variables";
+@import "base/styles";
+
+
+// Vendors
+/*--------------------------------------------------------------------------*/
+// First decide where you want to include your file
+
+// To include from vendor folder
+// @import "../../../../vendor/erdiko/wordpress/themes/clean-blog/styles/main";
+
+
+// User includes
+/*--------------------------------------------------------------------------*/
+@import "variables";
+@import "styles";
+@import "mixins";

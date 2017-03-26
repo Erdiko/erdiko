@@ -1,1 +1,0 @@
-<?php echo $this->getView('examples/two') ?>

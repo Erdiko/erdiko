@@ -1,0 +1,67 @@
+{
+    "name": "bootstrap",
+    "description": "Simple Bootstrap based theme",
+    "credits": "John Arroyo",
+    "namespace": "/app/themes/bootstrap",
+    "public":"/public/themes/bootstrap",
+    "rules": {
+    "header": {
+        "condition": { "route":"/" },
+        "view": "slideshow"
+        }
+    },
+    "css": [
+        {
+            "name": "default",
+            "file": "/themes/clean-blog/css/main.min.css",
+            "active": 1
+        },
+        {
+            "name": "custom-font-1",
+            "file": "http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic",
+            "active": 1
+        },
+        {
+            "name": "custom-font-2",
+            "file": "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800",
+            "active": 1
+        }
+    ],
+    "js": {
+        "default": {
+            "file": "/themes/clean-blog/js/scripts.min.js",
+            "active": 1,
+            "order": 1
+        }
+    },
+    "templates": {
+        "default": {
+            "file": "default"
+        },
+        "fullpage": {
+            "file": "fullpage"
+        },
+        "header": {
+            "file": "page/header"
+        },
+        "footer": {
+            "file": "page/footer"
+        },
+        "analytics": {
+            "file": "page/analytics"
+        }
+    },
+    "layouts": {
+        "1column": {
+            "file": "/themes/clean-blog/templates/layouts/1column"
+        },
+        "2column": {
+            "file": "/themes/clean-blog/templates/layouts/2column"
+        },
+        "3column": {
+            "file": "/themes/clean-blog/templates/layouts/3column"
+        }
+    },
+    "views": {
+    }
+}

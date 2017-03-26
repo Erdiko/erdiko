@@ -1,0 +1,11 @@
+{% extends "bootstrap.html" %}
+
+  {% block body %}
+    {{ include('layout/1column.html') }}
+    {% block body-column1 %}
+      <h1>Erdiko Theme</h1>
+      <div>A micro MVC framework for PHP</div>
+      <h2>Hello {{name}}!</h2>
+      <pre>{{dump(_context)}}</pre>
+    {% endblock body-column1 %}
+  {% endblock body %}
