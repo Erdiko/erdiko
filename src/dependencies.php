@@ -17,19 +17,6 @@ $container['logger'] = function ($container) {
     return $logger;
 };
 
-// Twig view
-$container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig('../app/templates/views', [
-        'cache' => '/tmp/erdiko/twig'
-    ]);
-    
-    // Instantiate and add Slim specific extension
-    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
-    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
-
-    return $view;
-};
-
 // Theme view (erdiko, twig)
 $container['theme'] = function ($container) {
     $settings = $container->get('settings')['theme'];
@@ -45,4 +32,12 @@ $container['theme'] = function ($container) {
         $view->addExtension(new \Twig_Extension_Debug());
 
     return $view;
+};
+
+// 404 Handler
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+        $themeData = \erdiko\theme\Config::get();
+        return $container['theme']->render($response->withStatus(404), '404.html', $themeData);
+    };
 };

@@ -8,7 +8,7 @@ class Home extends \erdiko\Controller
 	public function __invoke($request, $response, $args) 
 	{
         $this->container->logger->debug("/controller");
-   		$view = 'views/controller.html';
+   	    $view = 'views/controller.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
         $config = \erdiko\theme\Config::get();        
