@@ -1,7 +1,7 @@
 <?php
 // Routes
 
-$app->get('/[{name}]', function ($request, $response, $args) {
+$app->get('/', function ($request, $response, $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
 
@@ -55,20 +55,16 @@ $app->any('/render/[{name}]', function ($request, $response, $args) {
 })->setName('invoke');
 
 // Web Controller
-$app->get('/examples/web[/{action}]', \app\controllers\Examples::class)
-    ->setName('web');
+$app->get('/examples/{action}/[{param}]', \app\controllers\Examples::class)
+    ->setName('examples2');
 
-// Example Controller
-//$app->get('/examples[/{action}]', \app\controllers\Examples::class)
-//    ->setName('Examples');
-
-// Controller
-$app->get('/examples/controller[/{name}]', \app\controllers\Home::class)
-    ->setName('home');
+// Web Controller
+$app->get('/examples[/{action}]', \app\controllers\Examples::class)
+    ->setName('examples');
 
 // Controller
-$app->get('/examples/grid/[{count}]', \app\controllers\Grid::class)
-    ->setName('grid');
+//$app->get('/controller[/{name}]', \app\controllers\Home::class)
+//    ->setName('home');
 
 // REST Controller
 $app->get('/rest/{resource}[/{id}]', \app\controllers\Home::class)

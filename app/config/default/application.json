@@ -21,14 +21,14 @@
       "href": "/examples",
       "title": "Examples"
     }, {
-      "href": "/examples/controller/john",
+      "href": "/examples/john",
       "title": "Controller"
     }, {
       "href": "/examples/grid/12",
       "title": "Grid"
     }, {
       "href": "/examples/markup",
-      "title": "Mark-Up"
+      "title": "Markup"
     }],
     "footer": [{
       "href": "/",
