@@ -1,7 +1,7 @@
 Erdiko
 =======
 
-[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/ArroyoLabs/erdiko.svg?branch=master)](https://travis-ci.org/ArroyoLabs/erdiko) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/?branch=master) [![License](https://poser.pugx.org/erdiko/erdiko/license)](https://packagist.org/packages/erdiko/erdiko)
+[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/Erdiko/erdiko.svg?branch=master)](https://travis-ci.org/Erdiko/erdiko) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Erdiko/erdiko/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Erdiko/erdiko/?branch=master) [![License](https://poser.pugx.org/erdiko/erdiko/license)](https://packagist.org/packages/erdiko/erdiko)
 
 **Erdiko Micro MVC Framework**
 
@@ -58,7 +58,7 @@ We recommend installing using composer.  At the commandline run,
 
 If you prefer to install yourself you can clone erdiko from github and run "composer install" in the root folder.
 
-1. git clone git@github.com:ArroyoLabs/erdiko.git
+1. git clone git@github.com:Erdiko/erdiko.git
 2. cd erdiko
 3. composer install
 
