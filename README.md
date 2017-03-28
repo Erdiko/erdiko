@@ -114,6 +114,8 @@ Credits
 * Andy Armstrong
 * Leo Daidone
 
+[All Contributors](https://github.com/Erdiko/erdiko/graphs/contributors)
+
 * If you want to help, please do, we'd love more brainpower!  Fork, commit your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
 
