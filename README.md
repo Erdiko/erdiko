@@ -1,7 +1,7 @@
 Erdiko
 =======
 
-[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/ArroyoLabs/erdiko.svg?branch=master)](https://travis-ci.org/ArroyoLabs/erdiko) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ArroyoLabs/erdiko/?branch=master) [![License](https://poser.pugx.org/erdiko/erdiko/license)](https://packagist.org/packages/erdiko/erdiko)
+[![Package version](https://img.shields.io/packagist/v/erdiko/erdiko.svg?style=flat-square)](https://packagist.org/packages/erdiko/erdiko) [![Travis CI](https://travis-ci.org/Erdiko/erdiko.svg?branch=master)](https://travis-ci.org/Erdiko/erdiko) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Erdiko/erdiko/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Erdiko/erdiko/?branch=master) [![License](https://poser.pugx.org/erdiko/erdiko/license)](https://packagist.org/packages/erdiko/erdiko)
 
 **Erdiko Micro MVC**
 
@@ -76,24 +76,19 @@ Upgrades
 If you are upgrading from version 0.9.0 or earier than you need to adjust the configs in app/config folder.  The structure has changed slightly.  Move app/config/application/default.json to app/config/default/application.json and app/config/application/routes.json to app/config/default/routes.json.  Take a look at the latest configs in this repo and make sure they adhere to the new structure.
 
 
-Team
-----
+Credits
+-------
 
-**Primary Contributors**
+* John Arroyo
+* Andy Armstrong
+* Leo Daidone
 
-    * John Arroyo (Lead)
-    * Andy Armstrong
-    * Leo Daidone
+[All Contributors](https://github.com/Erdiko/erdiko/graphs/contributors)
 
-* If you want to help, please do, we'd love more brains and clever code!  Make your enhancements and do a pull request.  If you want to get to even more involved please contact us!
-
-**Who is behind Erdiko?**
-
-Erdiko was created by [Arroyo Labs](http://arroyolabs.com)
+* If you want to help, please do, we'd love more brainpower!  Fork, commit your enhancements and do a pull request.  If you want to get to even more involved please contact us!
 
 
 License
 -------
 
 Erdiko is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
