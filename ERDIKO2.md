@@ -8,7 +8,7 @@ Installation
 ------------
 
     git clone git@github.com:Erdiko/erdiko.git
-    git clone git@github.com:Erdiko/core.git erdiko-core
+    git clone git@github.com:Erdiko/core.git
     git clone git@github.com:Erdiko/theme.git
 
     cd erdiko

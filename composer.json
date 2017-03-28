@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "erdiko/core": "@dev",
+        "erdiko/core": "@dev-erdiko2",
         "erdiko/theme": "@dev",
         "slim/slim": "^3.1",
         "slim/php-view": "^2.0",
@@ -52,7 +52,7 @@
         },
         {
             "type": "path",
-            "url": "../erdiko-core",
+            "url": "../core",
             "options": {
                 "symlink": true
             }

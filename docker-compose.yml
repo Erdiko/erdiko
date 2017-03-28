@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/code
       - ../theme:/theme
-      - ../erdiko-core:/erdiko-core
+      - ../core:/core
 
   webserver:
     extends:
