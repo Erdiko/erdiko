@@ -5,7 +5,7 @@ Erdiko
 
 **Erdiko Micro MVC Framework**
 
-Erdiko is a micro MVC framework, or better yet, a lean framework for APIs, web front-ends and web apps.  Erdiko is start up friendly.
+Erdiko is a micro MVC framework, or better yet, a lean framework for APIs, web apps and websites.  Erdiko is start up friendly.
 
 Take a lean approach to your next PHP project.
 
