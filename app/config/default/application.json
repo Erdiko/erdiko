@@ -5,6 +5,7 @@
   "copyright": "Copyright © 2017",
   "description": "Erdiko is a lean approach to application development in PHP",
   "meta": {
+    "viewport": "width=device-width, initial-scale=1",
     "description": "Erdiko micro MVC framework (enterprise glue)"
   },
   "home": "/",
