@@ -1,12 +1,12 @@
 {
   "name": "Erdiko",
   "full_name": "Erdiko Framework",
-  "tagline": "Enterprise Glue (Micro MVC Framework)",
+  "tagline": "A PHP framework for lean web development",
   "copyright": "Copyright © 2017",
-  "description": "Erdiko is a lean approach to application development in PHP",
+  "description": "A PHP framework for lean web development",
   "meta": {
     "viewport": "width=device-width, initial-scale=1",
-    "description": "Erdiko micro MVC framework (enterprise glue)"
+    "description": "A PHP framework for lean web development"
   },
   "home": "/",
   "theme": {
