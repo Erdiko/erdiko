@@ -45,6 +45,26 @@ class Examples extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
+    public function getFlash($request, $response, $args)
+    {
+        $view = 'bootstrap.html';
+
+        // Add some flash messages
+        $this->container->flash->addMessage('success', 'This is a success message');
+        $this->container->flash->addMessage('info', 'This is an info message');
+        $this->container->flash->addMessage('warning', 'This is a warning message');
+        $this->container->flash->addMessage('danger', 'This is a danger (error) message'); 
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $themeData = \erdiko\theme\Config::get();
+        $themeData['args'] = $args;
+        $themeData['page'] = [
+            'title' => "Flash Message Example"
+            ];
+
+        return $this->container->theme->render($response, $view, $themeData);
+    }
+
     public function getGrid($request, $response, $args)
     {
         $this->container->logger->debug("/controller");

@@ -17,6 +17,11 @@ $container['logger'] = function ($container) {
     return $logger;
 };
 
+// Register flash provider
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};
+
 // Theme view (erdiko, twig)
 $container['theme'] = function ($container) {
     $settings = $container->get('settings')['theme'];
@@ -26,8 +31,15 @@ $container['theme'] = function ($container) {
     ]);
     
     // Instantiate and add Slim specific extension
-    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
-    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+    $basePath = rtrim(str_ireplace('index.php', '', 
+        $container['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension(
+        $container['router'], $basePath
+    ));
+    $view->addExtension(new Knlv\Slim\Views\TwigMessages(
+        new Slim\Flash\Messages()
+    ));
+
     if($settings['debug'] == true)
         $view->addExtension(new \Twig_Extension_Debug());
 

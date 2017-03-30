@@ -8,7 +8,7 @@
     "viewport": "width=device-width, initial-scale=1",
     "description": "A PHP framework for lean web development"
   },
-  "home": "/",
+  "language": "en",
   "theme": {
     "name": "bootstrap",
     "namespace": "/themes/bootstrap",
@@ -17,6 +17,7 @@
       "view": "erdiko.html"
     }
   },
+  "home": "/",
   "menu": {
     "main": [{
       "href": "/examples",
