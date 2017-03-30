@@ -17,7 +17,7 @@
     },
     "scripts": {
         "default": {
-            "file": "/themes/bootstrap/js/scripts.min.js",
+            "uri": "/themes/bootstrap/js/scripts.min.js",
             "active": 1,
             "order": 1
         }
