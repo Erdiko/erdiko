@@ -11,29 +11,6 @@ $app->get('/', function ($request, $response, $args) {
 //    ->setName('home');
 
 // Render Twig template in route
-$app->get('/theme/{name}', function ($request, $response, $args) {
-    // Erdiko setup (load configs)
-    // $erdiko = \erdiko\App;
-    // $erdiko->load('application');
-    $this->logger->info("/theme");
-    $config = \erdiko\Config::get('application');
-    if (isset($appConfig['theme']['namespace']))
-    {
-        $themeConfig = new \erdiko\theme\Config;
-        $themeConfigArr = $themeConfig->getThemeConfig($appConfig['theme']['namespace']);
-    }
-
-    $view = 'views/page.html';
-    
-    return $this->theme->render($response, $view, [
-        'name' => $args['name'],
-        'title' => "Erdiko Theme",
-        'application' => $appConfig,
-        'theme' => $themeConfigArr
-    ]);
-});
-
-// Render Twig template in route
 $app->any('/render/[{name}]', function ($request, $response, $args) {
     // Erdiko setup (load configs)
     // $erdiko = \erdiko\App;
@@ -54,6 +31,9 @@ $app->any('/render/[{name}]', function ($request, $response, $args) {
         'theme' => $themeConfigArr
     ]);
 })->setName('invoke');
+
+// Render Twig template in route
+$app->get('/examples/config', \app\controllers\Config::class);
 
 // Web Controller
 $app->any('/examples/{action}/[{param}]', \app\controllers\Examples::class)
