@@ -55,11 +55,11 @@ $app->any('/render/[{name}]', function ($request, $response, $args) {
 })->setName('invoke');
 
 // Web Controller
-$app->get('/examples/{action}/[{param}]', \app\controllers\Examples::class)
+$app->any('/examples/{action}/[{param}]', \app\controllers\Examples::class)
     ->setName('examples2');
 
 // Web Controller
-$app->get('/examples[/{action}]', \app\controllers\Examples::class)
+$app->any('/examples[/{action}]', \app\controllers\Examples::class)
     ->setName('examples');
 
 // Controller
@@ -67,9 +67,9 @@ $app->get('/examples[/{action}]', \app\controllers\Examples::class)
 //    ->setName('home');
 
 // REST Controller
-$app->get('/rest/{resource}[/{id}]', \app\controllers\Home::class)
+$app->any('/rest/{resource}[/{id}]', \app\controllers\Rest::class)
     ->setName('rest');
 
 // REST Controller, two key/value pairs
-$app->get('/rest/{resource}/{id}/{sub_resource}[/{sub_id}]', \app\controllers\Home::class)
+$app->any('/rest/{resource}/{id}/{sub_resource}[/{sub_id}]', \app\controllers\Rest::class)
     ->setName('rest2');
