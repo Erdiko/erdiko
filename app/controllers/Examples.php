@@ -46,6 +46,20 @@ class Examples extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
+    public function getCarousel($request, $response, $args)
+    {
+        $view = 'examples/carousel.html';
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $themeData = \erdiko\theme\Config::get();
+        $themeData['page'] = [
+            'title' => "Fullpage Example",
+            'description' => "This is the description of the page."
+            ];
+
+        return $this->container->theme->render($response, $view, $themeData);
+    }
+
     public function getFlash($request, $response, $args)
     {
         $view = 'bootstrap.html';
@@ -75,6 +89,7 @@ class Examples extends \erdiko\controllers\Web
         $themeData = \erdiko\theme\Config::get();
         // $this->container->logger->debug("config: ".print_r($config, true));
 
+        // Generate data for grid
         $item = [
             'url' => "#",
             'image' => "/images/grid-item.png",
@@ -89,12 +104,41 @@ class Examples extends \erdiko\controllers\Web
             $items[] = $item;
         }
 
-        $themeData['args'] = $args;
         $themeData['page'] = [
             'title' => "Grid Example",
             'items' => $items
             ];
     
+        return $this->container->theme->render($response, $view, $themeData);
+    }
+
+    public function getFullpage($request, $response, $args)
+    {
+        $view = 'fullpage.html';
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $themeData = \erdiko\theme\Config::get();
+        $themeData['page'] = [
+            'title' => "Fullpage Example",
+            'description' => "This is the description of the page."
+            ];
+
+        return $this->container->theme->render($response, $view, $themeData);
+    }
+
+    public function getException($request, $response, $args)
+    {
+        $view = 'fullpage.html';
+
+        throw new \Exception("This is an exception");
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $themeData = \erdiko\theme\Config::get();
+        $themeData['page'] = [
+            'title' => "Fullpage Example",
+            'description' => "This is the description of the page."
+            ];
+
         return $this->container->theme->render($response, $view, $themeData);
     }
 }
