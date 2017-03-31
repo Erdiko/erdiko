@@ -9,9 +9,10 @@ class Examples extends \erdiko\controllers\Web
 
         // Get erdiko config, this gets application.json and loads the theme specified
         $themeData = \erdiko\theme\Config::get();
-        $themeData['args'] = $args; // optional
+        // $themeData['args'] = $args; // optional
         $themeData['page'] = [
-            'title' => "Erdiko Web Example"
+            'title' => "Erdiko Web Example",
+            'hello' => "world"
             ];
 
         return $this->container->theme->render($response, $view, $themeData);
