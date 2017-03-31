@@ -1,13 +1,14 @@
 <?php
-// Routes
+// Application Routes
 
 $app->get('/', function ($request, $response, $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
-
     // Render index view
-    return $this->renderer->render($response, 'slim.phtml', $args);
+    return $this->theme->render($response, 'slim.phtml', $args);
 });
+
+// Controller
+//$app->get('/controller[/{name}]', \app\controllers\Home::class)
+//    ->setName('home');
 
 // Render Twig template in route
 $app->get('/theme/{name}', function ($request, $response, $args) {
@@ -30,7 +31,7 @@ $app->get('/theme/{name}', function ($request, $response, $args) {
         'application' => $appConfig,
         'theme' => $themeConfigArr
     ]);
-})->setName('theme');
+});
 
 // Render Twig template in route
 $app->any('/render/[{name}]', function ($request, $response, $args) {
@@ -56,15 +57,11 @@ $app->any('/render/[{name}]', function ($request, $response, $args) {
 
 // Web Controller
 $app->any('/examples/{action}/[{param}]', \app\controllers\Examples::class)
-    ->setName('examples2');
+    ->setName('examples');
 
 // Web Controller
 $app->any('/examples[/{action}]', \app\controllers\Examples::class)
-    ->setName('examples');
-
-// Controller
-//$app->get('/controller[/{name}]', \app\controllers\Home::class)
-//    ->setName('home');
+    ->setName('examples2');
 
 // REST Controller
 $app->any('/rest/{resource}[/{id}]', \app\controllers\Rest::class)
