@@ -60,6 +60,18 @@ class Examples extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
+    public function getTheme($request, $response, $args)
+    {
+        // $view = 'examples/theme.html';
+        $theme = new \erdiko\theme\Engine;
+        $theme->title = "Theme Engine Example";
+        $theme->description = "Description of your page";
+        $theme->hello = "World";
+
+        return $this->render($response, null, $theme);
+        // return $this->container->theme->render($response, $view, $theme->toArray());
+    }
+
     public function getFlash($request, $response, $args)
     {
         $view = 'bootstrap.html';

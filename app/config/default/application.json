@@ -13,8 +13,7 @@
     "name": "bootstrap",
     "namespace": "/themes/bootstrap",
     "defaults": {
-      "template": "layouts/1column.html",
-      "view": "erdiko.html"
+      "view": "layouts/1column.html"
     }
   },
   "home": "/",
