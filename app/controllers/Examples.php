@@ -3,6 +3,8 @@ namespace app\controllers;
 
 class Examples extends \erdiko\controllers\Web
 {
+    use \erdiko\theme\traits\Controller;
+
     public function get($request, $response, $args)
     {
         $view = 'examples/list.html';
@@ -65,11 +67,10 @@ class Examples extends \erdiko\controllers\Web
         // $view = 'examples/theme.html';
         $theme = new \erdiko\theme\Engine;
         $theme->title = "Theme Engine Example";
-        $theme->description = "Description of your page";
-        $theme->hello = "World";
+        $theme->description = "This page is rendered using the theme engine.  
+            \\erdiko\\theme\\Engine";
 
         return $this->render($response, null, $theme);
-        // return $this->container->theme->render($response, $view, $theme->toArray());
     }
 
     public function getFlash($request, $response, $args)
