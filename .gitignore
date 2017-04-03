@@ -2,9 +2,9 @@
 *.komodoproject
 *.sublime-project
 *.sublime-workspace
-var/*
 .idea
 .idea/*
+var/*
 node_modules/*
 vendor/
 composer.lock

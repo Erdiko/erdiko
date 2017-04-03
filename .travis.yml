@@ -2,7 +2,7 @@ sudo: required
 
 language: php
 php:
-  - '5.4'
+  - '7.1'
 
 install:
   - curl -sSL https://get.docker.com/ | sudo sh
