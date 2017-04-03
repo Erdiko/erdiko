@@ -14,13 +14,9 @@
     "require": {
         "php": ">=7.0",
         "erdiko/core": "@dev",
-        "erdiko/theme": "@dev",
         "slim/slim": "^3.1",
-        "slim/php-view": "^2.0",
-        "slim/flash": "^0.2.0",
-        "slim/twig-view": "^2.2",
-        "monolog/monolog": "^1.17",
-        "kanellov/slim-twig-flash": "^0.2.0"
+        "erdiko/theme": "@dev",
+        "monolog/monolog": "^1.17"
     },
     "autoload" : {
         "psr-4" : {
