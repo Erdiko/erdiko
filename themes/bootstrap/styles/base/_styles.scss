@@ -2,6 +2,38 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-header {
-    margin-bottom: 70px;
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
+}
+
+#header-push {
+  height: 70px;
+}
+
+#footer-push, .footer {
+  height: 100px;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  .row {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
