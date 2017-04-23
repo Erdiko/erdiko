@@ -31,7 +31,7 @@ $container['theme'] = function ($container) {
         $container['router'], $basePath
     ));
     $view->addExtension(new Knlv\Slim\Views\TwigMessages(
-        new Slim\Flash\Messages()
+        new Slim\Flash\Messages
     ));
 
     if($settings['debug'] == true)
