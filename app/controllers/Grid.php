@@ -2,9 +2,7 @@
 namespace app\controllers;
 
 class Grid extends \erdiko\Controller
-{
-	protected $container;
-   
+{   
 	public function __invoke($request, $response, $args) 
 	{
         $this->container->logger->debug("/controller");
