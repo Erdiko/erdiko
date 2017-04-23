@@ -16,7 +16,7 @@
         "erdiko/core": "@dev",
         "slim/slim": "^3.1",
         "erdiko/theme": "@dev",
-        "monolog/monolog": "^1.17"
+        "monolog/monolog": "^1.22"
     },
     "autoload" : {
         "psr-4" : {
