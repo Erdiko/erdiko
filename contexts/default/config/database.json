@@ -1,0 +1,17 @@
+{
+    "default": "master",
+    "entities": "/entities",
+    "is_dev_mode": 1,
+    "connections": {
+        "master": {
+            "driver": "pdo_mysql",
+            "host": "localhost",
+            "database": "orms",
+            "username": "webuser",
+            "password": "webuserpass",
+            "charset": "utf8",
+            "collation": "utf8_unicode_ci",
+            "prefix": ""
+        }
+    }
+}
