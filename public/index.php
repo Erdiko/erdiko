@@ -10,17 +10,17 @@
 
 // Bootstrap erdiko & composer autoload
 define('ERDIKO_ROOT', dirname(__DIR__));
-require dirname(__DIR__) . '/vendor/erdiko/core/bootstrap.php';
-require dirname(__DIR__) . '/vendor/autoload.php';
+require ERDIKO_ROOT . '/vendor/erdiko/core/bootstrap.php';
 session_start(); // @todo put somewhere else, startSession()
 
 // Load app settings
-$settings =  require dirname(__DIR__) . '/src/settings.php'; // getSettings()
+$settings = require ERDIKO_ROOT."/contexts/".getenv('ERDIKO_CONTEXT')."/bootstrap/settings.php";
 // $settings =  \erdiko\App::getSettings(); // getSettings()
 
 // Instantiate the app
 $app = new \Slim\App($settings);
-require dirname(__DIR__) . '/src/bootstrap.php';
+
+require ERDIKO_ROOT."/contexts/".getenv('ERDIKO_CONTEXT')."/bootstrap.php";
 
 // Run the app
 $app->run();
