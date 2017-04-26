@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  php:
+    container_name: erdiko_php
+    image: erdiko/php-fpm:latest
+    env_file: ./environment.env
+    ports:
+      - "9000:9000"

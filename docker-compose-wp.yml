@@ -21,9 +21,9 @@ services:
       - ./docker/nginx/wordpress.conf:/etc/nginx/conf.d/wordpress.conf
 
   php:
-    container_name: erdiko_php
-    env_file: ./environment.env
-    image: erdiko/php-fpm:latest
+    extends:
+      file: ./docker/php/docker-compose.yml
+      service: php
     volumes_from: [data]
 
   database:
