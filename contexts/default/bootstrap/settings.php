@@ -12,8 +12,8 @@ return [
 
         // Monolog settings
         'logger' => [
-            'name' => 'slim-app',
-            'path' => dirname(__DIR__) . '/var/logs/app.log',
+            'name' => 'erdiko-default',
+            'path' => ERDIKO_ROOT . '/var/logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
 
