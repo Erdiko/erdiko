@@ -8,3 +8,4 @@ var/*
 node_modules/*
 vendor/
 composer.lock
+/mysql
