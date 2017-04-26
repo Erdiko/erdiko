@@ -1,19 +1,11 @@
 <?php
-// Application Routes
-
-/* *** WordPress *** */
+/* Application Routes (Headless WordPress Blog) */
 
 // List all posts
 $app->get('/', \erdiko\wordpress\controllers\Posts::class);
 
 // Get Author
 $app->get('/author/{author}', \erdiko\wordpress\controllers\Author::class);
-
-// Get Bookmarks
-// $app->get('/bookmarks', \erdiko\wordpress\controllers\Bookmarks::class);
-
-// Get Bookmarks by category
-// $app->get('/bookmarks/{category}', \erdiko\wordpress\controllers\Bookmarks::class);
 
 // Get Posts by category
 $app->get('/category/{category}', \erdiko\wordpress\controllers\Category::class);
