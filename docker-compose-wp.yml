@@ -7,9 +7,9 @@ services:
     volumes:
       - ./:/code
       - ../theme:/theme
-      - ../core:/core
       - ./vendor/wordpress:/wordpress
       - ../erdiko-wordpress:/code/vendor/erdiko/wordpress
+      - ../core:/code/vendor/erdiko/core
 
   webserver:
     extends:
