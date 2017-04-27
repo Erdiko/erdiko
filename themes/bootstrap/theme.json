@@ -3,7 +3,7 @@
     "description": "Simple Bootstrap 3 based theme",
     "credits": "John Arroyo",
     "public":"/public/themes/bootstrap",
-    "view": "bootstrap.html",
+    "view": "page.html",
     "styles": {
         "default": {
             "uri": "/themes/bootstrap/css/main.min.css",

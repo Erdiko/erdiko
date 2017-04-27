@@ -7,6 +7,7 @@ class Examples extends \erdiko\controllers\Web
 
     public function get($request, $response, $args)
     {
+        $this->container->logger->debug("examples");
         $view = 'examples/list.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
@@ -75,7 +76,7 @@ class Examples extends \erdiko\controllers\Web
 
     public function getFlash($request, $response, $args)
     {
-        $view = 'bootstrap.html';
+        $view = 'page.html';
 
         // Add some flash messages
         $this->container->flash->addMessage('success', 'This is a success message');
@@ -141,7 +142,7 @@ class Examples extends \erdiko\controllers\Web
 
     public function getException($request, $response, $args)
     {
-        $view = 'fullpage.html';
+        $view = 'page.html';
 
         throw new \Exception("This is an exception");
 
