@@ -1,0 +1,38 @@
+version: '2.1'
+
+services:
+
+  data:
+    image: busybox
+    volumes:
+      - ./:/code
+      - ../theme:/theme
+      - ./vendor/wordpress:/wordpress
+      - ../erdiko-wordpress:/code/vendor/erdiko/wordpress
+      - ../core:/code/vendor/erdiko/core
+
+  webserver:
+    extends:
+      file: ./docker/nginx/docker-compose.yml
+      service: webserver
+    volumes_from: [data]
+    volumes:
+      - ./docker/nginx/global:/etc/nginx/global
+      - ./docker/nginx/wordpress.conf:/etc/nginx/conf.d/wordpress.conf
+
+  php:
+    extends:
+      file: ./docker/php/docker-compose.yml
+      service: php
+    volumes_from: [data]
+
+  database:
+    container_name: erdiko_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=pa55WDo123
+      - SHELL=/bin/bash
+    image: mysql:latest
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
