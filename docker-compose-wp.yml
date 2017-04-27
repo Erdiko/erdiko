@@ -17,13 +17,20 @@ services:
       service: webserver
     volumes_from: [data]
     volumes:
-      - ./docker/nginx/global:/etc/nginx/global
-      - ./docker/nginx/wordpress.conf:/etc/nginx/conf.d/wordpress.conf
+      - ./docker/nginx/multisite.conf:/etc/nginx/conf.d/site.conf
+      #- ./docker/nginx/global:/etc/nginx/global
+      #- ./docker/nginx/wordpress.conf:/etc/nginx/conf.d/wordpress.conf
+
+  php_blog:
+    container_name: erdiko_php_blog
+    env_file: ./docker/php/environment-blog.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
 
   php:
-    extends:
-      file: ./docker/php/docker-compose.yml
-      service: php
+    container_name: erdiko_php
+    env_file: ./docker/php/environment.env
+    image: erdiko/php-fpm:latest
     volumes_from: [data]
 
   database:
