@@ -21,6 +21,43 @@ class Examples extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
+
+    public function getOnecolumn($request, $response, $args)
+    {
+        $this->container->logger->debug("route: /config");
+        $view = 'layouts/1column.html';
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $config = \erdiko\theme\Config::get();
+        $config['page']['title'] = "1 Column Layout";
+
+        return $this->container->theme->render($response, $view, $config);
+    }
+
+    public function getTwocolumn($request, $response, $args)
+    {
+        $this->container->logger->debug("route: /config");
+        $view = 'layouts/2column.html';
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $config = \erdiko\theme\Config::get();
+        $config['page']['title'] = "2 Column Layout";
+
+        return $this->container->theme->render($response, $view, $config);
+    }
+
+    public function getThreecolumn($request, $response, $args)
+    {
+        $this->container->logger->debug("route: /config");
+        $view = 'layouts/3column.html';
+
+        // Get erdiko config, this gets application.json and loads the theme specified
+        $config = \erdiko\theme\Config::get();
+        $config['page']['title'] = "3 Column Layout";
+
+        return $this->container->theme->render($response, $view, $config);
+    }
+
     public function getJohn($request, $response, $args)
     {
         $view = 'pages/example.html';
