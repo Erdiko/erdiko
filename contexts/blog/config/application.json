@@ -3,14 +3,14 @@
   "full_name": "Erdiko Framework",
   "tagline": "A PHP framework for lean web development",
   "copyright": "Copyright © 2017",
-  "description": "A PHP framework for lean web development",
+  "description": "A headless WP blog using Erdiko",
   "meta": {
     "viewport": "width=device-width, initial-scale=1",
     "description": "A PHP framework for lean web development"
   },
   "language": "en",
   "theme": {
-    "name": "bootstrap",
+    "name": "clean-blog",
     "namespace": "/vendor/erdiko/wordpress/themes/clean-blog",
     "defaults": {
       "view": "layouts/1column.html",

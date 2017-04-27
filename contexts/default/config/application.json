@@ -1,5 +1,5 @@
 {
-  "name": "Erdiko Blog",
+  "name": "Erdiko",
   "full_name": "Erdiko Framework",
   "tagline": "A PHP framework for lean web development",
   "copyright": "Copyright © 2017",
@@ -11,11 +11,11 @@
   "language": "en",
   "theme": {
     "name": "bootstrap",
-    "namespace": "/vendor/erdiko/wordpress/themes/clean-blog",
+    "namespace": "/themes/bootstrap",
     "defaults": {
       "view": "layouts/1column.html",
       "pagesize": 10,
-      "blog_home": "/"
+      "home": "/"
     }
   },
   "home": "/",
