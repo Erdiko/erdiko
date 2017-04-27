@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+
+  data:
+    image: busybox
+    volumes:
+      - ./:/code
+      - ../theme:/theme
+      - ../core:/core
+
+  webserver:
+    extends:
+      file: ./docker/nginx/docker-compose.yml
+      service: webserver
+    volumes_from: [data]
+
+  php:
+    container_name: erdiko_php
+    env_file: ./environment.env
+    image: erdiko/php-fpm:latest
+    volumes_from: [data]
