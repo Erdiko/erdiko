@@ -9,7 +9,7 @@ chmod 770 composer.sh
 ./composer.sh
 
 # Install erdiko
-composer update --keep-vcs
+composer update
 
 # decide which docker environment to bring up
 if [ "$CIRCLE_BRANCH" == "release" ]; then
