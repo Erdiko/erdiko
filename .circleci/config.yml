@@ -24,9 +24,6 @@ jobs:
             chmod 770 ./.circleci/scripts/*.sh
             ./.circleci/scripts/setup.sh
 
-            pwd
-            ls -al
-
       - run:
           name: Run PHPUnit tests
           command: |
@@ -36,7 +33,7 @@ jobs:
             ls -al
             cd /code
             ls -al ./.circleci/scripts
-            ls -la /erdiko/vendor/erdiko/core/.circleci/scripts
+            ls -la ./vendor/erdiko/core/.circleci/scripts
 
             ./.circleci/scripts/test-logic.sh
 
