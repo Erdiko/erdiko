@@ -2,9 +2,11 @@ version: '2'
 
 services:
 
+  webserver:
+    image: erdiko/nginx:latest
+    container_name: erdiko_web
+
   php:
     container_name: erdiko_php
     env_file: ./docker/environment.env
     image: erdiko/php-fpm:latest
-    volumes:
-      - ./:/code
