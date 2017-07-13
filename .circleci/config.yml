@@ -1,0 +1,48 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: erdiko/docker-compose:1.11
+    working_directory: /code
+
+    environment:
+      TEST_RESULTS: /tmp/test-results
+
+    steps:
+      - checkout
+
+      - run: mkdir -p $TEST_RESULTS
+
+      - setup_remote_docker
+
+      - run:
+          name: Build container environment
+          command: |
+            set -x
+
+            chmod 770 ./.circleci/scripts/*.sh
+            ./.circleci/scripts/setup.sh
+
+            pwd
+            ls -al
+
+      - run:
+          name: Run PHPUnit tests
+          command: |
+            set -x
+
+            pwd
+            ls -al
+            cd /code
+            ls -al ./.circleci/scripts
+            ls -la /erdiko/vendor/erdiko/core/.circleci/scripts
+
+            ./.circleci/scripts/test-logic.sh
+
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: raw-test-output
+
+      - store_test_results:
+          path: /tmp/test-results
