@@ -17,6 +17,7 @@ require ERDIKO_ROOT . '/vendor/erdiko/core/session.php'; // @todo put somewhere 
 $app = new \erdiko\App();
 
 // Bootstrap your app (context)
+// If you are running multiple sites in the same server (container) then you would hardcode your context here.
 require ERDIKO_ROOT."/contexts/".getenv('ERDIKO_CONTEXT')."/bootstrap.php";
 
 // Run the app (autoloads the context bootstrap)
