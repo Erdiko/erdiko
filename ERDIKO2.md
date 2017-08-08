@@ -1,6 +1,14 @@
 # Erdiko 2 Development
 
-## Installation
+## Quick Installation
+
+Create a working folder, e.g erdiko2, and run the following in that folder.
+
+```
+curl -s https://raw.githubusercontent.com/Erdiko/erdiko/erdiko2/.circleci/scripts/build.sh | bash
+```
+
+## Manual Installation
 
 ### Clone all the repositories
 

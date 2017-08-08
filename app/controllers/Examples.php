@@ -3,16 +3,18 @@ namespace app\controllers;
 
 class Examples extends \erdiko\controllers\Web
 {
-    use \erdiko\theme\traits\Controller;
+    // use \erdiko\theme\traits\Controller;
 
     public function get($request, $response, $args)
     {
-        $this->container->logger->debug("examples");
+        // $this->container->logger->debug("examples");
         $view = 'examples/list.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        // $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         // $themeData['args'] = $args; // optional
+
         $themeData['page'] = [
             'title' => "Erdiko Web Example",
             'hello' => "world"
@@ -21,41 +23,34 @@ class Examples extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
-
     public function getOnecolumn($request, $response, $args)
     {
         $this->container->logger->debug("route: /config");
         $view = 'layouts/1column.html';
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
+        $themeData['page']['title'] = "1 Column Layout";
 
-        // Get erdiko config, this gets application.json and loads the theme specified
-        $config = \erdiko\theme\Config::get();
-        $config['page']['title'] = "1 Column Layout";
-
-        return $this->container->theme->render($response, $view, $config);
+        return $this->container->theme->render($response, $view, $themeData);
     }
 
     public function getTwocolumn($request, $response, $args)
     {
         $this->container->logger->debug("route: /config");
         $view = 'layouts/2column.html';
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
+        $themeData['page']['title'] = "2 Column Layout";
 
-        // Get erdiko config, this gets application.json and loads the theme specified
-        $config = \erdiko\theme\Config::get();
-        $config['page']['title'] = "2 Column Layout";
-
-        return $this->container->theme->render($response, $view, $config);
+        return $this->container->theme->render($response, $view, $themeData);
     }
 
     public function getThreecolumn($request, $response, $args)
     {
         $this->container->logger->debug("route: /config");
         $view = 'layouts/3column.html';
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
+        $themeData['page']['title'] = "3 Column Layout";
 
-        // Get erdiko config, this gets application.json and loads the theme specified
-        $config = \erdiko\theme\Config::get();
-        $config['page']['title'] = "3 Column Layout";
-
-        return $this->container->theme->render($response, $view, $config);
+        return $this->container->theme->render($response, $view, $themeData);
     }
 
     public function getJohn($request, $response, $args)
@@ -63,7 +58,7 @@ class Examples extends \erdiko\controllers\Web
         $view = 'pages/example.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['args'] = $args; // optional
         $themeData['page'] = [
             'title' => "Erdiko Web Example"
@@ -77,7 +72,7 @@ class Examples extends \erdiko\controllers\Web
         $view = 'examples/markup.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['args'] = $args; // optional
         $themeData['page'] = [
             'title' => "Markup Example"
@@ -91,7 +86,7 @@ class Examples extends \erdiko\controllers\Web
         $view = 'examples/carousel.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['page'] = [
             'title' => "Fullpage Example",
             'description' => "This is the description of the page."
@@ -102,10 +97,10 @@ class Examples extends \erdiko\controllers\Web
 
     public function getTheme($request, $response, $args)
     {
-        // $view = 'examples/theme.html';
-        $theme = new \erdiko\theme\Engine;
+        $theme = new \erdiko\theme\Engine($this);
+
         $theme->title = "Theme Engine Example";
-        $theme->description = "This page is rendered using the theme engine.  
+        $theme->description = "This page is rendered using the theme engine.
             \\erdiko\\theme\\Engine";
 
         return $this->render($response, null, $theme);
@@ -119,10 +114,10 @@ class Examples extends \erdiko\controllers\Web
         $this->container->flash->addMessage('success', 'This is a success message');
         $this->container->flash->addMessage('info', 'This is an info message');
         $this->container->flash->addMessage('warning', 'This is a warning message');
-        $this->container->flash->addMessage('danger', 'This is a danger (error) message'); 
+        $this->container->flash->addMessage('danger', 'This is a danger (error) message');
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['args'] = $args;
         $themeData['page'] = [
             'title' => "Flash Message Example"
@@ -137,7 +132,7 @@ class Examples extends \erdiko\controllers\Web
         $view = 'examples/grid.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         // $this->container->logger->debug("config: ".print_r($config, true));
 
         // Generate data for grid
@@ -159,7 +154,7 @@ class Examples extends \erdiko\controllers\Web
             'title' => "Grid Example",
             'items' => $items
             ];
-    
+
         return $this->container->theme->render($response, $view, $themeData);
     }
 
@@ -168,7 +163,7 @@ class Examples extends \erdiko\controllers\Web
         $view = 'fullpage.html';
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['page'] = [
             'title' => "Fullpage Example",
             'description' => "This is the description of the page."
@@ -184,7 +179,7 @@ class Examples extends \erdiko\controllers\Web
         throw new \Exception("This is an exception");
 
         // Get erdiko config, this gets application.json and loads the theme specified
-        $themeData = \erdiko\theme\Config::get();
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['page'] = [
             'title' => "Fullpage Example",
             'description' => "This is the description of the page."

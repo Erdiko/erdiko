@@ -1,10 +1,9 @@
-{% extends application.theme.defaults.view %}
+{% extends theme.defaults.view %}
 
   {% block column1 %}
     <h1>{{page.title}}</h1>
-    <p>template: {{application.theme.defaults.template}}</p>
+    <p>template: {{theme.defaults.template}}</p>
     <pre>debug dump:
-
         {{dump(_context)}}
     </pre>
   {% endblock %}

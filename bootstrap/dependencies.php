@@ -43,7 +43,7 @@ $container['theme'] = function ($container) {
 // 404 Handler
 $container['notFoundHandler'] = function ($container) {
     return function ($request, $response) use ($container) {
-        $themeData = \erdiko\theme\Config::get();
+        $themeData = \erdiko\theme\Config::get($container->get('settings')['theme']);
         return $container['theme']->render($response->withStatus(404), '404.html', $themeData);
     };
 };

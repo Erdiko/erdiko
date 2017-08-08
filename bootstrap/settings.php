@@ -11,13 +11,9 @@ return [
         ],
 
         // Monolog settings
-        'logger' => [
-            'name' => 'erdiko-default',
-            'path' => ERDIKO_ROOT . '/var/logs/app.log',
-            'level' => \Monolog\Logger::DEBUG,
-        ],
+        'logger' => require getenv("ERDIKO_ROOT").'/config/logger.php',
 
         // Theme settings
-        'theme' => require getenv("ERDIKO_ROOT").'/contexts/'.getenv("ERDIKO_CONTEXT").'/config/theme.php',
+        'theme' => require getenv("ERDIKO_ROOT").'/config/theme.php',
     ],
 ];

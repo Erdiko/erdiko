@@ -9,16 +9,15 @@
  */
 
 // Bootstrap erdiko (& composer)
-define('ERDIKO_ROOT', dirname(__DIR__)); // @todo move, perhaps use a setenv?
-require ERDIKO_ROOT . '/vendor/erdiko/core/bootstrap.php';
-require ERDIKO_ROOT . '/vendor/erdiko/core/session.php'; // @todo put somewhere else?
+require getenv("ERDIKO_ROOT").'/vendor/erdiko/core/bootstrap.php';
 
 // Instantiate the app (autoloads the context settings)
 $app = new \erdiko\App();
 
-// Bootstrap your app (context)
-// If you are running multiple sites in the same server (container) then you would hardcode your context here.
-require ERDIKO_ROOT."/contexts/".getenv('ERDIKO_CONTEXT')."/bootstrap.php";
+// Bootstrap your app
+require getenv("ERDIKO_ROOT")."/bootstrap.php";
 
 // Run the app (autoloads the context bootstrap)
 $app->run();
+
+/** For multi site pass settings file to the \erdiko\App() and call your site specific bootstrap **/
