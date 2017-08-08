@@ -3,7 +3,7 @@ namespace app\controllers;
 
 class Examples extends \erdiko\controllers\Web
 {
-    // use \erdiko\theme\traits\Controller;
+    use \erdiko\theme\traits\Controller; // Add theme engine suport (for convenience)
 
     public function get($request, $response, $args)
     {
@@ -95,15 +95,33 @@ class Examples extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
+    /**
+     * Leverage the theme trait to easily add content to an action
+     */
     public function getTheme($request, $response, $args)
     {
-        $theme = new \erdiko\theme\Engine($this);
-
-        $theme->title = "Theme Engine Example";
-        $theme->description = "This page is rendered using the theme engine.
+        $this->getThemeEngine();
+        $this->theme->title = "Theme Engine Example";
+        $this->theme->description = "This page is rendered using the erdiko theme engine.
             \\erdiko\\theme\\Engine";
 
         return $this->render($response, null, $theme);
+    }
+
+    /**
+     * Alternative way to use the theme Engine (explicit)
+     * In this approach it does not rely on the theme trait
+     */
+    public function getTheme2($request, $response, $args)
+    {
+        $theme = new \erdiko\theme\Engine( $this->container->get('settings')['theme'] );
+        $theme->title = "Theme Engine Example";
+        $theme->description = "This page is rendered with the erdiko theme engine.
+            It does not leverage the erdiko theme trait.
+            \\erdiko\\theme\\Engine";
+
+        return $this->container->theme->render($response, $theme->getDefaultView(), $theme->toArray());
+        // return $this->render($response, null, $theme);
     }
 
     public function getFlash($request, $response, $args)
