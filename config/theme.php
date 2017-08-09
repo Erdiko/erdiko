@@ -26,7 +26,6 @@ return [
     'menus' => [
         'main' => [
             ['title' => 'Examples', 'href' => '/examples'],
-            ['title' => 'Controller', 'href' => '/examples/john'],
             ['title' => 'Grid', 'href' => '/examples/grid/12'],
             ['title' => 'Markup', 'href' => '/examples/markup'],
         ],

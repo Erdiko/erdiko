@@ -124,6 +124,19 @@ class Examples extends \erdiko\controllers\Web
         // return $this->render($response, null, $theme);
     }
 
+    /**
+     * Leverage the theme trait to easily add content to an action
+     */
+    public function getAbout($request, $response, $args)
+    {
+        $this->getThemeEngine();
+        $this->theme->title = "About";
+        $this->theme->description = "Erdiko is a framework and set of open source packages for lean php development.
+            Created by Arroyo Labs and community contributors with the help of Slim and Symfony components";
+
+        return $this->render($response, null, $theme);
+    }
+
     public function getFlash($request, $response, $args)
     {
         $view = 'page.html';
