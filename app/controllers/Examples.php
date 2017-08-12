@@ -137,6 +137,23 @@ class Examples extends \erdiko\controllers\Web
         return $this->render($response, null, $theme);
     }
 
+    /**
+     * Test the session
+     */
+    public function getSession($request, $response, $args)
+    {
+        $this->getThemeEngine();
+        $this->theme->title = "Session Test";
+
+        $value = (isset($_GET["index"])) ? $_GET["index"] : \erdiko\session\Session::get('index');
+        \erdiko\session\Session::set('index', $value);
+
+        // $this->container->logger->debug("session::index = ".\erdiko\session\Session::get('index'));
+        $this->theme->description = "Session value: ".\erdiko\session\Session::get('index');
+
+        return $this->render($response, null, $theme);
+    }
+
     public function getFlash($request, $response, $args)
     {
         $view = 'page.html';

@@ -1,6 +1,8 @@
 <?php
 // Start session
-require getenv("ERDIKO_ROOT") . '/vendor/erdiko/core/session.php';
+require_once __DIR__ . '/config/session.php';
+// \erdiko\session\Session::start();
+// \erdiko\session\Session::set("start", true);
 
 // Set up dependencies
 require_once __DIR__ . '/bootstrap/dependencies.php';
