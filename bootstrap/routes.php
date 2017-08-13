@@ -21,9 +21,9 @@ $app->any('/render/[{name}]', function ($request, $response, $args) {
         $themeConfig = new \erdiko\theme\Config;
         $themeConfigArr = $themeConfig->getThemeConfig($appConfig['theme']['namespace']);
     }
-    
+
     $view = 'views/invoke.html';
-    
+
     return $this->theme->render($response, $view, [
         'name' => $args['name'],
         'title' => "Erdiko Theme",
@@ -34,6 +34,12 @@ $app->any('/render/[{name}]', function ($request, $response, $args) {
 
 // Render Twig template in route
 $app->get('/examples/config', \app\controllers\Config::class);
+
+// Session Tests
+$app->get('/examples/session', \app\controllers\examples\Session::class);
+
+// Doctrine (database) Tests
+$app->get('/examples/database', \app\controllers\examples\Database::class);
 
 // Web Controller
 $app->any('/examples/{action}/[{param}]', \app\controllers\Examples::class)

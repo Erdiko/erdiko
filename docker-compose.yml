@@ -27,3 +27,13 @@ services:
     image: redis:latest
     volumes:
       - ../redis:/data
+
+  db:
+    container_name: erdiko_db
+    env_file: ./environment.env
+    image: mysql:latest
+    volumes:
+      - ../mysql:/var/lib/mysql
+      - ./docker/mysql/conf.d/erdiko.cnf:/etc/mysql/conf.d/erdiko.cnf
+    ports:
+      - "3306:3306"

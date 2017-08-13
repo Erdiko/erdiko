@@ -1,0 +1,4 @@
+# Bind to all IPs
+[mysql]
+bind-address = 0.0.0.0
+

@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  db:
+    container_name: erdiko_users_db
+    env_file: ./environment.env
+    image: mysql:latest
+    volumes:
+      - ../../../mysql:/var/lib/mysql
+      - ./conf.d/erdiko.cnf:/etc/mysql/conf.d/erdiko.cnf

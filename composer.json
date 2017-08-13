@@ -17,6 +17,7 @@
         "slim/slim": "^3.1",
         "erdiko/theme": "@dev",
         "erdiko/session": "@dev",
+        "erdiko/doctrine": "@dev",
         "monolog/monolog": "^1.22"
     },
     "autoload" : {
@@ -58,6 +59,13 @@
         {
             "type": "path",
             "url": "../session",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../doctrine",
             "options": {
                 "symlink": true
             }
