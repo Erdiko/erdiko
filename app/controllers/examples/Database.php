@@ -4,7 +4,7 @@ namespace app\controllers\examples;
 class Database extends \erdiko\controllers\Web
 {
     use \erdiko\theme\traits\Controller; // Add theme engine suport (for convenience)
-    use \erdiko\doctrine\controllers\EntityTrait;
+    // use \erdiko\doctrine\controllers\EntityTrait;
 
     public function get($request, $response, $args)
     {

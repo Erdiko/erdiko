@@ -8,6 +8,8 @@ services:
       - ./:/code
       - ../theme:/theme
       - ../core:/core
+      - ../doctrine:/doctrine
+      - ../session:/session
 
   webserver:
     extends:
