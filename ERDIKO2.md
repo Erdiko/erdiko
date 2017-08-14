@@ -16,7 +16,8 @@ curl -s https://raw.githubusercontent.com/Erdiko/erdiko/erdiko2/.circleci/script
 git clone git@github.com:Erdiko/erdiko.git -b erdiko2
 git clone git@github.com:Erdiko/core.git -b erdiko2
 git clone git@github.com:Erdiko/theme.git
-git clone git@github.com:Erdiko/session.git
+git clone git@github.com:Erdiko/doctrine.git -b erdiko2
+git clone git@github.com:Erdiko/session.git -b erdiko2
 
 cd erdiko
 docker-compose up &

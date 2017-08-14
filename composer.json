@@ -1,6 +1,6 @@
 {
     "name": "erdiko/erdiko",
-    "description": "A micro MVC framework built with Slim",
+    "description": "A micro MVC framework built with Slim and Symfony components",
     "keywords": ["microframework", "rest", "router", "psr7", "php7"],
     "homepage": "http://erdiko.org",
     "license": "MIT",
@@ -14,7 +14,7 @@
     "require": {
         "php": ">=7.0",
         "erdiko/core": "@dev",
-        "slim/slim": "^3.1",
+        "slim/slim": "^3.8",
         "erdiko/theme": "@dev",
         "erdiko/session": "@dev",
         "erdiko/doctrine": "@dev",
@@ -36,11 +36,11 @@
             "Tests\\": "tests/"
         }
     },
-	"scripts": {
+	  "scripts": {
         "start": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit",
         "erdiko": "docker-compose up -d"
-	},
+	  },
     "repositories": [
         {
             "type": "path",
