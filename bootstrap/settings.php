@@ -15,5 +15,8 @@ return [
 
         // Theme settings
         'theme' => require getenv("ERDIKO_ROOT").'/config/theme.php',
+
+        // Database settings
+        'database' => require getenv("ERDIKO_ROOT").'/config/database.php',
     ],
 ];

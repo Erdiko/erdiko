@@ -4,15 +4,20 @@ namespace app\controllers\examples;
 class Database extends \erdiko\controllers\Web
 {
     use \erdiko\theme\traits\Controller; // Add theme engine suport (for convenience)
+    use \erdiko\doctrine\controllers\EntityTrait;
 
     public function get($request, $response, $args)
     {
         $this->getThemeEngine();
         $this->theme->title = "Database Test";
 
-        $test = new \app\models\Test;
-        $tests = $test->getTests();
+        // Inject in controller
+        // $tests = $this->getRepository('app\entities\Test')->findAll();
+        // $this->theme->description = "<pre>Tests: ".print_r($tests, true)."</pre>";
 
+        // Inject EntityManager into the model
+        $test = new \app\models\Test($this->container->em);
+        $tests = $test->getTests();
         $this->theme->description = "<pre>Tests: ".print_r($tests, true)."</pre>";
 
         return $this->render($response, null, $theme);

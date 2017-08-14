@@ -16,6 +16,11 @@ $container['flash'] = function () {
     return new \Slim\Flash\Messages();
 };
 
+// EntityManager provider
+$container['em'] = function ($container) {
+    return \erdiko\doctrine\EntityManager::getEntityManager($container->get('settings')['database']);
+};
+
 // Theme view (erdiko, twig)
 $container['theme'] = function ($container) {
     $settings = $container->get('settings')['theme'];

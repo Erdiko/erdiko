@@ -13,17 +13,10 @@ namespace app\models;
 
 class Test
 {
-    use \erdiko\doctrine\EntityTraits; // This adds some convenience methods
+    use \erdiko\doctrine\models\EntityTrait; // This adds some convenience methods
 
     public function getTests()
     {
         return $this->getRepository('app\entities\Test')->findAll(); // The easy (convenient) way
-    }
-
-    public function getUsersOld()
-    {
-        // The old fashioned way (typical doctrine use)
-        $entityManager = \erdiko\doctrine\EntityManager::getEntityManager();
-        return $entityManager->getRepository('app\entities\User')->findAll();
     }
 }
