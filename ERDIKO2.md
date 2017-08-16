@@ -2,9 +2,11 @@
 
 ## Quick Installation
 
-Create a working folder, e.g erdiko2, and run the following in that folder.
+Create a working folder, e.g erdiko2, and then run the install script.
 
 ```
+mkdir erdiko2
+cd erdiko2
 curl -s https://raw.githubusercontent.com/Erdiko/erdiko/erdiko2/.circleci/scripts/build.sh | bash
 ```
 
