@@ -1,6 +1,4 @@
 <?php
-// Start Session
-require ERDIKO_ROOT . '/vendor/erdiko/core/session.php';
 
 // Set up dependencies
 require_once __DIR__ . '/bootstrap/dependencies.php';

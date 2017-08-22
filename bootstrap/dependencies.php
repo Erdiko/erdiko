@@ -2,6 +2,11 @@
 // DIC configuration
 $container = $app->getContainer();
 
+// Register Session
+$container['session'] = function () {
+    return \erdiko\session\Session::getDriverDefault();
+};
+
 // Monolog
 $container['logger'] = function ($container) {
     $settings = $container->get('settings')['logger'];
@@ -12,8 +17,8 @@ $container['logger'] = function ($container) {
 };
 
 // Register flash provider
-$container['flash'] = function () {
-    return new \Slim\Flash\Messages();
+$container['flash'] = function ($container) {
+    return new \Slim\Flash\Messages($container['session']);
 };
 
 // EntityManager provider
@@ -36,7 +41,7 @@ $container['theme'] = function ($container) {
         $container['router'], $basePath
     ));
     $view->addExtension(new Knlv\Slim\Views\TwigMessages(
-        new Slim\Flash\Messages
+        new Slim\Flash\Messages($container['session'])
     ));
 
     if( $settings['debug'] )
