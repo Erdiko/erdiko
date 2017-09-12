@@ -4,6 +4,7 @@ services:
 
   data:
     image: busybox
+    env_file: ./environment.env
     volumes:
       - ./:/code
       - ../theme:/theme
@@ -15,6 +16,7 @@ services:
     extends:
       file: ./docker/nginx/docker-compose.yml
       service: webserver
+    env_file: ./environment.env
     volumes_from: [data]
 
   php:

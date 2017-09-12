@@ -4,8 +4,7 @@ return [
     "default" => [
         "driver" => "file",
         "session_config" => [
-            "save_path" => "/tmp",
-            "lifetime" => 60000
+            "save_path" => "/tmp"
         ]
     ]
 ];
