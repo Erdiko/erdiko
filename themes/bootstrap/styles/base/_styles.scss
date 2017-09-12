@@ -3,6 +3,33 @@
 @import "../../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot";
 
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-  padding-top: 5rem;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+
+  > .container {
+    padding: 60px 15px 0;
+  }
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 102px;
+  line-height: 20px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+
+  > .container {
+    padding: 15px;
+  }
+}
+code {
+  font-size: 80%;
 }
