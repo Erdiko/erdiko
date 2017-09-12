@@ -1,6 +1,6 @@
 <?php
 return [
-    'name' => 'Erdiko',
+    'name' => 'Erdiko II',
     'full_name' => 'Erdiko II Framework',
     'tagline' => 'A PHP framework for lean web development',
     'description' => 'A PHP framework for lean web development',
