@@ -13,10 +13,10 @@
     ],
     "require": {
         "php": ">=7.0",
-        "erdiko/core": "2.0.0-beta1",
+        "erdiko/core": "@dev",
         "slim/slim": "^3.8",
-        "erdiko/theme": "^0.2.0",
-        "erdiko/session": "^0.1.0",
+        "erdiko/theme": "@dev",
+        "erdiko/session": "@dev",
         "erdiko/doctrine": "@dev",
         "monolog/monolog": "^1.22"
     },
@@ -42,6 +42,27 @@
         "erdiko": "docker-compose up -d"
 	  },
     "repositories": [
+        {
+            "type": "path",
+            "url": "../theme",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../session",
+            "options": {
+                "symlink": true
+            }
+        },
         {
             "type": "path",
             "url": "../doctrine",
