@@ -6,5 +6,5 @@ return [
     'description' => 'A PHP framework for lean web development',
     'copyright' => 'Copyright © 2017',
     'site_url' => getenv("ERDIKO_SITE_URL"),
-    'home' => '/',
+    'home' => '/examples',
 ];
