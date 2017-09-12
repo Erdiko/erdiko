@@ -10,8 +10,13 @@ var themeName       = "bootstrap";
 var renderedTheme   = renderedThemeRoot+'themes/'+themeName;
 
 var jQueryJs        = "node_modules/jquery/dist/jquery.slim.js";
+
 var tetherJs        = "node_modules/tether/dist/js/tether.js";
-var bootstrapJs     = "node_modules/bootstrap-v4-dev/dist/js/bootstrap.js";
+
+var popperJs        = "node_modules/popper.js/dist/umd/popper.min.js";
+
+var bootstrapJs     = "node_modules/bootstrap/dist/js/bootstrap.js";
+
 // var cleanBlogJs     = parentThemeRoot+"scripts/clean-blog.js";
 
 
@@ -53,6 +58,7 @@ gulp.task('build', function(callback) {
       'clean:stage',
       ['styles',
           'tether-scripts',
+          'popper-scripts',
           'bootstrap-scripts', 'jquery-scripts', 'scripts'],
       ['minify-css', 'minify-js'],
       'notify:buildComplete',
@@ -115,6 +121,13 @@ gulp.task('tether-scripts', function(callback) {
       .pipe(gulp.dest('stage/scripts/vendor'), callback);
 });
 
+// Popper Javascript
+gulp.task('popper-scripts', function(callback) {
+   return gulp.src(popperJs)
+      // copy scripts to stage
+      .pipe(gulp.dest('stage/scripts/vendor'), callback);
+});
+
 // Bootstrap Javascript
 gulp.task('bootstrap-scripts', function(callback) {
    return gulp.src(bootstrapJs)
@@ -150,6 +163,7 @@ gulp.task('minify-js', function () {
       .pipe($.order([
         "vendor/jquery.slim.js",
         "vendor/tether.js",
+        "vendor/popper.min.js",
         "vendor/bootstrap.js",
         "vendor/*.js",
         "**/*.js"
