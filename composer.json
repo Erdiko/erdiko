@@ -17,7 +17,6 @@
         "slim/slim": "^3.8",
         "erdiko/theme": "^0.2.0",
         "erdiko/session": "^0.1.1",
-        "erdiko/doctrine": "@dev",
         "monolog/monolog": "^1.22"
     },
     "autoload" : {
@@ -40,14 +39,5 @@
         "start": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit",
         "erdiko": "docker-compose up -d"
-	  },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../doctrine",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+	  }
 }
