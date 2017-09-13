@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 
+use erdiko\email\Mail;
+
 class Examples extends \erdiko\controllers\Web
 {
     use \erdiko\theme\traits\Controller; // Add theme engine suport (for convenience)

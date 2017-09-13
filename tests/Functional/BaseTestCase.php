@@ -23,6 +23,30 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
     protected $withMiddleware = true;
 
     /**
+     * @return App
+     */
+    protected function getApp()
+    {
+        // Use the application settings
+        $settings = require getenv('ERDIKO_ROOT').'/bootstrap/settings.php';
+
+        // Instantiate the application
+        $app = new App($settings);
+
+        // Set up dependencies
+        require getenv('ERDIKO_ROOT').'/bootstrap/dependencies.php';
+
+        // Register middleware
+        if ($this->withMiddleware) {
+            require getenv('ERDIKO_ROOT').'/bootstrap/middleware.php';
+        }
+        // Register routes
+        require getenv('ERDIKO_ROOT').'/bootstrap/routes.php';
+
+        return $app;
+    }
+
+    /**
      * Process the application given a request method and URI
      *
      * @param string $requestMethod the request method (e.g. GET, POST, etc.)

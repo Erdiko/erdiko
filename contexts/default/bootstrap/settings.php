@@ -17,6 +17,9 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
 
+        // Email settings
+        'email' => require getenv("ERDIKO_ROOT").'/config/email.php',
+
         // Theme settings
         'theme' => require getenv("ERDIKO_ROOT").'/contexts/'.getenv("ERDIKO_CONTEXT").'/config/theme.php',
     ],

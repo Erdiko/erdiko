@@ -13,6 +13,9 @@ return [
         // Monolog settings
         'logger' => require getenv("ERDIKO_ROOT").'/config/logger.php',
 
+        // Email settings
+        'email' => require getenv("ERDIKO_ROOT").'/config/email.php',
+
         // Theme settings
         'theme' => require getenv("ERDIKO_ROOT").'/config/theme.php',
 

@@ -2,6 +2,8 @@
 
 namespace Tests\Functional;
 
+require_once 'BaseTestCase.php';
+
 class HomepageTest extends BaseTestCase
 {
     /**

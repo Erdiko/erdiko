@@ -7,6 +7,11 @@ $container['session'] = function () {
     return \erdiko\session\Session::getDriverDefault();
 };
 
+// Email
+$container['email'] = function ($container) {
+    return new \erdiko\email\Email($container);
+};
+
 // Monolog
 $container['logger'] = function ($container) {
     $settings = $container->get('settings')['logger'];
