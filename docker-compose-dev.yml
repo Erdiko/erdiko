@@ -4,15 +4,19 @@ services:
 
   data:
     image: busybox
+    env_file: ./environment.env
     volumes:
       - ./:/code
       - ../theme:/theme
       - ../core:/core
+      - ../doctrine:/doctrine
+      - ../session:/session
 
   webserver:
     extends:
       file: ./docker/nginx/docker-compose.yml
       service: webserver
+    env_file: ./environment.env
     volumes_from: [data]
 
   php:
@@ -20,3 +24,20 @@ services:
     env_file: ./environment.env
     image: erdiko/php-fpm:latest
     volumes_from: [data]
+
+  redis:
+    container_name: erdiko_redis
+    env_file: ./environment.env
+    image: redis:latest
+    volumes:
+      - ../redis:/data
+
+  db:
+    container_name: erdiko_db
+    env_file: ./environment.env
+    image: mysql:latest
+    volumes:
+      - ../mysql:/var/lib/mysql
+      - ./docker/mysql/conf.d/erdiko.cnf:/etc/mysql/conf.d/erdiko.cnf
+    ports:
+      - "3306:3306"
