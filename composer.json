@@ -20,7 +20,10 @@
         "erdiko/email": "@dev",
         "erdiko/doctrine": "@dev",
         "monolog/monolog": "^1.22",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "mailgun/mailgun-php": "^2.3",
+        "php-http/curl-client": "^1.7",
+        "guzzlehttp/psr7": "^1.4"
     },
     "autoload" : {
         "psr-4" : {

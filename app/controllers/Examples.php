@@ -1,7 +1,8 @@
 <?php
 namespace app\controllers;
 
-use erdiko\email\Mail;
+use erdiko\email\Email;
+use Mailgun\Mailgun;
 
 class Examples extends \erdiko\controllers\Web
 {
