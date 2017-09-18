@@ -41,12 +41,11 @@
             "Tests\\": "tests/"
         }
     },
-	  "scripts": {
+    "scripts": {
         "start": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit",
         "erdiko": "docker-compose up -d"
-<<<<<<< HEAD
-	  },
+    },
     "repositories": [
         {
             "type": "path",
@@ -84,7 +83,4 @@
             }
         }
     ]
-=======
-	  }
->>>>>>> 36ec26eeac1242f83fa5365372c82960b2439ed6
 }
