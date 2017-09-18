@@ -7,14 +7,11 @@ services:
     env_file: ./environment.env
     volumes:
       - ./:/code
-<<<<<<< HEAD
       - ../theme:/theme
       - ../core:/core
       - ../doctrine:/doctrine
       - ../session:/session
       - ../email:/email
-=======
->>>>>>> 36ec26eeac1242f83fa5365372c82960b2439ed6
 
   webserver:
     extends:
