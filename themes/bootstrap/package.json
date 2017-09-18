@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap",
+  "name": "bootstrap-test",
   "version": "1.0.0",
   "description": "Bootstrap base theme for erdiko",
   "private": false,
@@ -8,15 +8,14 @@
     "type": "git",
     "url": "git://github.com/ArroyoLabs/erdiko"
   },
-  "dependencies": {},
   "devDependencies": {
-    "bootstrap-sass": "^3.3.6",
-    "jquery": "^2.1.1",
+    "bootstrap": "^4.0.0-beta",
     "del": "^1.2.0",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^2.3.0",
     "gulp-clean-css": "^2.0.4",
+    "gulp-cli": "^1.4.0",
     "gulp-concat": "^2.6.0",
     "gulp-debug": "^2.1.2",
     "gulp-file-include": "^0.9.0",
@@ -35,9 +34,16 @@
     "gulp-uglify": "^0.2.1",
     "gulp-useref": "^1.1.2",
     "gulp-watch": "^4.2.4",
-    "run-sequence": "^1.1.0"
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "popper.js": "^1.12.5",
+    "run-sequence": "^1.1.0",
+    "tether": "^1.4.0"
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "gulp-install": "^1.1.0"
   }
 }

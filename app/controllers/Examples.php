@@ -19,7 +19,7 @@ class Examples extends \erdiko\controllers\Web
         // $themeData['args'] = $args; // optional
 
         $themeData['page'] = [
-            'title' => "Erdiko Web Example",
+            'title' => "Erdiko Web Examples",
             'hello' => "world"
             ];
 

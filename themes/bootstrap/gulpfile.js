@@ -9,8 +9,14 @@ var renderedThemeRoot  = "../../public/";
 var themeName       = "bootstrap";
 var renderedTheme   = renderedThemeRoot+'themes/'+themeName;
 
-var jQueryJs        = "node_modules/jquery/dist/jquery.js";
-var bootstrapJs     = "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js";
+var jQueryJs        = "node_modules/jquery/dist/jquery.slim.js";
+
+var tetherJs        = "node_modules/tether/dist/js/tether.js";
+
+var popperJs        = "node_modules/popper.js/dist/umd/popper.min.js";
+
+var bootstrapJs     = "node_modules/bootstrap/dist/js/bootstrap.js";
+
 // var cleanBlogJs     = parentThemeRoot+"scripts/clean-blog.js";
 
 
@@ -50,7 +56,10 @@ gulp.task('clean:stage', function(callback) {
 gulp.task('build', function(callback) {
    $.runSequence(
       'clean:stage',
-      ['styles', 'bootstrap-scripts', 'jquery-scripts', 'scripts'],
+      ['styles',
+          'tether-scripts',
+          'popper-scripts',
+          'bootstrap-scripts', 'jquery-scripts', 'scripts'],
       ['minify-css', 'minify-js'],
       'notify:buildComplete',
       callback
@@ -105,6 +114,20 @@ gulp.task('scripts', function(callback) {
       .pipe(gulp.dest('stage/scripts'), callback);
 });
 
+// Tether Javascript
+gulp.task('tether-scripts', function(callback) {
+   return gulp.src(tetherJs)
+      // copy scripts to stage
+      .pipe(gulp.dest('stage/scripts/vendor'), callback);
+});
+
+// Popper Javascript
+gulp.task('popper-scripts', function(callback) {
+   return gulp.src(popperJs)
+      // copy scripts to stage
+      .pipe(gulp.dest('stage/scripts/vendor'), callback);
+});
+
 // Bootstrap Javascript
 gulp.task('bootstrap-scripts', function(callback) {
    return gulp.src(bootstrapJs)
@@ -138,7 +161,9 @@ gulp.task('minify-js', function () {
 
    return gulp.src(['stage/scripts/**/*.js'])
       .pipe($.order([
-        "vendor/jquery.js",
+        "vendor/jquery.slim.js",
+        "vendor/tether.js",
+        "vendor/popper.min.js",
         "vendor/bootstrap.js",
         "vendor/*.js",
         "**/*.js"

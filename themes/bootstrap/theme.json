@@ -1,6 +1,6 @@
 {
     "name": "bootstrap",
-    "description": "Simple Bootstrap 3 based theme",
+    "description": "Simple Bootstrap 4 based theme",
     "credits": "John Arroyo",
     "public":"/public/themes/bootstrap",
     "view": "page.html",

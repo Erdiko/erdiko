@@ -13,17 +13,12 @@
     ],
     "require": {
         "php": ">=7.0",
-        "erdiko/core": "2.0.0-beta1",
+        "erdiko/core": "@dev",
         "slim/slim": "^3.8",
-        "erdiko/theme": "^0.2.0",
-        "erdiko/session": "^0.1.1",
-        "monolog/monolog": "^1.22",
-        "erdiko/email": "@dev",
+        "erdiko/theme": "@dev",
+        "erdiko/session": "@dev",
         "erdiko/doctrine": "@dev",
-        "guzzlehttp/guzzle": "~6.0",
-        "mailgun/mailgun-php": "^2.3",
-        "php-http/curl-client": "^1.7",
-        "guzzlehttp/psr7": "^1.4"
+        "monolog/monolog": "^1.22"
     },
     "autoload" : {
         "psr-4" : {
@@ -45,7 +40,6 @@
         "start": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit",
         "erdiko": "docker-compose up -d"
-<<<<<<< HEAD
 	  },
     "repositories": [
         {
@@ -75,16 +69,6 @@
             "options": {
                 "symlink": true
             }
-        },
-        {
-            "type": "path",
-            "url": "../email",
-            "options": {
-                "symlink": true
-            }
         }
     ]
-=======
-	  }
->>>>>>> 36ec26eeac1242f83fa5365372c82960b2439ed6
 }
