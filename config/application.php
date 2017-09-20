@@ -7,4 +7,6 @@ return [
     'copyright' => 'Copyright © 2017',
     'site_url' => getenv("ERDIKO_SITE_URL"),
     'home' => '/examples',
+    'language' => 'en',
+    'charset' => 'utf-8'
 ];
