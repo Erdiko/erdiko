@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit colors="true" bootstrap="bootstrap.php">
+    <testsuites>
+        <testsuite name="Functional Tests">
+            <directory>Functional</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>deprecated</group>
+        </exclude>
+    </groups>
+</phpunit>
