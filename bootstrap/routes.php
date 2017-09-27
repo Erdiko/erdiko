@@ -11,26 +11,26 @@ $app->get('/', function ($request, $response, $args) {
 //    ->setName('home');
 
 // Render Twig template in route
-$app->any('/render/[{name}]', function ($request, $response, $args) {
-    // Erdiko setup (load configs)
-    // $erdiko = \erdiko\App;
-    // $erdiko->load('application');
-    $this->logger->debug("/render");
-    $config = \erdiko\Config::get('application');
-    if (isset($appConfig['theme']['namespace'])) {
-        $themeConfig = new \erdiko\theme\Config;
-        $themeConfigArr = $themeConfig->getThemeConfig($appConfig['theme']['namespace']);
-    }
+// $app->any('/render/[{name}]', function ($request, $response, $args) {
+//     // Erdiko setup (load configs)
+//     // $erdiko = \erdiko\App;
+//     // $erdiko->load('application');
+//     $this->logger->debug("/render");
+//     $config = \erdiko\Config::get('application');
+//     if (isset($appConfig['theme']['namespace'])) {
+//         $themeConfig = new \erdiko\theme\Config;
+//         $themeConfigArr = $themeConfig->getThemeConfig($appConfig['theme']['namespace']);
+//     }
 
-    $view = 'views/invoke.html';
+//     $view = 'views/invoke.html';
 
-    return $this->theme->render($response, $view, [
-        'name' => $args['name'],
-        'title' => "Erdiko Theme",
-        'application' => $appConfig,
-        'theme' => $themeConfigArr
-    ]);
-})->setName('invoke');
+//     return $this->theme->render($response, $view, [
+//         'name' => $args['name'],
+//         'title' => "Erdiko Theme",
+//         'application' => $appConfig,
+//         'theme' => $themeConfigArr
+//     ]);
+// })->setName('invoke');
 
 // Render Twig template in route
 $app->get('/examples/config', \app\controllers\Config::class);
@@ -56,3 +56,23 @@ $app->any('/rest/{resource}[/{id}]', \app\controllers\Rest::class)
 // REST Controller, two key/value pairs
 $app->any('/rest/{resource}/{id}/{sub_resource}[/{sub_id}]', \app\controllers\Rest::class)
     ->setName('rest2');
+
+// Web Controller
+// $app->any('/log', \app\controllers\LogController::class)
+//     ->setName('logger');
+
+// Web Controller
+
+$app->any('/log[/{action}]', \app\controllers\LogController::class)
+    ->setName('logaction');
+
+// // Web Controller
+$app->any('/log/{action}/[{param}]', \app\controllers\LogController::class)
+    ->setName('logactionparam');
+
+// Web Controller
+$app->any('/create', \app\controllers\LogCreateController::class)
+    ->setName('loggercreate');
+
+$app->post('/create/createevent', \app\controllers\LogCreateController::class)
+    ->setName('createevent');

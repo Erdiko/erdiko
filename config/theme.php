@@ -25,11 +25,14 @@ return [
     ],
     'menus' => [
         'main' => [
+            ['title' => 'Log Menu', 'href' => '/log'],
+            ['title' => 'Create', 'href' => '/create'],
+
+        ],
+        'footer' => [
             ['title' => 'Examples', 'href' => '/examples'],
             ['title' => 'Grid', 'href' => '/examples/grid/12'],
             ['title' => 'Markup', 'href' => '/examples/markup'],
-        ],
-        'footer' => [
             ['title' => 'Home', 'href' => '/'],
             ['title' => 'View Config', 'href' => '/examples/config'],
             ['title' => 'About', 'href' => '/examples/about'],

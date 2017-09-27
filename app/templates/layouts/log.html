@@ -1,0 +1,31 @@
+{% extends "layouts/1column.html" %}
+
+  {% block column1 %}
+    <h1>{{page.title}}</h1>
+
+    <div>{{page.description}}</div>
+
+    <div class="card-group">
+      {% for log in page.logevents %}
+      <div class="card">
+        <img class="card-img-top" src="{{log.image_src}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{log.title}}</h4>
+          <p class="card-text">{{log.description}}</p>
+          <a href="{{log.href}}">
+            <button type="button" class="btn btn-primary" href="">
+              See Details
+            </button>
+          </a>
+
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{log.latest_update}}</small>
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+    <br />
+
+  {% endblock %}

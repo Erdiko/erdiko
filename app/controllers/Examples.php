@@ -24,7 +24,7 @@ class Examples extends \erdiko\controllers\Web
     }
 
     public function getOnecolumn($request, $response, $args)
-    {
+    {   
         $this->container->logger->debug("route: /config");
         $view = 'layouts/1column.html';
         $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
@@ -49,6 +49,16 @@ class Examples extends \erdiko\controllers\Web
         $view = 'layouts/3column.html';
         $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         $themeData['page']['title'] = "3 Column Layout";
+
+        return $this->container->theme->render($response, $view, $themeData);
+    }
+
+    public function getFourcolumn($request, $response, $args)
+    {
+        $this->container->logger->debug("route: /config");
+        $view = 'layouts/4column.html';
+        $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
+        $themeData['page']['title'] = "4 Column Layout";
 
         return $this->container->theme->render($response, $view, $themeData);
     }
