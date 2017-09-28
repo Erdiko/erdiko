@@ -1,0 +1,29 @@
+{
+    "logevents": [
+        {
+            "title": "Log 1",
+            "eventID": 1,
+            "description": "This is a filler content description for Log 1. These content will be dynamically generated in future.",
+            "image_src": "https://lorempixel.com/600/300/food/5/",
+            "latest_update": "Last update by aPerson x minutes ago",
+            "href": "/log/detail/1"
+        },
+        {
+            "title": "Log 2",
+            "eventID": 2,
+            "description": "This is a filler content description for Log 2. These content will be dynamically generated in future.",
+            "image_src": "https://lorempixel.com/600/300/food/5/",
+            "latest_update": "Last update by aPerson x minutes ago",
+            "href": "/log/detail/2"
+        },
+        {                    "title": "Log 3",
+            "eventID": 3,
+            "description": "This is a filler content description for Log 3. These content will be dynamically generated in future.",
+            "image_src": "https://lorempixel.com/600/300/food/5/",
+            "latest_update": "Last update by aPerson x minutes ago",
+            "href": "/log/detail/3"
+        }
+        
+ 
+    ]
+}

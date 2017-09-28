@@ -5,22 +5,22 @@
 
     <div>{{page.description}}</div>
 
-    <form action"/createevent" method="POST">
+    <form action="/create/createevent" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Name of Event</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jogging, Cup Stacking, etc.">
+        <input name="event_title" class="form-control" placeholder="Jogging, Cup Stacking, etc.">
         <small id="emailHelp" class="form-text text-muted">What's in a name? That which we call a rose by any other name would smell as sweet. -Shakespeare</small>
       </div>
       
       <div class="form-group">
         <label>Event Type</label> <br />
         <label class="custom-control custom-radio">
-          <input id="radio1" name="radio" type="radio" class="custom-control-input">
+          <input id="radio1" name="string_radio" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">String</span>
         </label>
         <label class="custom-control custom-radio">
-          <input id="radio2" name="radio" type="radio" class="custom-control-input">
+          <input id="radio2" name="integer_radio" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">Integer</span>
         </label>
@@ -28,21 +28,21 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Value</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Join">
-        <small id="emailHelp" class="form-text text-muted">John has joined the group (This should only show when event type above is set to 'string')</small>
+        <label>Value</label>
+        <input name="value" class="form-control" placeholder="Join">
+        <small class="form-text text-muted">John has joined the group (This should only show when event type above is set to 'string')</small>
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Unit of Value</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="km, barrels, glass of 12oz beer">
-        <small id="emailHelp" class="form-text text-muted">Define the unit of value of integer (This should only show when event type above is set to 'int') </small>
+        <label>Unit of Value</label>
+        <input name="unit_value" class="form-control" placeholder="km, barrels, glass of 12oz beer">
+        <small class="form-text text-muted">Define the unit of value of integer (This should only show when event type above is set to 'int') </small>
       </div>
       
       <div class="form-group">
         <label for="exampleInputEmail1">Template</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User1 has drank int_val int_unit">
-        <small id="emailHelp" class="form-text text-muted">Template provides means to customize how the event log</small>
+        <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User1 has drank int_val int_unit">
+        <small class="form-text text-muted">Template provides means to customize how the event log</small>
       </div>
       
       <button type="submit" class="btn btn-primary">Create</button>

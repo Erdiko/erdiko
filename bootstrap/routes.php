@@ -58,10 +58,6 @@ $app->any('/rest/{resource}/{id}/{sub_resource}[/{sub_id}]', \app\controllers\Re
     ->setName('rest2');
 
 // Web Controller
-// $app->any('/log', \app\controllers\LogController::class)
-//     ->setName('logger');
-
-// Web Controller
 
 $app->any('/log[/{action}]', \app\controllers\LogController::class)
     ->setName('logaction');
@@ -71,8 +67,6 @@ $app->any('/log/{action}/[{param}]', \app\controllers\LogController::class)
     ->setName('logactionparam');
 
 // Web Controller
-$app->any('/create', \app\controllers\LogCreateController::class)
-    ->setName('loggercreate');
 
-$app->post('/create/createevent', \app\controllers\LogCreateController::class)
+$app->any('/create[/{action}]', \app\controllers\LogCreateController::class)
     ->setName('createevent');

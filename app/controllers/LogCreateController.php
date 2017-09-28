@@ -20,9 +20,8 @@ class LogCreateController extends \erdiko\controllers\Web
         return $this->container->theme->render($response, $view, $themeData);
     }
 
-    public function postCreateEvent($request, $response, $args)
+    public function postCreateevent($request, $response, $args)
     {
-        //var_dump($_POST); die("POST");
-        //$data = $request->getParsedBody();
+        var_dump($_POST);
     }
 }

@@ -12,36 +12,57 @@ class LogController extends \erdiko\controllers\Web
         $view = 'layouts/log.html';
         $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
         
-        $themeData['page'] = [
-            'title' => "This is the Log Index Controller",
-            'description' => "This is where all the log that were previously created",
-            'logevents' => [
-                [
-                    'title' => "Log 1",
-                    'eventID' => 1,
-                    'description' => "This is a filler content description for Log 1. These content will be dynamically generated in future.",
-                    'image_src' => "https://lorempixel.com/600/300/food/5/",
-                    'latest_update' => "Last update by aPerson x minutes ago",
-                    'href' => "/log/detail/1"
-                ],
-                [
-                    'title' => "Log 2",
-                    'eventID' => 2,
-                    'description' => "This is a filler content description for Log 2. These content will be dynamically generated in future.",
-                    'image_src' => "https://lorempixel.com/600/300/food/5/",
-                    'latest_update' => "Last update by aPerson x minutes ago",
-                    'href' => "/log/detail/2"
-                ],
-                [
-                    'title' => "Log 3",
-                    'eventID' => 3,
-                    'description' => "This is a filler content description for Log 3. These content will be dynamically generated in future.",
-                    'image_src' => "https://lorempixel.com/600/300/food/5/",
-                    'latest_update' => "Last update by aPerson x minutes ago",
-                    'href' => "/log/detail/3"
-                ]
-            ]
-        ];
+        $host = "127.0.0.1";
+        $user = "root";
+        $pass = "root";
+        $db_name = "mydb";
+        $connection = mysqli_connect($host, $user, $pass, $db_name);
+
+        var_dump($connection);
+        $query = "SELECT * from event order by id";
+        //$result = $connection->query($query);
+
+        // if (!function_exists('mysqli_init') && !function_exists('mysqli_connect') && !extension_loaded('mysqli') ) {
+        //     echo 'no mysqli :(';
+        // } else {
+        //     echo 'we gots it';
+        // }
+        
+
+        //var_dump($result); die("result");
+
+        // $themeData['page'] = [
+        //     'title' => "This is the Log Index Controller",
+        //     'description' => "This is where all the log that were previously created",
+        //     'logevents' => [
+        //         [
+        //             'title' => "Log 1",
+        //             'eventID' => 1,
+        //             'description' => "This is a filler content description for Log 1. These content will be dynamically generated in future.",
+        //             'image_src' => "https://lorempixel.com/600/300/food/5/",
+        //             'latest_update' => "Last update by aPerson x minutes ago",
+        //             'href' => "/log/detail/1"
+        //         ],
+        //         [
+        //             'title' => "Log 2",
+        //             'eventID' => 2,
+        //             'description' => "This is a filler content description for Log 2. These content will be dynamically generated in future.",
+        //             'image_src' => "https://lorempixel.com/600/300/food/5/",
+        //             'latest_update' => "Last update by aPerson x minutes ago",
+        //             'href' => "/log/detail/2"
+        //         ],
+        //         [
+        //             'title' => "Log 3",
+        //             'eventID' => 3,
+        //             'description' => "This is a filler content description for Log 3. These content will be dynamically generated in future.",
+        //             'image_src' => "https://lorempixel.com/600/300/food/5/",
+        //             'latest_update' => "Last update by aPerson x minutes ago",
+        //             'href' => "/log/detail/3"
+        //         ]
+        //     ]
+        // ];
+
+
 
         return $this->container->theme->render($response, $view, $themeData);
     }
