@@ -6,7 +6,6 @@ namespace Tests\Functional;
  * Class HomepageTest
  *
  * @package Tests\Functional
- * @group deprecated
  */
 class HomepageTest extends BaseTestCase
 {

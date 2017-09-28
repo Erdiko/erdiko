@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+use app\models\Users;
 use erdiko\email\Email;
 use Mailgun\Mailgun;
 
