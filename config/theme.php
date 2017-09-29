@@ -3,7 +3,7 @@
 return [
     // Twig settings
     'namespace' => '/themes/bootstrap',
-    'templates' => ['../app/templates', '../vendor/erdiko/theme/templates'],
+    'templates' => [getenv("ERDIKO_ROOT").'/app/templates', getenv("ERDIKO_ROOT").'/vendor/erdiko/theme/templates'],
     'debug' => getenv("ERDIKO_IS_DEV_MODE"),
     'cache' => false, // 'cache' => '/tmp/erdiko/theme',
     // Application settings

@@ -1,6 +1,10 @@
 <?php
 namespace app\controllers;
 
+use app\models\Users;
+use erdiko\email\Email;
+use Mailgun\Mailgun;
+
 class Examples extends \erdiko\controllers\Web
 {
     use \erdiko\theme\traits\Controller; // Add theme engine suport (for convenience)

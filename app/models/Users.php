@@ -11,19 +11,12 @@
  */
 namespace app\models;
 
-class Users 
+class Users
 {
-    use \erdiko\doctrine\EntityTraits; // This adds some convenience methods
+    use \erdiko\doctrine\models\EntityTrait;
 
     public function getUsers()
     {
-        return $this->getRepository('app\entities\User')->findAll(); // The easy (convenient) way
-    }
-
-    public function getUsersOld()
-    {
-        // The old fashioned way (typical doctrine use)
-        $entityManager = \erdiko\doctrine\EntityManager::getEntityManager();
-        return $entityManager->getRepository('app\entities\User')->findAll();
+        return $this->getRepository('app\entities\User')->findAll();
     }
 }

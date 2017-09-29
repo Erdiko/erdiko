@@ -7,6 +7,11 @@ services:
     env_file: ./environment.env
     volumes:
       - ./:/code
+      - ../theme:/theme
+      - ../core:/core
+      - ../doctrine:/doctrine
+      - ../session:/session
+      - ../email:/email
 
   webserver:
     extends:
@@ -28,12 +33,12 @@ services:
   #  volumes:
   #    - ../redis:/data
 
-  #db:
-  #  container_name: erdiko_db
-  #  env_file: ./environment.env
-  #  image: mysql:latest
-  #  volumes:
-  #    - ../mysql:/var/lib/mysql
-  #    - ./docker/mysql/conf.d/erdiko.cnf:/etc/mysql/conf.d/erdiko.cnf
-  #  ports:
-  #    - "3306:3306"
+  db:
+    container_name: erdiko_db
+    env_file: ./environment.env
+    image: mysql:latest
+    volumes:
+      - ../mysql:/var/lib/mysql
+      - ./docker/mysql/conf.d/erdiko.cnf:/etc/mysql/conf.d/erdiko.cnf
+    ports:
+      - "3306:3306"

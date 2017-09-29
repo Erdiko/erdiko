@@ -11,15 +11,16 @@ return [
         ],
 
         // Monolog settings
-        'logger' => require getenv("ERDIKO_ROOT").'/config/logger.php',
+        'logger' => [
+            'name' => 'erdiko-default',
+            'path' => ERDIKO_ROOT . '/var/logs/app.log',
+            'level' => \Monolog\Logger::DEBUG,
+        ],
 
         // Email settings
         'email' => require getenv("ERDIKO_ROOT").'/config/email.php',
 
         // Theme settings
-        'theme' => require getenv("ERDIKO_ROOT").'/config/theme.php',
-
-        // Database settings
-        'database' => require getenv("ERDIKO_ROOT").'/config/database.php',
+        'theme' => require getenv("ERDIKO_ROOT").'/contexts/'.getenv("ERDIKO_CONTEXT").'/config/theme.php',
     ],
 ];
