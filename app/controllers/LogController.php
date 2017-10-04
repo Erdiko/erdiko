@@ -9,6 +9,10 @@ class LogController extends \erdiko\controllers\Web
     public function get($request, $response, $args)
     {
 
+        $service = new \app\models\Log();
+
+        $events = $service->getEvents();
+
         $view = 'layouts/log.html';
         $themeData['theme'] = \erdiko\theme\Config::get($this->container->get('settings')['theme']);
 
