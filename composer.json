@@ -19,7 +19,7 @@
         "erdiko/theme": "^0.2.0",
         "erdiko/session": "^0.1.1",
         "monolog/monolog": "^1.22",
-        "erdiko/doctrine": "*"
+        "erdiko/doctrine": "dev-erdiko2"
     },
     "autoload" : {
         "psr-4" : {
